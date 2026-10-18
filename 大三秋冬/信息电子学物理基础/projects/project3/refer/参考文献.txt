@@ -1,0 +1,13 @@
+Modelling charge transport and electro-optical characteristics of
+quantum dot light-emitting diodes, *npj Computational*
+Materials (2021) 122
+
+Truly form-factor-free industrially scalable system integration
+for electronic textile architectures with multifunctional fiber
+devices *SCIENCE ADVANCES* 21 Apr 2023,
+Vol 9, Issue 16,
+
+Optoelectronic system and device integration for quantum-
+dot light-emitting diode white lighting with computational
+design framework, *Nat Commun* 13, 4189 (2022).
+https://doi.org/10.1038/s41467-022-31853-9

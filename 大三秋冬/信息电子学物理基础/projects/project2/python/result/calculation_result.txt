@@ -1,0 +1,19 @@
+==================================================
+PN Junction Design - Numerical Solution
+==================================================
+
+1. Doping Ratio (Current Symmetry)
+   NA/ND = 1.67702
+
+2. Design Window
+   ND upper limit (Capacitance): 2.7198e+14 cm^-3
+   ND lower limit (Leakage):     6.1801e+12 cm^-3
+
+3. Selected Design Point
+   ND = 2.00e+14 cm^-3
+   NA = 3.35e+14 cm^-3
+
+4. Verification
+   Capacitance: 1.3740e-09 F/cm^2 (< 1.60e-09) - PASS
+   Leakage:     4.0170e-10 A/cm^2 (< 1.30e-08) - PASS
+==================================================

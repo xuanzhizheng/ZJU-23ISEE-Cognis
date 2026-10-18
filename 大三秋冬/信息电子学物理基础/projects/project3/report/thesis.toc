@@ -1,0 +1,44 @@
+\contentsline {section}{\numberline {1}设计背景与核心需求}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}设计背景与现状分析}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}设计背景}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}现有解决方案的不足}{1}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}需求分析与应用场景}{1}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}核心功能设计}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}工作环境与器件要求}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}机械与环境耐受性要求}{2}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}发光性能要求}{3}{subsubsection.1.3.2}%
+\contentsline {section}{\numberline {2}QLED设计指标与要求}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}QLED工作环境与寿命指标}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}工作温度范围(Operating Temperature)}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}环境与寿命指标(Environment \& Lifetime)}{4}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}发光频率/波长}{4}{subsection.2.2}%
+\contentsline {section}{\numberline {3}QLED器件结构与材料选择}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}QLED器件的常用器件结构}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}材料与参数设计}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}本征可拉伸器件结构(Device Structure)}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}详细材料参数表}{6}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {4}QLED器件的精密制备工艺}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}复合阳极转印}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}功能层逐层旋涂}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}复合阴极沉积}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}系统封装}{9}{subsection.4.4}%
+\contentsline {section}{\numberline {5}织物集成与加工工艺设计}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}织物基底选型与界面平坦化}{10}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}织物基底选型}{10}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}紫外固化树脂平坦化工艺(UV-Resin Planarization)}{10}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}异质转印集成技术}{10}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}转印原理与工艺流程}{10}{subsubsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.3}可呼吸的液态金属互连系统}{11}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}系统封装与耐洗涤设计}{12}{subsection.5.4}%
+\contentsline {section}{\numberline {6}社会与环境方面的考虑}{13}{section.6}%
+\contentsline {subsection}{\numberline {6.1}产业污染特征与环境风险分析}{13}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}量子点材料制造(QD Synthesis)}{13}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}器件制造(Device Fabrication)}{13}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}纺织品集成(Textile Integration)}{13}{subsubsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.2}绿色制造与清洁材料选择}{13}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}核心材料无毒化：从CdSe向InP过渡}{13}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}绿色溶剂工艺(Green Solvent Processing)}{14}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}低损耗转印技术(Loss-less Transfer)}{14}{subsubsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.3}废弃物处理与循环经济}{15}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}液态金属的回收再利用}{15}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}织物与电子层分离}{15}{subsubsection.6.3.2}%
