@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}实物制作}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}PCB设计}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}机械制作}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}面板制作}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}实物图}{3}{subsection.1.4}%
+\contentsline {section}{\numberline {2}遇到问题}{4}{section.2}%
