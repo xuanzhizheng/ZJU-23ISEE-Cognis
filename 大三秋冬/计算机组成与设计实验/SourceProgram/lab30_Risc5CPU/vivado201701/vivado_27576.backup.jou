@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Tue Nov  4 23:15:41 2025
+# Process ID: 27576
+# Current directory: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19004 C:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\vivado201701\Risc5CPU.xpr
+# Log file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/vivado.log
+# Journal file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.xpr
+update_compile_order -fileset sources_1
+reset_run DisplayROM_synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+launch_simulation -mode post-implementation -type timing
+source PipelineCPUTest.tcl
+launch_simulation
+source PipelineCPUTest.tcl
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU_tb.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Risc5CPU_tb_v [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation -mode post-implementation -type timing
+source Risc5CPU_tb_v.tcl
+close_sim
+current_sim simulation_2
+close_sim
+close_sim

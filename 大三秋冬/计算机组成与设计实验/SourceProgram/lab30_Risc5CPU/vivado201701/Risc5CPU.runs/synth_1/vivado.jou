@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Nov 23 16:08:41 2025
+# Process ID: 17568
+# Current directory: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.runs/synth_1
+# Command line: vivado.exe -log PipelineCPUTest.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PipelineCPUTest.tcl
+# Log file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.runs/synth_1/PipelineCPUTest.vds
+# Journal file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source PipelineCPUTest.tcl -notrace

@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov  3 20:45:27 2025
+# Process ID: 33276
+# Current directory: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201704
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22332 C:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\vivado201704\Risc5CPU.xpr
+# Log file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201704/vivado.log
+# Journal file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201704\vivado.jou
+#-----------------------------------------------------------
+start_guieopen_project C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201704/Risc5CPU.xpr
+INFO: [Project 1-313] Project file moved from 'F:/SourceProgram/lab30_Risc5CPU/vivado201704' since last save.
+Scanning sources...
+Finished scanning sources
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name ProjectType
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2017.3/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'DCM_PLL' is locked:
+* Project containing IP 'DCM_PLL' is read-only.
+* IP definition 'Clocking Wizard (5.4)' for IP 'DCM_PLL' (customized with software release 2017.4) has a different revision in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'DisplayROM' is locked:
+* Project containing IP 'DisplayROM' is read-only.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [Project 1-231] Project 'Risc5CPU.xpr' was created with a future version and may or may not perform reliably with this version of Vivado. It has been opened in read-only mode for the protection of unrecognized data. Use 'File | Save Project As...' if you wish to alter a copy of the project.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  3 20:45:53 2025...

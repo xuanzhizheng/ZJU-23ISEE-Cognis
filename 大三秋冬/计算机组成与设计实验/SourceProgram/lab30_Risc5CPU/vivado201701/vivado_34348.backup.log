@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov  3 20:46:04 2025
+# Process ID: 34348
+# Current directory: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent34520 C:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\vivado201701\Risc5CPU.xpr
+# Log file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/vivado.log
+# Journal file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701\vivado.jou
+#-----------------------------------------------------------
+start_gui
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  3 20:48:03 2025...

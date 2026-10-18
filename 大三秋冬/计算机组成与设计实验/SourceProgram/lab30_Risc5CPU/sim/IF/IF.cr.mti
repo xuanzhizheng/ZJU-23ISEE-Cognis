@@ -1,0 +1,36 @@
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module adder_32bits
+
+Top level modules:
+	adder_32bits
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/IF.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/IF.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module IF1
+
+Top level modules:
+	IF1
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/InstructionROM.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/InstructionROM.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module InstructionROM
+
+Top level modules:
+	InstructionROM
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/IF_tb.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/IF_tb.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module IF_tb
+
+Top level modules:
+	IF_tb
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module adder_4bits
+
+Top level modules:
+	adder_4bits
+
+} {} {}}

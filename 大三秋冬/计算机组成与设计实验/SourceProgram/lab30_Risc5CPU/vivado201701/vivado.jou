@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Wed Nov  5 09:51:38 2025
+# Process ID: 25564
+# Current directory: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18480 C:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\vivado201701\Risc5CPU.xpr
+# Log file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/vivado.log
+# Journal file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701\vivado.jou
+#-----------------------------------------------------------
+start_guioopen_project C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.xpruupdate_compile_order -fileset sources_1
+reset_run impl_1
+add_files -norecurse C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/DFF.v
+update_compile_order -fileset sources_1
+reset_run DisplayROM_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+reset_simulation -simset sim_1 -mode post-implementation -type timing
+launch_simulation -mode post-implementation -type timing
+source Risc5CPU_tb_v.tcl
+close_sim

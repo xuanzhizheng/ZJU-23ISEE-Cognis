@@ -1,0 +1,21 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v,1762134421,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Branch_test.v,,ALU,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Branch_test.v,1762140583,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/CSR.v,,Branch_test,,,,,,,,
+,,,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/DFF.v,,CSR,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/DFF.v,1762308593,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v,,DFF,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v,1763813365,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v,,Decode,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v,1761451689,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Forwarding.v,,EX,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Forwarding.v,1761451598,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v,,Forwarding,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v,1761398611,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ID.v,,Hazard_Detector,,,,,,,,
+,,,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/IF.v,,ID,,,,,,,,
+,,,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/InstructionROM.v,,IF1,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/InstructionROM.v,1687795200,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers.v,,InstructionROM,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers.v,1761398604,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU.v,,Registers,,,,,,,,
+,,,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v,,Risc5CPU,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU_tb.v,1687795200,verilog,,,,Risc5CPU_tb_v,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v,1762140939,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v,,adder_32bits,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v,1762140923,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU_tb.v,,adder_4bits,,,,,,,,
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.sim/sim_1/impl/timing/xsim/Risc5CPU_tb_v_time_impl.v,1763878680,verilog,,C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v,,DCM_PLL;DCM_PLL_DCM_PLL_clk_wiz;DFF__parameterized0;DFF__parameterized1;DFF__parameterized2;DataRAM;DataRAM_dist_mem_gen_v8_0_12;DataRAM_dist_mem_gen_v8_0_12_synth;DataRAM_spram;DisplayROM;DisplayROM__dist_mem_gen_v8_0_11;DisplayROM__dist_mem_gen_v8_0_11_synth;DisplayROM__rom;NumberCnt;NumberCnt_2;NumberCnt_3;NumberCnt_4;NumberCnt_5;PipelineCPUTest;RAM32M_HD63;RAM32M_HD64;RAM32M_HD65;RAM32M_HD66;RAM32M_HD67;RAM32M_HD68;RAM32M_HD69;RAM32M_HD70;RAM32M_HD71;RAM32M_HD72;RAM32M_HD73;RAM32M_UNIQ_BASE_;RAM64X1S_HD32;RAM64X1S_HD33;RAM64X1S_HD34;RAM64X1S_HD35;RAM64X1S_HD36;RAM64X1S_HD37;RAM64X1S_HD38;RAM64X1S_HD39;RAM64X1S_HD40;RAM64X1S_HD41;RAM64X1S_HD42;RAM64X1S_HD43;RAM64X1S_HD44;RAM64X1S_HD45;RAM64X1S_HD46;RAM64X1S_HD47;RAM64X1S_HD48;RAM64X1S_HD49;RAM64X1S_HD50;RAM64X1S_HD51;RAM64X1S_HD52;RAM64X1S_HD53;RAM64X1S_HD54;RAM64X1S_HD55;RAM64X1S_HD56;RAM64X1S_HD57;RAM64X1S_HD58;RAM64X1S_HD59;RAM64X1S_HD60;RAM64X1S_HD61;RAM64X1S_HD62;RAM64X1S_UNIQ_BASE_;TMDSencode;brute_force_synchronizer;button_process_unit;counter_n;debouncer;dff;dff_0;dff_1;dffre;dffre__parameterized0;encode;encode_0;encode_1;glbl;one_pulse;syncGenarator;vga_data,,,,,,,,

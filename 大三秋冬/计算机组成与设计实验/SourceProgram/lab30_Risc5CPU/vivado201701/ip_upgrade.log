@@ -1,0 +1,16 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
+| Date         : Wed Nov  5 09:29:21 2025
+| Host         : LAPTOP-V15JOVGD running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'DCM_PLL'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of DCM_PLL (xilinx.com:ip:clk_wiz:5.4) to (Rev. 2)
+

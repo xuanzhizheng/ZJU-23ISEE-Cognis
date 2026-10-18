@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Nov  3 20:52:31 2025
+# Process ID: 15944
+# Current directory: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent35420 C:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\vivado201701\Risc5CPU.xpr
+# Log file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/vivado.log
+# Journal file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.xpr
+update_compile_order -fileset sources_1
+create_ip -name dist_mem_gen -vendor xilinx.com -library ip -version 8.0 -module_name DataRAM -dir c:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.srcs/sources_1/ip
+set_property -dict [list CONFIG.data_width {32} CONFIG.Component_Name {DataRAM}] [get_ips DataRAM]
+generate_target {instantiation_template} [get_files c:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+catch { config_ip_cache -export [get_ips -all DataRAM] }
+export_ip_user_files -of_objects [get_files c:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+launch_runs -jobs 12 DataRAM_synth_1
+export_simulation -of_objects [get_files c:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci] -directory C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.ip_user_files -ipstatic_source_dir C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.cache/compile_simlib/modelsim} {questa=C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.cache/compile_simlib/questa} {riviera=C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.cache/compile_simlib/riviera} {activehdl=C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet

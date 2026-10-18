@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Wed Nov  5 09:23:45 2025
+# Process ID: 20844
+# Current directory: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1120 C:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\vivado201701\Risc5CPU.xpr
+# Log file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/vivado.log
+# Journal file: C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.xpr
+update_compile_order -fileset sources_1
+reset_run DisplayROM_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+reset_run synth_1
+reset_run DisplayROM_synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+upgrade_ip -srcset DCM_PLL -vlnv xilinx.com:ip:clk_wiz:5.4 [get_ips  DCM_PLL] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips DCM_PLL] -no_script -sync -force -quiet
+update_compile_order -fileset sources_1
+reset_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+reset_run impl_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1

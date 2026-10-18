@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\zzx\Desktop\SourceProgram\lab8\sim
+vDecode
+VKLMa0Efh@`BBm>@TBSHAR0
+r1
+!s85 0
+31
+I1k;J2=bb9^aiLb7QNCSZ73
+Z0 dC:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\sim\Decode
+w1761399954
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v
+L0 6
+Z1 OL;L;10.1c;51
+Z2 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@decode
+!s100 XGXcSj=JRS7Jh0I7Ve]ES2
+!s108 1761452928.601000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v|
+!i10b 1
+vDecode_tb
+VcQi7FSgV<`TPI16Z<8JFR3
+r1
+31
+IRkJin;PQ0Z8Ydc53_i1JS2
+Z3 dC:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\sim\Decode
+w1687795200
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode_tb.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode_tb.v
+L0 6
+R1
+R2
+n@decode_tb
+!s85 0
+!i10b 1
+!s100 <?gjOS@84N:5jIB;ozfF@2
+!s108 1761452928.709000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode_tb.v|

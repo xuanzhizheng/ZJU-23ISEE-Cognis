@@ -1,0 +1,57 @@
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ID_tb.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ID_tb.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module ID_tb
+
+Top level modules:
+	ID_tb
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module adder_32bits
+
+Top level modules:
+	adder_32bits
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Hazard_Detector
+
+Top level modules:
+	Hazard_Detector
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v {1 {vlog -work work -vopt {C:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\src\Decode.v}
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Decode
+
+Top level modules:
+	Decode
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Registers
+
+Top level modules:
+	Registers
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ID.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ID.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module ID
+
+Top level modules:
+	ID
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Branch_test.v {1 {vlog -work work -vopt {C:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\src\Branch_test.v}
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Branch_test
+
+Top level modules:
+	Branch_test
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module adder_4bits
+
+Top level modules:
+	adder_4bits
+
+} {} {}}

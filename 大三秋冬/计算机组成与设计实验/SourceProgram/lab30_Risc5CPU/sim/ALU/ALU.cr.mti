@@ -1,0 +1,29 @@
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module adder_32bits
+
+Top level modules:
+	adder_32bits
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU_tb.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU_tb.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module ALU_tb
+
+Top level modules:
+	ALU_tb
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module adder_4bits
+
+Top level modules:
+	adder_4bits
+
+} {} {}}

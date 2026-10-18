@@ -1,0 +1,117 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\sim\ALU
+vadder_32bits
+VH3MfAaUBUHMniOHlZdcI;0
+r1
+31
+I<nZI`d2oaG_1]jCi_aD2K1
+Z0 dC:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\sim\EX
+w1762140939
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v
+L0 1
+Z1 OL;L;10.1c;51
+Z2 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s85 0
+!s100 ][Q3];ea8CNgW9GKb1F8Y0
+!s108 1762141416.421000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v|
+!i10b 1
+vadder_4bits
+VRIOd4YzBVIKIHabCV7aQM3
+r1
+!s85 0
+31
+I:bAEYVzAZbmmJmO]_UjCE2
+Z3 dC:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\sim\EX
+w1762140923
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v
+L0 1
+R1
+R2
+!s100 hQaGZhQRX;C:k[oMQDWaZ2
+!s108 1762141416.336000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v|
+!i10b 1
+vALU
+V1P1U`1hcN7OEUS`I_nR`;1
+r1
+31
+IDDG;<gjfLV<YKLP:MCgz:2
+R3
+w1762134421
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v
+L0 6
+R1
+R2
+n@a@l@u
+!s85 0
+!s100 32NNbEPSGY8CinUDWFg1j2
+!s108 1762141416.518000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v|
+!i10b 1
+vEX
+VJ0@zaaLb8::XO@_<_@<Yf2
+r1
+31
+I_HF4GRlF2b?Po3KNz_G2@1
+R3
+w1761451689
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v
+L0 6
+R1
+R2
+n@e@x
+!s85 0
+!s100 R2dmc6;fDdmSbL4BTWBN;3
+!s108 1762141416.605000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v|
+!i10b 1
+vEX_tb
+VziBG6F`BcGOm8n17I71n83
+r1
+31
+IlzX^DC>TC>:ebbKD`GTSa3
+R3
+w1762139870
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX_tb.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX_tb.v
+L0 6
+R1
+R2
+n@e@x_tb
+!s85 0
+!s100 BQ[SMG<18>_Q_;2FZ=QWF1
+!s108 1762141416.690000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX_tb.v|
+!i10b 1
+vForwarding
+V^cVWV9J=Dh`Qon4C<>I7b3
+r1
+31
+IkW1>IGEhWzWLgnfmYhS?L0
+R3
+w1761451598
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Forwarding.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Forwarding.v
+L0 6
+R1
+R2
+n@forwarding
+!s85 0
+!i10b 1
+!s100 d0PLZiF@_f=1l7`N^[3FF3
+!s108 1762141416.787000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Forwarding.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Forwarding.v|

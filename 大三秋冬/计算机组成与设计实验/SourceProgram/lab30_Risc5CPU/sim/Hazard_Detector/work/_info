@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\sim\Branch_test
+vHazard_Detector
+V_fYjjjWGn@fk2n7XZWJBb1
+r1
+!s85 0
+31
+IoDbfN8c`<Oj=0VhN7:OJ80
+Z0 dC:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\sim\Hazard_Detector
+w1761398611
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v
+L0 6
+Z1 OL;L;10.1c;51
+Z2 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@hazard_@detector
+!s100 TKDC;=i]h7P8nkOSK5b3o0
+!s108 1762094355.625000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v|
+!i10b 1
+vHazard_Detector_tb
+V?c^?L2nna8g8Zm4na5h?Z2
+r1
+31
+I25fKL:95Ro0?E5Xm=BTM[0
+Z3 dC:\Users\zzx\Desktop\SourceProgram\lab30_Risc5CPU\sim\Hazard_Detector
+w1762093031
+8C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector_tb.v
+FC:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector_tb.v
+L0 6
+R1
+R2
+n@hazard_@detector_tb
+!s85 0
+!i10b 1
+!s100 `z?gF;i>Foo>IEnT5hZZE0
+!s108 1762094355.719000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector_tb.v|

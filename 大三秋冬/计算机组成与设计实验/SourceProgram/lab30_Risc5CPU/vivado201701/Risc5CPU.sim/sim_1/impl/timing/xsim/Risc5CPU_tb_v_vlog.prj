@@ -1,0 +1,22 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"Risc5CPU_tb_v_time_impl.v" \
+"../../../../../../src/ALU.v" \
+"../../../../../../src/Branch_test.v" \
+"../../../../../../src/CSR.v" \
+"../../../../../../src/DFF.v" \
+"../../../../../../src/Decode.v" \
+"../../../../../../src/EX.v" \
+"../../../../../../src/Forwarding.v" \
+"../../../../../../src/Hazard_Detector.v" \
+"../../../../../../src/ID.v" \
+"../../../../../../src/IF.v" \
+"../../../../../../src/InstructionROM.v" \
+"../../../../../../src/Registers.v" \
+"../../../../../../src/Risc5CPU.v" \
+"../../../../../../src/adder_32bits.v" \
+"../../../../../../src/adder_4bits.v" \
+"../../../../../../src/Risc5CPU_tb.v" \
+
+# Do not sort compile order
+nosort

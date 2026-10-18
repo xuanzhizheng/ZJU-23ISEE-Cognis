@@ -1,0 +1,15 @@
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Hazard_Detector
+
+Top level modules:
+	Hazard_Detector
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector_tb.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector_tb.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Hazard_Detector_tb
+
+Top level modules:
+	Hazard_Detector_tb
+
+} {} {}}

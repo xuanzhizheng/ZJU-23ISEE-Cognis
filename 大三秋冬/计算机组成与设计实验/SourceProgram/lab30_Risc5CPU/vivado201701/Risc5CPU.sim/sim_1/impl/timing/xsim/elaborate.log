@@ -1,0 +1,67 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 55e7aacc0e5c48718c6c4728c2864e1e --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot Risc5CPU_tb_v_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.Risc5CPU_tb_v xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder_4bits
+Compiling module xil_defaultlib.adder_32bits
+Compiling module xil_defaultlib.InstructionROM
+Compiling module xil_defaultlib.IF1
+Compiling module xil_defaultlib.DFF(WIDTH=64,RESET_VALUE=64'b010...
+Compiling module xil_defaultlib.Registers
+Compiling module xil_defaultlib.Decode
+Compiling module xil_defaultlib.Branch_test
+Compiling module xil_defaultlib.Hazard_Detector
+Compiling module xil_defaultlib.CSR
+Compiling module xil_defaultlib.ID
+Compiling module xil_defaultlib.DFF(WIDTH=157)
+Compiling module xil_defaultlib.Forwarding
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.EX
+Compiling module xil_defaultlib.DFF(WIDTH=75)
+Compiling module simprims_ver.RAMS64E(RAM_ADDRESS_MASK=2'b11,R...
+Compiling module xil_defaultlib.RAM64X1S_UNIQ_BASE_
+Compiling module xil_defaultlib.RAM64X1S_HD32
+Compiling module xil_defaultlib.RAM64X1S_HD33
+Compiling module xil_defaultlib.RAM64X1S_HD34
+Compiling module xil_defaultlib.RAM64X1S_HD35
+Compiling module xil_defaultlib.RAM64X1S_HD36
+Compiling module xil_defaultlib.RAM64X1S_HD37
+Compiling module xil_defaultlib.RAM64X1S_HD38
+Compiling module xil_defaultlib.RAM64X1S_HD39
+Compiling module xil_defaultlib.RAM64X1S_HD40
+Compiling module xil_defaultlib.RAM64X1S_HD41
+Compiling module xil_defaultlib.RAM64X1S_HD42
+Compiling module xil_defaultlib.RAM64X1S_HD43
+Compiling module xil_defaultlib.RAM64X1S_HD44
+Compiling module xil_defaultlib.RAM64X1S_HD45
+Compiling module xil_defaultlib.RAM64X1S_HD46
+Compiling module xil_defaultlib.RAM64X1S_HD47
+Compiling module xil_defaultlib.RAM64X1S_HD48
+Compiling module xil_defaultlib.RAM64X1S_HD49
+Compiling module xil_defaultlib.RAM64X1S_HD50
+Compiling module xil_defaultlib.RAM64X1S_HD51
+Compiling module xil_defaultlib.RAM64X1S_HD52
+Compiling module xil_defaultlib.RAM64X1S_HD53
+Compiling module xil_defaultlib.RAM64X1S_HD54
+Compiling module xil_defaultlib.RAM64X1S_HD55
+Compiling module xil_defaultlib.RAM64X1S_HD56
+Compiling module xil_defaultlib.RAM64X1S_HD57
+Compiling module xil_defaultlib.RAM64X1S_HD58
+Compiling module xil_defaultlib.RAM64X1S_HD59
+Compiling module xil_defaultlib.RAM64X1S_HD60
+Compiling module xil_defaultlib.RAM64X1S_HD61
+Compiling module xil_defaultlib.RAM64X1S_HD62
+Compiling module xil_defaultlib.DataRAM_spram
+Compiling module xil_defaultlib.DataRAM_dist_mem_gen_v8_0_12_syn...
+Compiling module xil_defaultlib.DataRAM_dist_mem_gen_v8_0_12
+Compiling module xil_defaultlib.DataRAM
+Compiling module xil_defaultlib.DFF(WIDTH=71)
+Compiling module xil_defaultlib.Risc5CPU
+Compiling module xil_defaultlib.glbl
+Compiling module xil_defaultlib.Risc5CPU_tb_v
+Built simulation snapshot Risc5CPU_tb_v_time_impl

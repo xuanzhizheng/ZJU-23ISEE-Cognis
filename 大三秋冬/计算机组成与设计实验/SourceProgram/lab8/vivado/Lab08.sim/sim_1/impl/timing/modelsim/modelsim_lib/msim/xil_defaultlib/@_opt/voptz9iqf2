@@ -1,0 +1,28 @@
+library verilog;
+use verilog.vl_types.all;
+entity FDRE is
+    generic(
+        LOC             : string  := "UNPLACED";
+        MSGON           : string  := "TRUE";
+        XON             : string  := "TRUE";
+        INIT            : vl_logic_vector(0 downto 0) := (others => Hi0);
+        IS_C_INVERTED   : vl_logic_vector(0 downto 0) := (others => Hi0);
+        IS_D_INVERTED   : vl_logic_vector(0 downto 0) := (others => Hi0);
+        IS_R_INVERTED   : vl_logic_vector(0 downto 0) := (others => Hi0)
+    );
+    port(
+        Q               : out    vl_logic;
+        C               : in     vl_logic;
+        CE              : in     vl_logic;
+        D               : in     vl_logic;
+        R               : in     vl_logic
+    );
+    attribute mti_svvh_generic_type : integer;
+    attribute mti_svvh_generic_type of LOC : constant is 1;
+    attribute mti_svvh_generic_type of MSGON : constant is 1;
+    attribute mti_svvh_generic_type of XON : constant is 1;
+    attribute mti_svvh_generic_type of INIT : constant is 2;
+    attribute mti_svvh_generic_type of IS_C_INVERTED : constant is 2;
+    attribute mti_svvh_generic_type of IS_D_INVERTED : constant is 2;
+    attribute mti_svvh_generic_type of IS_R_INVERTED : constant is 2;
+end FDRE;

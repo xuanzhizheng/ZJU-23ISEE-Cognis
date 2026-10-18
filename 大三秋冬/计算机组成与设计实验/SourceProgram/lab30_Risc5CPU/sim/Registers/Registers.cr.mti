@@ -1,0 +1,15 @@
+C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Registers
+
+Top level modules:
+	Registers
+
+} {} {}} C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers_tb.v {1 {vlog -work work -vopt C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers_tb.v
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module Registers_tb
+
+Top level modules:
+	Registers_tb
+
+} {} {}}

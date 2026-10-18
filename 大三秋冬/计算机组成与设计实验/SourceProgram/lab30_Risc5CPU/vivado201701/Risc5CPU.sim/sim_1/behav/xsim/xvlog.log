@@ -1,0 +1,35 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataRAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Branch_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Branch_test
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/CSR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CSR
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/DFF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DFF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decode
+WARNING: [VRFC 10-756] identifier SYSTEM is used before its declaration [C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v:103]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Forwarding.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Forwarding
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hazard_Detector
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/IF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/InstructionROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Registers
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Risc5CPU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_32bits
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_4bits
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Risc5CPU_tb_v

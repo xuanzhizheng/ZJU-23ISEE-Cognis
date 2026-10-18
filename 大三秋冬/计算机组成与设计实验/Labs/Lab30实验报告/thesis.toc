@@ -1,0 +1,74 @@
+\contentsline {section}{\numberline {1}实验目的}{1}{section.1}%
+\contentsline {section}{\numberline {2}实验任务}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}基本要求}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}扩展要求}{1}{subsection.2.2}%
+\contentsline {section}{\numberline {3}实验设备}{2}{section.3}%
+\contentsline {section}{\numberline {4}提供的文件}{2}{section.4}%
+\contentsline {section}{\numberline {5}实验内容}{3}{section.5}%
+\contentsline {section}{\numberline {6}实验过程}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Decode模块设计}{5}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}设计原理}{5}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Verilog HDL代码与设计分析}{9}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}ModelSim仿真波形}{11}{subsubsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.4}实验结果分析}{11}{subsubsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.2}Register模块设计}{14}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}设计原理}{14}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Verilog HDL代码与设计分析}{15}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}ModelSim仿真波形}{16}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.4}实验结果分析}{17}{subsubsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.3}ID模块设计}{19}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}设计原理}{19}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Verilog HDL代码与设计分析}{21}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}ModelSim仿真波形}{23}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}实验结果分析}{23}{subsubsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.4}ALU模块设计}{26}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}设计原理}{26}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.2}Verilog HDL代码与设计分析}{28}{subsubsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.3}ModelSim仿真波形}{30}{subsubsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.4}实验结果分析}{30}{subsubsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.5}EX模块设计}{34}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}设计原理}{34}{subsubsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.2}Verilog HDL代码与设计分析}{35}{subsubsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.3}ModelSim仿真波形}{38}{subsubsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.4}实验结果分析}{38}{subsubsection.6.5.4}%
+\contentsline {subsection}{\numberline {6.6}IF模块设计}{41}{subsection.6.6}%
+\contentsline {subsubsection}{\numberline {6.6.1}设计原理}{41}{subsubsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.2}Verilog HDL代码与设计分析}{42}{subsubsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.3}ModelSim仿真波形}{44}{subsubsection.6.6.3}%
+\contentsline {subsubsection}{\numberline {6.6.4}实验结果分析}{44}{subsubsection.6.6.4}%
+\contentsline {subsection}{\numberline {6.7}MEM模块设计}{47}{subsection.6.7}%
+\contentsline {subsubsection}{\numberline {6.7.1}设计原理}{47}{subsubsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.8}CPU顶层设计}{49}{subsection.6.8}%
+\contentsline {subsubsection}{\numberline {6.8.1}设计原理}{49}{subsubsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.2}Verilog HDL代码与设计分析}{49}{subsubsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.3}Vivado行为级仿真波形}{55}{subsubsection.6.8.3}%
+\contentsline {subsubsection}{\numberline {6.8.4}实验结果分析}{55}{subsubsection.6.8.4}%
+\contentsline {section}{\numberline {7}实验结果}{57}{section.7}%
+\contentsline {section}{\numberline {8}拓展部分设计}{58}{section.8}%
+\contentsline {subsection}{\numberline {8.1}扩展指令集支持}{58}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}代码修改方案}{58}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}测试程序设计}{61}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}测试程序运行结果}{62}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.4}仿真结果验证}{62}{subsubsection.8.1.4}%
+\contentsline {subsection}{\numberline {8.2}异常处理机制}{64}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}代码修改方案}{64}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}测试程序设计}{66}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}仿真与验证}{66}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}非法指令异常触发（PC $14 \to 40$）}{66}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.5}非法指令异常返回（PC $64 \to 14$）}{67}{subsubsection.8.2.5}%
+\contentsline {subsubsection}{\numberline {8.2.6}ECALL异常触发（PC $1C \to 40$）}{68}{subsubsection.8.2.6}%
+\contentsline {subsubsection}{\numberline {8.2.7}ECALL异常返回（PC $64 \to 1C$）}{68}{subsubsection.8.2.7}%
+\contentsline {subsubsection}{\numberline {8.2.8}结论}{69}{subsubsection.8.2.8}%
+\contentsline {section}{\numberline {9}遇到问题与解决}{70}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Vivado 2017.3 Implementation 阶段卡死问题}{70}{subsection.9.1}%
+\contentsline {section}{\numberline {10}思考题}{71}{section.10}%
+\contentsline {subsection}{\numberline {10.1}问题分析：}{71}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}解决方案}{71}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}硬件设计尝试}{72}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}实现思路}{72}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}代码修改方案}{72}{subsubsection.10.3.2}%
+\contentsline {subsubsection}{\numberline {10.3.3}仿真与验证}{74}{subsubsection.10.3.3}%
+\contentsline {subsubsection}{\numberline {10.3.4}结论}{76}{subsubsection.10.3.4}%
+\contentsline {section}{\numberline {11}实验总结与实验心得}{77}{section.11}%
+\contentsline {subsection}{\numberline {11.1}实验总结}{77}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}实验心得}{77}{subsection.11.2}%

@@ -1,0 +1,126 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/vivado201701/Risc5CPU.sim/sim_1/impl/timing/xsim/Risc5CPU_tb_v_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAM32M_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module RAM32M_HD63
+INFO: [VRFC 10-311] analyzing module RAM32M_HD64
+INFO: [VRFC 10-311] analyzing module RAM32M_HD65
+INFO: [VRFC 10-311] analyzing module RAM32M_HD66
+INFO: [VRFC 10-311] analyzing module RAM32M_HD67
+INFO: [VRFC 10-311] analyzing module RAM32M_HD68
+INFO: [VRFC 10-311] analyzing module RAM32M_HD69
+INFO: [VRFC 10-311] analyzing module RAM32M_HD70
+INFO: [VRFC 10-311] analyzing module RAM32M_HD71
+INFO: [VRFC 10-311] analyzing module RAM32M_HD72
+INFO: [VRFC 10-311] analyzing module RAM32M_HD73
+INFO: [VRFC 10-311] analyzing module RAM64X1S_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD32
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD33
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD34
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD35
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD36
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD37
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD38
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD39
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD40
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD41
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD42
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD43
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD44
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD45
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD46
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD47
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD48
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD49
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD50
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD51
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD52
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD53
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD54
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD55
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD56
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD57
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD58
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD59
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD60
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD61
+INFO: [VRFC 10-311] analyzing module RAM64X1S_HD62
+INFO: [VRFC 10-311] analyzing module CSR
+INFO: [VRFC 10-311] analyzing module DCM_PLL
+INFO: [VRFC 10-311] analyzing module DCM_PLL_DCM_PLL_clk_wiz
+INFO: [VRFC 10-311] analyzing module DFF
+INFO: [VRFC 10-311] analyzing module DFF__parameterized0
+INFO: [VRFC 10-311] analyzing module DFF__parameterized1
+INFO: [VRFC 10-311] analyzing module DFF__parameterized2
+INFO: [VRFC 10-311] analyzing module DataRAM
+INFO: [VRFC 10-311] analyzing module DisplayROM
+INFO: [VRFC 10-311] analyzing module EX
+INFO: [VRFC 10-311] analyzing module ID
+INFO: [VRFC 10-311] analyzing module IF1
+INFO: [VRFC 10-311] analyzing module NumberCnt
+INFO: [VRFC 10-311] analyzing module NumberCnt_2
+INFO: [VRFC 10-311] analyzing module NumberCnt_3
+INFO: [VRFC 10-311] analyzing module NumberCnt_4
+INFO: [VRFC 10-311] analyzing module NumberCnt_5
+INFO: [VRFC 10-311] analyzing module PipelineCPUTest
+INFO: [VRFC 10-311] analyzing module Risc5CPU
+INFO: [VRFC 10-311] analyzing module TMDSencode
+INFO: [VRFC 10-311] analyzing module brute_force_synchronizer
+INFO: [VRFC 10-311] analyzing module button_process_unit
+INFO: [VRFC 10-311] analyzing module counter_n
+INFO: [VRFC 10-311] analyzing module debouncer
+INFO: [VRFC 10-311] analyzing module dff
+INFO: [VRFC 10-311] analyzing module dff_0
+INFO: [VRFC 10-311] analyzing module dff_1
+INFO: [VRFC 10-311] analyzing module dffre
+INFO: [VRFC 10-311] analyzing module dffre__parameterized0
+INFO: [VRFC 10-311] analyzing module encode
+INFO: [VRFC 10-311] analyzing module encode_0
+INFO: [VRFC 10-311] analyzing module encode_1
+INFO: [VRFC 10-311] analyzing module one_pulse
+INFO: [VRFC 10-311] analyzing module syncGenarator
+INFO: [VRFC 10-311] analyzing module vga_data
+INFO: [VRFC 10-311] analyzing module DataRAM_dist_mem_gen_v8_0_12
+INFO: [VRFC 10-311] analyzing module DataRAM_dist_mem_gen_v8_0_12_synth
+INFO: [VRFC 10-311] analyzing module DataRAM_spram
+INFO: [VRFC 10-311] analyzing module DisplayROM__dist_mem_gen_v8_0_11
+INFO: [VRFC 10-311] analyzing module DisplayROM__dist_mem_gen_v8_0_11_synth
+INFO: [VRFC 10-311] analyzing module DisplayROM__rom
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Branch_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Branch_test
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/CSR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CSR
+WARNING: [VRFC 10-1195] overwriting previous definition of module CSR [C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/CSR.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/DFF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DFF
+WARNING: [VRFC 10-1195] overwriting previous definition of module DFF [C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/DFF.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decode
+WARNING: [VRFC 10-756] identifier SYSTEM is used before its declaration [C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Decode.v:103]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX
+WARNING: [VRFC 10-1195] overwriting previous definition of module EX [C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/EX.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Forwarding.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Forwarding
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Hazard_Detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hazard_Detector
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID
+WARNING: [VRFC 10-1195] overwriting previous definition of module ID [C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/ID.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/IF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF1
+WARNING: [VRFC 10-1195] overwriting previous definition of module IF1 [C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/IF.v:7]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/InstructionROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Registers.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Registers
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Risc5CPU
+WARNING: [VRFC 10-1195] overwriting previous definition of module Risc5CPU [C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU.v:8]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_32bits.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_32bits
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/adder_4bits.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_4bits
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/zzx/Desktop/SourceProgram/lab30_Risc5CPU/src/Risc5CPU_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Risc5CPU_tb_v

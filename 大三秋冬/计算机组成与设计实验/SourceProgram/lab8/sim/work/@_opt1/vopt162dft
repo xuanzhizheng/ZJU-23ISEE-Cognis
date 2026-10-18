@@ -1,0 +1,128 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\zzx\Desktop\SourceProgram\test
+T_opt
+VNDm<n^@>Ci_1<95FZY_9I1
+04 14 4 work adder_4bits_tb fast 0
+=1-78465c3afa8b-68e7af84-367-8688
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z1 OL;O;10.1c;51
+Z2 dC:\Users\zzx\Desktop\SourceProgram\test
+T_opt1
+V=PTI>5TC5SaIE:3]fkl_`3
+04 15 4 work adder_32bits_tb fast 0
+=1-78465c3afa8b-68e7be31-15d-2394
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt1
+R1
+vadder_32bits
+VH3MfAaUBUHMniOHlZdcI;0
+r1
+31
+ID]je?zmgADi5`[^>z<ggd3
+Z3 dC:\Users\zzx\Desktop\SourceProgram\lab8\sim
+w1759989639
+8C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_32bits.v
+FC:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_32bits.v
+L0 1
+Z4 OL;L;10.1c;51
+Z5 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s85 0
+!s100 2L9SDzm@7jcDnNnOH?_CO1
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_32bits.v|
+!s108 1760017916.900000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_32bits.v|
+!i10b 1
+vadder_32bits_tb
+VP?e][o6n^f@f9ggj0;bR70
+r1
+31
+I769>gm_UeMYj:Z7:B>[n91
+R3
+w1758980112
+8C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_32bits_tb.v
+FC:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_32bits_tb.v
+L0 2
+R4
+R5
+!s85 0
+!s100 Td9^k4^^S3dX9kJAI^ilI2
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_32bits_tb.v|
+!s108 1760017916.766000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_32bits_tb.v|
+!i10b 1
+vadder_4bits
+VRIOd4YzBVIKIHabCV7aQM3
+r1
+31
+IU]]dVo888<2dP16e5ko]W1
+R3
+w1760015165
+8C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_4bits.v
+FC:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_4bits.v
+L0 1
+R4
+R5
+!s85 0
+!s100 bEjQL]ifUj`o^j2^D3[NV1
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_4bits.v|
+!s108 1760017916.633000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_4bits.v|
+!i10b 1
+vadder_4bits_tb
+IcdKPelmWRVDheB8;UZ7Z53
+V9C0Q6R<^MR:764[RV[z^j0
+R3
+w1687795200
+8C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_4bits_tb.v
+FC:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_4bits_tb.v
+L0 2
+R4
+r1
+31
+R5
+!s100 8Ejg;EIA=CjB^:[do[Z`?3
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_4bits_tb.v|
+!s108 1760017916.694000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab8/src/adder_4bits_tb.v|
+!i10b 1
+!s85 0
+vpipeline_adder
+ISEPmeONo?=W;Rz@BCc8>Z3
+VhKR45^iCMUV^ZT7@<iT]n0
+R3
+w1760012811
+8C:/Users/zzx/Desktop/SourceProgram/lab8/src/pipeline_adder.v
+FC:/Users/zzx/Desktop/SourceProgram/lab8/src/pipeline_adder.v
+L0 3
+R4
+r1
+31
+R5
+!s100 NR3:?Azz^98[nd>8a9[KI0
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab8/src/pipeline_adder.v|
+!i10b 1
+!s85 0
+!s108 1760017916.971000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab8/src/pipeline_adder.v|
+vpipeline_adder_tb
+I_Ca1k<2[_IJje>R@FORUL1
+V8MO2H86O:BSEo;JPG?1653
+R3
+w1696867200
+8C:/Users/zzx/Desktop/SourceProgram/lab8/src/pipeline_adder_tb.v
+FC:/Users/zzx/Desktop/SourceProgram/lab8/src/pipeline_adder_tb.v
+L0 2
+R4
+r1
+31
+R5
+!s100 `EZ9:gKC^J:C@6N>ZVELD1
+!s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab8/src/pipeline_adder_tb.v|
+!s108 1760017916.828000
+!s107 C:/Users/zzx/Desktop/SourceProgram/lab8/src/pipeline_adder_tb.v|
+!i10b 1
+!s85 0

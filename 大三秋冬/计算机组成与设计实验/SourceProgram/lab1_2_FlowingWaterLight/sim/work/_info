@@ -1,0 +1,105 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\zzx\Desktop\SourceProgram\lab1_2_FlowingWaterLight
+T_opt
+Z1 Vao_=GbDbUzhWQN]hHjEnH1
+Z2 04 9 4 work counter_n fast 0
+Z3 =1-78465c3afa8b-68cb78ae-91-2344
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OL;O;10.1c;51
+Z7 dC:\Users\zzx\Desktop\SourceProgram\lab1_2_FlowingWaterLight
+vcounter_n
+!i10b 1
+Z8 !s100 M9MD32zhHP84=Hdj<<jA^3
+Z9 I;ABc[T7h9z`ia:5l7ld:z0
+Z10 V>mTZ1=R;D0^z3`R_`:cJ92
+Z11 dc:\Users\zzx\Desktop\DIED_TEMP
+w1758205993
+Z12 8c:\Users\zzx\Desktop\DIED_TEMP\user\src\counter_n.v
+Z13 Fc:\Users\zzx\Desktop\DIED_TEMP\user\src\counter_n.v
+L0 5
+Z14 OL;L;10.1c;51
+r1
+!s85 0
+31
+!s108 1758205993.515000
+!s107 c:\Users\zzx\Desktop\DIED_TEMP\user\src\counter_n.v|
+Z15 !s90 -nologo|-work|C:\Users\zzx\Desktop\SourceProgram\lab1_2_FlowingWaterLight\sim\work|c:\Users\zzx\Desktop\DIED_TEMP\user\src\counter_n.v|
+Z16 o-nologo -work {C:\Users\zzx\Desktop\SourceProgram\lab1_2_FlowingWaterLight\sim\work} -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+vcounter_up_dn
+Z17 IWCH@fJ>`S_gcX[=efUWUV1
+Z18 Vi5i`zHnI`[To?TL<=ZJTY3
+R11
+Z19 w1758205944
+Z20 8c:\Users\zzx\Desktop\DIED_TEMP\user\src\counter_up_down.v
+Z21 Fc:\Users\zzx\Desktop\DIED_TEMP\user\src\counter_up_down.v
+L0 6
+R14
+r1
+31
+R16
+Z22 !s100 XjV`zN1eYA0AzGgm]VC;E1
+Z23 !s108 1758205944.495000
+Z24 !s107 c:\Users\zzx\Desktop\DIED_TEMP\user\src\counter_up_down.v|
+Z25 !s90 -nologo|-work|C:\Users\zzx\Desktop\SourceProgram\lab1_2_FlowingWaterLight\sim\work|c:\Users\zzx\Desktop\DIED_TEMP\user\src\counter_up_down.v|
+!i10b 1
+!s85 0
+vdecode
+Z26 Vn>_l[H:YC>k[zhgS6>1T13
+r1
+31
+Z27 I470bQ7]^AR0Id;B[ele`13
+Z28 dC:\Users\zzx\Desktop\SourceProgram\lab1_2_FlowingWaterLight\sim
+Z29 w1758166561
+Z30 8C:/Users/zzx/Desktop/SourceProgram/lab1_2_FlowingWaterLight/src/decode.v
+Z31 FC:/Users/zzx/Desktop/SourceProgram/lab1_2_FlowingWaterLight/src/decode.v
+L0 4
+R14
+Z32 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z33 !s90 -reportprogress|300|-work|work|-vopt|C:/Users/zzx/Desktop/SourceProgram/lab1_2_FlowingWaterLight/src/decode.v|
+Z34 !s100 lSUca>HG_7cT6:5?K8ziL1
+Z35 !s108 1758166561.435000
+Z36 !s107 C:/Users/zzx/Desktop/SourceProgram/lab1_2_FlowingWaterLight/src/decode.v|
+!s85 0
+!i10b 1
+vFlowingWateLight_tb
+Z37 !s100 `LOdbfjYNHhO8NjVgn6GB0
+Z38 IzTR7l^9meY>@[YNhW=Lza1
+Z39 VW1U17`T8H5WR3V@Q2=NF60
+R11
+Z40 w1758204643
+Z41 8c:\Users\zzx\Desktop\DIED_TEMP\user\src\FlowingWaterLight_tb.v
+Z42 Fc:\Users\zzx\Desktop\DIED_TEMP\user\src\FlowingWaterLight_tb.v
+L0 6
+R14
+r1
+31
+Z43 !s90 -nologo|-work|C:\Users\zzx\Desktop\SourceProgram\lab1_2_FlowingWaterLight\sim\work|c:\Users\zzx\Desktop\DIED_TEMP\user\src\FlowingWaterLight_tb.v|
+R16
+Z44 n@flowing@wate@light_tb
+Z45 !s108 1758205965.867000
+Z46 !s107 c:\Users\zzx\Desktop\DIED_TEMP\user\src\FlowingWaterLight_tb.v|
+!i10b 1
+!s85 0
+vFlowingWaterLight
+Z47 I5fGf_bQJhIUWQ1X1]hhRe2
+Z48 VGLm[Pb^b^aDi5GX[c8U0o3
+R11
+Z49 w1758204637
+Z50 8c:\Users\zzx\Desktop\DIED_TEMP\user\src\FlowingWaterLight.v
+Z51 Fc:\Users\zzx\Desktop\DIED_TEMP\user\src\FlowingWaterLight.v
+L0 1
+R14
+r1
+31
+R16
+Z52 n@flowing@water@light
+Z53 !s100 ;6[6mcGX7mV^GcMN<difm1
+Z54 !s108 1758205965.332000
+Z55 !s107 c:\Users\zzx\Desktop\DIED_TEMP\user\src\FlowingWaterLight.v|
+Z56 !s90 -nologo|-work|C:\Users\zzx\Desktop\SourceProgram\lab1_2_FlowingWaterLight\sim\work|c:\Users\zzx\Desktop\DIED_TEMP\user\src\FlowingWaterLight.v|
+!i10b 1
+!s85 0
