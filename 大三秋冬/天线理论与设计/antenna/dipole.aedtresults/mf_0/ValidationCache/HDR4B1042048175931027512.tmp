@@ -1,0 +1,7 @@
+$begin 'ValidationCache'
+	$begin 'OneValidationResult'
+		Variation='dip_length=\'23.879999999999999\' dip_radius=\'0.5\' gap=\'0.23999999999999999\' lambda=\'100\' length=\'48\' rad_height=\'34\' rad_radiu=\'25.5\''
+		Status=true
+		FileName='VI4B1042048175931027513.tmp'
+	$end 'OneValidationResult'
+$end 'ValidationCache'

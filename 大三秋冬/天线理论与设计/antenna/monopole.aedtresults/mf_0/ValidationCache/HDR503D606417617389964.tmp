@@ -1,0 +1,7 @@
+$begin 'ValidationCache'
+	$begin 'OneValidationResult'
+		Variation='Gap=\'0.00025000000000000001\' GND_length=\'1\' Height=\'0.25\' lambda=\'1000m\' Radius=\'0.01\''
+		Status=true
+		FileName='VI503D606417617389965.tmp'
+	$end 'OneValidationResult'
+$end 'ValidationCache'

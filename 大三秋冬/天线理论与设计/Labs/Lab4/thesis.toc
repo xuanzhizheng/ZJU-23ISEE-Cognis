@@ -1,0 +1,48 @@
+\contentsline {section}{\numberline {1}实验原理}{1}{section.1}%
+\contentsline {section}{\numberline {2}天线参数计算}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}辐射贴片的宽度 W 计算}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}辐射贴片长度 L 计算}{2}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}计算有效介电常数 $\epsilon _{eff}$}{2}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}计算有效长度 $L_{eff}$}{2}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}计算边缘效应长度 $\Delta L$}{3}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}计算物理长度 $L$}{3}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}微带线宽度 $W_0$ 计算}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}馈线嵌入距离 $y_0$ 计算}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}切缝宽度 $d_0$ 计算}{4}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}天线参数汇总}{4}{subsection.2.6}%
+\contentsline {section}{\numberline {3}仿真步骤}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}工程初始化}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}变量设定}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}天线建模}{5}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}介质基片建模}{6}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}辐射贴片建模}{6}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}四分之一波长阻抗转换器建模}{7}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}50$\Omega $ 微带传输线建模}{7}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}矩形面合并与切缝生成}{8}{subsubsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.4}端口设置}{9}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}设置辐射边界条件}{9}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}设置端口激励}{9}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}求解设置}{10}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}求解设置}{10}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}设计检查和运行仿真}{10}{subsubsection.3.5.2}%
+\contentsline {section}{\numberline {4}仿真数据后处理与分析}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}回波损耗}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}输入阻抗}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}方向图}{12}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}方向图仿真设置}{12}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}E 平面方向图}{13}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}H 平面方向图}{13}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}三维方向图}{14}{subsubsection.4.3.4}%
+\contentsline {section}{\numberline {5}实验结果分析}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}对比 HFSS 共振频率与理论10GHz的差异，并分析原因}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}在共振频率处给出E/H面辐射方向图与3D效能指标}{15}{subsection.5.2}%
+\contentsline {section}{\numberline {6}实验探究}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}d0参数扫参}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}W/L扫参}{17}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}W/L优化仿真}{18}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}回波损耗}{19}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}输入阻抗}{19}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}方向图}{20}{subsubsection.6.3.3}%
+\contentsline {section}{\numberline {7}实验总结与实验心得}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}实验总结}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}实验心得}{21}{subsection.7.2}%
