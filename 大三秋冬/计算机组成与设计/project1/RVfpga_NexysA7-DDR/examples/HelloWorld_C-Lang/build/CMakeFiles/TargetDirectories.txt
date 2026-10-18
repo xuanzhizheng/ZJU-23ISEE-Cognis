@@ -1,0 +1,3 @@
+C:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/HelloWorld_C-Lang/build/CMakeFiles/HelloWorld_C-Lang.elf.dir
+C:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/HelloWorld_C-Lang/build/CMakeFiles/edit_cache.dir
+C:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/HelloWorld_C-Lang/build/CMakeFiles/rebuild_cache.dir

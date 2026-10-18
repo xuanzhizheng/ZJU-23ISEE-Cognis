@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.17"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AL_Operations",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AL_Operations.elf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AL_Operations.elf-Debug-abde94a80324afd73716.json",
+					"name" : "AL_Operations.elf",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/AL_Operations/build",
+		"source" : "/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/AL_Operations"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

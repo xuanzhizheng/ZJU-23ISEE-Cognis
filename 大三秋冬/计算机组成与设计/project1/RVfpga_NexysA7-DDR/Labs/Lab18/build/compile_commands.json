@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab18/build",
+  "command": "/opt/imgtec/catapult-sdk_1.9.1/bin/riscv64-img-elf-gcc -DCPU_FREQ=13000000 -DCUSTOM_UART -DHAS_PRINTF=0 -DNO_SEMIHOSTING=1 -DPERIPH_H=\\\"RVfpgaNexys_periph.h\\\" -DPLATFORM_H=\\\"swerv_csr.h\\\" -DUART -I/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common -I/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/ee_printf -I/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/uart/RVfpga -I/opt/imgtec/catapult-sdk_1.9.1/build/platform/RVfpga -I/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/uart -I/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/psp/api_inc -I/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/bsp -g -O0 -g -march=rv32im_zicsr_zifencei -mabi=ilp32 -o CMakeFiles/fp_add.elf.dir/src/fp_add.S.obj -c /mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab18/src/fp_add.S",
+  "file": "/mnt/c/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab18/src/fp_add.S",
+  "output": "CMakeFiles/fp_add.elf.dir/src/fp_add.S.obj"
+}
+]

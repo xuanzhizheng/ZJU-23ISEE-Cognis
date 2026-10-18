@@ -1,0 +1,76 @@
+#!/bin/sh
+# Copyright (c) 2015 Xilinx, Inc.  All rights reserved. 
+# 
+# Xilinx, Inc. 
+# XILINX IS PROVIDING THIS DESIGN, CODE, OR INFORMATION "AS IS" AS A 
+# COURTESY TO YOU.  BY PROVIDING THIS DESIGN, CODE, OR INFORMATION AS 
+# ONE POSSIBLE   IMPLEMENTATION OF THIS FEATURE, APPLICATION OR 
+# STANDARD, XILINX IS MAKING NO REPRESENTATION THAT THIS IMPLEMENTATION 
+# IS FREE FROM ANY CLAIMS OF INFRINGEMENT, AND YOU ARE RESPONSIBLE 
+# FOR OBTAINING ANY RIGHTS YOU MAY REQUIRE FOR YOUR IMPLEMENTATION. 
+# XILINX EXPRESSLY DISCLAIMS ANY WARRANTY WHATSOEVER WITH RESPECT TO 
+# THE ADEQUACY OF THE IMPLEMENTATION, INCLUDING BUT NOT LIMITED TO 
+# ANY WARRANTIES OR REPRESENTATIONS THAT THIS IMPLEMENTATION IS FREE 
+# FROM CLAIMS OF INFRINGEMENT, IMPLIED WARRANTIES OF MERCHANTABILITY 
+# AND FITNESS FOR A PARTICULAR PURPOSE. 
+#
+
+file_exists () 
+{
+	if [ -f $1 ]
+	then
+		echo "--File $1 exists."
+		return 1
+	else
+		echo "--File $1 does not exist."
+		return 0
+	fi;
+}
+
+# arg1 = file, arg2 = version string
+get_rules_file_version ()
+{
+	TP_DRIVER_VER="0000"
+	file_exists $1
+	if [ $? = "1" ]
+	then 
+		TP_VER_STR_LINE=`cat $1 | grep "$2"`
+		TP_DRIVER_VER=`expr substr "$TP_VER_STR_LINE" 11 4`
+		echo "--File $1 version = "$TP_DRIVER_VER
+		return 1
+	else
+		return 0
+	fi;
+}
+
+TP_RC="0"
+
+TP_INSTALL_DRIVER="1"
+TP_DRIVER_FILE="/etc/udev/rules.d/52-xilinx-pcusb.rules"		
+get_rules_file_version $TP_DRIVER_FILE "# version"		
+if [ $? = "1" ]
+then
+	TP_DEST_VERSION=$TP_DRIVER_VER
+	TP_DRIVER_FILE="52-xilinx-pcusb.rules"		
+	get_rules_file_version $TP_DRIVER_FILE "# version"		
+	TP_SRC_VERSION=$TP_DRIVER_VER
+	if [ $TP_DEST_VERSION -lt $TP_SRC_VERSION ]
+	then
+		echo "--File $TP_DRIVER_FILE is newer than the destination file."
+	else
+		echo "--File $TP_DRIVER_FILE is already updated."
+		TP_INSTALL_DRIVER="0"
+	fi;
+else
+	echo "--File version of $TP_DRIVER_FILE = $TP_DRIVER_VER."
+fi;
+
+if [ $TP_INSTALL_DRIVER = "1" ]
+then
+	echo "--Updating rules file." 
+	/bin/cp -p 52-xilinx-pcusb.rules /etc/udev/rules.d 
+fi;
+
+exit $TP_RC
+
+# End of file.

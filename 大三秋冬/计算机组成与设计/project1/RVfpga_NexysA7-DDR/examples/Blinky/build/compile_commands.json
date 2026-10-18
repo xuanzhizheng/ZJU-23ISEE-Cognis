@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/Blinky/build",
+  "command": "D:\\catapult-sdk_1.9.1\\bin\\riscv64-img-elf-gcc.exe -DCPU_FREQ=13000000 -DCUSTOM_UART -DHAS_PRINTF=0 -DNO_SEMIHOSTING=1 -DPERIPH_H=\\\"RVfpgaNexys_periph.h\\\" -DPLATFORM_H=\\\"swerv_csr.h\\\" -DUART -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/ee_printf -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/uart/RVfpga -Id:/catapult-sdk_1.9.1/build/platform/RVfpga -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/uart -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/psp/api_inc -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/bsp -g -O0 -g -march=rv32im_zicsr_zifencei -mabi=ilp32 -o CMakeFiles\\Blinky.elf.dir\\src\\Blinky.S.obj -c C:\\Users\\ROG\\Desktop\\phdy1\\low_temp\\RVfpga\\RVfpgaEL2\\RVfpga_NexysA7-DDR\\examples\\Blinky\\src\\Blinky.S",
+  "file": "C:\\Users\\ROG\\Desktop\\phdy1\\low_temp\\RVfpga\\RVfpgaEL2\\RVfpga_NexysA7-DDR\\examples\\Blinky\\src\\Blinky.S",
+  "output": "CMakeFiles\\Blinky.elf.dir\\src\\Blinky.S.obj"
+}
+]

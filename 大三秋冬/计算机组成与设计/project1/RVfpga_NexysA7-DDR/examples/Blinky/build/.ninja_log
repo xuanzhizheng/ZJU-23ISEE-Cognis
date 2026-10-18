@@ -1,0 +1,5 @@
+# ninja log v5
+0	5622	7748991984839879	CMakeFiles/Blinky.elf.dir/src/Blinky.S.obj	a3349fc38e8da588
+5623	10647	7748992035196806	Blinky.elf	17443c8354ab81ca
+1	7118	7766974637914435	CMakeFiles/Blinky.elf.dir/src/Blinky.S.obj	c3a331379f6cd7bc
+7118	15580	7766974722534400	Blinky.elf	15cfc6f924f024fd

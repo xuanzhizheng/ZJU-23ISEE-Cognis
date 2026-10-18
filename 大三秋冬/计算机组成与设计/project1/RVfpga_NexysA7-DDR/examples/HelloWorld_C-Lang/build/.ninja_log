@@ -1,0 +1,6 @@
+# ninja log v5
+0	85850	7767003840859309	CMakeFiles/HelloWorld_C-Lang.elf.dir/src/HelloWorld_C-Lang.c.obj	391e5be0ed8ccbce
+454	86033	7767003888930542	CMakeFiles/HelloWorld_C-Lang.elf.dir/fa1c5b58107e5587d9e95579af4a2142/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/uart/uart_send_char.c.obj	e2bcb3b5cf202663
+4912	113863	7767004167208561	CMakeFiles/HelloWorld_C-Lang.elf.dir/fa1c5b58107e5587d9e95579af4a2142/RVfpgaEL2/RVfpga_NexysA7-DDR/common/drivers/uart/RVfpga/config_uart.c.obj	b03ce43ad79c6a6d
+45533	114455	7767004173121077	CMakeFiles/HelloWorld_C-Lang.elf.dir/C_/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/common/ee_printf/ee_printf.c.obj	2be40d901e5a896
+114455	128624	7767004314725388	HelloWorld_C-Lang.elf	bcc2a4a05af57728

@@ -1,0 +1,1793 @@
+The system is: CYGWIN - 3.3.5-341.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/3.23.2/CompilerIdC/a.exe"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_71740/fast && /usr/bin/make  -f CMakeFiles/cmTC_71740.dir/build.make CMakeFiles/cmTC_71740.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.23.2/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+Target: x86_64-pc-cygwin
+Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71740.dir/'
+ /usr/lib/gcc/x86_64-pc-cygwin/11/cc1.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/../../include/w32api /usr/share/cmake-3.23.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_71740.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccNRixSv.s
+GNU C17 (GCC) version 11.3.0 (x86_64-pc-cygwin)
+	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-cygwin/11/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/include"
+ignoring duplicate directory "/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/../../include/w32api"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-pc-cygwin/11/include
+ /usr/local/include
+ /usr/include
+ /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api
+End of search list.
+GNU C17 (GCC) version 11.3.0 (x86_64-pc-cygwin)
+	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: e610203cc0750d34e6eff5a7387a08f9
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71740.dir/'
+ /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o /tmp/ccNRixSv.s
+GNU assembler version 2.38 (x86_64-pc-cygwin) using BFD version (GNU Binutils) 2.38
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_71740.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_71740.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import -v CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o -o cmTC_71740.exe -Wl,--out-implib,libcmTC_71740.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe
+Target: x86_64-pc-cygwin
+Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71740.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_71740.'
+ /usr/lib/gcc/x86_64-pc-cygwin/11/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/11/cyglto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe -plugin-opt=-fresolution=/tmp/ccQ2RHM5.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lcygwin -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=cyg --tsaware -o cmTC_71740.exe /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o /usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/11 -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../.. --enable-auto-import CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o --out-implib libcmTC_71740.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71740.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_71740.'
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-pc-cygwin/11/include]
+    add: [/usr/local/include]
+    add: [/usr/include]
+    add: [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-pc-cygwin/11/include] ==> [/usr/lib/gcc/x86_64-pc-cygwin/11/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api] ==> [/usr/include/w32api]
+  implicit include dirs: [/usr/lib/gcc/x86_64-pc-cygwin/11/include;/usr/local/include;/usr/include;/usr/include/w32api]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_71740/fast && /usr/bin/make  -f CMakeFiles/cmTC_71740.dir/build.make CMakeFiles/cmTC_71740.dir/build]
+  ignore line: [make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.23.2/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [Target: x86_64-pc-cygwin]
+  ignore line: [Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.3.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71740.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/cc1.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/../../include/w32api /usr/share/cmake-3.23.2/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_71740.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccNRixSv.s]
+  ignore line: [GNU C17 (GCC) version 11.3.0 (x86_64-pc-cygwin)]
+  ignore line: [	compiled by GNU C version 11.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-cygwin/11/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/include"]
+  ignore line: [ignoring duplicate directory "/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/../../include/w32api"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GCC) version 11.3.0 (x86_64-pc-cygwin)]
+  ignore line: [	compiled by GNU C version 11.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: e610203cc0750d34e6eff5a7387a08f9]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71740.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o /tmp/ccNRixSv.s]
+  ignore line: [GNU assembler version 2.38 (x86_64-pc-cygwin) using BFD version (GNU Binutils) 2.38]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_71740.exe]
+  ignore line: [/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_71740.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc -Wl --enable-auto-import -v CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o -o cmTC_71740.exe -Wl --out-implib libcmTC_71740.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe]
+  ignore line: [Target: x86_64-pc-cygwin]
+  ignore line: [Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.3.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_71740.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_71740.']
+  link line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/11/cyglto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe -plugin-opt=-fresolution=/tmp/ccQ2RHM5.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lcygwin -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=cyg --tsaware -o cmTC_71740.exe /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o /usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/11 -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../.. --enable-auto-import CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o --out-implib libcmTC_71740.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/collect2.exe] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/cyglto_plugin.dll] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccQ2RHM5.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lcygwin] ==> ignore
+    arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+    arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [-m] ==> ignore
+    arg [i386pep] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_Znwm] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_Znam] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdlPv] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdaPv] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZnwmRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZnamRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdlPvRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdaPvRKSt9nothrow_t] ==> ignore
+    arg [-Bdynamic] ==> search dynamic
+    arg [--dll-search-prefix=cyg] ==> ignore
+    arg [--tsaware] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_71740.exe] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../..]
+    arg [--enable-auto-import] ==> ignore
+    arg [CMakeFiles/cmTC_71740.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [--out-implib] ==> ignore
+    arg [libcmTC_71740.dll.a] ==> ignore
+    arg [--major-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [--minor-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lcygwin] ==> lib [cygwin]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o]
+  collapse obj [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o] ==> [/usr/lib/crt0.o]
+  collapse obj [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o] ==> [/usr/lib/default-manifest.o]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11] ==> [/usr/lib/gcc/x86_64-pc-cygwin/11]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib] ==> [/usr/x86_64-pc-cygwin/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib] ==> [/usr/x86_64-pc-cygwin/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../..] ==> [/usr/lib]
+  implicit libs: [gcc_s;gcc;cygwin;advapi32;shell32;user32;kernel32;gcc_s;gcc]
+  implicit objs: [/usr/lib/crt0.o;/usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o;/usr/lib/default-manifest.o;/usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-cygwin/11;/usr/x86_64-pc-cygwin/lib;/usr/lib;/lib]
+  implicit fwks: []
+
+
+Performing C SOURCE FILE Test LWS_HAVE_inline succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_97c69/fast && /usr/bin/make  -f CMakeFiles/cmTC_97c69.dir/build.make CMakeFiles/cmTC_97c69.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_97c69.dir/src.c.o
+/usr/bin/cc -DKEYWORD=inline -DLWS_HAVE_inline   -o CMakeFiles/cmTC_97c69.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_97c69.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_97c69.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_97c69.dir/src.c.o -o cmTC_97c69.exe -Wl,--out-implib,libcmTC_97c69.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+		#include <stdio.h>
+		static KEYWORD void a() {}
+		int main(int argc, char **argv) { a(); return 0; }
+		
+Performing C SOURCE FILE Test LWS_HAVE___inline__ succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_2d09f/fast && /usr/bin/make  -f CMakeFiles/cmTC_2d09f.dir/build.make CMakeFiles/cmTC_2d09f.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d09f.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline__ -DLWS_HAVE___inline__   -o CMakeFiles/cmTC_2d09f.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2d09f.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_2d09f.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_2d09f.dir/src.c.o -o cmTC_2d09f.exe -Wl,--out-implib,libcmTC_2d09f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+		#include <stdio.h>
+		static KEYWORD void a() {}
+		int main(int argc, char **argv) { a(); return 0; }
+		
+Performing C SOURCE FILE Test LWS_HAVE___inline succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_c07c5/fast && /usr/bin/make  -f CMakeFiles/cmTC_c07c5.dir/build.make CMakeFiles/cmTC_c07c5.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c07c5.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE___inline   -o CMakeFiles/cmTC_c07c5.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c07c5.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_c07c5.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_c07c5.dir/src.c.o -o cmTC_c07c5.exe -Wl,--out-implib,libcmTC_c07c5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+		#include <stdio.h>
+		static KEYWORD void a() {}
+		int main(int argc, char **argv) { a(); return 0; }
+		
+Performing C SOURCE FILE Test LWS_HAVE_MALLOC_TRIM succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_921a6/fast && /usr/bin/make  -f CMakeFiles/cmTC_921a6.dir/build.make CMakeFiles/cmTC_921a6.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_921a6.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_MALLOC_TRIM   -o CMakeFiles/cmTC_921a6.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_921a6.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_921a6.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_921a6.dir/src.c.o -o cmTC_921a6.exe -Wl,--out-implib,libcmTC_921a6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <malloc.h>
+	int main(int argc, char **argv) { return malloc_trim(0); }
+	
+Performing C SOURCE FILE Test LWS_HAVE_MALLOC_USABLE_SIZE succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_04caa/fast && /usr/bin/make  -f CMakeFiles/cmTC_04caa.dir/build.make CMakeFiles/cmTC_04caa.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04caa.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_MALLOC_USABLE_SIZE   -o CMakeFiles/cmTC_04caa.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_04caa.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_04caa.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_04caa.dir/src.c.o -o cmTC_04caa.exe -Wl,--out-implib,libcmTC_04caa.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <malloc.h>
+	int main(int argc, char **argv) { return (int)malloc_usable_size((void *)0); }
+	
+Determining if the function fork exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_3de71/fast && /usr/bin/make  -f CMakeFiles/cmTC_3de71.dir/build.make CMakeFiles/cmTC_3de71.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3de71.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=fork -o CMakeFiles/cmTC_3de71.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘fork’; expected ‘int(void)’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+Linking C executable cmTC_3de71.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_3de71.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=fork -Wl,--enable-auto-import  CMakeFiles/cmTC_3de71.dir/CheckFunctionExists.c.o -o cmTC_3de71.exe -Wl,--out-implib,libcmTC_3de71.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getenv exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_78852/fast && /usr/bin/make  -f CMakeFiles/cmTC_78852.dir/build.make CMakeFiles/cmTC_78852.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78852.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=getenv -o CMakeFiles/cmTC_78852.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_78852.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_78852.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getenv -Wl,--enable-auto-import  CMakeFiles/cmTC_78852.dir/CheckFunctionExists.c.o -o cmTC_78852.exe -Wl,--out-implib,libcmTC_78852.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function malloc exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_2721d/fast && /usr/bin/make  -f CMakeFiles/cmTC_2721d.dir/build.make CMakeFiles/cmTC_2721d.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2721d.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=malloc -o CMakeFiles/cmTC_2721d.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘malloc’; expected ‘void *(long unsigned int)’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:1:1: note: ‘malloc’ is declared in header ‘<stdlib.h>’
+  +++ |+#include <stdlib.h>
+    1 | #ifdef CHECK_FUNCTION_EXISTS
+Linking C executable cmTC_2721d.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_2721d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=malloc -Wl,--enable-auto-import  CMakeFiles/cmTC_2721d.dir/CheckFunctionExists.c.o -o cmTC_2721d.exe -Wl,--out-implib,libcmTC_2721d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function memset exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_ebd60/fast && /usr/bin/make  -f CMakeFiles/cmTC_ebd60.dir/build.make CMakeFiles/cmTC_ebd60.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ebd60.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=memset -o CMakeFiles/cmTC_ebd60.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘memset’; expected ‘void *(void *, int,  long unsigned int)’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:1:1: note: ‘memset’ is declared in header ‘<string.h>’
+  +++ |+#include <string.h>
+    1 | #ifdef CHECK_FUNCTION_EXISTS
+Linking C executable cmTC_ebd60.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_ebd60.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=memset -Wl,--enable-auto-import  CMakeFiles/cmTC_ebd60.dir/CheckFunctionExists.c.o -o cmTC_ebd60.exe -Wl,--out-implib,libcmTC_ebd60.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function realloc exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_7c840/fast && /usr/bin/make  -f CMakeFiles/cmTC_7c840.dir/build.make CMakeFiles/cmTC_7c840.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7c840.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=realloc -o CMakeFiles/cmTC_7c840.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘realloc’; expected ‘void *(void *, long unsigned int)’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:1:1: note: ‘realloc’ is declared in header ‘<stdlib.h>’
+  +++ |+#include <stdlib.h>
+    1 | #ifdef CHECK_FUNCTION_EXISTS
+Linking C executable cmTC_7c840.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_7c840.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=realloc -Wl,--enable-auto-import  CMakeFiles/cmTC_7c840.dir/CheckFunctionExists.c.o -o cmTC_7c840.exe -Wl,--out-implib,libcmTC_7c840.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function socket exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_d5bb0/fast && /usr/bin/make  -f CMakeFiles/cmTC_d5bb0.dir/build.make CMakeFiles/cmTC_d5bb0.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d5bb0.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=socket -o CMakeFiles/cmTC_d5bb0.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d5bb0.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_d5bb0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=socket -Wl,--enable-auto-import  CMakeFiles/cmTC_d5bb0.dir/CheckFunctionExists.c.o -o cmTC_d5bb0.exe -Wl,--out-implib,libcmTC_d5bb0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function strerror exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_aefc2/fast && /usr/bin/make  -f CMakeFiles/cmTC_aefc2.dir/build.make CMakeFiles/cmTC_aefc2.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aefc2.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=strerror -o CMakeFiles/cmTC_aefc2.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_aefc2.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_aefc2.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strerror -Wl,--enable-auto-import  CMakeFiles/cmTC_aefc2.dir/CheckFunctionExists.c.o -o cmTC_aefc2.exe -Wl,--out-implib,libcmTC_aefc2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function vfork exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_002ff/fast && /usr/bin/make  -f CMakeFiles/cmTC_002ff.dir/build.make CMakeFiles/cmTC_002ff.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_002ff.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=vfork -o CMakeFiles/cmTC_002ff.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_002ff.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_002ff.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=vfork -Wl,--enable-auto-import  CMakeFiles/cmTC_002ff.dir/CheckFunctionExists.c.o -o cmTC_002ff.exe -Wl,--out-implib,libcmTC_002ff.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function execvpe exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_214ed/fast && /usr/bin/make  -f CMakeFiles/cmTC_214ed.dir/build.make CMakeFiles/cmTC_214ed.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_214ed.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=execvpe -o CMakeFiles/cmTC_214ed.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_214ed.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_214ed.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=execvpe -Wl,--enable-auto-import  CMakeFiles/cmTC_214ed.dir/CheckFunctionExists.c.o -o cmTC_214ed.exe -Wl,--out-implib,libcmTC_214ed.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getifaddrs exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_fe601/fast && /usr/bin/make  -f CMakeFiles/cmTC_fe601.dir/build.make CMakeFiles/cmTC_fe601.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe601.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=getifaddrs -o CMakeFiles/cmTC_fe601.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fe601.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_fe601.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getifaddrs -Wl,--enable-auto-import  CMakeFiles/cmTC_fe601.dir/CheckFunctionExists.c.o -o cmTC_fe601.exe -Wl,--out-implib,libcmTC_fe601.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function snprintf exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_c751a/fast && /usr/bin/make  -f CMakeFiles/cmTC_c751a.dir/build.make CMakeFiles/cmTC_c751a.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c751a.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=snprintf -o CMakeFiles/cmTC_c751a.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘snprintf’; expected ‘int(char *, long unsigned int,  const char *, ...)’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c:1:1: note: ‘snprintf’ is declared in header ‘<stdio.h>’
+  +++ |+#include <stdio.h>
+    1 | #ifdef CHECK_FUNCTION_EXISTS
+Linking C executable cmTC_c751a.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_c751a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=snprintf -Wl,--enable-auto-import  CMakeFiles/cmTC_c751a.dir/CheckFunctionExists.c.o -o cmTC_c751a.exe -Wl,--out-implib,libcmTC_c751a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getloadavg exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_d1f15/fast && /usr/bin/make  -f CMakeFiles/cmTC_d1f15.dir/build.make CMakeFiles/cmTC_d1f15.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d1f15.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=getloadavg -o CMakeFiles/cmTC_d1f15.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d1f15.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_d1f15.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getloadavg -Wl,--enable-auto-import  CMakeFiles/cmTC_d1f15.dir/CheckFunctionExists.c.o -o cmTC_d1f15.exe -Wl,--out-implib,libcmTC_d1f15.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function atoll exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_ea8e1/fast && /usr/bin/make  -f CMakeFiles/cmTC_ea8e1.dir/build.make CMakeFiles/cmTC_ea8e1.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ea8e1.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=atoll -o CMakeFiles/cmTC_ea8e1.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ea8e1.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_ea8e1.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=atoll -Wl,--enable-auto-import  CMakeFiles/cmTC_ea8e1.dir/CheckFunctionExists.c.o -o cmTC_ea8e1.exe -Wl,--out-implib,libcmTC_ea8e1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function clock_gettime exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_95245/fast && /usr/bin/make  -f CMakeFiles/cmTC_95245.dir/build.make CMakeFiles/cmTC_95245.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_95245.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=clock_gettime -o CMakeFiles/cmTC_95245.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_95245.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_95245.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=clock_gettime -Wl,--enable-auto-import  CMakeFiles/cmTC_95245.dir/CheckFunctionExists.c.o -o cmTC_95245.exe -Wl,--out-implib,libcmTC_95245.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function localtime_r exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_af0d5/fast && /usr/bin/make  -f CMakeFiles/cmTC_af0d5.dir/build.make CMakeFiles/cmTC_af0d5.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_af0d5.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=localtime_r -o CMakeFiles/cmTC_af0d5.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_af0d5.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_af0d5.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=localtime_r -Wl,--enable-auto-import  CMakeFiles/cmTC_af0d5.dir/CheckFunctionExists.c.o -o cmTC_af0d5.exe -Wl,--out-implib,libcmTC_af0d5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gmtime_r exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_b578b/fast && /usr/bin/make  -f CMakeFiles/cmTC_b578b.dir/build.make CMakeFiles/cmTC_b578b.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b578b.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=gmtime_r -o CMakeFiles/cmTC_b578b.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b578b.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_b578b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gmtime_r -Wl,--enable-auto-import  CMakeFiles/cmTC_b578b.dir/CheckFunctionExists.c.o -o cmTC_b578b.exe -Wl,--out-implib,libcmTC_b578b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function ctime_r exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_f63fb/fast && /usr/bin/make  -f CMakeFiles/cmTC_f63fb.dir/build.make CMakeFiles/cmTC_f63fb.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f63fb.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=ctime_r -o CMakeFiles/cmTC_f63fb.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f63fb.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_f63fb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=ctime_r -Wl,--enable-auto-import  CMakeFiles/cmTC_f63fb.dir/CheckFunctionExists.c.o -o cmTC_f63fb.exe -Wl,--out-implib,libcmTC_f63fb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getgrgid_r exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_72112/fast && /usr/bin/make  -f CMakeFiles/cmTC_72112.dir/build.make CMakeFiles/cmTC_72112.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_72112.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=getgrgid_r -o CMakeFiles/cmTC_72112.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_72112.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_72112.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getgrgid_r -Wl,--enable-auto-import  CMakeFiles/cmTC_72112.dir/CheckFunctionExists.c.o -o cmTC_72112.exe -Wl,--out-implib,libcmTC_72112.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getgrnam_r exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_81ebf/fast && /usr/bin/make  -f CMakeFiles/cmTC_81ebf.dir/build.make CMakeFiles/cmTC_81ebf.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_81ebf.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=getgrnam_r -o CMakeFiles/cmTC_81ebf.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_81ebf.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_81ebf.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getgrnam_r -Wl,--enable-auto-import  CMakeFiles/cmTC_81ebf.dir/CheckFunctionExists.c.o -o cmTC_81ebf.exe -Wl,--out-implib,libcmTC_81ebf.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getpwuid_r exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_148bb/fast && /usr/bin/make  -f CMakeFiles/cmTC_148bb.dir/build.make CMakeFiles/cmTC_148bb.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_148bb.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=getpwuid_r -o CMakeFiles/cmTC_148bb.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_148bb.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_148bb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getpwuid_r -Wl,--enable-auto-import  CMakeFiles/cmTC_148bb.dir/CheckFunctionExists.c.o -o cmTC_148bb.exe -Wl,--out-implib,libcmTC_148bb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function getpwnam_r exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_42d9c/fast && /usr/bin/make  -f CMakeFiles/cmTC_42d9c.dir/build.make CMakeFiles/cmTC_42d9c.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_42d9c.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=getpwnam_r -o CMakeFiles/cmTC_42d9c.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_42d9c.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_42d9c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getpwnam_r -Wl,--enable-auto-import  CMakeFiles/cmTC_42d9c.dir/CheckFunctionExists.c.o -o cmTC_42d9c.exe -Wl,--out-implib,libcmTC_42d9c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function timegm exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_e5ea0/fast && /usr/bin/make  -f CMakeFiles/cmTC_e5ea0.dir/build.make CMakeFiles/cmTC_e5ea0.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e5ea0.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=timegm -o CMakeFiles/cmTC_e5ea0.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e5ea0.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_e5ea0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=timegm -Wl,--enable-auto-import  CMakeFiles/cmTC_e5ea0.dir/CheckFunctionExists.c.o -o cmTC_e5ea0.exe -Wl,--out-implib,libcmTC_e5ea0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test LWS_HAVE_IN6ADDR_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_b9cc2/fast && /usr/bin/make  -f CMakeFiles/cmTC_b9cc2.dir/build.make CMakeFiles/cmTC_b9cc2.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b9cc2.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_IN6ADDR_H   -o CMakeFiles/cmTC_b9cc2.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b9cc2.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_b9cc2.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_b9cc2.dir/src.c.o -o cmTC_b9cc2.exe -Wl,--out-implib,libcmTC_b9cc2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <malloc.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_MEMORY_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_1782e/fast && /usr/bin/make  -f CMakeFiles/cmTC_1782e.dir/build.make CMakeFiles/cmTC_1782e.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1782e.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_MEMORY_H   -o CMakeFiles/cmTC_1782e.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1782e.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_1782e.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_1782e.dir/src.c.o -o cmTC_1782e.exe -Wl,--out-implib,libcmTC_1782e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <memory.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_NETINET_IN_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_e83f2/fast && /usr/bin/make  -f CMakeFiles/cmTC_e83f2.dir/build.make CMakeFiles/cmTC_e83f2.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e83f2.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_NETINET_IN_H   -o CMakeFiles/cmTC_e83f2.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e83f2.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_e83f2.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_e83f2.dir/src.c.o -o cmTC_e83f2.exe -Wl,--out-implib,libcmTC_e83f2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <netinet/in.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_STDINT_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_ddc46/fast && /usr/bin/make  -f CMakeFiles/cmTC_ddc46.dir/build.make CMakeFiles/cmTC_ddc46.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ddc46.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_STDINT_H   -o CMakeFiles/cmTC_ddc46.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ddc46.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_ddc46.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_ddc46.dir/src.c.o -o cmTC_ddc46.exe -Wl,--out-implib,libcmTC_ddc46.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <stdint.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_STDLIB_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_24d23/fast && /usr/bin/make  -f CMakeFiles/cmTC_24d23.dir/build.make CMakeFiles/cmTC_24d23.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_24d23.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_STDLIB_H   -o CMakeFiles/cmTC_24d23.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_24d23.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_24d23.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_24d23.dir/src.c.o -o cmTC_24d23.exe -Wl,--out-implib,libcmTC_24d23.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <stdlib.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_STRINGS_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_6c516/fast && /usr/bin/make  -f CMakeFiles/cmTC_6c516.dir/build.make CMakeFiles/cmTC_6c516.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6c516.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_STRINGS_H   -o CMakeFiles/cmTC_6c516.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_6c516.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_6c516.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_6c516.dir/src.c.o -o cmTC_6c516.exe -Wl,--out-implib,libcmTC_6c516.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <strings.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_STRING_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_47e11/fast && /usr/bin/make  -f CMakeFiles/cmTC_47e11.dir/build.make CMakeFiles/cmTC_47e11.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_47e11.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_STRING_H   -o CMakeFiles/cmTC_47e11.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_47e11.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_47e11.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_47e11.dir/src.c.o -o cmTC_47e11.exe -Wl,--out-implib,libcmTC_47e11.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <string.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_SYS_SOCKET_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_bbb61/fast && /usr/bin/make  -f CMakeFiles/cmTC_bbb61.dir/build.make CMakeFiles/cmTC_bbb61.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bbb61.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SYS_SOCKET_H   -o CMakeFiles/cmTC_bbb61.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_bbb61.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_bbb61.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_bbb61.dir/src.c.o -o cmTC_bbb61.exe -Wl,--out-implib,libcmTC_bbb61.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <sys/socket.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_SYS_STAT_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_01c7c/fast && /usr/bin/make  -f CMakeFiles/cmTC_01c7c.dir/build.make CMakeFiles/cmTC_01c7c.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_01c7c.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SYS_STAT_H   -o CMakeFiles/cmTC_01c7c.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_01c7c.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_01c7c.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_01c7c.dir/src.c.o -o cmTC_01c7c.exe -Wl,--out-implib,libcmTC_01c7c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <sys/stat.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_SYS_TYPES_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_44f4f/fast && /usr/bin/make  -f CMakeFiles/cmTC_44f4f.dir/build.make CMakeFiles/cmTC_44f4f.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_44f4f.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SYS_TYPES_H   -o CMakeFiles/cmTC_44f4f.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_44f4f.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_44f4f.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_44f4f.dir/src.c.o -o cmTC_44f4f.exe -Wl,--out-implib,libcmTC_44f4f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <sys/types.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_UNISTD_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_4dadf/fast && /usr/bin/make  -f CMakeFiles/cmTC_4dadf.dir/build.make CMakeFiles/cmTC_4dadf.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4dadf.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_UNISTD_H   -o CMakeFiles/cmTC_4dadf.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_4dadf.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_4dadf.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_4dadf.dir/src.c.o -o cmTC_4dadf.exe -Wl,--out-implib,libcmTC_4dadf.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <unistd.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_MALLOC_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_baf7d/fast && /usr/bin/make  -f CMakeFiles/cmTC_baf7d.dir/build.make CMakeFiles/cmTC_baf7d.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_baf7d.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_MALLOC_H   -o CMakeFiles/cmTC_baf7d.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_baf7d.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_baf7d.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_baf7d.dir/src.c.o -o cmTC_baf7d.exe -Wl,--out-implib,libcmTC_baf7d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <malloc.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_PTHREAD_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_033b1/fast && /usr/bin/make  -f CMakeFiles/cmTC_033b1.dir/build.make CMakeFiles/cmTC_033b1.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_033b1.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_PTHREAD_H   -o CMakeFiles/cmTC_033b1.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_033b1.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_033b1.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_033b1.dir/src.c.o -o cmTC_033b1.exe -Wl,--out-implib,libcmTC_033b1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_INTTYPES_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_292da/fast && /usr/bin/make  -f CMakeFiles/cmTC_292da.dir/build.make CMakeFiles/cmTC_292da.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_292da.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_INTTYPES_H   -o CMakeFiles/cmTC_292da.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_292da.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_292da.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_292da.dir/src.c.o -o cmTC_292da.exe -Wl,--out-implib,libcmTC_292da.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <inttypes.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_SYS_RESOURCE_H succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_e6eb7/fast && /usr/bin/make  -f CMakeFiles/cmTC_e6eb7.dir/build.make CMakeFiles/cmTC_e6eb7.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e6eb7.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SYS_RESOURCE_H   -o CMakeFiles/cmTC_e6eb7.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e6eb7.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_e6eb7.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_e6eb7.dir/src.c.o -o cmTC_e6eb7.exe -Wl,--out-implib,libcmTC_e6eb7.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <sys/resource.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Determining if files stdlib.h;stdarg.h;string.h exist passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_55fd0/fast && /usr/bin/make  -f CMakeFiles/cmTC_55fd0.dir/build.make CMakeFiles/cmTC_55fd0.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_55fd0.dir/STDC_HEADERS.c.o
+/usr/bin/cc -DKEYWORD=__inline   -o CMakeFiles/cmTC_55fd0.dir/STDC_HEADERS.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CheckIncludeFiles/STDC_HEADERS.c
+Linking C executable cmTC_55fd0.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_55fd0.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_55fd0.dir/STDC_HEADERS.c.o -o cmTC_55fd0.exe -Wl,--out-implib,libcmTC_55fd0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test LWS_HAS_INTPTR_T succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_3f749/fast && /usr/bin/make  -f CMakeFiles/cmTC_3f749.dir/build.make CMakeFiles/cmTC_3f749.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3f749.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAS_INTPTR_T   -o CMakeFiles/cmTC_3f749.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3f749.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_3f749.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_3f749.dir/src.c.o -o cmTC_3f749.exe -Wl,--out-implib,libcmTC_3f749.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <stdint.h> 
+	int main(void) {
+		intptr_t test = 1;
+		return 0;
+	}
+Performing C SOURCE FILE Test LWS_HAS_PTHREAD_SETNAME_NP succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_38bc5/fast && /usr/bin/make  -f CMakeFiles/cmTC_38bc5.dir/build.make CMakeFiles/cmTC_38bc5.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_38bc5.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAS_PTHREAD_SETNAME_NP   -o CMakeFiles/cmTC_38bc5.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_38bc5.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_38bc5.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_38bc5.dir/src.c.o -o cmTC_38bc5.exe -Wl,--out-implib,libcmTC_38bc5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+		#ifndef _GNU_SOURCE
+		#define _GNU_SOURCE
+		#endif
+		#include <pthread.h>
+		int main(void) {
+		#ifdef __PTW32_H
+			pthread_t th = {0,0};
+		#else
+			pthread_t th = 0;
+		#endif
+			pthread_setname_np(th, NULL);
+			return 0;
+		}
+Performing C SOURCE FILE Test LWS_HAS_GETOPT_LONG succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_8b01b/fast && /usr/bin/make  -f CMakeFiles/cmTC_8b01b.dir/build.make CMakeFiles/cmTC_8b01b.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8b01b.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAS_GETOPT_LONG   -o CMakeFiles/cmTC_8b01b.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8b01b.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_8b01b.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_8b01b.dir/src.c.o -o cmTC_8b01b.exe -Wl,--out-implib,libcmTC_8b01b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <stddef.h>
+	#include <getopt.h>
+	int main(void) {
+		void *p = (void *)getopt_long;
+		return p != NULL;
+	}
+Performing C SOURCE FILE Test LWS_HAVE_SUSECONDS_T succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_136e0/fast && /usr/bin/make  -f CMakeFiles/cmTC_136e0.dir/build.make CMakeFiles/cmTC_136e0.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_136e0.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SUSECONDS_T   -o CMakeFiles/cmTC_136e0.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_136e0.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_136e0.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_136e0.dir/src.c.o -o cmTC_136e0.exe -Wl,--out-implib,libcmTC_136e0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <sys/types.h>
+	int main(void) {
+		suseconds_t x = 0;
+		return (int)x;
+	}
+Performing C SOURCE FILE Test LWS_HAVE_VISIBILITY succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_f842f/fast && /usr/bin/make  -f CMakeFiles/cmTC_f842f.dir/build.make CMakeFiles/cmTC_f842f.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f842f.dir/src.c.o
+/usr/bin/cc -DLWS_HAVE_VISIBILITY  -fvisibility=hidden -o CMakeFiles/cmTC_f842f.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f842f.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_f842f.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_f842f.dir/src.c.o -o cmTC_f842f.exe -Wl,--out-implib,libcmTC_f842f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test LWS_GCC_HAS_IGNORED_QUALIFIERS succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_2a904/fast && /usr/bin/make  -f CMakeFiles/cmTC_2a904.dir/build.make CMakeFiles/cmTC_2a904.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2a904.dir/src.c.o
+/usr/bin/cc -DLWS_GCC_HAS_IGNORED_QUALIFIERS  -Wignored-qualifiers -o CMakeFiles/cmTC_2a904.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2a904.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_2a904.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_2a904.dir/src.c.o -o cmTC_2a904.exe -Wl,--out-implib,libcmTC_2a904.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test LWS_GCC_HAS_TYPE_LIMITS succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_c4544/fast && /usr/bin/make  -f CMakeFiles/cmTC_c4544.dir/build.make CMakeFiles/cmTC_c4544.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c4544.dir/src.c.o
+/usr/bin/cc -DLWS_GCC_HAS_TYPE_LIMITS  -Wtype-limits -o CMakeFiles/cmTC_c4544.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c4544.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_c4544.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_c4544.dir/src.c.o -o cmTC_c4544.exe -Wl,--out-implib,libcmTC_c4544.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test LWS_GCC_HAS_NO_DEPRECATED_DECLARATIONS succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_1c5fd/fast && /usr/bin/make  -f CMakeFiles/cmTC_1c5fd.dir/build.make CMakeFiles/cmTC_1c5fd.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1c5fd.dir/src.c.o
+/usr/bin/cc -DLWS_GCC_HAS_NO_DEPRECATED_DECLARATIONS  -Wno-deprecated-declarations -o CMakeFiles/cmTC_1c5fd.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1c5fd.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_1c5fd.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,--enable-auto-import  CMakeFiles/cmTC_1c5fd.dir/src.c.o -o cmTC_1c5fd.exe -Wl,--out-implib,libcmTC_1c5fd.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test LWS_HAVE_PIPE2 succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_9ea37/fast && /usr/bin/make  -f CMakeFiles/cmTC_9ea37.dir/build.make CMakeFiles/cmTC_9ea37.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9ea37.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_PIPE2  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -o CMakeFiles/cmTC_9ea37.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9ea37.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_9ea37.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -Wl,--enable-auto-import  CMakeFiles/cmTC_9ea37.dir/src.c.o -o cmTC_9ea37.exe -Wl,--out-implib,libcmTC_9ea37.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lpthread 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+	#ifndef _GNU_SOURCE
+	#define _GNU_SOURCE
+	#endif
+	#include <unistd.h>
+	int main(void) {
+		int fd[2];
+		return pipe2(fd, 0);
+	}
+Determining if the include file openssl/ecdh.h exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_1fbaa/fast && /usr/bin/make  -f CMakeFiles/cmTC_1fbaa.dir/build.make CMakeFiles/cmTC_1fbaa.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1fbaa.dir/CheckIncludeFile.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -o CMakeFiles/cmTC_1fbaa.dir/CheckIncludeFile.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_1fbaa.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_1fbaa.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -Wl,--enable-auto-import  CMakeFiles/cmTC_1fbaa.dir/CheckIncludeFile.c.o -o cmTC_1fbaa.exe -Wl,--out-implib,libcmTC_1fbaa.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lpthread 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function SSL_CTX_set1_param exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_d41bd/fast && /usr/bin/make  -f CMakeFiles/cmTC_d41bd.dir/build.make CMakeFiles/cmTC_d41bd.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d41bd.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_CTX_set1_param -o CMakeFiles/cmTC_d41bd.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d41bd.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_d41bd.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_CTX_set1_param -Wl,--enable-auto-import  CMakeFiles/cmTC_d41bd.dir/CheckFunctionExists.c.o -o cmTC_d41bd.exe -Wl,--out-implib,libcmTC_d41bd.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function SSL_set_info_callback exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_77f9d/fast && /usr/bin/make  -f CMakeFiles/cmTC_77f9d.dir/build.make CMakeFiles/cmTC_77f9d.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77f9d.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_set_info_callback -o CMakeFiles/cmTC_77f9d.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_77f9d.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_77f9d.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_set_info_callback -Wl,--enable-auto-import  CMakeFiles/cmTC_77f9d.dir/CheckFunctionExists.c.o -o cmTC_77f9d.exe -Wl,--out-implib,libcmTC_77f9d.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function X509_VERIFY_PARAM_set1_host exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_30a2f/fast && /usr/bin/make  -f CMakeFiles/cmTC_30a2f.dir/build.make CMakeFiles/cmTC_30a2f.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_30a2f.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=X509_VERIFY_PARAM_set1_host -o CMakeFiles/cmTC_30a2f.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_30a2f.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_30a2f.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=X509_VERIFY_PARAM_set1_host -Wl,--enable-auto-import  CMakeFiles/cmTC_30a2f.dir/CheckFunctionExists.c.o -o cmTC_30a2f.exe -Wl,--out-implib,libcmTC_30a2f.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function RSA_set0_key exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_f4b96/fast && /usr/bin/make  -f CMakeFiles/cmTC_f4b96.dir/build.make CMakeFiles/cmTC_f4b96.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f4b96.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=RSA_set0_key -o CMakeFiles/cmTC_f4b96.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f4b96.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_f4b96.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=RSA_set0_key -Wl,--enable-auto-import  CMakeFiles/cmTC_f4b96.dir/CheckFunctionExists.c.o -o cmTC_f4b96.exe -Wl,--out-implib,libcmTC_f4b96.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function X509_get_key_usage exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_0b045/fast && /usr/bin/make  -f CMakeFiles/cmTC_0b045.dir/build.make CMakeFiles/cmTC_0b045.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b045.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=X509_get_key_usage -o CMakeFiles/cmTC_0b045.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0b045.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_0b045.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=X509_get_key_usage -Wl,--enable-auto-import  CMakeFiles/cmTC_0b045.dir/CheckFunctionExists.c.o -o cmTC_0b045.exe -Wl,--out-implib,libcmTC_0b045.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function SSL_CTX_get0_certificate exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_ef6c3/fast && /usr/bin/make  -f CMakeFiles/cmTC_ef6c3.dir/build.make CMakeFiles/cmTC_ef6c3.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ef6c3.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_CTX_get0_certificate -o CMakeFiles/cmTC_ef6c3.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ef6c3.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_ef6c3.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_CTX_get0_certificate -Wl,--enable-auto-import  CMakeFiles/cmTC_ef6c3.dir/CheckFunctionExists.c.o -o cmTC_ef6c3.exe -Wl,--out-implib,libcmTC_ef6c3.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function SSL_get0_alpn_selected exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_f2c59/fast && /usr/bin/make  -f CMakeFiles/cmTC_f2c59.dir/build.make CMakeFiles/cmTC_f2c59.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f2c59.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_get0_alpn_selected -o CMakeFiles/cmTC_f2c59.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f2c59.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_f2c59.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_get0_alpn_selected -Wl,--enable-auto-import  CMakeFiles/cmTC_f2c59.dir/CheckFunctionExists.c.o -o cmTC_f2c59.exe -Wl,--out-implib,libcmTC_f2c59.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function SSL_set_alpn_protos exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_4589f/fast && /usr/bin/make  -f CMakeFiles/cmTC_4589f.dir/build.make CMakeFiles/cmTC_4589f.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4589f.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_set_alpn_protos -o CMakeFiles/cmTC_4589f.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4589f.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_4589f.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_set_alpn_protos -Wl,--enable-auto-import  CMakeFiles/cmTC_4589f.dir/CheckFunctionExists.c.o -o cmTC_4589f.exe -Wl,--out-implib,libcmTC_4589f.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_128_cfb8 exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_818bd/fast && /usr/bin/make  -f CMakeFiles/cmTC_818bd.dir/build.make CMakeFiles/cmTC_818bd.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_818bd.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_cfb8 -o CMakeFiles/cmTC_818bd.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_818bd.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_818bd.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_cfb8 -Wl,--enable-auto-import  CMakeFiles/cmTC_818bd.dir/CheckFunctionExists.c.o -o cmTC_818bd.exe -Wl,--out-implib,libcmTC_818bd.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_128_cfb128 exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_24172/fast && /usr/bin/make  -f CMakeFiles/cmTC_24172.dir/build.make CMakeFiles/cmTC_24172.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_24172.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_cfb128 -o CMakeFiles/cmTC_24172.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_24172.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_24172.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_cfb128 -Wl,--enable-auto-import  CMakeFiles/cmTC_24172.dir/CheckFunctionExists.c.o -o cmTC_24172.exe -Wl,--out-implib,libcmTC_24172.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_192_cfb8 exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_c09db/fast && /usr/bin/make  -f CMakeFiles/cmTC_c09db.dir/build.make CMakeFiles/cmTC_c09db.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c09db.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_192_cfb8 -o CMakeFiles/cmTC_c09db.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c09db.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_c09db.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_192_cfb8 -Wl,--enable-auto-import  CMakeFiles/cmTC_c09db.dir/CheckFunctionExists.c.o -o cmTC_c09db.exe -Wl,--out-implib,libcmTC_c09db.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_192_cfb128 exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_4d7b9/fast && /usr/bin/make  -f CMakeFiles/cmTC_4d7b9.dir/build.make CMakeFiles/cmTC_4d7b9.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4d7b9.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_192_cfb128 -o CMakeFiles/cmTC_4d7b9.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4d7b9.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_4d7b9.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_192_cfb128 -Wl,--enable-auto-import  CMakeFiles/cmTC_4d7b9.dir/CheckFunctionExists.c.o -o cmTC_4d7b9.exe -Wl,--out-implib,libcmTC_4d7b9.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_256_cfb8 exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_9b8ef/fast && /usr/bin/make  -f CMakeFiles/cmTC_9b8ef.dir/build.make CMakeFiles/cmTC_9b8ef.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9b8ef.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_256_cfb8 -o CMakeFiles/cmTC_9b8ef.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9b8ef.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_9b8ef.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_256_cfb8 -Wl,--enable-auto-import  CMakeFiles/cmTC_9b8ef.dir/CheckFunctionExists.c.o -o cmTC_9b8ef.exe -Wl,--out-implib,libcmTC_9b8ef.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_256_cfb128 exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_5b0ac/fast && /usr/bin/make  -f CMakeFiles/cmTC_5b0ac.dir/build.make CMakeFiles/cmTC_5b0ac.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5b0ac.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_256_cfb128 -o CMakeFiles/cmTC_5b0ac.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5b0ac.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_5b0ac.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_256_cfb128 -Wl,--enable-auto-import  CMakeFiles/cmTC_5b0ac.dir/CheckFunctionExists.c.o -o cmTC_5b0ac.exe -Wl,--out-implib,libcmTC_5b0ac.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_128_xts exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_d0fe9/fast && /usr/bin/make  -f CMakeFiles/cmTC_d0fe9.dir/build.make CMakeFiles/cmTC_d0fe9.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d0fe9.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_xts -o CMakeFiles/cmTC_d0fe9.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d0fe9.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_d0fe9.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_xts -Wl,--enable-auto-import  CMakeFiles/cmTC_d0fe9.dir/CheckFunctionExists.c.o -o cmTC_d0fe9.exe -Wl,--out-implib,libcmTC_d0fe9.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_128_ofb exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_fbcb8/fast && /usr/bin/make  -f CMakeFiles/cmTC_fbcb8.dir/build.make CMakeFiles/cmTC_fbcb8.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fbcb8.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_ofb -o CMakeFiles/cmTC_fbcb8.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fbcb8.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_fbcb8.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_ofb -Wl,--enable-auto-import  CMakeFiles/cmTC_fbcb8.dir/CheckFunctionExists.c.o -o cmTC_fbcb8.exe -Wl,--out-implib,libcmTC_fbcb8.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_128_ecb exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_bda7d/fast && /usr/bin/make  -f CMakeFiles/cmTC_bda7d.dir/build.make CMakeFiles/cmTC_bda7d.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bda7d.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_ecb -o CMakeFiles/cmTC_bda7d.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bda7d.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_bda7d.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_ecb -Wl,--enable-auto-import  CMakeFiles/cmTC_bda7d.dir/CheckFunctionExists.c.o -o cmTC_bda7d.exe -Wl,--out-implib,libcmTC_bda7d.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_128_ctr exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_b790b/fast && /usr/bin/make  -f CMakeFiles/cmTC_b790b.dir/build.make CMakeFiles/cmTC_b790b.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b790b.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_ctr -o CMakeFiles/cmTC_b790b.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b790b.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_b790b.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_ctr -Wl,--enable-auto-import  CMakeFiles/cmTC_b790b.dir/CheckFunctionExists.c.o -o cmTC_b790b.exe -Wl,--out-implib,libcmTC_b790b.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function HMAC_CTX_new exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_29d68/fast && /usr/bin/make  -f CMakeFiles/cmTC_29d68.dir/build.make CMakeFiles/cmTC_29d68.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_29d68.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=HMAC_CTX_new -o CMakeFiles/cmTC_29d68.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_29d68.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_29d68.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=HMAC_CTX_new -Wl,--enable-auto-import  CMakeFiles/cmTC_29d68.dir/CheckFunctionExists.c.o -o cmTC_29d68.exe -Wl,--out-implib,libcmTC_29d68.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_PKEY_new_raw_private_key exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_8d853/fast && /usr/bin/make  -f CMakeFiles/cmTC_8d853.dir/build.make CMakeFiles/cmTC_8d853.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d853.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_PKEY_new_raw_private_key -o CMakeFiles/cmTC_8d853.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8d853.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_8d853.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_PKEY_new_raw_private_key -Wl,--enable-auto-import  CMakeFiles/cmTC_8d853.dir/CheckFunctionExists.c.o -o cmTC_8d853.exe -Wl,--out-implib,libcmTC_8d853.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function SSL_SESSION_set_time exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_32655/fast && /usr/bin/make  -f CMakeFiles/cmTC_32655.dir/build.make CMakeFiles/cmTC_32655.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_32655.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_SESSION_set_time -o CMakeFiles/cmTC_32655.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_32655.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_32655.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_SESSION_set_time -Wl,--enable-auto-import  CMakeFiles/cmTC_32655.dir/CheckFunctionExists.c.o -o cmTC_32655.exe -Wl,--out-implib,libcmTC_32655.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function SSL_CTX_set_keylog_callback exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_7defe/fast && /usr/bin/make  -f CMakeFiles/cmTC_7defe.dir/build.make CMakeFiles/cmTC_7defe.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7defe.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_CTX_set_keylog_callback -o CMakeFiles/cmTC_7defe.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7defe.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_7defe.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_CTX_set_keylog_callback -Wl,--enable-auto-import  CMakeFiles/cmTC_7defe.dir/CheckFunctionExists.c.o -o cmTC_7defe.exe -Wl,--out-implib,libcmTC_7defe.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EC_KEY_new_by_curve_name exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_47855/fast && /usr/bin/make  -f CMakeFiles/cmTC_47855.dir/build.make CMakeFiles/cmTC_47855.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_47855.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EC_KEY_new_by_curve_name -o CMakeFiles/cmTC_47855.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_47855.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_47855.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EC_KEY_new_by_curve_name -Wl,--enable-auto-import  CMakeFiles/cmTC_47855.dir/CheckFunctionExists.c.o -o cmTC_47855.exe -Wl,--out-implib,libcmTC_47855.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test LWS_HAVE_SSL_EXTRA_CHAIN_CERTS succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_5e42d/fast && /usr/bin/make  -f CMakeFiles/cmTC_5e42d.dir/build.make CMakeFiles/cmTC_5e42d.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5e42d.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SSL_EXTRA_CHAIN_CERTS  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -o CMakeFiles/cmTC_5e42d.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5e42d.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_5e42d.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -Wl,--enable-auto-import  CMakeFiles/cmTC_5e42d.dir/src.c.o -o cmTC_5e42d.exe -Wl,--out-implib,libcmTC_5e42d.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <openssl/ssl.h>
+int main(void) { STACK_OF(X509) *c = NULL; SSL_CTX *ctx = NULL; return (int)SSL_CTX_get_extra_chain_certs_only(ctx, &c); }
+
+Performing C SOURCE FILE Test LWS_HAVE_EVP_MD_CTX_free succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_68cd1/fast && /usr/bin/make  -f CMakeFiles/cmTC_68cd1.dir/build.make CMakeFiles/cmTC_68cd1.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_68cd1.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_EVP_MD_CTX_free  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -o CMakeFiles/cmTC_68cd1.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_68cd1.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_68cd1.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -Wl,--enable-auto-import  CMakeFiles/cmTC_68cd1.dir/src.c.o -o cmTC_68cd1.exe -Wl,--out-implib,libcmTC_68cd1.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <openssl/ssl.h>
+int main(void) { EVP_MD_CTX *md_ctx = NULL; EVP_MD_CTX_free(md_ctx); return 0; }
+
+Performing C SOURCE FILE Test LWS_HAVE_OPENSSL_STACK succeeded with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_ed4ce/fast && /usr/bin/make  -f CMakeFiles/cmTC_ed4ce.dir/build.make CMakeFiles/cmTC_ed4ce.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ed4ce.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_OPENSSL_STACK  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -o CMakeFiles/cmTC_ed4ce.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ed4ce.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_ed4ce.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -Wl,--enable-auto-import  CMakeFiles/cmTC_ed4ce.dir/src.c.o -o cmTC_ed4ce.exe -Wl,--out-implib,libcmTC_ed4ce.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <openssl/ssl.h>
+int main(void) { OPENSSL_STACK *x = NULL; return !x; } 
+
+Determining if the function ECDSA_SIG_set0 exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_93987/fast && /usr/bin/make  -f CMakeFiles/cmTC_93987.dir/build.make CMakeFiles/cmTC_93987.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_93987.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=ECDSA_SIG_set0 -o CMakeFiles/cmTC_93987.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_93987.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_93987.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=ECDSA_SIG_set0 -Wl,--enable-auto-import  CMakeFiles/cmTC_93987.dir/CheckFunctionExists.c.o -o cmTC_93987.exe -Wl,--out-implib,libcmTC_93987.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function BN_bn2binpad exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_cf185/fast && /usr/bin/make  -f CMakeFiles/cmTC_cf185.dir/build.make CMakeFiles/cmTC_cf185.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cf185.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=BN_bn2binpad -o CMakeFiles/cmTC_cf185.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cf185.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_cf185.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=BN_bn2binpad -Wl,--enable-auto-import  CMakeFiles/cmTC_cf185.dir/CheckFunctionExists.c.o -o cmTC_cf185.exe -Wl,--out-implib,libcmTC_cf185.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EVP_aes_128_wrap exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_d3596/fast && /usr/bin/make  -f CMakeFiles/cmTC_d3596.dir/build.make CMakeFiles/cmTC_d3596.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d3596.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_wrap -o CMakeFiles/cmTC_d3596.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d3596.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_d3596.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EVP_aes_128_wrap -Wl,--enable-auto-import  CMakeFiles/cmTC_d3596.dir/CheckFunctionExists.c.o -o cmTC_d3596.exe -Wl,--out-implib,libcmTC_d3596.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function EC_POINT_get_affine_coordinates exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_c73be/fast && /usr/bin/make  -f CMakeFiles/cmTC_c73be.dir/build.make CMakeFiles/cmTC_c73be.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c73be.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EC_POINT_get_affine_coordinates -o CMakeFiles/cmTC_c73be.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c73be.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_c73be.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=EC_POINT_get_affine_coordinates -Wl,--enable-auto-import  CMakeFiles/cmTC_c73be.dir/CheckFunctionExists.c.o -o cmTC_c73be.exe -Wl,--out-implib,libcmTC_c73be.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function TLS_client_method exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_472af/fast && /usr/bin/make  -f CMakeFiles/cmTC_472af.dir/build.make CMakeFiles/cmTC_472af.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_472af.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=TLS_client_method -o CMakeFiles/cmTC_472af.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_472af.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_472af.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=TLS_client_method -Wl,--enable-auto-import  CMakeFiles/cmTC_472af.dir/CheckFunctionExists.c.o -o cmTC_472af.exe -Wl,--out-implib,libcmTC_472af.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function TLSv1_2_client_method exists passed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_85217/fast && /usr/bin/make  -f CMakeFiles/cmTC_85217.dir/build.make CMakeFiles/cmTC_85217.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_85217.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=TLSv1_2_client_method -o CMakeFiles/cmTC_85217.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_85217.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_85217.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=TLSv1_2_client_method -Wl,--enable-auto-import  CMakeFiles/cmTC_85217.dir/CheckFunctionExists.c.o -o cmTC_85217.exe -Wl,--out-implib,libcmTC_85217.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/3.23.2/CompilerIdCXX/a.exe"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_77073/fast && /usr/bin/make  -f CMakeFiles/cmTC_77073.dir/build.make CMakeFiles/cmTC_77073.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++.exe   -v -o CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.23.2/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+Target: x86_64-pc-cygwin
+Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77073.dir/'
+ /usr/lib/gcc/x86_64-pc-cygwin/11/cc1plus.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/../../include/w32api /usr/share/cmake-3.23.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_77073.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccEOwdo1.s
+GNU C++17 (GCC) version 11.3.0 (x86_64-pc-cygwin)
+	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-cygwin/11/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/include"
+ignoring duplicate directory "/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/../../include/w32api"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++
+ /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin
+ /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward
+ /usr/lib/gcc/x86_64-pc-cygwin/11/include
+ /usr/local/include
+ /usr/include
+ /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api
+End of search list.
+GNU C++17 (GCC) version 11.3.0 (x86_64-pc-cygwin)
+	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 7c247929d4fb3889d0f1125106bf3205
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77073.dir/'
+ /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccEOwdo1.s
+GNU assembler version 2.38 (x86_64-pc-cygwin) using BFD version (GNU Binutils) 2.38
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_77073.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_77073.dir/link.txt --verbose=1
+/usr/bin/c++.exe -Wl,--enable-auto-import -v CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_77073.exe -Wl,--out-implib,libcmTC_77073.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe
+Target: x86_64-pc-cygwin
+Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.3.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_77073.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_77073.'
+ /usr/lib/gcc/x86_64-pc-cygwin/11/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/11/cyglto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe -plugin-opt=-fresolution=/tmp/ccVylIIG.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lcygwin -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=cyg --tsaware -o cmTC_77073.exe /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o /usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/11 -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../.. --enable-auto-import CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o --out-implib libcmTC_77073.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_77073.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_77073.'
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++]
+    add: [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin]
+    add: [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward]
+    add: [/usr/lib/gcc/x86_64-pc-cygwin/11/include]
+    add: [/usr/local/include]
+    add: [/usr/include]
+    add: [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++] ==> [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin] ==> [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward] ==> [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-cygwin/11/include] ==> [/usr/lib/gcc/x86_64-pc-cygwin/11/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api] ==> [/usr/include/w32api]
+  implicit include dirs: [/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++;/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin;/usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward;/usr/lib/gcc/x86_64-pc-cygwin/11/include;/usr/local/include;/usr/include;/usr/include/w32api]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_77073/fast && /usr/bin/make  -f CMakeFiles/cmTC_77073.dir/build.make CMakeFiles/cmTC_77073.dir/build]
+  ignore line: [make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++.exe   -v -o CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.23.2/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [Target: x86_64-pc-cygwin]
+  ignore line: [Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.3.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77073.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/cc1plus.exe -quiet -v -idirafter /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api -idirafter /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/../../include/w32api /usr/share/cmake-3.23.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_77073.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccEOwdo1.s]
+  ignore line: [GNU C++17 (GCC) version 11.3.0 (x86_64-pc-cygwin)]
+  ignore line: [	compiled by GNU C version 11.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-cygwin/11/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/include"]
+  ignore line: [ignoring duplicate directory "/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/../../include/w32api"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/x86_64-pc-cygwin]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/include/c++/backward]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/../include/w32api]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (GCC) version 11.3.0 (x86_64-pc-cygwin)]
+  ignore line: [	compiled by GNU C version 11.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 7c247929d4fb3889d0f1125106bf3205]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77073.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/as.exe -v -o CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccEOwdo1.s]
+  ignore line: [GNU assembler version 2.38 (x86_64-pc-cygwin) using BFD version (GNU Binutils) 2.38]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_77073.exe]
+  ignore line: [/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_77073.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++.exe -Wl --enable-auto-import -v CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_77073.exe -Wl --out-implib libcmTC_77073.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe]
+  ignore line: [Target: x86_64-pc-cygwin]
+  ignore line: [Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.3.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/11/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_77073.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_77073.']
+  link line: [ /usr/lib/gcc/x86_64-pc-cygwin/11/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/11/cyglto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe -plugin-opt=-fresolution=/tmp/ccVylIIG.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lcygwin -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=cyg --tsaware -o cmTC_77073.exe /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o /usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/11 -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/11/../../.. --enable-auto-import CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o --out-implib libcmTC_77073.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/collect2.exe] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/cyglto_plugin.dll] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccVylIIG.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lcygwin] ==> ignore
+    arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+    arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [-m] ==> ignore
+    arg [i386pep] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_Znwm] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_Znam] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdlPv] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdaPv] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZnwmRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZnamRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdlPvRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdaPvRKSt9nothrow_t] ==> ignore
+    arg [-Bdynamic] ==> search dynamic
+    arg [--dll-search-prefix=cyg] ==> ignore
+    arg [--tsaware] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_77073.exe] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/11/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../..]
+    arg [--enable-auto-import] ==> ignore
+    arg [CMakeFiles/cmTC_77073.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [--out-implib] ==> ignore
+    arg [libcmTC_77073.dll.a] ==> ignore
+    arg [--major-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [--minor-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lcygwin] ==> lib [cygwin]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o]
+  collapse obj [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/crt0.o] ==> [/usr/lib/crt0.o]
+  collapse obj [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib/default-manifest.o] ==> [/usr/lib/default-manifest.o]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11] ==> [/usr/lib/gcc/x86_64-pc-cygwin/11]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib/../lib] ==> [/usr/x86_64-pc-cygwin/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/lib] ==> [/usr/x86_64-pc-cygwin/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/11/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;gcc_s;gcc;cygwin;advapi32;shell32;user32;kernel32;gcc_s;gcc]
+  implicit objs: [/usr/lib/crt0.o;/usr/lib/gcc/x86_64-pc-cygwin/11/crtbegin.o;/usr/lib/default-manifest.o;/usr/lib/gcc/x86_64-pc-cygwin/11/crtend.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-cygwin/11;/usr/x86_64-pc-cygwin/lib;/usr/lib;/lib]
+  implicit fwks: []
+
+

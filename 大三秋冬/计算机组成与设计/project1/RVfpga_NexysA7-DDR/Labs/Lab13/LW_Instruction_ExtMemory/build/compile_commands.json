@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab13/LW_Instruction_ExtMemory/build",
+  "command": "D:\\catapult-sdk_1.9.1\\bin\\riscv64-img-elf-gcc.exe -DCPU_FREQ=13000000 -DCUSTOM_UART -DHAS_PRINTF=0 -DNO_SEMIHOSTING=1 -DPERIPH_H=\\\"RVfpgaNexys_periph.h\\\" -DPLATFORM_H=\\\"swerv_csr.h\\\" -DUART -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab13/LW_Instruction_ExtMemory/common_tuned -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab13/LW_Instruction_ExtMemory/common_tuned/ee_printf -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab13/LW_Instruction_ExtMemory/common_tuned/drivers/uart/RVfpga -Id:/catapult-sdk_1.9.1/build/platform/RVfpga -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab13/LW_Instruction_ExtMemory/common_tuned/drivers/uart -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab13/LW_Instruction_ExtMemory/common_tuned/drivers/psp/api_inc -IC:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/Labs/Lab13/LW_Instruction_ExtMemory/common_tuned/drivers/bsp -g -O0 -g -march=rv32im_zicsr_zifencei -mabi=ilp32 -o CMakeFiles\\Test.elf.dir\\src\\Test.S.obj -c C:\\Users\\ROG\\Desktop\\phdy1\\low_temp\\RVfpga\\RVfpgaEL2\\RVfpga_NexysA7-DDR\\Labs\\Lab13\\LW_Instruction_ExtMemory\\src\\Test.S",
+  "file": "C:\\Users\\ROG\\Desktop\\phdy1\\low_temp\\RVfpga\\RVfpgaEL2\\RVfpga_NexysA7-DDR\\Labs\\Lab13\\LW_Instruction_ExtMemory\\src\\Test.S",
+  "output": "CMakeFiles\\Test.elf.dir\\src\\Test.S.obj"
+}
+]

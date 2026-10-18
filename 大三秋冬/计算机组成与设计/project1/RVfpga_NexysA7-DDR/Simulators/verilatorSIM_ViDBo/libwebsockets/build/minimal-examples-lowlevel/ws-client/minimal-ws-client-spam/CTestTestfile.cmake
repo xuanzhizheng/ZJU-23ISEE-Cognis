@@ -1,0 +1,12 @@
+# CMake generated Testfile for 
+# Source directory: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam
+# Build directory: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(st_wcs_srv "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/scripts/ctest-background.sh" "wcs_srv" "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/bin/libwebsockets-test-server.exe" "-r" "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/destdir/usr/local/share/libwebsockets-test-server/" "-s" "--port" "7620")
+set_tests_properties(st_wcs_srv PROPERTIES  FIXTURES_SETUP "wcs_srv" TIMEOUT "800" WORKING_DIRECTORY "." _BACKTRACE_TRIPLES "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam/CMakeLists.txt;63;add_test;/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam/CMakeLists.txt;0;")
+add_test(ki_wcs_srv "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/scripts/ctest-background-kill.sh" "wcs_srv" "libwebsockets-test-server.exe" "--port" "7620")
+set_tests_properties(ki_wcs_srv PROPERTIES  FIXTURES_CLEANUP "wcs_srv" _BACKTRACE_TRIPLES "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam/CMakeLists.txt;68;add_test;/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam/CMakeLists.txt;0;")
+add_test(ws-client-spam "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/bin/lws-minimal-ws-client-spam.exe" "--server" "localhost" "--port" "7620" "-l" "32" "-c" "3")
+set_tests_properties(ws-client-spam PROPERTIES  FIXTURES_REQUIRED "wcs_srv" TIMEOUT "40" WORKING_DIRECTORY "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam" _BACKTRACE_TRIPLES "/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam/CMakeLists.txt;77;add_test;/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/minimal-examples-lowlevel/ws-client/minimal-ws-client-spam/CMakeLists.txt;0;")

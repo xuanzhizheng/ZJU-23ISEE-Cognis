@@ -1,0 +1,3 @@
+C:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/Blinky/build/CMakeFiles/Blinky.elf.dir
+C:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/Blinky/build/CMakeFiles/edit_cache.dir
+C:/Users/ROG/Desktop/phdy1/low_temp/RVfpga/RVfpgaEL2/RVfpga_NexysA7-DDR/examples/Blinky/build/CMakeFiles/rebuild_cache.dir

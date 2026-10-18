@@ -1,0 +1,346 @@
+Determining if the function _snprintf exists failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_f77de/fast && /usr/bin/make  -f CMakeFiles/cmTC_f77de.dir/build.make CMakeFiles/cmTC_f77de.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f77de.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=_snprintf -o CMakeFiles/cmTC_f77de.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f77de.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_f77de.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=_snprintf -Wl,--enable-auto-import  CMakeFiles/cmTC_f77de.dir/CheckFunctionExists.c.o -o cmTC_f77de.exe -Wl,--out-implib,libcmTC_f77de.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/ld: CMakeFiles/cmTC_f77de.dir/CheckFunctionExists.c.o:CheckFunctionExists.c:(.text+0x15): undefined reference to `_snprintf'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_f77de.dir/build.make:99: cmTC_f77de.exe] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_f77de/fast] Error 2
+
+
+
+Determining if the function _vsnprintf exists failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_bb3e4/fast && /usr/bin/make  -f CMakeFiles/cmTC_bb3e4.dir/build.make CMakeFiles/cmTC_bb3e4.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bb3e4.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=_vsnprintf -o CMakeFiles/cmTC_bb3e4.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bb3e4.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_bb3e4.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=_vsnprintf -Wl,--enable-auto-import  CMakeFiles/cmTC_bb3e4.dir/CheckFunctionExists.c.o -o cmTC_bb3e4.exe -Wl,--out-implib,libcmTC_bb3e4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/ld: CMakeFiles/cmTC_bb3e4.dir/CheckFunctionExists.c.o:CheckFunctionExists.c:(.text+0x15): undefined reference to `_vsnprintf'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_bb3e4.dir/build.make:99: cmTC_bb3e4.exe] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_bb3e4/fast] Error 2
+
+
+
+Determining if the function _atoi64 exists failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_2235e/fast && /usr/bin/make  -f CMakeFiles/cmTC_2235e.dir/build.make CMakeFiles/cmTC_2235e.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2235e.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=_atoi64 -o CMakeFiles/cmTC_2235e.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2235e.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_2235e.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=_atoi64 -Wl,--enable-auto-import  CMakeFiles/cmTC_2235e.dir/CheckFunctionExists.c.o -o cmTC_2235e.exe -Wl,--out-implib,libcmTC_2235e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/ld: CMakeFiles/cmTC_2235e.dir/CheckFunctionExists.c.o:CheckFunctionExists.c:(.text+0x15): undefined reference to `_atoi64'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_2235e.dir/build.make:99: cmTC_2235e.exe] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_2235e/fast] Error 2
+
+
+
+Determining if the function _stat32i64 exists failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_b5eff/fast && /usr/bin/make  -f CMakeFiles/cmTC_b5eff.dir/build.make CMakeFiles/cmTC_b5eff.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b5eff.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=_stat32i64 -o CMakeFiles/cmTC_b5eff.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b5eff.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_b5eff.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=_stat32i64 -Wl,--enable-auto-import  CMakeFiles/cmTC_b5eff.dir/CheckFunctionExists.c.o -o cmTC_b5eff.exe -Wl,--out-implib,libcmTC_b5eff.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/ld: CMakeFiles/cmTC_b5eff.dir/CheckFunctionExists.c.o:CheckFunctionExists.c:(.text+0x15): undefined reference to `_stat32i64'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_b5eff.dir/build.make:99: cmTC_b5eff.exe] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_b5eff/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test LWS_HAVE_SYS_PRCTL_H failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_7aef7/fast && /usr/bin/make  -f CMakeFiles/cmTC_7aef7.dir/build.make CMakeFiles/cmTC_7aef7.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7aef7.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SYS_PRCTL_H   -o CMakeFiles/cmTC_7aef7.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:1:10: fatal error: sys/prctl.h: No such file or directory
+    1 | #include <sys/prctl.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_7aef7.dir/build.make:78: CMakeFiles/cmTC_7aef7.dir/src.c.o] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_7aef7/fast] Error 2
+
+
+Source file was:
+#include <sys/prctl.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_SYS_SOCKIO_H failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_d93d3/fast && /usr/bin/make  -f CMakeFiles/cmTC_d93d3.dir/build.make CMakeFiles/cmTC_d93d3.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d93d3.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SYS_SOCKIO_H   -o CMakeFiles/cmTC_d93d3.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:1:10: fatal error: sys/sockio.h: No such file or directory
+    1 | #include <sys/sockio.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_d93d3.dir/build.make:78: CMakeFiles/cmTC_d93d3.dir/src.c.o] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_d93d3/fast] Error 2
+
+
+Source file was:
+#include <sys/sockio.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_VFORK_H failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_200c8/fast && /usr/bin/make  -f CMakeFiles/cmTC_200c8.dir/build.make CMakeFiles/cmTC_200c8.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_200c8.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_VFORK_H   -o CMakeFiles/cmTC_200c8.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:1:10: fatal error: vfork.h: No such file or directory
+    1 | #include <vfork.h>
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_200c8.dir/build.make:78: CMakeFiles/cmTC_200c8.dir/src.c.o] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_200c8/fast] Error 2
+
+
+Source file was:
+#include <vfork.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Performing C SOURCE FILE Test LWS_HAVE_SYS_CAPABILITY_H failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_f3f11/fast && /usr/bin/make  -f CMakeFiles/cmTC_f3f11.dir/build.make CMakeFiles/cmTC_f3f11.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f3f11.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_SYS_CAPABILITY_H   -o CMakeFiles/cmTC_f3f11.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:1:10: fatal error: sys/capability.h: No such file or directory
+    1 | #include <sys/capability.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_f3f11.dir/build.make:78: CMakeFiles/cmTC_f3f11.dir/src.c.o] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_f3f11/fast] Error 2
+
+
+Source file was:
+#include <sys/capability.h>
+void main(void) { while(1) ; } void xxexit(void){}
+Determining if the function cap_set_flag exists in the cap failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_1e6ba/fast && /usr/bin/make  -f CMakeFiles/cmTC_1e6ba.dir/build.make CMakeFiles/cmTC_1e6ba.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1e6ba.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -DCHECK_FUNCTION_EXISTS=cap_set_flag -o CMakeFiles/cmTC_1e6ba.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1e6ba.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_1e6ba.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cap_set_flag -Wl,--enable-auto-import  CMakeFiles/cmTC_1e6ba.dir/CheckFunctionExists.c.o -o cmTC_1e6ba.exe -Wl,--out-implib,libcmTC_1e6ba.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lcap 
+/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/ld: cannot find -lcap: No such file or directory
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_1e6ba.dir/build.make:99: cmTC_1e6ba.exe] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_1e6ba/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test LWS_HAVE_RTA_PREF failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_04d9c/fast && /usr/bin/make  -f CMakeFiles/cmTC_04d9c.dir/build.make CMakeFiles/cmTC_04d9c.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04d9c.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_RTA_PREF   -o CMakeFiles/cmTC_04d9c.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:1:10: fatal error: linux/rtnetlink.h: No such file or directory
+    1 | #include <linux/rtnetlink.h>
+      |          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_04d9c.dir/build.make:78: CMakeFiles/cmTC_04d9c.dir/src.c.o] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_04d9c/fast] Error 2
+
+
+Source file was:
+#include <linux/rtnetlink.h>
+	int main(void) {
+		int test = RTA_PREF;
+		return 0;
+	}
+Performing C SOURCE FILE Test LWS_HAVE_TCP_USER_TIMEOUT failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_6019a/fast && /usr/bin/make  -f CMakeFiles/cmTC_6019a.dir/build.make CMakeFiles/cmTC_6019a.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6019a.dir/src.c.o
+/usr/bin/cc -DKEYWORD=__inline -DLWS_HAVE_TCP_USER_TIMEOUT  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -o CMakeFiles/cmTC_6019a.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+In file included from /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:1:
+/usr/include/netinet/tcp.h:38:9: error: unknown type name ‘u_int32_t’
+   38 | typedef u_int32_t tcp_seq;
+      |         ^~~~~~~~~
+/usr/include/netinet/tcp.h:39:9: error: unknown type name ‘u_int32_t’
+   39 | typedef u_int32_t tcp_cc;               /* connection count per rfc1644 */
+      |         ^~~~~~~~~
+/usr/include/netinet/tcp.h:49:9: error: unknown type name ‘u_int16_t’
+   49 |         u_int16_t th_sport;             /* source port */
+      |         ^~~~~~~~~
+/usr/include/netinet/tcp.h:50:9: error: unknown type name ‘u_int16_t’
+   50 |         u_int16_t th_dport;             /* destination port */
+      |         ^~~~~~~~~
+/usr/include/netinet/tcp.h:61:9: error: unknown type name ‘u_int8_t’
+   61 |         u_int8_t  th_flags;
+      |         ^~~~~~~~
+/usr/include/netinet/tcp.h:70:9: error: unknown type name ‘u_int16_t’
+   70 |         u_int16_t th_win;                 /* window */
+      |         ^~~~~~~~~
+/usr/include/netinet/tcp.h:71:9: error: unknown type name ‘u_int16_t’
+   71 |         u_int16_t th_sum;                 /* checksum */
+      |         ^~~~~~~~~
+/usr/include/netinet/tcp.h:72:9: error: unknown type name ‘u_int16_t’
+   72 |         u_int16_t th_urp;                 /* urgent pointer */
+      |         ^~~~~~~~~
+make[1]: *** [CMakeFiles/cmTC_6019a.dir/build.make:78: CMakeFiles/cmTC_6019a.dir/src.c.o] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_6019a/fast] Error 2
+
+
+Source file was:
+#include <netinet/tcp.h>
+int main(void) { return TCP_USER_TIMEOUT; }
+
+Determining if the X509_VERIFY_PARAM_set1_host exist failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_fbe86/fast && /usr/bin/make  -f CMakeFiles/cmTC_fbe86.dir/build.make CMakeFiles/cmTC_fbe86.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fbe86.dir/CheckSymbolExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers     -o CMakeFiles/cmTC_fbe86.dir/CheckSymbolExists.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: LWS_HAVE_X509_VERIFY_PARAM_set1_host_sym: No such file or directory
+    2 | #include <LWS_HAVE_X509_VERIFY_PARAM_set1_host_sym>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_fbe86.dir/build.make:78: CMakeFiles/cmTC_fbe86.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_fbe86/fast] Error 2
+
+
+File /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <LWS_HAVE_X509_VERIFY_PARAM_set1_host_sym>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef X509_VERIFY_PARAM_set1_host
+  return ((int*)(&X509_VERIFY_PARAM_set1_host))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function SSL_CTX_EVP_PKEY_new_raw_private_key exists failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_185c2/fast && /usr/bin/make  -f CMakeFiles/cmTC_185c2.dir/build.make CMakeFiles/cmTC_185c2.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_185c2.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_CTX_EVP_PKEY_new_raw_private_key -o CMakeFiles/cmTC_185c2.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_185c2.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_185c2.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=SSL_CTX_EVP_PKEY_new_raw_private_key -Wl,--enable-auto-import  CMakeFiles/cmTC_185c2.dir/CheckFunctionExists.c.o -o cmTC_185c2.exe -Wl,--out-implib,libcmTC_185c2.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/ld: CMakeFiles/cmTC_185c2.dir/CheckFunctionExists.c.o:CheckFunctionExists.c:(.text+0x15): undefined reference to `SSL_CTX_EVP_PKEY_new_raw_private_key'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_185c2.dir/build.make:101: cmTC_185c2.exe] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_185c2/fast] Error 2
+
+
+
+Determining if the function RSA_verify_pss_mgf1 exists failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_f1cb9/fast && /usr/bin/make  -f CMakeFiles/cmTC_f1cb9.dir/build.make CMakeFiles/cmTC_f1cb9.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1cb9.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DKEYWORD=__inline  -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=RSA_verify_pss_mgf1 -o CMakeFiles/cmTC_f1cb9.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.23.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f1cb9.exe
+/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_f1cb9.dir/link.txt --verbose=1
+/usr/bin/cc -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread -DCHECK_FUNCTION_EXISTS=RSA_verify_pss_mgf1 -Wl,--enable-auto-import  CMakeFiles/cmTC_f1cb9.dir/CheckFunctionExists.c.o -o cmTC_f1cb9.exe -Wl,--out-implib,libcmTC_f1cb9.dll.a -Wl,--major-image-version,0,--minor-image-version,0  /usr/lib/libssl.dll.a /usr/lib/libcrypto.dll.a -lssl -lcrypto -lpthread -ldl 
+/usr/lib/gcc/x86_64-pc-cygwin/11/../../../../x86_64-pc-cygwin/bin/ld: CMakeFiles/cmTC_f1cb9.dir/CheckFunctionExists.c.o:CheckFunctionExists.c:(.text+0x15): undefined reference to `RSA_verify_pss_mgf1'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_f1cb9.dir/build.make:101: cmTC_f1cb9.exe] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_f1cb9/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test HAS_LWS_WITH_SECURE_STREAMS_PROXY_API failed with the following output:
+Change Dir: /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make.exe -f Makefile cmTC_453a9/fast && /usr/bin/make  -f CMakeFiles/cmTC_453a9.dir/build.make CMakeFiles/cmTC_453a9.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_453a9.dir/src.c.o
+/usr/bin/cc -DHAS_LWS_WITH_SECURE_STREAMS_PROXY_API -DKEYWORD=__inline -I/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/lib -I/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build -Wno-deprecated-declarations -Wno-deprecated -Wall -Wextra -Wno-unused-parameter -Wconversion -Wsign-compare -Wstrict-aliasing -fvisibility=hidden -Wundef  -Wuninitialized -Wtype-limits -Wignored-qualifiers   -Werror -pthread  -o CMakeFiles/cmTC_453a9.dir/src.c.o -c /cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:3:2: error: stray ‘#’ in program
+    3 | i#if defined(LWS_WITH_SECURE_STREAMS_PROXY_API)
+      |  ^
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:3:1: error: ‘i’ undeclared (first use in this function)
+    3 | i#if defined(LWS_WITH_SECURE_STREAMS_PROXY_API)
+      | ^
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:3:1: note: each undeclared identifier is reported only once for each function it appears in
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:3:2: error: expected ‘;’ before ‘if’
+    3 | i#if defined(LWS_WITH_SECURE_STREAMS_PROXY_API)
+      |  ^~~
+      |  ;
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:5:3: error: #else without #if
+    5 |  #else
+      |   ^~~~
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:7:3: error: #endif without #if
+    7 |  #endif
+      |   ^~~~~
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:6:2: error: ‘fail’ undeclared (first use in this function)
+    6 |  fail
+      |  ^~~~
+/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp/src.c:6:6: error: expected ‘;’ before ‘return’
+    6 |  fail
+      |      ^
+      |      ;
+    7 |  #endif
+    8 |  return 0;
+      |  ~~~~~~
+make[1]: *** [CMakeFiles/cmTC_453a9.dir/build.make:78: CMakeFiles/cmTC_453a9.dir/src.c.o] Error 1
+make[1]: Leaving directory '/cygdrive/c/Users/Daniel/Desktop/RVfpga_ViDBo/libwebsockets/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_453a9/fast] Error 2
+
+
+Source file was:
+#include <libwebsockets.h>
+int main(void) {
+i#if defined(LWS_WITH_SECURE_STREAMS_PROXY_API)
+ return 0;
+ #else
+ fail
+ #endif
+ return 0;
+}
+

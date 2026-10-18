@@ -1,0 +1,94 @@
+#!/bin/sh
+# Copyright (c) 2015 Xilinx, Inc.  All rights reserved. 
+# Xilinx, Inc. 
+# XILINX IS PROVIDING THIS DESIGN, CODE, OR INFORMATION "AS IS" AS A 
+# COURTESY TO YOU.  BY PROVIDING THIS DESIGN, CODE, OR INFORMATION AS 
+# ONE POSSIBLE   IMPLEMENTATION OF THIS FEATURE, APPLICATION OR 
+# STANDARD, XILINX IS MAKING NO REPRESENTATION THAT THIS IMPLEMENTATION 
+# IS FREE FROM ANY CLAIMS OF INFRINGEMENT, AND YOU ARE RESPONSIBLE 
+# FOR OBTAINING ANY RIGHTS YOU MAY REQUIRE FOR YOUR IMPLEMENTATION. 
+# XILINX EXPRESSLY DISCLAIMS ANY WARRANTY WHATSOEVER WITH RESPECT TO 
+# THE ADEQUACY OF THE IMPLEMENTATION, INCLUDING BUT NOT LIMITED TO 
+# ANY WARRANTIES OR REPRESENTATIONS THAT THIS IMPLEMENTATION IS FREE 
+# FROM CLAIMS OF INFRINGEMENT, IMPLIED WARRANTIES OF MERCHANTABILITY 
+# AND FITNESS FOR A PARTICULAR PURPOSE. 
+#
+
+tp_is_root ()
+{
+  if [ `id -u` = "0" ]
+  then
+    return 1
+  else
+    return 0
+  fi;
+}
+
+echo "INFO: Installing cable drivers."
+echo "INFO: Script name = "$0
+echo "INFO: HostName = `hostname`"
+TP_CURRENT_WORKING_DIR=`pwd`
+echo "INFO: Current working dir = "$TP_CURRENT_WORKING_DIR
+TP_D_RC="0"
+TP_X_RC="0"
+TP_KERNEL_VERSION=`uname -r`
+echo "INFO: Kernel version = "$TP_KERNEL_VERSION.
+echo "INFO: Arch = `uname -m`".
+
+# check if user has root access
+tp_is_root
+TP_RC=$?
+if [ $TP_RC = "1" ]
+then
+  ./install_digilent.sh
+  TP_D_RC=$?
+  ./setup_xilinx_ftdi
+  TP_X_RC=$?
+  ./setup_pcusb
+  TP_RC=$?
+else
+  echo ""
+  echo "ERROR: User does not have root privileges." 
+  echo ""
+  exit "22"
+fi;
+
+
+if [ $TP_RC = "0" ]
+then
+  echo ""
+else
+  # convert other errors to 1
+  echo "--real rc="$TP_RC
+  TP_RC="1"
+  echo ""
+  echo "ERROR: Driver installation failed."
+  echo ""
+fi;
+
+echo "INFO: Digilent Return code = "$TP_D_RC
+echo "INFO: Xilinx Return code = "$TP_RC
+echo "INFO: Xilinx FTDI Return code = "$TP_X_RC
+
+if [ $TP_RC = "0" ]
+then
+  if [ $TP_D_RC != "0" ]
+  then
+	TP_RC="1"
+  fi;
+  if [ $TP_X_RC != "0" ]
+  then
+	TP_RC="1"
+  fi;
+fi;
+
+echo "INFO: Return code = "$TP_RC
+if [ $TP_RC = "0" ]
+then
+  echo "INFO: Driver installation successful."
+  echo "CRITICAL WARNING: Cable(s) on the system must be unplugged then plugged back in order for the driver scripts to update the cables."
+fi;
+
+exit $TP_RC	
+
+# End of file.

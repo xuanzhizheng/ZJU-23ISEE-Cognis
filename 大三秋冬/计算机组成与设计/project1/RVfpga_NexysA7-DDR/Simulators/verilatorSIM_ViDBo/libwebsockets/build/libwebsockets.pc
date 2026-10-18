@@ -1,0 +1,11 @@
+prefix="/usr/local"
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libwebsockets
+Description: Websockets server and client library
+Version: 4.3.99-v4.3.0-260-g162e11e5
+
+Libs: -L${libdir} -lwebsockets
+Cflags: -I${includedir}

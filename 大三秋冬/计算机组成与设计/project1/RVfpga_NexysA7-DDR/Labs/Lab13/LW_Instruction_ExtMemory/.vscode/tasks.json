@@ -1,0 +1,305 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "run-model-alpine",
+            "detail": "Runs alpine model as a background task",
+            "command": "model-alpine --boot-binentry --gdb-enabled ${command:img.getPortNumber} -i '${command:img.getLaunchTarget}'",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": false,
+                    "beginsPattern": "^.*Alpine Model.*$",
+                    "endsPattern": "^.*GDB Server listening.*$"
+                }
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "run-openocd",
+            "detail": "Runs openocd as a background task",
+            "command": "openocd -c 'gdb_port ${command:img.getPortNumber}' -f '${command:img.openocdCfgFilepath}'",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": false,
+                    "beginsPattern": "^.*Open On-Chip Debugger.*$",
+                    "endsPattern": "^.*Now, you can connect GDB.*$"
+                }
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "program-fpga",
+            "detail": "Programs an FPGA via OpenOCD",
+            "command": "openocd -c 'set BITFILE ${command:img.getFPGAbitfilePath}' -f '${command:img.getFPGAProgCfgfilePath}'",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": false,
+                    "beginsPattern": "^.*Open On-Chip Debugger.*$",
+                    "endsPattern": "^.*shutdown command invoked*$"
+                }
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "run-catapult-model",
+            "detail": "Runs catapult model connection as a background task",
+            "command": "openocd -c 'gdb_port ${command:img.getPortNumber}' -f '${command:img.openocdCfgFilepath}'",
+            "isBackground": true,
+            "dependsOn": "run-rpcserver",
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": false,
+                    "beginsPattern": "^.*Open On-Chip Debugger.*$",
+                    "endsPattern": "^.*Now, you can connect GDB.*$"
+                }
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "run-rpcserver",
+            "detail": "Runs model RPC server as a background task",
+            "command": "catapult-model-rpc-server ${command:img.getModelRPCserverArgs}",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": false,
+                    "beginsPattern": "^.*Initialising model.*$",
+                    "endsPattern": "^.*Server listening on localhost:7777.*$"
+                }
+            },
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "run-whisper",
+            "detail": "Runs Whisper simulator as a background task",
+            "command": "whisper --gdb --gdb-tcp-port=${command:img.getPortNumber} ${command:img.getWhisperArgs} '${command:img.getLaunchTarget}'",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "not used",
+                    "endsPattern": "^.*VecRegs::VecRegs: Remove test code.*$"
+                }
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "run-qemu-system32",
+            "detail": "Runs 32-bit QEMU system simulator as a background task",
+            "command": "qemu-system-riscv32 -chardev stdio,id=stdio0 -semihosting-config enable=on,chardev=stdio0 -monitor none -serial none -machine virt,accel=tcg -nographic -bios none -S -gdb tcp::${command:img.getPortNumber} -kernel ${command:img.getLaunchTarget}",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "not used",
+                    "endsPattern": "^.*gdb server initialised.*$"
+                }
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "run-qemu-system64",
+            "detail": "Runs 64bit QEMU system simulator as a background task",
+            "command": "qemu-system-riscv64 -chardev stdio,id=stdio0 -semihosting-config enable=on,chardev=stdio0 -monitor none -serial none -machine virt,accel=tcg -nographic -bios none -S -gdb tcp::${command:img.getPortNumber} -kernel ${command:img.getLaunchTarget}",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "not used",
+                    "endsPattern": "^.*gdb server initialised.*$"
+                }
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "run-qemu-linux64",
+            "detail": "Runs QEMU 64-bit linux user mode simulator as a background task",
+            "command": "qemu-riscv64 -g ${command:img.getPortNumber} -L ${command:img.getSysRootForLaunchTarget} ${command:img.getLaunchTarget}",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "not used",
+                    "endsPattern": "^.*gdb server waiting for tcp connection.*$"
+                }
+            },
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "credentials-remote-linux",
+            "detail": "Copies your ID (public key) to the remote Linux system",
+            "command": "ssh-copy-id -i ~/.ssh/id_rsa.pub ${command:img.getRemoteUsername}@${command:img.getRemoteHost}",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "copy-remote-linux",
+            "detail": "Copies the launch target to the remote Linux system",
+            "command": "scp '${command:img.getLaunchTarget}' ${command:img.getRemoteUsername}@${command:img.getRemoteHost}:${command:img.getRemoteLaunchTarget}",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "permissions-remote-linux",
+            "detail": "Enables execute permissions for the copied launch target on the remote Linux system",
+            "command": "ssh ${command:img.getRemoteUsername}@${command:img.getRemoteHost} 'chmod +x ${command:img.getRemoteLaunchTarget}'",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "gdbserver-remote-linux",
+            "detail": "Runs gdbserver on the remote Linux system as a background task",
+            "command": "ssh ${command:img.getRemoteUsername}@${command:img.getRemoteHost} 'gdbserver :${command:img.getPortNumber} ${command:img.getRemoteLaunchTarget}'",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": false,
+                    "beginsPattern": "^.*Process.*$",
+                    "endsPattern": "^.*Listening on port.*$"
+                }
+            },
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "tidy-remote-linux",
+            "detail": "Tidies up on the remote Linux system",
+            "command": "ssh ${command:img.getRemoteUsername}@${command:img.getRemoteHost} 'pkill -u ${command:img.getRemoteUsername} gdbserver; rm -f ${command:img.getRemoteLaunchTarget}'",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "run-remote-linux",
+            "detail": "Runs on the remote Linux system",
+            "dependsOn": [
+                "tidy-remote-linux",
+                "copy-remote-linux",
+                "permissions-remote-linux",
+                "gdbserver-remote-linux"
+            ],
+            "dependsOrder": "sequence",
+            "group": "test"
+        },
+        {
+            "type": "shell",
+            "label": "terminate-model-alpine",
+            "detail": "Terminates alpine model background task",
+            "command": "echo ${input:terminate-model-alpine}",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "terminate-openocd",
+            "detail": "Terminates openocd background task",
+            "command": "echo ${input:terminate-openocd}",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "terminate-rpcserver",
+            "detail": "Terminates model RPC server background task",
+            "command": "echo ${input:terminate-rpc-server}",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "terminate-model-catapult",
+            "detail": "Terminates catapult model background task",
+            "dependsOn": "terminate-rpcserver",
+            "command": "echo ${input:terminate-model-openocd}",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "terminate-whisper",
+            "detail": "Terminates Whisper simulator background task",
+            "command": "echo ${input:terminate-whisper}",
+            "group": "none"
+        },
+        {
+            "type": "shell",
+            "label": "terminate-remote-linux",
+            "detail": "Terminates remote Linux background task",
+            "dependsOn": "tidy-remote-linux",
+            "group": "none"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "command",
+            "id": "terminate-model-alpine",
+            "command": "workbench.action.tasks.terminate",
+            "args": "run-model-alpine"
+        },
+        {
+            "type": "command",
+            "id": "terminate-openocd",
+            "command": "workbench.action.tasks.terminate",
+            "args": "run-openocd"
+        },
+        {
+            "type": "command",
+            "id": "terminate-model-openocd",
+            "command": "workbench.action.tasks.terminate",
+            "args": "run-catapult-model"
+        },
+        {
+            "type": "command",
+            "id": "terminate-rpc-server",
+            "command": "workbench.action.tasks.terminate",
+            "args": "run-rpcserver"
+        },
+        {
+            "type": "command",
+            "id": "terminate-whisper",
+            "command": "workbench.action.tasks.terminate",
+            "args": "run-whisper"
+        }
+    ]
+}

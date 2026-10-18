@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(Embedded) Attach",
+            "type": "embedded-debug",
+            "request": "attach",
+            "executable": "${command:img.getLaunchTarget}",
+            "remote": true,
+            "target": "${command:img.getRemoteHost}:${command:img.getPortNumber}",
+            "gdbpath": "${command:img.getGdbPath}",
+            "preLaunchTask": "${command:img.getLaunchTask}",
+            "postDebugTask": "${command:img.getTerminateTask}",
+            "autorun": [
+                "${command:img.getAutorunCmds}"
+            ],
+            "runToEntryPoint": "main",
+            "valuesFormatting": "prettyPrinters",
+            "pathSubstitutionsString": "${command:img.getSourcePathMappings}"
+        }
+    ]
+}

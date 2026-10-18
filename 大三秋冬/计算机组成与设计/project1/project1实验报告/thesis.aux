@@ -1,0 +1,118 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\HyPL@Entry{1<</S/D>>}
+\HyPL@Entry{4<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}实验概述}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Project1简介}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}实验环境}{1}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}环境搭建}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}WSL2安装与配置}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}安装步骤}{1}{subsubsection.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}VS Code配置}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}工具链安装}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Verilator仿真器}{2}{subsubsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}GTKWave波形查看器}{2}{subsubsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Catapult-studio编译平台（可选）}{2}{subsubsection.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}硬件设计与实现}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}译码级信号修改}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}el2\_dec\_decode\_ctl.sv修改}{3}{subsubsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}el2\_dec.sv修改}{3}{subsubsection.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}el2\_exu.sv修改}{3}{subsubsection.3.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.4}el2\_veer.sv修改}{3}{subsubsection.3.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}浮点加法器集成}{4}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}el2\_exu\_div\_ctl.sv修改}{4}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{1. 信号定义}{4}{Item.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{2. 操作数锁存}{4}{lstnumber.-7.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{3. 信号延拓}{5}{lstnumber.-8.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{4. 浮点加法器例化}{5}{lstnumber.-9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{5. 操作类型识别}{6}{lstnumber.-10.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{6. 完成信号多路选择}{6}{lstnumber.-11.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{7. 结果输出多路选择}{6}{lstnumber.-12.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}仿真验证}{8}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}测试文件}{8}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}仿真步骤}{9}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}生成仿真文件}{9}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}运行仿真}{9}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}查看波形}{9}{subsubsection.4.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}简化仿真流程（可选）}{9}{subsubsection.4.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}验证结果}{10}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}完整波形分析}{10}{subsubsection.4.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 完整指令执行流程波形图}}{10}{figure.caption.3}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:waveform_overview}{{1}{10}{完整指令执行流程波形图}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}浮点加法细节波形}{10}{subsubsection.4.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 浮点加法运算细节波形（24.1 ns - 24.4 ns）}}{10}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:waveform_fpadd}{{2}{10}{浮点加法运算细节波形（24.1 ns - 24.4 ns）}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}整数除法细节波形}{11}{subsubsection.4.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 整数除法运算细节波形（24.3 ns - 24.5 ns）}}{11}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:waveform_div}{{3}{11}{整数除法运算细节波形（24.3 ns - 24.5 ns）}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4}信号复用机制验证}{12}{subsubsection.4.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.5}验证结论}{12}{subsubsection.4.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}实验探究}{14}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}OR运算数据保持方案的缺陷}{14}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}问题提出}{14}{subsubsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}验证策略}{15}{subsubsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}波形分析}{15}{subsubsection.5.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces OR运算数据污染现象1}}{15}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:or_pollution_state}{{4}{15}{OR运算数据污染现象1}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces OR运算数据污染现象2}}{16}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:or_pollution_data}{{5}{16}{OR运算数据污染现象2}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces OR运算数据污染现象3}}{16}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:or_pollution_result}{{6}{16}{OR运算数据污染现象3}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}结论}{17}{subsubsection.5.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}优化方案实现}{18}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}初步锁存方案}{18}{subsubsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}时序问题的根本原因}{18}{subsubsection.5.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 握手时序问题波形分析}}{19}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:handshake_timing_issue}{{7}{19}{握手时序问题波形分析}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}最终优化方案}{19}{subsubsection.5.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 优化后的正确波形1}}{21}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:optimized_waveform}{{8}{21}{优化后的正确波形1}{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 优化后的正确波形2}}{21}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:optimized_waveform}{{9}{21}{优化后的正确波形2}{figure.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 三种方案对比}}{21}{table.caption.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4}状态机握手实现}{22}{subsubsection.5.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces FSM握手实现波形1}}{24}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:fsm_adder1}{{10}{24}{FSM握手实现波形1}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces FSM握手实现波形2}}{25}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:fsm_adder2}{{11}{25}{FSM握手实现波形2}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}乘除法器实现}{26}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}测试代码设计}{26}{subsubsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}状态机集成过程}{27}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3}测试波形分析}{30}{subsubsection.5.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces 浮点乘法波形1}}{30}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:mul1}{{12}{30}{浮点乘法波形1}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces 浮点乘法波形2}}{30}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:mul2}{{13}{30}{浮点乘法波形2}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces 浮点除法波形1：迭代除法过程}}{31}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:div1}{{14}{31}{浮点除法波形1：迭代除法过程}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces 浮点除法波形2：状态机循环}}{31}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:div2}{{15}{31}{浮点除法波形2：状态机循环}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces 浮点除法波形3：计算结果输出}}{31}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:div3}{{16}{31}{浮点除法波形3：计算结果输出}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}遇到的问题与解决}{32}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Verilator编译时序错误}{32}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}问题描述}{32}{subsubsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}问题分析}{32}{subsubsection.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3}解决方案}{32}{subsubsection.6.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.4}解决结果}{33}{subsubsection.6.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}浮点寄存器初始化错误}{34}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}问题发现}{34}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces 错误的浮点寄存器初始化波形1}}{34}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:reg_init_error_state}{{17}{34}{错误的浮点寄存器初始化波形1}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces 错误的浮点寄存器初始化波形2}}{34}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:reg_init_error_input}{{18}{34}{错误的浮点寄存器初始化波形2}{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces 错误的浮点寄存器初始化波形3}}{35}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:reg_init_error_output}{{19}{35}{错误的浮点寄存器初始化波形3}{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2}问题分析}{35}{subsubsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.3}解决方案}{36}{subsubsection.6.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}实验总结与实验心得}{37}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}实验完成情况}{37}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}实验总结}{38}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}实验心得}{38}{subsection.7.3}\protected@file@percent }
+\newlabel{LastPage}{{7.3}{38}{实验心得}{page.38}{}}
+\gdef\lastpage@lastpage{38}
+\gdef\lastpage@lastpageHy{38}
+\gdef \@abspage@last{42}
