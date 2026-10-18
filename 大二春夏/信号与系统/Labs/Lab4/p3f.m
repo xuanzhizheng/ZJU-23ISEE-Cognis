@@ -1,0 +1,1 @@
+clear;clc;n = 0:999;x = sin(2*pi*n/50) + 0.5*randn(size(n));N_fft = [64, 128, 256, 512];figure;for i = 1:4    X = fft(x(1:N_fft(i)));    f = (0:N_fft(i)-1)/N_fft(i);        subplot(2,2,i);    plot(f, abs(X));    title(['$N = ' num2str(N_fft(i)) '$'], 'Interpreter', 'latex');    xlabel('$\mathrm{Normalized\ Frequency}$', 'Interpreter', 'latex');end
