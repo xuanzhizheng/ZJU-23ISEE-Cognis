@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=-12V Pin=Power-1
+Removed Pin From Net: NetName=+12V Pin=Power-5
+Removed Pin From Net: NetName=NetR8_2 Pin=Rw1-1
+Removed Pin From Net: NetName=NetRw1_2 Pin=Rw1-3
+Removed Pin From Net: NetName=NetR12_1 Pin=Rw2-1
+Removed Pin From Net: NetName=GND Pin=Rw2-3
+Added Pin To Net: NetName=+12V Pin=Power-1
+Added Pin To Net: NetName=-12V Pin=Power-5
+Added Pin To Net: NetName=NetRw1_2 Pin=Rw1-1
+Added Pin To Net: NetName=NetR8_2 Pin=Rw1-3
+Added Pin To Net: NetName=GND Pin=Rw2-1
+Added Pin To Net: NetName=NetR12_1 Pin=Rw2-3
+Change Net Name : Old Net Name=NetRw1_2 New Net Name=NetRw1_1
+Added Room: Name=I-V S67_01_3913
