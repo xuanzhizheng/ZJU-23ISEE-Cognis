@@ -1,0 +1,416 @@
+{
+    "APPHOSTIP": "",
+    "AdjLockParam": true,
+    "BASEMOTION_CFG": [
+        {
+            "Delay": 1000,
+            "Dir": 0,
+            "Speak": ""
+        },
+        {
+            "Delay": 0,
+            "Dir": 4,
+            "Speak": ""
+        },
+        {
+            "Delay": 1000,
+            "Dir": 1,
+            "Speak": ""
+        },
+        {
+            "Delay": 0,
+            "Dir": 4,
+            "Speak": ""
+        },
+        {
+            "Delay": 1000,
+            "Dir": 2,
+            "Speak": ""
+        },
+        {
+            "Delay": 0,
+            "Dir": 4,
+            "Speak": ""
+        },
+        {
+            "Delay": 1000,
+            "Dir": 3,
+            "Speak": ""
+        }
+    ],
+    "BackArm": false,
+    "BallColor": 1,
+    "CATCHBALL_CFG": [
+        {
+            "ANG": 90,
+            "Delay": 200,
+            "ID": -2,
+            "Speak": ""
+        },
+        {
+            "ANG": 85,
+            "Delay": 2000,
+            "ID": 4,
+            "Speak": "开爪子"
+        },
+        {
+            "ANG": 40,
+            "Delay": 2000,
+            "ID": 1,
+            "Speak": "前伸"
+        },
+        {
+            "ANG": 78,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": "你好"
+        },
+        {
+            "ANG": 20,
+            "Delay": 2000,
+            "ID": 1,
+            "Speak": "抓住"
+        },
+        {
+            "ANG": 130,
+            "Delay": 2000,
+            "ID": 4,
+            "Speak": ""
+        },
+        {
+            "ANG": 95,
+            "Delay": 2000,
+            "ID": 1,
+            "Speak": "举起"
+        },
+        {
+            "ANG": 100,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": ""
+        },
+        {
+            "ANG": 95,
+            "Delay": 2000,
+            "ID": 1,
+            "Speak": "厉不厉害"
+        },
+        {
+            "ANG": 100,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": ""
+        },
+        {
+            "ANG": 23,
+            "Delay": 2000,
+            "ID": 1,
+            "Speak": "放下吧"
+        },
+        {
+            "ANG": 78,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": ""
+        },
+        {
+            "ANG": 85,
+            "Delay": 2000,
+            "ID": 4,
+            "Speak": ""
+        },
+        {
+            "ANG": 95,
+            "Delay": 2000,
+            "ID": 1,
+            "Speak": ""
+        },
+        {
+            "ANG": 150,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": ""
+        },
+        {
+            "ANG": 130,
+            "Delay": 2000,
+            "ID": 4,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 200,
+            "ID": -2,
+            "Speak": ""
+        }
+    ],
+    "Debug": false,
+    "FINDBALL_CFG": [
+        {
+            "SIZE": 0,
+            "SPEAK": "大范围查找",
+            "ballX": -1,
+            "ballY": -1,
+            "servoH": -1,
+            "servoV": -1,
+            "spdTurnFwd": 60
+        },
+        {
+            "SIZE": 0,
+            "SPEAK": "中范围查找",
+            "ballX": -1,
+            "ballY": -1,
+            "servoH": -1,
+            "servoV": -1,
+            "spdTurnFwd": 40
+        },
+        {
+            "SIZE": 0,
+            "SPEAK": "近距离查找",
+            "ballX": -1,
+            "ballY": -1,
+            "servoH": -1,
+            "servoV": -1,
+            "spdTurnFwd": 20
+        },
+        {
+            "SIZE": 231,
+            "SPEAK": "最终定位",
+            "ballX": 417,
+            "ballY": 222,
+            "servoH": 56,
+            "servoV": 70,
+            "spdTurnFwd": 0
+        }
+    ],
+    "GROUPINFO": "周二下午421-04",
+    "INTI_CFG": [
+        89,
+        155,
+        90,
+        133,
+        90,
+        100,
+        78,
+        35
+    ],
+    "NODECAM_CFG": [
+        {
+            "ANG": -1,
+            "Delay": 200,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": 60,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": 15,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": 15,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": 15,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        },
+        {
+            "ANG": -1,
+            "Delay": 2000,
+            "ID": 8,
+            "Speak": ""
+        }
+    ],
+    "SHAKECAM_CFG": [
+        {
+            "ANG": -1,
+            "Delay": 200,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 130,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 50,
+            "Delay": 1999,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 130,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 50,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": 75,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        },
+        {
+            "ANG": -1,
+            "Delay": 2000,
+            "ID": 7,
+            "Speak": ""
+        }
+    ],
+    "SHAKEHAND_CFG": [
+        {
+            "ANG": 90,
+            "Delay": 200,
+            "ID": -2,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": "你好"
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 80,
+            "Delay": 2000,
+            "ID": 1,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 4,
+            "Speak": ""
+        },
+        {
+            "ANG": 130,
+            "Delay": 2000,
+            "ID": 4,
+            "Speak": ""
+        },
+        {
+            "ANG": 70,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": "幸会幸会"
+        },
+        {
+            "ANG": 120,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": ""
+        },
+        {
+            "ANG": 70,
+            "Delay": 2000,
+            "ID": 4,
+            "Speak": ""
+        },
+        {
+            "ANG": 130,
+            "Delay": 2000,
+            "ID": 4,
+            "Speak": "再见了您哪"
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": 3,
+            "Speak": ""
+        },
+        {
+            "ANG": 115,
+            "Delay": 2000,
+            "ID": 2,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 2000,
+            "ID": -2,
+            "Speak": ""
+        },
+        {
+            "ANG": 90,
+            "Delay": 200,
+            "ID": -2,
+            "Speak": ""
+        }
+    ],
+    "VR_CFG": [
+        "ji ben dong zuo",
+        "yao tou huang nao",
+        "dian tou shi yi",
+        "you hao wo zhua",
+        "lan xiang fu ti",
+        "ren wu zhong jie",
+        "dan bu suo ding",
+        "xia yi bu"
+    ],
+    "ZoominFar": true,
+    "blueError": 33,
+    "greenError": 33,
+    "lockSpeed": 200,
+    "maxBallSize": 45,
+    "minBallSize": 2,
+    "minSolid": 60,
+    "minSqure": 50,
+    "posError": 10,
+    "redError": 75,
+    "sizeError": 200
+}

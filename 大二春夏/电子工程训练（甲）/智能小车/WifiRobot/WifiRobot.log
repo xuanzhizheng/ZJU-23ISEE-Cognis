@@ -1,0 +1,2074 @@
+
+
+Application start...
+
+20:27:03:534: Warning: qInstallMessageHandler end...
+20:27:03:536: Warning: qmlRegisterType end...
+20:27:03:536: Warning: DebugFlag share mem alloced!
+20:27:03:536: Warning: Attaching DebugFlag share mem!
+20:27:03:536: Warning: Clear DebugFlag share memory...
+20:27:03:536: Warning: Clear DebugFlag share memory done!
+20:27:03:536: Warning: Init DebugFlag share memory...
+20:27:03:536: Warning: Init DebugFlag share memory done!
+20:27:03:536: Warning: DEBUG_VAR INITED...
+20:27:03:536: Warning: Install kb filter...
+20:27:04:124: Warning: QWifiVideo constructor start..
+20:27:04:124: Warning: QThreadWifiVideo constructor start..
+20:27:04:171: Warning: setCamera start...
+20:27:04:171: Warning: setCamera old camera deleted...
+20:27:04:172: Warning: 1.viewfinder size=640x360,pmp size=1280x720
+20:27:04:172: Warning: 2.viewfinder size=640x360,pmp size=1280x720
+20:27:04:172: Warning: probe sucess!
+20:27:04:172: Warning: setCamera end...
+20:27:04:173: Warning: QWifiVideo start ttsThread..
+20:27:04:173: Warning: QThreadWifiVideo start ttsThread end..
+20:27:04:192: Warning: QWifiVideo start load sim Image..
+20:27:04:274: Warning: QThreadWifiVideo end constructor..
+20:27:04:274: Warning: QWifiVideo end constructor..
+20:27:04:277: Warning: Both point size and pixel size set. Using pixel size.
+20:27:04:277: Warning: Both point size and pixel size set. Using pixel size.
+20:27:04:594: Warning: size==0?
+20:27:04:595: Warning: videoUrl=[CAM99]/?action=stream
+20:27:04:698: Warning: qrc:/Page4Form.ui.qml:45:13: QML ToolButton: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+20:27:04:698: Warning: qrc:/Page4Form.ui.qml:58:13: QML Label: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+20:27:04:708: Warning: qrc:/Page3Form.ui.qml:79:17: QML ToolButton: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+20:27:04:735: Warning: libpng warning: iCCP: known incorrect sRGB profile
+20:27:04:777: Debug: 机械臂控>onGrayedChanged,false
+20:27:04:782: Debug: 设置>onGrayedChanged,false
+20:27:04:829: Debug: panel_scale=-0.06607142857142857
+20:27:04:831: Debug: panel_scale=1
+20:27:04:845: Debug: panel_scale=1
+20:27:04:846: Debug: APPSET.videoUrl=[CAM99]/?action=stream
+20:27:04:849: Warning: 相机模拟小车运动...
+20:27:04:865: Warning: QThreadWifiVideo::start...
+
+
+
+
+20:27:04:865: Warning: try use usb camera!
+20:27:04:865: Warning: use static image...
+20:27:04:865: Warning: capture timer started!
+20:27:05:043: Warning: QThreadWifiVideo::start...
+
+
+
+
+20:27:05:043: Warning: try use usb camera!
+20:27:05:043: Warning: use static image...
+20:27:05:043: Warning: capture timer started!
+20:27:05:065: Warning: we found it!
+20:27:05:065: Warning: Application runing...
+20:27:05:150: Warning: slotInitOpParams...do 0 of 44
+20:27:05:219: Warning: slotInitOpParams...do 1 of 44
+20:27:05:285: Warning: slotInitOpParams...do 2 of 44
+20:27:05:346: Warning: slotInitOpParams...do 3 of 44
+20:27:05:402: Warning: slotInitOpParams...do 4 of 44
+20:27:05:462: Warning: slotInitOpParams...do 5 of 44
+20:27:05:519: Warning: slotInitOpParams...do 6 of 44
+20:27:05:572: Warning: slotInitOpParams...do 7 of 44
+20:27:05:621: Warning: slotInitOpParams...do 8 of 44
+20:27:05:667: Warning: slotInitOpParams...do 9 of 44
+20:27:05:718: Warning: slotInitOpParams...do 10 of 44
+20:27:05:784: Warning: slotInitOpParams...do 11 of 44
+20:27:05:830: Warning: slotInitOpParams...do 12 of 44
+20:27:05:881: Warning: slotInitOpParams...do 13 of 44
+20:27:05:927: Warning: slotInitOpParams...do 14 of 44
+20:27:05:981: Warning: slotInitOpParams...do 15 of 44
+20:27:06:027: Warning: slotInitOpParams...do 16 of 44
+20:27:06:087: Warning: slotInitOpParams...do 17 of 44
+20:27:06:139: Warning: slotInitOpParams...do 18 of 44
+20:27:06:201: Warning: slotInitOpParams...do 19 of 44
+20:27:06:252: Warning: slotInitOpParams...do 20 of 44
+20:27:06:311: Warning: slotInitOpParams...do 21 of 44
+20:27:06:312: Debug: servo #7 ==>90
+20:27:06:312: Debug: servo #8 ==>79
+20:27:06:312: Debug: ServoAngle_8==>79
+20:27:06:320: Debug: W=640,H=480
+20:27:08:662: Warning: tts server started!
+20:27:08:662: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+20:27:08:662: Debug: servo #7 ==>90
+20:27:08:662: Debug: servo #8 ==>63
+20:27:08:662: Debug: ServoAngle_8==>63
+20:27:08:668: Warning: tts server started!
+20:27:08:668: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+20:27:08:675: Debug: servo #7 ==>90
+20:27:08:675: Debug: servo #8 ==>63
+20:28:50:807: Warning: key press=16777236
+20:28:51:580: Warning: key press=32
+20:28:56:271: Debug: panel_scale=0.012307692307692308
+20:28:56:273: Debug: panel_scale=0.5061538461538462
+20:28:58:519: Debug: panel_scale=1.2232142857142858
+20:28:58:521: Debug: panel_scale=1
+20:28:59:174: Debug: servo #1 ==>90
+20:28:59:174: Debug: servo #2 ==>90
+20:28:59:174: Debug: servo #3 ==>90
+20:28:59:174: Debug: servo #4 ==>90
+20:28:59:174: Debug: servo #5 ==>90
+20:28:59:174: Debug: servo #6 ==>90
+20:29:40:852: Debug: panel_scale=0.012307692307692308
+20:29:40:855: Debug: panel_scale=0.5061538461538462
+20:30:59:009: Debug: panel_scale=1.2232142857142858
+20:30:59:009: Debug: panel_scale=1
+20:33:02:689: Debug: cameraXangle==>89
+20:33:02:689: Debug: servo #7 ==>89
+20:33:02:689: Debug: ServoAngle_7==>89
+20:33:02:697: Debug: cameraXangle==>88
+20:33:02:697: Debug: servo #7 ==>88
+20:33:02:697: Debug: ServoAngle_7==>88
+20:33:02:701: Debug: cameraXangle==>87
+20:33:02:701: Debug: servo #7 ==>87
+20:33:02:701: Debug: ServoAngle_7==>87
+20:33:02:701: Debug: servo #8 ==>64
+20:33:02:701: Debug: ServoAngle_8==>64
+20:33:02:705: Debug: cameraXangle==>86
+20:33:02:705: Debug: servo #7 ==>86
+20:33:02:705: Debug: ServoAngle_7==>86
+20:33:02:709: Debug: cameraXangle==>85
+20:33:02:709: Debug: servo #7 ==>85
+20:33:02:709: Debug: ServoAngle_7==>85
+20:33:02:718: Debug: cameraXangle==>84
+20:33:02:718: Debug: servo #7 ==>84
+20:33:02:718: Debug: ServoAngle_7==>84
+20:33:02:718: Debug: servo #8 ==>65
+20:33:02:718: Debug: ServoAngle_8==>65
+20:33:02:718: Debug: cameraXangle==>83
+20:33:02:718: Debug: servo #7 ==>83
+20:33:02:718: Debug: ServoAngle_7==>83
+20:33:02:721: Debug: cameraXangle==>82
+20:33:02:721: Debug: servo #7 ==>82
+20:33:02:721: Debug: ServoAngle_7==>82
+20:33:02:721: Debug: servo #8 ==>66
+20:33:02:721: Debug: ServoAngle_8==>66
+20:33:02:726: Debug: cameraXangle==>81
+20:33:02:726: Debug: servo #7 ==>81
+20:33:02:726: Debug: ServoAngle_7==>81
+20:33:02:728: Debug: cameraXangle==>79
+20:33:02:728: Debug: servo #7 ==>79
+20:33:02:728: Debug: ServoAngle_7==>79
+20:33:02:728: Debug: servo #8 ==>67
+20:33:02:728: Debug: ServoAngle_8==>67
+20:33:02:733: Debug: cameraXangle==>77
+20:33:02:733: Debug: servo #7 ==>77
+20:33:02:733: Debug: ServoAngle_7==>77
+20:33:02:733: Debug: servo #8 ==>68
+20:33:02:733: Debug: ServoAngle_8==>68
+20:33:02:737: Debug: cameraXangle==>75
+20:33:02:737: Debug: servo #7 ==>75
+20:33:02:737: Debug: ServoAngle_7==>75
+20:33:02:747: Debug: cameraXangle==>71
+20:33:02:747: Debug: servo #7 ==>71
+20:33:02:747: Debug: ServoAngle_7==>71
+20:33:02:747: Debug: servo #8 ==>69
+20:33:02:747: Debug: ServoAngle_8==>69
+20:33:02:749: Debug: cameraXangle==>69
+20:33:02:749: Debug: servo #7 ==>69
+20:33:02:749: Debug: ServoAngle_7==>69
+20:33:02:753: Debug: cameraXangle==>67
+20:33:02:753: Debug: servo #7 ==>67
+20:33:02:753: Debug: ServoAngle_7==>67
+20:33:02:758: Debug: cameraXangle==>65
+20:33:02:758: Debug: servo #7 ==>65
+20:33:02:758: Debug: ServoAngle_7==>65
+20:33:02:761: Debug: cameraXangle==>64
+20:33:02:761: Debug: servo #7 ==>64
+20:33:02:761: Debug: ServoAngle_7==>64
+20:33:02:765: Debug: cameraXangle==>63
+20:33:02:765: Debug: servo #7 ==>63
+20:33:02:765: Debug: ServoAngle_7==>63
+20:33:02:769: Debug: cameraXangle==>62
+20:33:02:769: Debug: servo #7 ==>62
+20:33:02:769: Debug: ServoAngle_7==>62
+20:33:02:779: Debug: cameraXangle==>61
+20:33:02:779: Debug: servo #7 ==>61
+20:33:02:779: Debug: ServoAngle_7==>61
+20:33:02:781: Debug: cameraXangle==>60
+20:33:02:781: Debug: servo #7 ==>60
+20:33:02:781: Debug: ServoAngle_7==>60
+20:33:02:781: Debug: servo #8 ==>70
+20:33:02:781: Debug: ServoAngle_8==>70
+20:33:02:785: Debug: cameraXangle==>59
+20:33:02:785: Debug: servo #7 ==>59
+20:33:02:785: Debug: ServoAngle_7==>59
+20:33:02:796: Debug: cameraXangle==>58
+20:33:02:796: Debug: servo #7 ==>58
+20:33:02:796: Debug: ServoAngle_7==>58
+20:33:04:351: Debug: onCurrentIndexChanged 6
+20:33:04:352: Debug: disable[0]=true
+20:33:04:352: Debug: disable[1]=true
+20:33:04:352: Debug: disable[2]=true
+20:33:04:352: Debug: disable[3]=true
+20:33:04:352: Debug: disable[4]=true
+20:33:04:352: Debug: 机械臂控>onGrayedChanged,true
+20:33:04:352: Debug: disable[5]=true
+20:33:04:352: Debug: disable[6]=true
+20:33:04:352: Debug: 设置>onGrayedChanged,true
+20:33:04:500: Debug: onCurrentIndexChanged 5
+20:33:04:500: Debug: disable[0]=true
+20:33:04:500: Debug: disable[1]=true
+20:33:04:500: Debug: disable[2]=true
+20:33:04:500: Debug: disable[3]=true
+20:33:04:500: Debug: disable[4]=true
+20:33:04:501: Debug: disable[5]=true
+20:33:04:501: Debug: disable[6]=true
+20:33:05:058: Debug: onCurrentIndexChanged 6
+20:33:05:060: Debug: disable[0]=true
+20:33:05:060: Debug: disable[1]=true
+20:33:05:060: Debug: disable[2]=true
+20:33:05:060: Debug: disable[3]=true
+20:33:05:060: Debug: disable[4]=true
+20:33:05:060: Debug: disable[5]=true
+20:33:05:060: Debug: disable[6]=true
+20:33:05:781: Debug: 设置>onGrayedChanged,false
+20:33:05:782: Debug: on_Clicked_OnImage:T设置
+20:33:09:094: Warning: key press=16777250
+20:33:09:098: Warning: key press=16777248
+20:33:37:692: Debug: panel_scale=1
+20:33:54:208: Debug: cameraXangle==>59
+20:33:54:208: Debug: servo #7 ==>59
+20:33:54:208: Debug: ServoAngle_7==>59
+20:33:54:232: Debug: cameraXangle==>60
+20:33:54:232: Debug: servo #7 ==>60
+20:33:54:232: Debug: ServoAngle_7==>60
+20:33:54:255: Debug: cameraXangle==>61
+20:33:54:255: Debug: servo #7 ==>61
+20:33:54:255: Debug: ServoAngle_7==>61
+20:33:54:279: Debug: cameraXangle==>62
+20:33:54:279: Debug: servo #7 ==>62
+20:33:54:279: Debug: ServoAngle_7==>62
+20:33:54:294: Debug: cameraXangle==>63
+20:33:54:294: Debug: servo #7 ==>63
+20:33:54:294: Debug: ServoAngle_7==>63
+20:33:54:295: Debug: cameraXangle==>64
+20:33:54:295: Debug: servo #7 ==>64
+20:33:54:295: Debug: ServoAngle_7==>64
+20:33:54:306: Debug: cameraXangle==>65
+20:33:54:306: Debug: servo #7 ==>65
+20:33:54:306: Debug: ServoAngle_7==>65
+20:33:54:327: Debug: cameraXangle==>66
+20:33:54:327: Debug: servo #7 ==>66
+20:33:54:327: Debug: ServoAngle_7==>66
+20:33:54:371: Debug: cameraXangle==>67
+20:33:54:371: Debug: servo #7 ==>67
+20:33:54:372: Debug: ServoAngle_7==>67
+20:33:54:557: Debug: cameraXangle==>68
+20:33:54:557: Debug: servo #7 ==>68
+20:33:54:557: Debug: ServoAngle_7==>68
+20:33:54:577: Debug: cameraXangle==>70
+20:33:54:577: Debug: servo #7 ==>70
+20:33:54:577: Debug: ServoAngle_7==>70
+20:33:54:589: Debug: cameraXangle==>71
+20:33:54:589: Debug: servo #7 ==>71
+20:33:54:589: Debug: ServoAngle_7==>71
+20:33:54:591: Debug: cameraXangle==>72
+20:33:54:591: Debug: servo #7 ==>72
+20:33:54:591: Debug: ServoAngle_7==>72
+20:33:54:611: Debug: cameraXangle==>74
+20:33:54:611: Debug: servo #7 ==>74
+20:33:54:611: Debug: ServoAngle_7==>74
+20:33:54:621: Debug: cameraXangle==>75
+20:33:54:621: Debug: servo #7 ==>75
+20:33:54:621: Debug: ServoAngle_7==>75
+20:33:54:621: Debug: cameraXangle==>76
+20:33:54:621: Debug: servo #7 ==>76
+20:33:54:621: Debug: ServoAngle_7==>76
+20:33:54:623: Debug: cameraXangle==>77
+20:33:54:623: Debug: servo #7 ==>77
+20:33:54:623: Debug: ServoAngle_7==>77
+20:33:54:645: Debug: cameraXangle==>80
+20:33:54:645: Debug: servo #7 ==>80
+20:33:54:645: Debug: ServoAngle_7==>80
+20:33:54:655: Debug: cameraXangle==>81
+20:33:54:655: Debug: servo #7 ==>81
+20:33:54:655: Debug: ServoAngle_7==>81
+20:33:54:656: Debug: cameraXangle==>82
+20:33:54:656: Debug: servo #7 ==>82
+20:33:54:656: Debug: ServoAngle_7==>82
+20:33:54:679: Debug: cameraXangle==>84
+20:33:54:679: Debug: servo #7 ==>84
+20:33:54:679: Debug: ServoAngle_7==>84
+20:33:54:689: Debug: cameraXangle==>85
+20:33:54:689: Debug: servo #7 ==>85
+20:33:54:689: Debug: ServoAngle_7==>85
+20:33:54:689: Debug: servo #8 ==>69
+20:33:54:689: Debug: ServoAngle_8==>69
+20:33:54:712: Debug: cameraXangle==>86
+20:33:54:713: Debug: servo #7 ==>86
+20:33:54:713: Debug: ServoAngle_7==>86
+20:33:54:985: Debug: cameraXangle==>87
+20:33:54:985: Debug: servo #7 ==>87
+20:33:54:985: Debug: ServoAngle_7==>87
+20:33:54:992: Debug: cameraXangle==>88
+20:33:54:992: Debug: servo #7 ==>88
+20:33:54:992: Debug: ServoAngle_7==>88
+20:33:54:992: Debug: servo #8 ==>68
+20:33:54:992: Debug: ServoAngle_8==>68
+20:33:55:000: Debug: cameraXangle==>89
+20:33:55:000: Debug: servo #7 ==>89
+20:33:55:000: Debug: ServoAngle_7==>89
+20:33:55:013: Debug: cameraXangle==>90
+20:33:55:013: Debug: servo #7 ==>90
+20:33:55:014: Debug: ServoAngle_7==>90
+20:33:55:014: Debug: servo #8 ==>67
+20:33:55:014: Debug: ServoAngle_8==>67
+20:33:55:016: Debug: cameraXangle==>91
+20:33:55:016: Debug: servo #7 ==>91
+20:33:55:016: Debug: ServoAngle_7==>91
+20:33:55:016: Debug: servo #8 ==>66
+20:33:55:016: Debug: ServoAngle_8==>66
+20:33:55:024: Debug: cameraXangle==>92
+20:33:55:024: Debug: servo #7 ==>92
+20:33:55:024: Debug: ServoAngle_7==>92
+20:33:55:024: Debug: servo #8 ==>65
+20:33:55:024: Debug: ServoAngle_8==>65
+20:33:55:040: Debug: cameraXangle==>93
+20:33:55:040: Debug: servo #7 ==>93
+20:33:55:040: Debug: ServoAngle_7==>93
+20:33:55:040: Debug: servo #8 ==>64
+20:33:55:040: Debug: ServoAngle_8==>64
+20:33:55:044: Debug: cameraXangle==>94
+20:33:55:044: Debug: servo #7 ==>94
+20:33:55:044: Debug: ServoAngle_7==>94
+20:33:55:044: Debug: servo #8 ==>63
+20:33:55:044: Debug: ServoAngle_8==>63
+20:33:55:061: Debug: cameraXangle==>95
+20:33:55:061: Debug: servo #7 ==>95
+20:33:55:061: Debug: ServoAngle_7==>95
+20:33:55:061: Debug: servo #8 ==>62
+20:33:55:061: Debug: ServoAngle_8==>62
+20:33:55:075: Debug: cameraXangle==>96
+20:33:55:075: Debug: servo #7 ==>96
+20:33:55:075: Debug: ServoAngle_7==>96
+20:33:55:076: Debug: servo #8 ==>61
+20:33:55:076: Debug: ServoAngle_8==>61
+20:33:55:080: Debug: cameraXangle==>97
+20:33:55:080: Debug: servo #7 ==>97
+20:33:55:080: Debug: ServoAngle_7==>97
+20:33:55:090: Debug: servo #8 ==>60
+20:33:55:090: Debug: ServoAngle_8==>60
+20:33:55:090: Debug: cameraXangle==>98
+20:33:55:090: Debug: servo #7 ==>98
+20:33:55:090: Debug: ServoAngle_7==>98
+20:33:55:110: Debug: cameraXangle==>100
+20:33:55:110: Debug: servo #7 ==>100
+20:33:55:110: Debug: ServoAngle_7==>100
+20:33:55:110: Debug: servo #8 ==>59
+20:33:55:110: Debug: ServoAngle_8==>59
+20:33:55:121: Debug: cameraXangle==>101
+20:33:55:121: Debug: servo #7 ==>101
+20:33:55:121: Debug: ServoAngle_7==>101
+20:33:55:124: Debug: cameraXangle==>102
+20:33:55:124: Debug: servo #7 ==>102
+20:33:55:124: Debug: ServoAngle_7==>102
+20:33:55:124: Debug: servo #8 ==>58
+20:33:55:124: Debug: ServoAngle_8==>58
+20:33:55:144: Debug: cameraXangle==>103
+20:33:55:145: Debug: servo #7 ==>103
+20:33:55:145: Debug: ServoAngle_7==>103
+20:33:55:148: Debug: servo #8 ==>57
+20:33:55:148: Debug: ServoAngle_8==>57
+20:33:55:156: Debug: cameraXangle==>104
+20:33:55:156: Debug: servo #7 ==>104
+20:33:55:156: Debug: ServoAngle_7==>104
+20:33:55:177: Debug: cameraXangle==>105
+20:33:55:177: Debug: servo #7 ==>105
+20:33:55:177: Debug: ServoAngle_7==>105
+20:33:55:204: Debug: cameraXangle==>106
+20:33:55:205: Debug: servo #7 ==>106
+20:33:55:205: Debug: ServoAngle_7==>106
+20:33:55:205: Debug: servo #8 ==>56
+20:33:55:205: Debug: ServoAngle_8==>56
+20:33:55:509: Debug: cameraXangle==>107
+20:33:55:509: Debug: servo #7 ==>107
+20:33:55:509: Debug: ServoAngle_7==>107
+20:33:55:509: Debug: servo #8 ==>55
+20:33:55:509: Debug: ServoAngle_8==>55
+20:33:55:517: Debug: cameraXangle==>108
+20:33:55:517: Debug: servo #7 ==>108
+20:33:55:517: Debug: ServoAngle_7==>108
+20:33:55:517: Debug: servo #8 ==>54
+20:33:55:517: Debug: ServoAngle_8==>54
+20:33:55:524: Debug: cameraXangle==>109
+20:33:55:524: Debug: servo #7 ==>109
+20:33:55:524: Debug: ServoAngle_7==>109
+20:33:55:525: Debug: servo #8 ==>53
+20:33:55:525: Debug: ServoAngle_8==>53
+20:33:55:536: Debug: cameraXangle==>110
+20:33:55:536: Debug: servo #7 ==>110
+20:33:55:536: Debug: ServoAngle_7==>110
+20:33:55:536: Debug: servo #8 ==>52
+20:33:55:536: Debug: ServoAngle_8==>52
+20:33:55:540: Debug: cameraXangle==>111
+20:33:55:540: Debug: servo #7 ==>111
+20:33:55:540: Debug: ServoAngle_7==>111
+20:33:55:540: Debug: servo #8 ==>51
+20:33:55:540: Debug: ServoAngle_8==>51
+20:33:55:556: Debug: cameraXangle==>112
+20:33:55:556: Debug: servo #7 ==>112
+20:33:55:556: Debug: ServoAngle_7==>112
+20:33:55:556: Debug: servo #8 ==>50
+20:33:55:557: Debug: ServoAngle_8==>50
+20:33:55:560: Debug: cameraXangle==>113
+20:33:55:560: Debug: servo #7 ==>113
+20:33:55:560: Debug: ServoAngle_7==>113
+20:33:55:560: Debug: servo #8 ==>49
+20:33:55:560: Debug: ServoAngle_8==>49
+20:33:55:571: Debug: cameraXangle==>114
+20:33:55:571: Debug: servo #7 ==>114
+20:33:55:571: Debug: ServoAngle_7==>114
+20:33:55:571: Debug: servo #8 ==>48
+20:33:55:571: Debug: ServoAngle_8==>48
+20:33:55:571: Debug: cameraXangle==>115
+20:33:55:571: Debug: servo #7 ==>115
+20:33:55:571: Debug: ServoAngle_7==>115
+20:33:55:594: Debug: cameraXangle==>117
+20:33:55:594: Debug: servo #7 ==>117
+20:33:55:594: Debug: ServoAngle_7==>117
+20:33:55:594: Debug: servo #8 ==>46
+20:33:55:594: Debug: ServoAngle_8==>46
+20:33:55:604: Debug: cameraXangle==>118
+20:33:55:604: Debug: servo #7 ==>118
+20:33:55:604: Debug: ServoAngle_7==>118
+20:33:55:604: Debug: servo #8 ==>45
+20:33:55:604: Debug: ServoAngle_8==>45
+20:33:55:608: Debug: cameraXangle==>119
+20:33:55:608: Debug: servo #7 ==>119
+20:33:55:608: Debug: ServoAngle_7==>119
+20:33:55:622: Debug: cameraXangle==>120
+20:33:55:622: Debug: servo #7 ==>120
+20:33:55:622: Debug: ServoAngle_7==>120
+20:33:55:623: Debug: servo #8 ==>44
+20:33:55:623: Debug: ServoAngle_8==>44
+20:33:55:639: Debug: cameraXangle==>121
+20:33:55:639: Debug: servo #7 ==>121
+20:33:55:639: Debug: ServoAngle_7==>121
+20:33:55:639: Debug: servo #8 ==>43
+20:33:55:639: Debug: ServoAngle_8==>43
+20:33:55:661: Debug: cameraXangle==>122
+20:33:55:661: Debug: servo #7 ==>122
+20:33:55:661: Debug: ServoAngle_7==>122
+20:33:55:664: Debug: servo #8 ==>42
+20:33:55:664: Debug: ServoAngle_8==>42
+20:33:55:956: Debug: cameraXangle==>123
+20:33:55:956: Debug: servo #7 ==>123
+20:33:55:956: Debug: ServoAngle_7==>123
+20:33:55:960: Debug: cameraXangle==>124
+20:33:55:960: Debug: servo #7 ==>124
+20:33:55:960: Debug: ServoAngle_7==>124
+20:33:55:964: Debug: cameraXangle==>125
+20:33:55:964: Debug: servo #7 ==>125
+20:33:55:964: Debug: ServoAngle_7==>125
+20:33:55:969: Debug: cameraXangle==>126
+20:33:55:969: Debug: servo #7 ==>126
+20:33:55:969: Debug: ServoAngle_7==>126
+20:33:55:972: Debug: cameraXangle==>127
+20:33:55:972: Debug: servo #7 ==>127
+20:33:55:972: Debug: ServoAngle_7==>127
+20:33:55:972: Debug: servo #8 ==>41
+20:33:55:972: Debug: ServoAngle_8==>41
+20:33:55:976: Debug: cameraXangle==>128
+20:33:55:976: Debug: servo #7 ==>128
+20:33:55:976: Debug: ServoAngle_7==>128
+20:33:55:995: Debug: cameraXangle==>130
+20:33:55:995: Debug: servo #7 ==>130
+20:33:55:995: Debug: ServoAngle_7==>130
+20:33:55:995: Debug: servo #8 ==>40
+20:33:55:996: Debug: ServoAngle_8==>40
+20:33:56:004: Debug: cameraXangle==>131
+20:33:56:004: Debug: servo #7 ==>131
+20:33:56:004: Debug: ServoAngle_7==>131
+20:33:56:007: Debug: cameraXangle==>132
+20:33:56:007: Debug: servo #7 ==>132
+20:33:56:007: Debug: ServoAngle_7==>132
+20:33:56:027: Debug: cameraXangle==>133
+20:33:56:027: Debug: servo #7 ==>133
+20:33:56:027: Debug: ServoAngle_7==>133
+20:33:56:031: Debug: cameraXangle==>134
+20:33:56:031: Debug: servo #7 ==>134
+20:33:56:031: Debug: ServoAngle_7==>134
+20:33:56:040: Debug: cameraXangle==>135
+20:33:56:040: Debug: servo #7 ==>135
+20:33:56:040: Debug: ServoAngle_7==>135
+20:33:56:061: Debug: cameraXangle==>136
+20:33:56:061: Debug: servo #7 ==>136
+20:33:56:061: Debug: ServoAngle_7==>136
+20:33:56:064: Debug: cameraXangle==>137
+20:33:56:064: Debug: servo #7 ==>137
+20:33:56:064: Debug: ServoAngle_7==>137
+20:33:56:072: Debug: cameraXangle==>138
+20:33:56:072: Debug: servo #7 ==>138
+20:33:56:072: Debug: ServoAngle_7==>138
+20:33:56:094: Debug: cameraXangle==>140
+20:33:56:094: Debug: servo #7 ==>140
+20:33:56:094: Debug: ServoAngle_7==>140
+20:33:56:104: Debug: cameraXangle==>141
+20:33:56:104: Debug: servo #7 ==>141
+20:33:56:104: Debug: ServoAngle_7==>141
+20:33:56:472: Debug: cameraXangle==>142
+20:33:56:472: Debug: servo #7 ==>142
+20:33:56:473: Debug: ServoAngle_7==>142
+20:33:56:475: Debug: servo #8 ==>39
+20:33:56:475: Debug: ServoAngle_8==>39
+20:33:56:480: Debug: cameraXangle==>143
+20:33:56:480: Debug: servo #7 ==>143
+20:33:56:480: Debug: ServoAngle_7==>143
+20:33:56:494: Debug: cameraXangle==>144
+20:33:56:494: Debug: servo #7 ==>144
+20:33:56:494: Debug: ServoAngle_7==>144
+20:33:56:494: Debug: servo #8 ==>38
+20:33:56:494: Debug: ServoAngle_8==>38
+20:33:56:505: Debug: cameraXangle==>145
+20:33:56:505: Debug: servo #7 ==>145
+20:33:56:505: Debug: ServoAngle_7==>145
+20:33:56:508: Debug: cameraXangle==>146
+20:33:56:508: Debug: servo #7 ==>146
+20:33:56:508: Debug: ServoAngle_7==>146
+20:33:56:522: Debug: cameraXangle==>147
+20:33:56:522: Debug: servo #7 ==>147
+20:33:56:522: Debug: ServoAngle_7==>147
+20:33:56:522: Debug: servo #8 ==>37
+20:33:56:522: Debug: ServoAngle_8==>37
+20:33:56:547: Debug: cameraXangle==>148
+20:33:56:548: Debug: servo #7 ==>148
+20:33:56:548: Debug: ServoAngle_7==>148
+20:33:56:704: Debug: servo #8 ==>38
+20:33:56:704: Debug: ServoAngle_8==>38
+20:33:56:725: Debug: servo #8 ==>39
+20:33:56:725: Debug: ServoAngle_8==>39
+20:33:56:772: Debug: cameraXangle==>147
+20:33:56:772: Debug: servo #7 ==>147
+20:33:56:772: Debug: ServoAngle_7==>147
+20:33:56:772: Debug: servo #8 ==>40
+20:33:56:773: Debug: ServoAngle_8==>40
+20:33:56:798: Debug: cameraXangle==>146
+20:33:56:798: Debug: servo #7 ==>146
+20:33:56:798: Debug: ServoAngle_7==>146
+20:33:56:812: Debug: cameraXangle==>145
+20:33:56:812: Debug: servo #7 ==>145
+20:33:56:812: Debug: ServoAngle_7==>145
+20:33:56:822: Debug: cameraXangle==>144
+20:33:56:822: Debug: servo #7 ==>144
+20:33:56:822: Debug: ServoAngle_7==>144
+20:33:56:845: Debug: cameraXangle==>143
+20:33:56:845: Debug: servo #7 ==>143
+20:33:56:845: Debug: ServoAngle_7==>143
+20:33:56:876: Debug: cameraXangle==>142
+20:33:56:876: Debug: servo #7 ==>142
+20:33:56:876: Debug: ServoAngle_7==>142
+20:33:56:913: Debug: cameraXangle==>141
+20:33:56:913: Debug: servo #7 ==>141
+20:33:56:913: Debug: ServoAngle_7==>141
+20:33:56:993: Debug: cameraXangle==>140
+20:33:56:994: Debug: servo #7 ==>140
+20:33:56:994: Debug: ServoAngle_7==>140
+20:33:57:004: Debug: cameraXangle==>139
+20:33:57:004: Debug: servo #7 ==>139
+20:33:57:004: Debug: ServoAngle_7==>139
+20:33:57:029: Debug: cameraXangle==>138
+20:33:57:029: Debug: servo #7 ==>138
+20:33:57:029: Debug: ServoAngle_7==>138
+20:33:57:062: Debug: cameraXangle==>137
+20:33:57:062: Debug: servo #7 ==>137
+20:33:57:062: Debug: ServoAngle_7==>137
+20:34:00:974: Debug: servo #1 ==>149
+20:34:01:140: Debug: servo #1 ==>149
+20:34:01:471: Debug: servo #1 ==>148
+20:34:01:554: Debug: servo #1 ==>148
+20:34:01:631: Debug: servo #1 ==>147
+20:34:01:711: Debug: servo #1 ==>147
+20:34:01:800: Debug: servo #1 ==>146
+20:34:01:889: Debug: servo #1 ==>146
+20:34:01:942: Debug: servo #1 ==>145
+20:34:02:064: Debug: servo #1 ==>145
+20:34:02:097: Debug: servo #1 ==>144
+20:34:02:221: Debug: servo #1 ==>144
+20:34:02:251: Debug: servo #1 ==>143
+20:34:02:393: Debug: servo #1 ==>143
+20:34:03:743: Debug: servo #1 ==>144
+20:34:03:877: Debug: servo #1 ==>144
+20:34:03:937: Debug: servo #1 ==>145
+20:34:04:054: Debug: servo #1 ==>145
+20:34:04:124: Debug: servo #1 ==>146
+20:34:04:221: Debug: servo #1 ==>146
+20:34:04:280: Debug: servo #1 ==>147
+20:34:04:388: Debug: servo #1 ==>147
+20:34:04:499: Debug: servo #1 ==>148
+20:34:04:596: Debug: servo #1 ==>148
+20:34:04:716: Debug: servo #1 ==>149
+20:34:04:804: Debug: servo #1 ==>149
+20:34:05:047: Debug: servo #1 ==>150
+20:34:05:144: Debug: servo #1 ==>150
+20:34:07:256: Debug: servo #8 ==>24
+20:34:07:256: Debug: ServoAngle_8==>24
+20:34:07:441: Debug: servo #8 ==>23
+20:34:07:441: Debug: ServoAngle_8==>23
+20:34:07:627: Debug: servo #8 ==>22
+20:34:07:627: Debug: ServoAngle_8==>22
+20:34:07:811: Debug: servo #8 ==>21
+20:34:07:812: Debug: ServoAngle_8==>21
+20:34:08:001: Debug: servo #8 ==>20
+20:34:08:001: Debug: ServoAngle_8==>20
+20:34:08:187: Debug: servo #8 ==>19
+20:34:08:187: Debug: ServoAngle_8==>19
+20:34:08:376: Debug: servo #8 ==>18
+20:34:08:376: Debug: ServoAngle_8==>18
+20:34:08:562: Debug: servo #8 ==>17
+20:34:08:562: Debug: ServoAngle_8==>17
+20:34:08:721: Debug: servo #8 ==>16
+20:34:08:722: Debug: ServoAngle_8==>16
+20:34:08:946: Debug: servo #8 ==>15
+20:34:08:946: Debug: ServoAngle_8==>15
+20:34:11:564: Debug: servo #8 ==>16
+20:34:11:564: Debug: ServoAngle_8==>16
+20:34:12:060: Debug: servo #8 ==>17
+20:34:12:060: Debug: ServoAngle_8==>17
+20:34:12:234: Debug: servo #8 ==>18
+20:34:12:234: Debug: ServoAngle_8==>18
+20:34:12:406: Debug: servo #8 ==>19
+20:34:12:406: Debug: ServoAngle_8==>19
+20:34:12:561: Debug: servo #8 ==>20
+20:34:12:561: Debug: ServoAngle_8==>20
+20:34:12:711: Debug: servo #8 ==>21
+20:34:12:711: Debug: ServoAngle_8==>21
+20:34:12:863: Debug: servo #8 ==>22
+20:34:12:863: Debug: ServoAngle_8==>22
+20:34:13:020: Debug: servo #8 ==>23
+20:34:13:020: Debug: ServoAngle_8==>23
+20:34:13:177: Debug: servo #8 ==>24
+20:34:13:177: Debug: ServoAngle_8==>24
+20:34:13:332: Debug: servo #8 ==>25
+20:34:13:332: Debug: ServoAngle_8==>25
+20:34:13:962: Debug: servo #8 ==>24
+20:34:13:962: Debug: ServoAngle_8==>24
+20:34:14:496: Debug: servo #8 ==>23
+20:34:14:496: Debug: ServoAngle_8==>23
+20:34:14:640: Debug: servo #8 ==>22
+20:34:14:640: Debug: ServoAngle_8==>22
+20:34:14:796: Debug: servo #8 ==>21
+20:34:14:796: Debug: ServoAngle_8==>21
+20:34:14:951: Debug: servo #8 ==>20
+20:34:14:951: Debug: ServoAngle_8==>20
+20:34:15:106: Debug: servo #8 ==>19
+20:34:15:106: Debug: ServoAngle_8==>19
+20:34:15:262: Debug: servo #8 ==>18
+20:34:15:262: Debug: ServoAngle_8==>18
+20:34:15:417: Debug: servo #8 ==>17
+20:34:15:417: Debug: ServoAngle_8==>17
+20:34:15:584: Debug: servo #8 ==>16
+20:34:15:584: Debug: ServoAngle_8==>16
+20:34:15:744: Debug: servo #8 ==>15
+20:34:15:744: Debug: ServoAngle_8==>15
+20:35:30:158: Warning: Retrying to obtain clipboard.
+20:40:01:279: Debug: cameraXangle==>136
+20:40:01:279: Debug: servo #7 ==>136
+20:40:01:279: Debug: ServoAngle_7==>136
+20:40:01:286: Debug: cameraXangle==>135
+20:40:01:286: Debug: servo #7 ==>135
+20:40:01:287: Debug: ServoAngle_7==>135
+20:40:01:292: Debug: cameraXangle==>134
+20:40:01:292: Debug: servo #7 ==>134
+20:40:01:292: Debug: ServoAngle_7==>134
+20:40:01:304: Debug: cameraXangle==>133
+20:40:01:304: Debug: servo #7 ==>133
+20:40:01:304: Debug: ServoAngle_7==>133
+20:40:01:306: Debug: cameraXangle==>132
+20:40:01:306: Debug: servo #7 ==>132
+20:40:01:306: Debug: ServoAngle_7==>132
+20:40:01:306: Debug: cameraXangle==>131
+20:40:01:306: Debug: servo #7 ==>131
+20:40:01:306: Debug: ServoAngle_7==>131
+20:40:01:324: Debug: cameraXangle==>128
+20:40:01:324: Debug: servo #7 ==>128
+20:40:01:324: Debug: ServoAngle_7==>128
+20:40:01:326: Debug: cameraXangle==>127
+20:40:01:326: Debug: servo #7 ==>127
+20:40:01:326: Debug: ServoAngle_7==>127
+20:40:01:340: Debug: cameraXangle==>125
+20:40:01:340: Debug: servo #7 ==>125
+20:40:01:340: Debug: ServoAngle_7==>125
+20:40:01:343: Debug: cameraXangle==>124
+20:40:01:343: Debug: servo #7 ==>124
+20:40:01:343: Debug: ServoAngle_7==>124
+20:40:01:343: Debug: servo #8 ==>15
+20:40:01:352: Debug: cameraXangle==>123
+20:40:01:352: Debug: servo #7 ==>123
+20:40:01:352: Debug: ServoAngle_7==>123
+20:40:01:369: Debug: cameraXangle==>122
+20:40:01:369: Debug: servo #7 ==>122
+20:40:01:369: Debug: ServoAngle_7==>122
+20:40:02:516: Debug: 设置>onGrayedChanged,true
+20:40:02:516: Debug: on_Clicked_OnImage:F设置
+20:42:43:501: Warning: Retrying to obtain clipboard.
+20:42:55:285: Warning: Retrying to obtain clipboard.
+20:43:36:974: Warning: Retrying to obtain clipboard.
+20:44:15:835: Debug: onCurrentIndexChanged 0
+20:44:15:835: Debug: disable[0]=true
+20:44:15:835: Debug: disable[1]=true
+20:44:15:836: Debug: disable[2]=true
+20:44:15:836: Debug: disable[3]=true
+20:44:15:836: Debug: disable[4]=true
+20:44:15:836: Debug: disable[5]=true
+20:44:15:836: Debug: disable[6]=true
+20:44:16:174: Debug: onCurrentIndexChanged 1
+20:44:16:174: Debug: disable[0]=true
+20:44:16:174: Debug: disable[1]=true
+20:44:16:174: Debug: disable[2]=true
+20:44:16:174: Debug: disable[3]=true
+20:44:16:174: Debug: disable[4]=true
+20:44:16:174: Debug: disable[5]=true
+20:44:16:174: Debug: disable[6]=true
+20:44:16:858: Debug: onCurrentIndexChanged 2
+20:44:16:858: Debug: disable[0]=true
+20:44:16:858: Debug: disable[1]=true
+20:44:16:858: Debug: disable[2]=true
+20:44:16:858: Debug: disable[3]=true
+20:44:16:858: Debug: disable[4]=true
+20:44:16:858: Debug: disable[5]=true
+20:44:16:858: Debug: disable[6]=true
+20:44:17:423: Debug: onCurrentIndexChanged 3
+20:44:17:423: Debug: disable[0]=true
+20:44:17:423: Debug: disable[1]=true
+20:44:17:423: Debug: disable[2]=true
+20:44:17:423: Debug: disable[3]=true
+20:44:17:423: Debug: disable[4]=true
+20:44:17:423: Debug: disable[5]=true
+20:44:17:423: Debug: disable[6]=true
+20:44:17:583: Debug: onCurrentIndexChanged 4
+20:44:17:583: Debug: disable[0]=true
+20:44:17:583: Debug: disable[1]=true
+20:44:17:583: Debug: disable[2]=true
+20:44:17:584: Debug: disable[3]=true
+20:44:17:584: Debug: disable[4]=true
+20:44:17:584: Debug: disable[5]=true
+20:44:17:584: Debug: disable[6]=true
+20:44:17:626: Debug: onCurrentIndexChanged 5
+20:44:17:626: Debug: disable[0]=true
+20:44:17:626: Debug: disable[1]=true
+20:44:17:626: Debug: disable[2]=true
+20:44:17:626: Debug: disable[3]=true
+20:44:17:626: Debug: disable[4]=true
+20:44:17:626: Debug: disable[5]=true
+20:44:17:626: Debug: disable[6]=true
+20:44:18:391: Debug: onCurrentIndexChanged 6
+20:44:18:391: Debug: disable[0]=true
+20:44:18:391: Debug: disable[1]=true
+20:44:18:391: Debug: disable[2]=true
+20:44:18:391: Debug: disable[3]=true
+20:44:18:391: Debug: disable[4]=true
+20:44:18:391: Debug: disable[5]=true
+20:44:18:391: Debug: disable[6]=true
+20:44:19:215: Debug: onCurrentIndexChanged 0
+20:44:19:215: Debug: disable[0]=true
+20:44:19:215: Debug: disable[1]=true
+20:44:19:215: Debug: disable[2]=true
+20:44:19:215: Debug: disable[3]=true
+20:44:19:215: Debug: disable[4]=true
+20:44:19:215: Debug: disable[5]=true
+20:44:19:215: Debug: disable[6]=true
+20:44:19:549: Debug: onCurrentIndexChanged 1
+20:44:19:549: Debug: disable[0]=true
+20:44:19:549: Debug: disable[1]=true
+20:44:19:549: Debug: disable[2]=true
+20:44:19:549: Debug: disable[3]=true
+20:44:19:550: Debug: disable[4]=true
+20:44:19:550: Debug: disable[5]=true
+20:44:19:550: Debug: disable[6]=true
+20:44:21:523: Debug: onCurrentIndexChanged 2
+20:44:21:523: Debug: disable[0]=true
+20:44:21:523: Debug: disable[1]=true
+20:44:21:523: Debug: disable[2]=true
+20:44:21:523: Debug: disable[3]=true
+20:44:21:523: Debug: disable[4]=true
+20:44:21:523: Debug: disable[5]=true
+20:44:21:523: Debug: disable[6]=true
+20:44:22:250: Debug: onCurrentIndexChanged 3
+20:44:22:250: Debug: disable[0]=true
+20:44:22:250: Debug: disable[1]=true
+20:44:22:250: Debug: disable[2]=true
+20:44:22:250: Debug: disable[3]=true
+20:44:22:250: Debug: disable[4]=true
+20:44:22:250: Debug: disable[5]=true
+20:44:22:250: Debug: disable[6]=true
+20:44:23:706: Debug: onCurrentIndexChanged 4
+20:44:23:706: Debug: disable[0]=true
+20:44:23:706: Debug: disable[1]=true
+20:44:23:706: Debug: disable[2]=true
+20:44:23:706: Debug: disable[3]=true
+20:44:23:706: Debug: disable[4]=true
+20:44:23:706: Debug: disable[5]=true
+20:44:23:706: Debug: disable[6]=true
+20:44:26:539: Debug: servo #2 ==>93
+20:44:26:740: Debug: servo #2 ==>124
+20:44:26:939: Debug: servo #2 ==>146
+20:44:27:132: Debug: servo #2 ==>154
+20:44:27:339: Debug: servo #2 ==>157
+20:44:27:715: Debug: servo #2 ==>151
+20:44:28:080: Debug: servo #2 ==>150
+20:44:28:246: Debug: servo #2 ==>148
+20:44:28:697: Debug: servo #2 ==>149
+20:44:29:642: Debug: servo #2 ==>150
+20:44:34:272: Debug: servo #2 ==>148
+20:44:34:465: Debug: servo #2 ==>134
+20:44:34:671: Debug: servo #2 ==>117
+20:44:34:865: Debug: servo #2 ==>103
+20:44:35:068: Debug: servo #2 ==>100
+20:44:35:272: Debug: servo #2 ==>87
+20:44:35:466: Debug: servo #2 ==>103
+20:44:35:672: Debug: servo #2 ==>136
+20:44:35:864: Debug: servo #2 ==>157
+20:44:36:074: Debug: servo #2 ==>159
+20:44:36:836: Debug: servo #2 ==>157
+20:44:36:998: Debug: servo #2 ==>156
+20:48:19:389: Warning: Retrying to obtain clipboard.
+20:48:26:386: Warning: Retrying to obtain clipboard.
+20:48:54:885: Warning: Retrying to obtain clipboard.
+20:49:24:429: Warning: Retrying to obtain clipboard.
+20:50:46:519: Warning: Retrying to obtain clipboard.
+20:52:24:470: Warning: Retrying to obtain clipboard.
+20:52:59:152: Warning: Retrying to obtain clipboard.
+21:21:51:695: Warning: Retrying to obtain clipboard.
+21:23:31:414: Debug: onSigModifyCfg.index=8,newVal=2
+21:23:31:414: Debug: onSigModifyCfg.index=9,newVal=30
+21:23:31:415: Debug: onSigModifyCfg.index=10,newVal=50
+21:23:31:415: Debug: onSigModifyCfg.index=11,newVal=60
+21:23:31:415: Debug: onSigModifyCfg.index=3,newVal=75
+21:23:31:416: Debug: onSigModifyCfg.index=4,newVal=33
+21:23:31:416: Debug: onSigModifyCfg.index=5,newVal=33
+21:23:31:416: Debug: onSigModifyCfg.index=2,newVal=0
+21:23:31:416: Debug: onSigModifyCfg.index=7,newVal=1
+21:25:18:311: Debug: onSigModifyCfg.index=8,newVal=2
+21:25:18:311: Debug: onSigModifyCfg.index=9,newVal=30
+21:25:18:311: Debug: onSigModifyCfg.index=10,newVal=50
+21:25:18:312: Debug: onSigModifyCfg.index=11,newVal=60
+21:25:18:312: Debug: onSigModifyCfg.index=3,newVal=75
+21:25:18:312: Debug: onSigModifyCfg.index=4,newVal=33
+21:25:18:312: Debug: onSigModifyCfg.index=5,newVal=33
+21:25:18:312: Debug: onSigModifyCfg.index=2,newVal=0
+21:25:18:312: Debug: onSigModifyCfg.index=7,newVal=1
+21:27:44:962: Warning: Retrying to obtain clipboard.
+21:28:52:937: Warning: Retrying to obtain clipboard.
+21:42:15:767: Debug: onSigModifyCfg.index=8,newVal=2
+21:42:15:767: Debug: onSigModifyCfg.index=9,newVal=30
+21:42:15:768: Debug: onSigModifyCfg.index=10,newVal=50
+21:42:15:768: Debug: onSigModifyCfg.index=11,newVal=60
+21:42:15:768: Debug: onSigModifyCfg.index=3,newVal=75
+21:42:15:768: Debug: onSigModifyCfg.index=4,newVal=33
+21:42:15:768: Debug: onSigModifyCfg.index=5,newVal=33
+21:42:15:768: Debug: onSigModifyCfg.index=2,newVal=0
+21:42:15:769: Debug: onSigModifyCfg.index=7,newVal=1
+21:42:36:938: Warning: Retrying to obtain clipboard.
+21:43:30:510: Debug: onCurrentIndexChanged 5
+21:43:30:512: Debug: disable[0]=true
+21:43:30:512: Debug: disable[1]=true
+21:43:30:512: Debug: disable[2]=true
+21:43:30:512: Debug: disable[3]=true
+21:43:30:512: Debug: disable[4]=true
+21:43:30:512: Debug: disable[5]=true
+21:43:30:512: Debug: disable[6]=true
+21:43:31:599: Debug: onCurrentIndexChanged 6
+21:43:31:599: Debug: disable[0]=true
+21:43:31:599: Debug: disable[1]=true
+21:43:31:599: Debug: disable[2]=true
+21:43:31:600: Debug: disable[3]=true
+21:43:31:600: Debug: disable[4]=true
+21:43:31:600: Debug: disable[5]=true
+21:43:31:600: Debug: disable[6]=true
+21:43:31:645: Debug: onCurrentIndexChanged 0
+21:43:31:645: Debug: disable[0]=true
+21:43:31:645: Debug: disable[1]=true
+21:43:31:645: Debug: disable[2]=true
+21:43:31:645: Debug: disable[3]=true
+21:43:31:645: Debug: disable[4]=true
+21:43:31:645: Debug: disable[5]=true
+21:43:31:645: Debug: disable[6]=true
+21:43:32:264: Debug: 策略控制>onGrayedChanged,false
+21:43:32:335: Debug: spExec.onSig_TTSSerialConfig in,tick=78212335
+21:43:32:335: Debug: spExec.onSig_TTSSerialConfig out,tick=78212335
+21:43:32:586: Debug: onCurrentIndexChanged 1
+21:43:32:586: Debug: disable[0]=true
+21:43:32:586: Debug: disable[1]=true
+21:43:32:586: Debug: disable[2]=true
+21:43:32:586: Debug: disable[3]=true
+21:43:32:586: Debug: disable[4]=true
+21:43:32:586: Debug: disable[5]=true
+21:43:32:586: Debug: 策略控制>onGrayedChanged,true
+21:43:32:586: Debug: disable[6]=true
+21:43:32:625: Debug: onCurrentIndexChanged 2
+21:43:32:626: Debug: disable[0]=true
+21:43:32:626: Debug: disable[1]=true
+21:43:32:626: Debug: disable[2]=true
+21:43:32:626: Debug: disable[3]=true
+21:43:32:626: Debug: disable[4]=true
+21:43:32:626: Debug: disable[5]=true
+21:43:32:626: Debug: disable[6]=true
+21:43:34:928: Debug: servo #7 ==>14
+21:43:34:929: Debug: ServoAngle_7==>14
+21:43:34:929: Debug: cameraXangle==>14
+21:43:34:946: Warning: getSimParam return -1!0,53,14,15
+21:43:34:956: Debug: servo #7 ==>26
+21:43:34:956: Debug: ServoAngle_7==>26
+21:43:34:956: Debug: cameraXangle==>26
+21:43:34:991: Debug: servo #7 ==>42
+21:43:34:991: Debug: ServoAngle_7==>42
+21:43:34:991: Debug: cameraXangle==>42
+21:43:35:024: Debug: servo #7 ==>57
+21:43:35:024: Debug: ServoAngle_7==>57
+21:43:35:024: Debug: cameraXangle==>57
+21:43:35:081: Debug: servo #7 ==>72
+21:43:35:081: Debug: ServoAngle_7==>72
+21:43:35:082: Debug: cameraXangle==>72
+21:43:35:107: Debug: servo #7 ==>85
+21:43:35:107: Debug: ServoAngle_7==>85
+21:43:35:107: Debug: cameraXangle==>85
+21:43:35:109: Debug: servo #7 ==>90
+21:43:35:109: Debug: ServoAngle_7==>90
+21:43:35:109: Debug: cameraXangle==>90
+21:43:35:148: Debug: spExec.onSig_TTSInterv in,tick=78215148
+21:43:35:148: Debug: spExec.onSig_TTSInterv out,tick=78215148
+21:43:35:148: Debug: spExec.onSig_TTSSerialConfig in,tick=78215148
+21:43:35:148: Debug: spExec.onSig_TTSSerialConfig out,tick=78215148
+21:43:35:148: Debug: servo #7 ==>90
+21:43:35:174: Debug: servo #7 ==>90
+21:43:35:231: Debug: servo #7 ==>90
+21:43:35:234: Debug: servo #7 ==>90
+21:43:35:294: Debug: servo #7 ==>90
+21:43:35:295: Debug: servo #7 ==>90
+21:43:35:333: Debug: servo #7 ==>90
+21:43:35:365: Debug: servo #7 ==>90
+21:43:35:396: Debug: servo #7 ==>90
+21:43:35:428: Debug: servo #7 ==>90
+21:43:35:457: Debug: servo #7 ==>90
+21:43:35:489: Debug: servo #7 ==>90
+21:43:35:522: Debug: servo #7 ==>90
+21:43:35:555: Debug: servo #7 ==>90
+21:43:35:608: Debug: servo #7 ==>90
+21:43:35:640: Debug: servo #7 ==>90
+21:43:35:677: Debug: servo #7 ==>90
+21:43:35:707: Debug: servo #7 ==>90
+21:43:35:743: Debug: servo #7 ==>90
+21:43:35:775: Debug: servo #7 ==>90
+21:43:35:805: Debug: servo #7 ==>90
+21:43:35:836: Debug: servo #7 ==>90
+21:43:35:870: Debug: servo #7 ==>90
+21:43:35:902: Debug: servo #7 ==>90
+21:43:35:935: Debug: servo #7 ==>90
+21:43:35:966: Debug: servo #7 ==>90
+21:43:36:028: Debug: servo #7 ==>90
+21:43:36:073: Debug: servo #7 ==>90
+21:43:36:108: Debug: servo #7 ==>90
+21:43:36:136: Debug: servo #7 ==>90
+21:43:36:169: Debug: servo #7 ==>90
+21:43:36:200: Debug: servo #7 ==>90
+21:43:36:230: Debug: servo #7 ==>90
+21:43:36:261: Debug: servo #7 ==>90
+21:43:36:292: Debug: servo #7 ==>90
+21:43:36:325: Debug: servo #7 ==>90
+21:43:36:355: Debug: servo #7 ==>90
+21:43:36:415: Debug: servo #7 ==>90
+21:43:36:418: Debug: servo #7 ==>90
+21:43:36:450: Debug: servo #7 ==>90
+21:43:36:481: Debug: servo #7 ==>90
+21:43:36:509: Debug: servo #7 ==>90
+21:43:36:540: Debug: servo #7 ==>90
+21:43:36:573: Debug: servo #7 ==>90
+21:43:36:606: Debug: servo #7 ==>90
+21:43:36:636: Debug: servo #7 ==>90
+21:43:36:666: Debug: servo #7 ==>90
+21:43:36:699: Debug: servo #7 ==>90
+21:43:36:732: Debug: servo #7 ==>90
+21:43:36:761: Debug: servo #7 ==>90
+21:43:36:790: Debug: servo #7 ==>90
+21:43:36:822: Debug: servo #7 ==>90
+21:43:36:852: Debug: servo #7 ==>90
+21:43:36:892: Debug: servo #7 ==>90
+21:43:36:915: Debug: servo #7 ==>90
+21:43:36:971: Debug: servo #7 ==>90
+21:43:36:973: Debug: servo #7 ==>90
+21:43:37:007: Debug: servo #7 ==>90
+21:43:37:039: Debug: servo #7 ==>90
+21:43:37:071: Debug: servo #7 ==>90
+21:43:37:103: Debug: servo #7 ==>90
+21:43:37:133: Debug: servo #7 ==>90
+21:43:37:161: Debug: spExec.onSig_TTSInterv in,tick=78217161
+21:43:37:161: Debug: spExec.onSig_TTSInterv out,tick=78217161
+21:43:37:161: Debug: spExec.onSig_TTSSerialConfig in,tick=78217161
+21:43:37:161: Debug: spExec.onSig_TTSSerialConfig out,tick=78217161
+21:43:37:162: Debug: servo #7 ==>90
+21:43:37:190: Debug: servo #7 ==>90
+21:43:37:226: Debug: servo #7 ==>90
+21:43:37:259: Debug: servo #7 ==>90
+21:43:37:290: Debug: servo #7 ==>90
+21:43:37:322: Debug: servo #7 ==>90
+21:43:37:354: Debug: servo #7 ==>90
+21:43:37:386: Debug: servo #7 ==>90
+21:43:37:420: Debug: servo #7 ==>90
+21:43:37:449: Debug: servo #7 ==>90
+21:43:37:480: Debug: servo #7 ==>90
+21:43:37:512: Debug: servo #7 ==>90
+21:43:37:541: Debug: servo #7 ==>90
+21:43:37:574: Debug: servo #7 ==>90
+21:43:37:606: Debug: servo #7 ==>90
+21:43:37:664: Debug: servo #7 ==>90
+21:43:37:667: Debug: servo #7 ==>90
+21:43:37:700: Debug: servo #7 ==>90
+21:43:37:730: Debug: servo #7 ==>90
+21:43:37:758: Debug: servo #7 ==>90
+21:43:37:790: Debug: servo #7 ==>90
+21:43:37:822: Debug: servo #7 ==>90
+21:43:37:855: Debug: servo #7 ==>90
+21:43:37:885: Debug: servo #7 ==>90
+21:43:37:920: Debug: servo #7 ==>90
+21:43:37:945: Debug: servo #7 ==>90
+21:43:37:973: Debug: servo #7 ==>90
+21:43:38:007: Debug: servo #7 ==>90
+21:43:38:067: Debug: servo #7 ==>90
+21:43:38:101: Debug: servo #7 ==>90
+21:43:38:131: Debug: servo #7 ==>90
+21:43:38:162: Debug: servo #7 ==>90
+21:43:38:192: Debug: servo #7 ==>90
+21:43:38:224: Debug: servo #7 ==>90
+21:43:38:256: Debug: servo #7 ==>90
+21:43:38:287: Debug: servo #7 ==>90
+21:43:38:316: Debug: servo #7 ==>90
+21:43:38:349: Debug: servo #7 ==>90
+21:43:38:404: Debug: servo #7 ==>90
+21:43:38:437: Debug: servo #7 ==>90
+21:43:38:495: Debug: servo #7 ==>90
+21:43:38:499: Debug: servo #7 ==>90
+21:43:38:533: Debug: servo #7 ==>90
+21:43:38:560: Debug: servo #7 ==>90
+21:43:38:590: Debug: servo #7 ==>90
+21:43:38:622: Debug: servo #7 ==>90
+21:43:38:655: Debug: servo #7 ==>90
+21:43:38:689: Debug: servo #7 ==>90
+21:43:38:716: Debug: servo #7 ==>90
+21:43:38:750: Debug: servo #7 ==>90
+21:43:38:782: Debug: servo #7 ==>90
+21:43:38:812: Debug: servo #7 ==>90
+21:43:38:847: Debug: servo #7 ==>90
+21:43:38:874: Debug: servo #7 ==>90
+21:43:38:915: Debug: servo #7 ==>90
+21:43:38:949: Debug: servo #7 ==>90
+21:43:38:979: Debug: servo #7 ==>90
+21:43:39:008: Debug: servo #7 ==>90
+21:43:39:041: Debug: servo #7 ==>90
+21:43:39:073: Debug: servo #7 ==>90
+21:43:39:106: Debug: servo #7 ==>90
+21:43:39:136: Debug: servo #7 ==>90
+21:43:39:168: Debug: servo #7 ==>90
+21:43:39:199: Debug: spExec.onSig_TTSInterv in,tick=78219199
+21:43:39:199: Debug: spExec.onSig_TTSInterv out,tick=78219199
+21:43:39:199: Debug: spExec.onSig_TTSSerialConfig in,tick=78219199
+21:43:39:199: Debug: spExec.onSig_TTSSerialConfig out,tick=78219199
+21:43:39:203: Debug: servo #7 ==>90
+21:43:39:246: Debug: servo #7 ==>90
+21:43:39:298: Debug: servo #7 ==>90
+21:43:39:327: Debug: servo #7 ==>90
+21:43:39:396: Debug: servo #7 ==>90
+21:43:39:416: Debug: servo #7 ==>90
+21:43:39:447: Debug: servo #7 ==>90
+21:43:39:459: Debug: servo #7 ==>90
+21:43:39:507: Debug: servo #7 ==>90
+21:43:39:570: Debug: servo #7 ==>90
+21:43:39:571: Debug: servo #7 ==>90
+21:43:39:605: Debug: servo #7 ==>90
+21:43:39:637: Debug: servo #7 ==>90
+21:43:39:667: Debug: servo #7 ==>90
+21:43:39:697: Debug: servo #7 ==>90
+21:43:39:730: Debug: servo #7 ==>90
+21:43:39:761: Debug: servo #7 ==>90
+21:43:39:791: Debug: servo #7 ==>90
+21:43:39:824: Debug: servo #7 ==>90
+21:43:39:883: Debug: servo #7 ==>90
+21:43:39:885: Debug: servo #7 ==>90
+21:43:39:914: Debug: servo #7 ==>90
+21:43:39:948: Debug: servo #7 ==>90
+21:43:39:977: Debug: servo #7 ==>90
+21:43:40:007: Debug: servo #7 ==>90
+21:43:40:040: Debug: servo #7 ==>90
+21:43:40:071: Debug: servo #7 ==>90
+21:43:40:122: Debug: servo #7 ==>90
+21:43:40:162: Debug: servo #7 ==>90
+21:43:40:195: Debug: servo #7 ==>90
+21:43:40:226: Debug: servo #7 ==>90
+21:43:40:256: Debug: servo #7 ==>90
+21:43:40:290: Debug: servo #7 ==>90
+21:43:40:319: Debug: servo #7 ==>90
+21:43:40:350: Debug: servo #7 ==>90
+21:43:40:379: Debug: servo #7 ==>90
+21:43:40:411: Debug: servo #7 ==>90
+21:43:40:443: Debug: servo #7 ==>90
+21:43:40:476: Debug: servo #7 ==>90
+21:43:40:505: Debug: servo #7 ==>90
+21:43:40:536: Debug: servo #7 ==>90
+21:43:40:568: Debug: servo #7 ==>90
+21:43:40:598: Debug: servo #7 ==>90
+21:43:40:630: Debug: servo #7 ==>90
+21:43:40:663: Debug: servo #7 ==>90
+21:43:40:691: Debug: servo #7 ==>90
+21:43:40:721: Debug: servo #7 ==>90
+21:43:40:777: Debug: servo #7 ==>90
+21:43:40:779: Debug: servo #7 ==>90
+21:43:40:811: Debug: servo #7 ==>90
+21:43:40:845: Debug: servo #7 ==>90
+21:43:40:879: Debug: servo #7 ==>90
+21:43:40:909: Debug: servo #7 ==>90
+21:43:40:939: Debug: servo #7 ==>90
+21:43:40:973: Debug: servo #7 ==>90
+21:43:41:007: Debug: servo #7 ==>90
+21:43:41:062: Debug: servo #7 ==>90
+21:43:41:097: Debug: servo #7 ==>90
+21:43:41:129: Debug: servo #7 ==>90
+21:43:41:157: Debug: servo #7 ==>90
+21:43:41:189: Debug: servo #7 ==>90
+21:43:41:227: Debug: spExec.onSig_TTSInterv in,tick=78221227
+21:43:41:227: Debug: spExec.onSig_TTSInterv out,tick=78221227
+21:43:41:227: Debug: spExec.onSig_TTSSerialConfig in,tick=78221227
+21:43:41:227: Debug: spExec.onSig_TTSSerialConfig out,tick=78221227
+21:43:41:228: Debug: servo #7 ==>90
+21:43:41:279: Debug: servo #7 ==>90
+21:43:41:342: Debug: servo #7 ==>90
+21:43:41:374: Debug: servo #7 ==>90
+21:43:41:409: Debug: servo #7 ==>90
+21:43:41:440: Debug: servo #7 ==>90
+21:43:41:472: Debug: servo #7 ==>90
+21:43:41:504: Debug: servo #7 ==>90
+21:43:41:536: Debug: servo #7 ==>90
+21:43:41:567: Debug: servo #7 ==>90
+21:43:41:596: Debug: servo #7 ==>90
+21:43:41:626: Debug: servo #7 ==>90
+21:43:41:658: Debug: servo #7 ==>90
+21:43:41:690: Debug: servo #7 ==>90
+21:43:41:719: Debug: servo #7 ==>90
+21:43:41:752: Debug: servo #7 ==>90
+21:43:41:782: Debug: servo #7 ==>90
+21:43:41:815: Debug: servo #7 ==>90
+21:43:41:846: Debug: servo #7 ==>90
+21:43:41:874: Debug: servo #7 ==>90
+21:43:41:906: Debug: servo #7 ==>90
+21:43:41:939: Debug: servo #7 ==>90
+21:43:41:969: Debug: servo #7 ==>90
+21:43:42:009: Debug: servo #7 ==>90
+21:43:42:034: Debug: servo #7 ==>90
+21:43:42:065: Debug: servo #7 ==>90
+21:43:42:122: Debug: servo #7 ==>90
+21:43:42:124: Debug: servo #7 ==>90
+21:43:42:157: Debug: servo #7 ==>90
+21:43:42:187: Debug: servo #7 ==>90
+21:43:42:219: Debug: servo #7 ==>90
+21:43:42:250: Debug: servo #7 ==>90
+21:43:42:282: Debug: servo #7 ==>90
+21:43:42:315: Debug: servo #7 ==>90
+21:43:42:344: Debug: servo #7 ==>90
+21:43:42:374: Debug: servo #7 ==>90
+21:43:42:406: Debug: servo #7 ==>90
+21:43:42:436: Debug: servo #7 ==>90
+21:43:42:469: Debug: servo #7 ==>90
+21:43:42:499: Debug: servo #7 ==>90
+21:43:42:534: Debug: servo #7 ==>90
+21:43:42:563: Debug: servo #7 ==>90
+21:43:42:595: Debug: servo #7 ==>90
+21:43:42:629: Debug: servo #7 ==>90
+21:43:42:660: Debug: servo #7 ==>90
+21:43:42:691: Debug: servo #7 ==>90
+21:43:42:749: Debug: servo #7 ==>90
+21:43:42:751: Debug: servo #7 ==>90
+21:43:42:779: Debug: servo #7 ==>90
+21:43:42:811: Debug: servo #7 ==>90
+21:43:42:843: Debug: servo #7 ==>90
+21:43:42:874: Debug: servo #7 ==>90
+21:43:42:907: Debug: servo #7 ==>90
+21:43:42:934: Debug: servo #7 ==>90
+21:43:42:969: Debug: servo #7 ==>90
+21:43:43:001: Debug: servo #7 ==>90
+21:43:43:031: Debug: servo #7 ==>90
+21:43:43:061: Debug: servo #7 ==>90
+21:43:43:094: Debug: servo #7 ==>90
+21:43:43:124: Debug: servo #7 ==>90
+21:43:43:155: Debug: servo #7 ==>90
+21:43:43:215: Debug: servo #7 ==>90
+21:43:43:218: Debug: servo #7 ==>90
+21:43:43:249: Debug: servo #7 ==>90
+21:43:43:278: Debug: servo #7 ==>90
+21:43:43:308: Debug: servo #7 ==>90
+21:43:43:340: Debug: servo #7 ==>90
+21:43:43:403: Debug: servo #7 ==>90
+21:43:43:404: Debug: servo #7 ==>90
+21:43:43:441: Debug: servo #7 ==>90
+21:43:43:468: Debug: servo #7 ==>90
+21:43:43:532: Debug: servo #7 ==>90
+21:43:43:565: Debug: servo #7 ==>90
+21:43:43:604: Debug: servo #7 ==>90
+21:43:43:631: Debug: servo #7 ==>90
+21:43:43:661: Debug: servo #7 ==>90
+21:43:43:704: Debug: servo #7 ==>90
+21:43:43:728: Debug: servo #7 ==>90
+21:43:43:760: Debug: servo #7 ==>90
+21:43:43:790: Debug: servo #7 ==>90
+21:43:43:822: Debug: servo #7 ==>90
+21:43:43:854: Debug: servo #7 ==>90
+21:43:43:884: Debug: servo #7 ==>90
+21:43:43:915: Debug: servo #7 ==>90
+21:43:43:950: Debug: servo #7 ==>90
+21:43:43:976: Debug: servo #7 ==>90
+21:43:44:009: Debug: servo #7 ==>90
+21:43:44:041: Debug: servo #7 ==>90
+21:43:44:101: Debug: servo #7 ==>90
+21:43:44:132: Debug: servo #7 ==>90
+21:43:44:165: Debug: servo #7 ==>90
+21:43:44:198: Debug: servo #7 ==>90
+21:43:44:227: Debug: servo #7 ==>90
+21:43:44:260: Debug: servo #7 ==>90
+21:43:44:292: Debug: servo #7 ==>90
+21:43:44:324: Debug: servo #7 ==>90
+21:43:44:355: Debug: servo #7 ==>90
+21:43:44:386: Debug: servo #7 ==>90
+21:43:44:416: Debug: servo #7 ==>90
+21:43:44:445: Debug: servo #7 ==>90
+21:43:44:476: Debug: servo #7 ==>90
+21:43:44:507: Debug: servo #7 ==>90
+21:43:44:541: Debug: servo #7 ==>90
+21:43:44:588: Debug: servo #7 ==>90
+21:43:44:624: Debug: servo #7 ==>90
+21:43:44:693: Debug: servo #7 ==>90
+21:43:44:697: Debug: servo #7 ==>90
+21:43:44:781: Debug: servo #7 ==>90
+21:43:44:785: Debug: servo #7 ==>90
+21:43:44:818: Debug: servo #7 ==>90
+21:43:44:844: Debug: servo #7 ==>90
+21:43:44:885: Debug: servo #7 ==>90
+21:43:44:915: Debug: servo #7 ==>90
+21:43:44:946: Debug: servo #7 ==>90
+21:43:44:979: Debug: servo #7 ==>90
+21:43:45:008: Debug: servo #7 ==>90
+21:43:45:039: Debug: servo #7 ==>90
+21:43:45:100: Debug: servo #7 ==>90
+21:43:45:102: Debug: servo #7 ==>90
+21:43:45:132: Debug: servo #7 ==>90
+21:43:45:164: Debug: servo #7 ==>90
+21:43:45:191: Debug: servo #7 ==>90
+21:43:45:224: Debug: servo #7 ==>90
+21:43:45:256: Debug: spExec.onSig_TTSInterv in,tick=78225256
+21:43:45:256: Debug: spExec.onSig_TTSInterv out,tick=78225256
+21:43:45:256: Debug: spExec.onSig_TTSSerialConfig in,tick=78225256
+21:43:45:256: Debug: spExec.onSig_TTSSerialConfig out,tick=78225256
+21:43:45:282: Debug: servo #7 ==>90
+21:43:45:285: Debug: servo #7 ==>90
+21:43:45:317: Debug: servo #7 ==>90
+21:43:45:348: Debug: servo #7 ==>90
+21:43:45:377: Debug: servo #7 ==>90
+21:43:45:432: Debug: servo #7 ==>90
+21:43:45:436: Debug: servo #7 ==>90
+21:43:45:470: Debug: servo #7 ==>90
+21:43:45:502: Debug: servo #7 ==>90
+21:43:45:531: Debug: servo #7 ==>90
+21:43:45:565: Debug: servo #7 ==>90
+21:43:45:593: Debug: servo #7 ==>90
+21:43:45:625: Debug: servo #7 ==>90
+21:43:45:655: Debug: servo #7 ==>90
+21:43:45:684: Debug: servo #7 ==>90
+21:43:45:717: Debug: servo #7 ==>90
+21:43:45:749: Debug: servo #7 ==>90
+21:43:45:782: Debug: servo #7 ==>90
+21:43:45:813: Debug: servo #7 ==>90
+21:43:45:840: Debug: servo #7 ==>90
+21:43:45:874: Debug: servo #7 ==>90
+21:43:45:906: Debug: servo #7 ==>90
+21:43:45:937: Debug: servo #7 ==>90
+21:43:45:969: Debug: servo #7 ==>90
+21:43:45:998: Debug: servo #7 ==>90
+21:43:46:031: Debug: servo #7 ==>90
+21:43:46:060: Debug: servo #7 ==>90
+21:43:46:092: Debug: servo #7 ==>90
+21:43:46:124: Debug: servo #7 ==>90
+21:43:46:182: Debug: servo #7 ==>90
+21:43:46:186: Debug: servo #7 ==>90
+21:43:46:218: Debug: servo #7 ==>90
+21:43:46:248: Debug: servo #7 ==>90
+21:43:46:282: Debug: servo #7 ==>90
+21:43:46:309: Debug: servo #7 ==>90
+21:43:46:354: Debug: servo #7 ==>90
+21:43:46:386: Debug: servo #7 ==>90
+21:43:46:433: Debug: servo #7 ==>90
+21:43:46:496: Debug: servo #7 ==>90
+21:43:46:512: Debug: servo #7 ==>90
+21:43:46:540: Debug: servo #7 ==>90
+21:43:46:575: Debug: servo #7 ==>90
+21:43:46:645: Debug: servo #7 ==>90
+21:43:46:672: Debug: servo #7 ==>90
+21:43:46:696: Debug: servo #7 ==>90
+21:43:46:737: Debug: servo #7 ==>90
+21:43:46:761: Debug: servo #7 ==>90
+21:43:46:763: Debug: servo #7 ==>90
+21:43:46:819: Debug: servo #7 ==>90
+21:43:46:828: Debug: servo #7 ==>90
+21:43:46:855: Debug: servo #7 ==>90
+21:43:46:884: Debug: servo #7 ==>90
+21:43:46:919: Debug: servo #7 ==>90
+21:43:46:950: Debug: servo #7 ==>90
+21:43:46:981: Debug: servo #7 ==>90
+21:43:47:012: Debug: servo #7 ==>90
+21:43:47:069: Debug: servo #7 ==>90
+21:43:47:128: Debug: servo #7 ==>90
+21:43:47:181: Debug: servo #7 ==>90
+21:43:47:218: Debug: servo #7 ==>90
+21:43:47:255: Debug: servo #7 ==>90
+21:43:48:787: Debug: spExec.onSig_TTSInterv in,tick=78228787
+21:43:48:787: Debug: spExec.onSig_TTSInterv out,tick=78228787
+21:43:48:787: Debug: spExec.onSig_TTSSerialConfig in,tick=78228787
+21:43:48:787: Debug: spExec.onSig_TTSSerialConfig out,tick=78228787
+21:43:54:888: Warning: Retrying to obtain clipboard.
+21:44:52:037: Warning: 
+
+Application ended!
+
+
+21:44:52:038: Debug: begin on_destruction...
+21:44:52:046: Warning: QVideoProbe control destroyed while it's still being referenced!!!
+21:44:52:165: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292163
+21:44:52:194: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292194
+21:44:52:231: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292231
+21:44:52:258: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292258
+21:44:52:290: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292290
+21:44:52:323: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292323
+21:44:52:354: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292354
+21:44:52:382: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292382
+21:44:52:415: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292415
+21:44:52:446: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292446
+21:44:52:477: Warning: CAN'T start ImgProcess,video_idx=115751,imgproc_idx=115748,tick=78292477
+21:44:52:480: Debug: end on_destruction...
+21:44:52:512: Warning: QObject::killTimer: Timers cannot be stopped from another thread
+21:44:52:513: Warning: QObject::~QObject: Timers cannot be stopped from another thread
+21:44:52:513: Warning: QObject::killTimer: Timers cannot be stopped from another thread
+21:44:52:514: Warning: QObject::~QObject: Timers cannot be stopped from another thread
+21:44:52:531: Warning: start delete scriptExec...
+21:44:52:532: Warning: waiting spExecThread...
+21:44:52:535: Warning: done.
+
+
+Application start...
+
+21:45:32:652: Warning: qInstallMessageHandler end...
+21:45:32:652: Warning: qmlRegisterType end...
+21:45:32:652: Warning: DebugFlag share mem alloced!
+21:45:32:652: Warning: Attaching DebugFlag share mem!
+21:45:32:652: Warning: Clear DebugFlag share memory...
+21:45:32:652: Warning: Clear DebugFlag share memory done!
+21:45:32:652: Warning: Init DebugFlag share memory...
+21:45:32:652: Warning: Init DebugFlag share memory done!
+21:45:32:652: Warning: DEBUG_VAR INITED...
+21:45:32:652: Warning: Install kb filter...
+21:45:33:111: Warning: QWifiVideo constructor start..
+21:45:33:111: Warning: QThreadWifiVideo constructor start..
+21:45:33:130: Warning: setCamera start...
+21:45:33:130: Warning: setCamera old camera deleted...
+21:45:33:131: Warning: 1.viewfinder size=640x360,pmp size=1280x720
+21:45:33:131: Warning: 2.viewfinder size=640x360,pmp size=1280x720
+21:45:33:132: Warning: probe sucess!
+21:45:33:132: Warning: setCamera end...
+21:45:33:132: Warning: QWifiVideo start ttsThread..
+21:45:33:132: Warning: QThreadWifiVideo start ttsThread end..
+21:45:33:152: Warning: QWifiVideo start load sim Image..
+21:45:33:229: Warning: QThreadWifiVideo end constructor..
+21:45:33:229: Warning: QWifiVideo end constructor..
+21:45:33:237: Warning: Both point size and pixel size set. Using pixel size.
+21:45:33:237: Warning: Both point size and pixel size set. Using pixel size.
+21:45:33:489: Warning: size==0?
+21:45:33:491: Warning: videoUrl=[CAM99]/?action=stream
+21:45:33:566: Warning: qrc:/Page4Form.ui.qml:45:13: QML ToolButton: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+21:45:33:566: Warning: qrc:/Page4Form.ui.qml:58:13: QML Label: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+21:45:33:570: Warning: qrc:/Page3Form.ui.qml:79:17: QML ToolButton: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+21:45:33:596: Warning: libpng warning: iCCP: known incorrect sRGB profile
+21:45:33:635: Debug: 机械臂控>onGrayedChanged,false
+21:45:33:641: Debug: 设置>onGrayedChanged,false
+21:45:33:684: Debug: panel_scale=-0.06607142857142857
+21:45:33:685: Debug: panel_scale=1
+21:45:33:697: Debug: panel_scale=1
+21:45:33:698: Debug: APPSET.videoUrl=[CAM99]/?action=stream
+21:45:33:700: Warning: 相机模拟小车运动...
+21:45:33:708: Warning: QThreadWifiVideo::start...
+
+
+
+
+21:45:33:708: Warning: try use usb camera!
+21:45:33:892: Warning: we found it!
+21:45:33:892: Warning: Application runing...
+21:45:33:961: Warning: QObject: Cannot create children for a parent that is in a different thread.
+(Parent is DSCameraSession(0xa122510), parent's thread is QThread(0x23acfc8), current thread is QThread(0xa0a4108)
+21:45:34:723: Warning: usb camera started!
+21:45:34:723: Warning: capture timer started!
+21:45:34:737: Warning: QThreadWifiVideo::start...
+
+
+
+
+21:45:34:737: Warning: try use usb camera!
+21:45:34:737: Warning: use static image...
+21:45:34:738: Warning: capture timer started!
+21:45:34:866: Warning: slotInitOpParams...do 0 of 44
+21:45:34:923: Warning: slotInitOpParams...do 1 of 44
+21:45:34:974: Warning: slotInitOpParams...do 2 of 44
+21:45:35:040: Warning: slotInitOpParams...do 3 of 44
+21:45:35:101: Warning: slotInitOpParams...do 4 of 44
+21:45:35:159: Warning: slotInitOpParams...do 5 of 44
+21:45:35:216: Warning: slotInitOpParams...do 6 of 44
+21:45:35:270: Warning: slotInitOpParams...do 7 of 44
+21:45:35:316: Warning: slotInitOpParams...do 8 of 44
+21:45:35:372: Warning: slotInitOpParams...do 9 of 44
+21:45:35:427: Warning: slotInitOpParams...do 10 of 44
+21:45:35:474: Warning: slotInitOpParams...do 11 of 44
+21:45:35:475: Warning: QThreadWifiVideo::start...
+
+
+
+
+21:45:35:475: Warning: try use usb camera!
+21:45:35:475: Warning: use static image...
+21:45:35:475: Warning: capture timer started!
+21:45:35:687: Debug: servo #1 ==>90
+21:45:35:689: Debug: servo #2 ==>90
+21:45:35:689: Debug: servo #3 ==>90
+21:45:35:689: Debug: servo #4 ==>90
+21:45:35:689: Debug: servo #5 ==>90
+21:45:35:689: Debug: servo #6 ==>90
+21:45:37:839: Warning: 
+
+Application ended!
+
+
+21:45:37:840: Debug: begin on_destruction...
+21:45:37:846: Warning: QVideoProbe control destroyed while it's still being referenced!!!
+21:45:39:081: Warning: tts server started!
+21:45:39:082: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+21:45:39:217: Warning: slotInitOpParams...do 12 of 44
+21:45:39:328: Warning: slotInitOpParams...do 13 of 44
+21:45:39:445: Warning: slotInitOpParams...do 14 of 44
+21:45:39:569: Warning: slotInitOpParams...do 15 of 44
+21:45:39:692: Warning: slotInitOpParams...do 16 of 44
+21:45:39:837: Warning: slotInitOpParams...do 17 of 44
+21:45:39:982: Warning: slotInitOpParams...do 18 of 44
+21:45:40:112: Warning: slotInitOpParams...do 19 of 44
+21:45:40:249: Warning: slotInitOpParams...do 20 of 44
+21:45:40:375: Warning: slotInitOpParams...do 21 of 44
+21:45:40:398: Warning: tts server started!
+21:45:40:398: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+21:45:40:446: Warning: tts server started!
+21:45:40:447: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+21:45:40:502: Debug: end on_destruction...
+21:45:40:543: Warning: QObject::killTimer: Timers cannot be stopped from another thread
+21:45:40:544: Warning: QObject::~QObject: Timers cannot be stopped from another thread
+21:45:40:545: Warning: QObject::killTimer: Timers cannot be stopped from another thread
+21:45:40:546: Warning: QObject::~QObject: Timers cannot be stopped from another thread
+21:45:40:561: Warning: start delete scriptExec...
+21:45:40:562: Warning: waiting spExecThread...
+21:45:40:562: Warning: done.
+
+
+Application start...
+
+13:44:43:099: Warning: qInstallMessageHandler end...
+13:44:43:101: Warning: qmlRegisterType end...
+13:44:43:101: Warning: DebugFlag share mem alloced!
+13:44:43:101: Warning: Attaching DebugFlag share mem!
+13:44:43:101: Warning: Clear DebugFlag share memory...
+13:44:43:101: Warning: Clear DebugFlag share memory done!
+13:44:43:101: Warning: Init DebugFlag share memory...
+13:44:43:101: Warning: Init DebugFlag share memory done!
+13:44:43:101: Warning: DEBUG_VAR INITED...
+13:44:43:101: Warning: Install kb filter...
+13:44:43:591: Warning: QWifiVideo constructor start..
+13:44:43:591: Warning: QThreadWifiVideo constructor start..
+13:44:43:632: Warning: setCamera start...
+13:44:43:632: Warning: setCamera old camera deleted...
+13:44:43:633: Warning: 1.viewfinder size=640x360,pmp size=1280x720
+13:44:43:633: Warning: 2.viewfinder size=640x360,pmp size=1280x720
+13:44:43:633: Warning: probe sucess!
+13:44:43:633: Warning: setCamera end...
+13:44:43:634: Warning: QWifiVideo start ttsThread..
+13:44:43:634: Warning: QThreadWifiVideo start ttsThread end..
+13:44:43:649: Warning: QWifiVideo start load sim Image..
+13:44:43:706: Warning: QThreadWifiVideo end constructor..
+13:44:43:706: Warning: QWifiVideo end constructor..
+13:44:43:709: Warning: Both point size and pixel size set. Using pixel size.
+13:44:43:709: Warning: Both point size and pixel size set. Using pixel size.
+13:44:43:975: Warning: size==0?
+13:44:43:976: Warning: videoUrl=[CAM99]/?action=stream
+13:44:44:054: Warning: qrc:/Page4Form.ui.qml:45:13: QML ToolButton: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+13:44:44:054: Warning: qrc:/Page4Form.ui.qml:58:13: QML Label: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+13:44:44:061: Warning: qrc:/Page3Form.ui.qml:79:17: QML ToolButton: Detected anchors on an item that is managed by a layout. This is undefined behavior; use Layout.alignment instead.
+13:44:44:078: Warning: libpng warning: iCCP: known incorrect sRGB profile
+13:44:44:107: Debug: 机械臂控>onGrayedChanged,false
+13:44:44:113: Debug: 设置>onGrayedChanged,false
+13:44:44:146: Debug: panel_scale=-0.06607142857142857
+13:44:44:147: Debug: panel_scale=1
+13:44:44:161: Debug: panel_scale=1
+13:44:44:162: Debug: APPSET.videoUrl=[CAM99]/?action=stream
+13:44:44:165: Warning: 相机模拟小车运动...
+13:44:44:178: Warning: QThreadWifiVideo::start...
+
+
+
+
+13:44:44:178: Warning: try use usb camera!
+13:44:44:178: Warning: use static image...
+13:44:44:178: Warning: capture timer started!
+13:44:44:315: Warning: QThreadWifiVideo::start...
+
+
+
+
+13:44:44:315: Warning: try use usb camera!
+13:44:44:315: Warning: use static image...
+13:44:44:315: Warning: capture timer started!
+13:44:44:317: Warning: we found it!
+13:44:44:317: Warning: Application runing...
+13:44:44:392: Warning: slotInitOpParams...do 0 of 44
+13:44:44:426: Warning: slotInitOpParams...do 1 of 44
+13:44:44:464: Warning: slotInitOpParams...do 2 of 44
+13:44:44:500: Warning: slotInitOpParams...do 3 of 44
+13:44:44:539: Warning: slotInitOpParams...do 4 of 44
+13:44:44:573: Warning: slotInitOpParams...do 5 of 44
+13:44:44:614: Warning: slotInitOpParams...do 6 of 44
+13:44:44:649: Warning: slotInitOpParams...do 7 of 44
+13:44:44:683: Warning: slotInitOpParams...do 8 of 44
+13:44:44:718: Warning: slotInitOpParams...do 9 of 44
+13:44:44:753: Warning: slotInitOpParams...do 10 of 44
+13:44:44:788: Warning: slotInitOpParams...do 11 of 44
+13:44:44:823: Warning: slotInitOpParams...do 12 of 44
+13:44:44:858: Warning: slotInitOpParams...do 13 of 44
+13:44:44:893: Warning: slotInitOpParams...do 14 of 44
+13:44:44:928: Warning: slotInitOpParams...do 15 of 44
+13:44:44:962: Warning: slotInitOpParams...do 16 of 44
+13:44:44:998: Warning: slotInitOpParams...do 17 of 44
+13:44:45:032: Warning: slotInitOpParams...do 18 of 44
+13:44:45:068: Warning: slotInitOpParams...do 19 of 44
+13:44:45:103: Warning: slotInitOpParams...do 20 of 44
+13:44:45:139: Warning: slotInitOpParams...do 21 of 44
+13:44:45:141: Debug: servo #7 ==>90
+13:44:45:141: Debug: servo #8 ==>79
+13:44:45:141: Debug: ServoAngle_8==>79
+13:44:45:144: Debug: W=640,H=480
+13:44:46:805: Warning: QThreadWifiVideo::start...
+
+
+
+
+13:44:46:805: Warning: try use usb camera!
+13:44:46:805: Warning: use static image...
+13:44:46:805: Warning: capture timer started!
+13:44:47:030: Debug: servo #1 ==>90
+13:44:47:030: Debug: servo #2 ==>90
+13:44:47:030: Debug: servo #3 ==>90
+13:44:47:030: Debug: servo #4 ==>90
+13:44:47:030: Debug: servo #5 ==>90
+13:44:47:030: Debug: servo #6 ==>90
+13:44:47:662: Debug: cameraXangle==>89
+13:44:47:662: Debug: servo #7 ==>89
+13:44:47:662: Debug: ServoAngle_7==>89
+13:44:47:680: Debug: cameraXangle==>88
+13:44:47:681: Debug: servo #7 ==>88
+13:44:47:681: Debug: ServoAngle_7==>88
+13:44:47:690: Debug: cameraXangle==>87
+13:44:47:690: Debug: servo #7 ==>87
+13:44:47:690: Debug: ServoAngle_7==>87
+13:44:47:703: Debug: cameraXangle==>86
+13:44:47:704: Debug: servo #7 ==>86
+13:44:47:704: Debug: ServoAngle_7==>86
+13:44:47:712: Debug: cameraXangle==>85
+13:44:47:712: Debug: servo #7 ==>85
+13:44:47:712: Debug: ServoAngle_7==>85
+13:44:47:720: Debug: cameraXangle==>84
+13:44:47:720: Debug: servo #7 ==>84
+13:44:47:720: Debug: ServoAngle_7==>84
+13:44:47:728: Debug: cameraXangle==>83
+13:44:47:728: Debug: servo #7 ==>83
+13:44:47:729: Debug: ServoAngle_7==>83
+13:44:47:736: Debug: cameraXangle==>82
+13:44:47:736: Debug: servo #7 ==>82
+13:44:47:736: Debug: ServoAngle_7==>82
+13:44:47:736: Debug: servo #8 ==>78
+13:44:47:736: Debug: ServoAngle_8==>78
+13:44:47:749: Debug: cameraXangle==>81
+13:44:47:749: Debug: servo #7 ==>81
+13:44:47:749: Debug: ServoAngle_7==>81
+13:44:47:774: Debug: cameraXangle==>80
+13:44:47:774: Debug: servo #7 ==>80
+13:44:47:774: Debug: ServoAngle_7==>80
+13:44:47:923: Debug: servo #8 ==>77
+13:44:47:923: Debug: ServoAngle_8==>77
+13:44:47:981: Debug: cameraXangle==>81
+13:44:47:981: Debug: servo #7 ==>81
+13:44:47:981: Debug: ServoAngle_7==>81
+13:44:48:016: Debug: cameraXangle==>82
+13:44:48:016: Debug: servo #7 ==>82
+13:44:48:016: Debug: ServoAngle_7==>82
+13:44:48:035: Debug: cameraXangle==>83
+13:44:48:035: Debug: servo #7 ==>83
+13:44:48:035: Debug: ServoAngle_7==>83
+13:44:48:059: Debug: cameraXangle==>84
+13:44:48:059: Debug: servo #7 ==>84
+13:44:48:059: Debug: ServoAngle_7==>84
+13:44:48:059: Debug: servo #8 ==>78
+13:44:48:059: Debug: ServoAngle_8==>78
+13:44:48:089: Debug: cameraXangle==>85
+13:44:48:089: Debug: servo #7 ==>85
+13:44:48:089: Debug: ServoAngle_7==>85
+13:44:49:295: Debug: onCurrentIndexChanged 6
+13:44:49:295: Debug: disable[0]=true
+13:44:49:295: Debug: disable[1]=true
+13:44:49:295: Debug: disable[2]=true
+13:44:49:295: Debug: disable[3]=true
+13:44:49:295: Debug: disable[4]=true
+13:44:49:295: Debug: 机械臂控>onGrayedChanged,true
+13:44:49:295: Debug: disable[5]=true
+13:44:49:295: Debug: disable[6]=true
+13:44:49:295: Debug: 设置>onGrayedChanged,true
+13:44:49:843: Debug: 设置>onGrayedChanged,false
+13:44:49:843: Debug: on_Clicked_OnImage:T设置
+13:44:49:849: Warning: QThreadWifiVideo::start...
+
+
+
+
+13:44:49:849: Warning: try use usb camera!
+13:44:49:849: Warning: use static image...
+13:44:49:849: Warning: capture timer started!
+13:44:53:467: Warning: tts server started!
+13:44:53:467: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+13:44:53:470: Debug: servo #7 ==>85
+13:44:53:470: Debug: servo #8 ==>79
+13:44:53:470: Debug: ServoAngle_8==>79
+13:44:53:473: Warning: tts server started!
+13:44:53:473: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+13:44:53:473: Debug: servo #7 ==>85
+13:44:53:473: Debug: servo #8 ==>79
+13:44:53:479: Warning: tts server started!
+13:44:53:479: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+13:44:53:479: Debug: servo #7 ==>85
+13:44:53:479: Debug: servo #8 ==>79
+13:44:53:501: Warning: tts server started!
+13:44:53:501: Warning: 
+
+
+
+QThreadWifiVideo::start done!
+
+
+
+
+13:44:53:507: Debug: servo #7 ==>85
+13:44:53:507: Debug: servo #8 ==>79
+13:45:06:021: Warning: key press=16777249
+13:45:09:481: Debug: onCurrentIndexChanged 5
+13:45:09:481: Debug: disable[0]=true
+13:45:09:482: Debug: disable[1]=true
+13:45:09:482: Debug: disable[2]=true
+13:45:09:482: Debug: disable[3]=true
+13:45:09:482: Debug: disable[4]=true
+13:45:09:482: Debug: disable[5]=true
+13:45:09:482: Debug: disable[6]=true
+13:45:10:622: Debug: onCurrentIndexChanged 4
+13:45:10:622: Debug: disable[0]=true
+13:45:10:622: Debug: disable[1]=true
+13:45:10:622: Debug: disable[2]=true
+13:45:10:622: Debug: disable[3]=true
+13:45:10:622: Debug: disable[4]=true
+13:45:10:622: Debug: disable[5]=true
+13:45:10:622: Debug: disable[6]=true
+13:45:11:751: Debug: onCurrentIndexChanged 3
+13:45:11:751: Debug: disable[0]=true
+13:45:11:751: Debug: disable[1]=true
+13:45:11:751: Debug: disable[2]=true
+13:45:11:751: Debug: disable[3]=true
+13:45:11:751: Debug: disable[4]=true
+13:45:11:751: Debug: disable[5]=true
+13:45:11:751: Debug: disable[6]=true
+13:45:12:034: Debug: onCurrentIndexChanged 4
+13:45:12:034: Debug: disable[0]=true
+13:45:12:034: Debug: disable[1]=true
+13:45:12:034: Debug: disable[2]=true
+13:45:12:034: Debug: disable[3]=true
+13:45:12:035: Debug: disable[4]=true
+13:45:12:035: Debug: disable[5]=true
+13:45:12:035: Debug: disable[6]=true
+13:45:12:904: Debug: cameraXangle==>86
+13:45:12:904: Debug: servo #7 ==>86
+13:45:12:904: Debug: ServoAngle_7==>86
+13:45:12:904: Debug: servo #8 ==>80
+13:45:12:904: Debug: ServoAngle_8==>80
+13:45:12:921: Debug: cameraXangle==>87
+13:45:12:921: Debug: servo #7 ==>87
+13:45:12:921: Debug: ServoAngle_7==>87
+13:45:12:921: Debug: servo #8 ==>81
+13:45:12:921: Debug: ServoAngle_8==>81
+13:45:12:934: Debug: cameraXangle==>88
+13:45:12:934: Debug: servo #7 ==>88
+13:45:12:934: Debug: ServoAngle_7==>88
+13:45:12:934: Debug: servo #8 ==>82
+13:45:12:934: Debug: ServoAngle_8==>82
+13:45:12:946: Debug: cameraXangle==>89
+13:45:12:946: Debug: servo #7 ==>89
+13:45:12:946: Debug: ServoAngle_7==>89
+13:45:12:947: Debug: servo #8 ==>83
+13:45:12:947: Debug: ServoAngle_8==>83
+13:45:12:958: Debug: cameraXangle==>90
+13:45:12:958: Debug: servo #7 ==>90
+13:45:12:958: Debug: ServoAngle_7==>90
+13:45:12:958: Debug: servo #8 ==>84
+13:45:12:958: Debug: ServoAngle_8==>84
+13:45:12:971: Debug: cameraXangle==>91
+13:45:12:971: Debug: servo #7 ==>91
+13:45:12:971: Debug: ServoAngle_7==>91
+13:45:12:975: Debug: servo #8 ==>85
+13:45:12:975: Debug: ServoAngle_8==>85
+13:45:12:993: Debug: cameraXangle==>92
+13:45:12:993: Debug: servo #7 ==>92
+13:45:12:993: Debug: ServoAngle_7==>92
+13:45:13:008: Debug: servo #8 ==>86
+13:45:13:008: Debug: ServoAngle_8==>86
+13:45:14:396: Debug: onCurrentIndexChanged 3
+13:45:14:397: Debug: disable[0]=true
+13:45:14:397: Debug: disable[1]=true
+13:45:14:397: Debug: disable[2]=true
+13:45:14:397: Debug: disable[3]=true
+13:45:14:397: Debug: disable[4]=true
+13:45:14:397: Debug: disable[5]=true
+13:45:14:397: Debug: disable[6]=true
+13:45:15:618: Debug: onCurrentIndexChanged 2
+13:45:15:618: Debug: disable[0]=true
+13:45:15:618: Debug: disable[1]=true
+13:45:15:618: Debug: disable[2]=true
+13:45:15:618: Debug: disable[3]=true
+13:45:15:618: Debug: disable[4]=true
+13:45:15:618: Debug: disable[5]=true
+13:45:15:618: Debug: disable[6]=true
+13:45:16:828: Debug: onCurrentIndexChanged 1
+13:45:16:828: Debug: disable[0]=true
+13:45:16:828: Debug: disable[1]=true
+13:45:16:828: Debug: disable[2]=true
+13:45:16:828: Debug: disable[3]=true
+13:45:16:828: Debug: disable[4]=true
+13:45:16:828: Debug: disable[5]=true
+13:45:16:828: Debug: disable[6]=true
+13:45:30:120: Debug: cameraXangle==>91
+13:45:30:120: Debug: servo #7 ==>91
+13:45:30:120: Debug: ServoAngle_7==>91
+13:45:30:137: Debug: cameraXangle==>90
+13:45:30:138: Debug: servo #7 ==>90
+13:45:30:138: Debug: ServoAngle_7==>90
+13:45:30:153: Debug: cameraXangle==>89
+13:45:30:153: Debug: servo #7 ==>89
+13:45:30:153: Debug: ServoAngle_7==>89
+13:45:30:170: Debug: cameraXangle==>88
+13:45:30:170: Debug: servo #7 ==>88
+13:45:30:170: Debug: ServoAngle_7==>88
+13:45:30:183: Debug: cameraXangle==>87
+13:45:30:183: Debug: servo #7 ==>87
+13:45:30:183: Debug: ServoAngle_7==>87
+13:45:30:200: Debug: cameraXangle==>86
+13:45:30:200: Debug: servo #7 ==>86
+13:45:30:200: Debug: ServoAngle_7==>86
+13:45:30:200: Debug: servo #8 ==>85
+13:45:30:200: Debug: ServoAngle_8==>85
+13:45:30:229: Debug: cameraXangle==>85
+13:45:30:229: Debug: servo #7 ==>85
+13:45:30:229: Debug: ServoAngle_7==>85
+13:45:30:429: Debug: servo #8 ==>84
+13:45:30:429: Debug: ServoAngle_8==>84
+13:45:30:495: Debug: cameraXangle==>86
+13:45:30:495: Debug: servo #7 ==>86
+13:45:30:495: Debug: ServoAngle_7==>86
+13:45:30:507: Debug: cameraXangle==>87
+13:45:30:507: Debug: servo #7 ==>87
+13:45:30:507: Debug: ServoAngle_7==>87
+13:45:30:507: Debug: servo #8 ==>83
+13:45:30:507: Debug: ServoAngle_8==>83
+13:45:30:514: Debug: cameraXangle==>88
+13:45:30:514: Debug: servo #7 ==>88
+13:45:30:514: Debug: ServoAngle_7==>88
+13:45:30:527: Debug: cameraXangle==>89
+13:45:30:528: Debug: servo #7 ==>89
+13:45:30:528: Debug: ServoAngle_7==>89
+13:45:30:533: Debug: cameraXangle==>90
+13:45:30:533: Debug: servo #7 ==>90
+13:45:30:533: Debug: ServoAngle_7==>90
+13:45:30:540: Debug: cameraXangle==>91
+13:45:30:540: Debug: servo #7 ==>91
+13:45:30:540: Debug: ServoAngle_7==>91
+13:45:30:549: Debug: cameraXangle==>92
+13:45:30:549: Debug: servo #7 ==>92
+13:45:30:549: Debug: ServoAngle_7==>92
+13:45:30:558: Debug: cameraXangle==>93
+13:45:30:558: Debug: servo #7 ==>93
+13:45:30:558: Debug: ServoAngle_7==>93
+13:45:30:565: Debug: cameraXangle==>94
+13:45:30:565: Debug: servo #7 ==>94
+13:45:30:565: Debug: ServoAngle_7==>94
+13:45:30:573: Debug: cameraXangle==>95
+13:45:30:573: Debug: servo #7 ==>95
+13:45:30:573: Debug: ServoAngle_7==>95
+13:45:30:581: Debug: cameraXangle==>96
+13:45:30:581: Debug: servo #7 ==>96
+13:45:30:581: Debug: ServoAngle_7==>96
+13:45:30:590: Debug: cameraXangle==>97
+13:45:30:590: Debug: servo #7 ==>97
+13:45:30:590: Debug: ServoAngle_7==>97
+13:45:30:598: Debug: cameraXangle==>98
+13:45:30:598: Debug: servo #7 ==>98
+13:45:30:598: Debug: ServoAngle_7==>98
+13:45:30:605: Debug: cameraXangle==>99
+13:45:30:606: Debug: servo #7 ==>99
+13:45:30:606: Debug: ServoAngle_7==>99
+13:45:30:606: Debug: servo #8 ==>84
+13:45:30:606: Debug: ServoAngle_8==>84
+13:45:30:615: Debug: cameraXangle==>100
+13:45:30:615: Debug: servo #7 ==>100
+13:45:30:615: Debug: ServoAngle_7==>100
+13:45:30:623: Debug: cameraXangle==>101
+13:45:30:623: Debug: servo #7 ==>101
+13:45:30:623: Debug: ServoAngle_7==>101
+13:45:30:635: Debug: cameraXangle==>102
+13:45:30:635: Debug: servo #7 ==>102
+13:45:30:635: Debug: ServoAngle_7==>102
+13:45:30:651: Debug: cameraXangle==>103
+13:45:30:651: Debug: servo #7 ==>103
+13:45:30:651: Debug: ServoAngle_7==>103
+13:45:30:660: Debug: servo #8 ==>85
+13:45:30:660: Debug: ServoAngle_8==>85
+13:45:30:697: Debug: cameraXangle==>104
+13:45:30:697: Debug: servo #7 ==>104
+13:45:30:697: Debug: ServoAngle_7==>104
+13:45:31:295: Debug: cameraXangle==>105
+13:45:31:295: Debug: servo #7 ==>105
+13:45:31:295: Debug: ServoAngle_7==>105
+13:45:31:295: Debug: servo #8 ==>86
+13:45:31:295: Debug: ServoAngle_8==>86
+13:45:31:308: Debug: cameraXangle==>106
+13:45:31:308: Debug: servo #7 ==>106
+13:45:31:308: Debug: ServoAngle_7==>106
+13:45:31:308: Debug: servo #8 ==>87
+13:45:31:308: Debug: ServoAngle_8==>87
+13:45:31:316: Debug: cameraXangle==>107
+13:45:31:316: Debug: servo #7 ==>107
+13:45:31:316: Debug: ServoAngle_7==>107
+13:45:31:316: Debug: servo #8 ==>88
+13:45:31:316: Debug: ServoAngle_8==>88
+13:45:31:326: Debug: cameraXangle==>108
+13:45:31:326: Debug: servo #7 ==>108
+13:45:31:326: Debug: ServoAngle_7==>108
+13:45:31:326: Debug: servo #8 ==>89
+13:45:31:326: Debug: ServoAngle_8==>89
+13:45:31:335: Debug: cameraXangle==>109
+13:45:31:335: Debug: servo #7 ==>109
+13:45:31:335: Debug: ServoAngle_7==>109
+13:45:31:335: Debug: servo #8 ==>90
+13:45:31:335: Debug: ServoAngle_8==>90
+13:45:31:342: Debug: cameraXangle==>110
+13:45:31:342: Debug: servo #7 ==>110
+13:45:31:342: Debug: ServoAngle_7==>110
+13:45:31:342: Debug: servo #8 ==>91
+13:45:31:342: Debug: ServoAngle_8==>91
+13:45:31:346: Debug: cameraXangle==>111
+13:45:31:346: Debug: servo #7 ==>111
+13:45:31:346: Debug: ServoAngle_7==>111
+13:45:31:354: Debug: cameraXangle==>112
+13:45:31:354: Debug: servo #7 ==>112
+13:45:31:354: Debug: ServoAngle_7==>112
+13:45:31:358: Debug: servo #8 ==>92
+13:45:31:358: Debug: ServoAngle_8==>92
+13:45:31:362: Debug: cameraXangle==>113
+13:45:31:362: Debug: servo #7 ==>113
+13:45:31:362: Debug: ServoAngle_7==>113
+13:45:31:370: Debug: cameraXangle==>114
+13:45:31:370: Debug: servo #7 ==>114
+13:45:31:370: Debug: ServoAngle_7==>114
+13:45:31:370: Debug: servo #8 ==>93
+13:45:31:370: Debug: ServoAngle_8==>93
+13:45:31:379: Debug: cameraXangle==>115
+13:45:31:379: Debug: servo #7 ==>115
+13:45:31:380: Debug: ServoAngle_7==>115
+13:45:31:387: Debug: cameraXangle==>116
+13:45:31:387: Debug: servo #7 ==>116
+13:45:31:387: Debug: ServoAngle_7==>116
+13:45:31:394: Debug: servo #8 ==>94
+13:45:31:394: Debug: ServoAngle_8==>94
+13:45:31:396: Debug: cameraXangle==>117
+13:45:31:396: Debug: servo #7 ==>117
+13:45:31:396: Debug: ServoAngle_7==>117
+13:45:31:407: Debug: cameraXangle==>118
+13:45:31:407: Debug: servo #7 ==>118
+13:45:31:407: Debug: ServoAngle_7==>118
+13:45:31:420: Debug: cameraXangle==>119
+13:45:31:420: Debug: servo #7 ==>119
+13:45:31:420: Debug: ServoAngle_7==>119
+13:45:31:436: Debug: cameraXangle==>120
+13:45:31:436: Debug: servo #7 ==>120
+13:45:31:436: Debug: ServoAngle_7==>120
+13:45:31:436: Debug: servo #8 ==>95
+13:45:31:436: Debug: ServoAngle_8==>95
+13:45:31:466: Debug: cameraXangle==>121
+13:45:31:466: Debug: servo #7 ==>121
+13:45:31:466: Debug: ServoAngle_7==>121
+13:45:31:698: Debug: servo #8 ==>96
+13:45:31:698: Debug: ServoAngle_8==>96
+13:45:32:540: Debug: cameraXangle==>122
+13:45:32:540: Debug: servo #7 ==>122
+13:45:32:540: Debug: ServoAngle_7==>122
+13:45:32:549: Debug: cameraXangle==>123
+13:45:32:549: Debug: servo #7 ==>123
+13:45:32:549: Debug: ServoAngle_7==>123
+13:45:32:557: Debug: cameraXangle==>124
+13:45:32:557: Debug: servo #7 ==>124
+13:45:32:557: Debug: ServoAngle_7==>124
+13:45:32:557: Debug: servo #8 ==>95
+13:45:32:557: Debug: ServoAngle_8==>95
+13:45:32:565: Debug: cameraXangle==>125
+13:45:32:565: Debug: servo #7 ==>125
+13:45:32:565: Debug: ServoAngle_7==>125
+13:45:32:574: Debug: cameraXangle==>126
+13:45:32:574: Debug: servo #7 ==>126
+13:45:32:574: Debug: ServoAngle_7==>126
+13:45:32:574: Debug: servo #8 ==>94
+13:45:32:574: Debug: ServoAngle_8==>94
+13:45:32:583: Debug: cameraXangle==>127
+13:45:32:583: Debug: servo #7 ==>127
+13:45:32:583: Debug: ServoAngle_7==>127
+13:45:32:585: Debug: servo #8 ==>93
+13:45:32:585: Debug: ServoAngle_8==>93
+13:45:32:590: Debug: cameraXangle==>128
+13:45:32:590: Debug: servo #7 ==>128
+13:45:32:590: Debug: ServoAngle_7==>128
+13:45:32:598: Debug: cameraXangle==>129
+13:45:32:598: Debug: servo #7 ==>129
+13:45:32:598: Debug: ServoAngle_7==>129
+13:45:32:598: Debug: servo #8 ==>92
+13:45:32:598: Debug: ServoAngle_8==>92
+13:45:32:607: Debug: cameraXangle==>130
+13:45:32:607: Debug: servo #7 ==>130
+13:45:32:607: Debug: ServoAngle_7==>130
+13:45:32:611: Debug: servo #8 ==>91
+13:45:32:611: Debug: ServoAngle_8==>91
+13:45:32:616: Debug: cameraXangle==>131
+13:45:32:616: Debug: servo #7 ==>131
+13:45:32:616: Debug: ServoAngle_7==>131
+13:45:32:623: Debug: cameraXangle==>132
+13:45:32:624: Debug: servo #7 ==>132
+13:45:32:624: Debug: ServoAngle_7==>132
+13:45:32:627: Debug: servo #8 ==>90
+13:45:32:627: Debug: ServoAngle_8==>90
+13:45:32:631: Debug: cameraXangle==>133
+13:45:32:631: Debug: servo #7 ==>133
+13:45:32:631: Debug: ServoAngle_7==>133
+13:45:32:646: Debug: cameraXangle==>134
+13:45:32:646: Debug: servo #7 ==>134
+13:45:32:646: Debug: ServoAngle_7==>134
+13:45:32:661: Debug: cameraXangle==>135
+13:45:32:661: Debug: servo #7 ==>135
+13:45:32:661: Debug: ServoAngle_7==>135
+13:45:32:661: Debug: servo #8 ==>89
+13:45:32:661: Debug: ServoAngle_8==>89
+13:45:34:701: Debug: onCurrentIndexChanged 0
+13:45:34:701: Debug: disable[0]=true
+13:45:34:701: Debug: disable[1]=true
+13:45:34:701: Debug: disable[2]=true
+13:45:34:701: Debug: disable[3]=true
+13:45:34:701: Debug: disable[4]=true
+13:45:34:701: Debug: disable[5]=true
+13:45:34:701: Debug: disable[6]=true
+13:45:36:675: Debug: onCurrentIndexChanged 6
+13:45:36:676: Debug: disable[0]=true
+13:45:36:676: Debug: disable[1]=true
+13:45:36:676: Debug: disable[2]=true
+13:45:36:676: Debug: disable[3]=true
+13:45:36:676: Debug: disable[4]=true
+13:45:36:676: Debug: disable[5]=true
+13:45:36:676: Debug: disable[6]=true
+13:45:37:334: Debug: 设置>onGrayedChanged,true
+13:45:37:334: Debug: on_Clicked_OnImage:F设置
+13:45:41:008: Warning: 
+
+Application ended!
+
+
+13:45:41:008: Debug: begin on_destruction...
+13:45:41:015: Warning: QVideoProbe control destroyed while it's still being referenced!!!
+13:45:41:127: Warning: CAN'T start ImgProcess,video_idx=1777,imgproc_idx=1774,tick=49541127
+13:45:41:159: Warning: CAN'T start ImgProcess,video_idx=1777,imgproc_idx=1774,tick=49541159
+13:45:41:191: Warning: CAN'T start ImgProcess,video_idx=1777,imgproc_idx=1774,tick=49541191
+13:45:41:220: Warning: CAN'T start ImgProcess,video_idx=1777,imgproc_idx=1774,tick=49541220
+13:45:41:252: Warning: CAN'T start ImgProcess,video_idx=1777,imgproc_idx=1774,tick=49541252
+13:45:41:283: Warning: CAN'T start ImgProcess,video_idx=1777,imgproc_idx=1774,tick=49541283
+13:45:41:316: Warning: CAN'T start ImgProcess,video_idx=1777,imgproc_idx=1774,tick=49541316
+13:45:41:343: Warning: CAN'T start ImgProcess,video_idx=1777,imgproc_idx=1774,tick=49541343
+13:45:41:347: Debug: end on_destruction...
+13:45:41:372: Warning: QObject::killTimer: Timers cannot be stopped from another thread
+13:45:41:372: Warning: QObject::~QObject: Timers cannot be stopped from another thread
+13:45:41:373: Warning: QObject::killTimer: Timers cannot be stopped from another thread
+13:45:41:373: Warning: QObject::~QObject: Timers cannot be stopped from another thread
+13:45:41:388: Warning: start delete scriptExec...
+13:45:41:389: Warning: waiting spExecThread...
+13:45:41:389: Warning: done.

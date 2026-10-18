@@ -1,0 +1,15 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{ORG}\PYG{+w}{ }\PYG{l+m+mi}{0000}\PYG{n+no}{H}
+\PYG{n+nf}{AJMP}\PYG{+w}{ }\PYG{n+no}{MAIN}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{err}{转}\PYG{err}{主}\PYG{err}{程}\PYG{err}{序}\PYG{n+no}{MAIN}
+\PYG{n+nf}{ORG}\PYG{+w}{ }\PYG{l+m+mi}{000}\PYG{n+no}{BH}
+\PYG{n+nf}{AJMP}\PYG{+w}{ }\PYG{n+no}{IT0P}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{err}{转}\PYG{n+no}{T0中断服务程序IT0P}
+\PYG{n+nf}{ORG}\PYG{+w}{ }\PYG{l+m+mi}{1000}\PYG{n+no}{H}
+\PYG{n+nl}{MAIN:}\PYG{+w}{ }\PYG{n+nf}{MOV}\PYG{+w}{ }\PYG{n+no}{SP}\PYG{err}{，}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZsh{}60}\PYG{n+no}{H}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{err}{设}\PYG{err}{堆}\PYG{err}{栈}\PYG{err}{指}\PYG{err}{针}
+\PYG{n+nf}{MOV}\PYG{+w}{ }\PYG{n+no}{TH0}\PYG{+w}{ }\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZsh{}0}\PYG{n+no}{E0H}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{err}{给}\PYG{err}{定}\PYG{err}{时}\PYG{err}{器}\PYG{n+no}{T0送初值}
+\PYG{n+nf}{MOV}\PYG{+w}{ }\PYG{n+no}{TL0}\PYG{+w}{ }\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZsh{}18}\PYG{n+no}{H}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{err}{送}\PYG{err}{定}\PYG{err}{时}\PYG{err}{初}\PYG{err}{值}
+\PYG{n+nf}{MOV}\PYG{+w}{ }\PYG{n+no}{TMOD}\PYG{err}{，}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZsh{}00}\PYG{n+no}{H}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{err}{设}\PYG{err}{置}\PYG{n+no}{T0为方式0}\PYG{err}{，}\PYG{+w}{ }\PYG{err}{定}\PYG{err}{时}
+\PYG{n+nf}{SETB}\PYG{+w}{ }\PYG{n+no}{EA}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{n+no}{CPU开中断}
+\PYG{n+nf}{SETB}\PYG{+w}{ }\PYG{n+no}{ET0}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{n+no}{T0允许中断}
+\PYG{n+nf}{SETB}\PYG{+w}{ }\PYG{n+no}{TR0}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{err}{启}\PYG{err}{动}\PYG{n+no}{T0定时}
+\PYG{n+nl}{HERE:}\PYG{+w}{ }\PYG{n+nf}{SJMP}\PYG{+w}{ }\PYG{n+no}{HERE}\PYG{+w}{ }\PYG{err}{；}\PYG{+w}{ }\PYG{err}{等}\PYG{err}{待}\PYG{err}{中}\PYG{err}{断}
+\end{MintedVerbatim}

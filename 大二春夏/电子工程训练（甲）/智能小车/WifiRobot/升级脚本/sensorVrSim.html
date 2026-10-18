@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>电工训小车控制页面</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <!--[if IE 6]>
+    <link rel="stylesheet" href="fix.css" type="text/css" />
+    <![endif]-->
+  </head>
+
+  <script type="text/javascript">
+    var href = window.location.href;
+    var root = href.substr(0, href.lastIndexOf('/'));
+
+	function sendUdp(sendData){
+		document.getElementById("udpInfo").innerHTML = "发送:"+sendData;
+		$.get(root+"/"+sendData);
+	}
+	function ifravoid_clicked(){
+		sendUdp("VR_0000200");
+		//alert("dongyao");
+	}
+	function znjqr_clicked(){
+		sendUdp("vr_0000001");
+		//alert("znjqr");
+	}
+  </script>
+
+  <body onload="run();">
+    <div id="sidebar">
+      <h1>电工训小车控制页面</h1>
+      <h2>方便无力驾驭语音模块的同学，及只有IOS手机的同学</h2>
+
+      <div id="menu">
+        <a href="index.html">主页</a>
+        <a href="vrs12345678">内置声控模拟</a>
+        <a href="VRS12345678">自定义声控模拟</a>
+        <a class="active" href="SEN12345678">传感器声控模拟</a>
+        <a href="VRH12345678">声控模拟</a>
+        <a href="VEH12345678">小车控制</a>
+      </div>
+
+      <h3 id="udpInfo">发送消息</h3>
+
+      <h3>Version info:</h3>
+      <p>v1.0 (Jul 06, 2023)</p>
+    </div>
+
+    <div id="content">
+      <h1>VoiceSim</h1>
+      <h2>Simulate the voice recognise control</h2>
+
+      <h3>Active the voice recognise mode</h3>
+      <p>just click it.</p>
+	  
+	  
+	  <table width="100%" border="1" style="margin: auto">
+	  <caption>传感器功能命令列表</caption>
+	  <tr>
+	  <td style="text-align: center;"><div class="button blue" onclick="sendUdp('VR_0000200')">红外避障 </div></td>
+	  <td style="text-align: center;"><div class="button blue" onclick="sendUdp('VR_0000201')">红外跟随 </div></td>
+	  <td style="text-align: center;"><div class="button blue" onclick="sendUdp('VR_0000202')">红外巡线 </div></td>
+	  </tr>
+	  <tr>
+	  <td style="text-align: center;"><div class="button blue" onclick="sendUdp('VR_0000203')">超声避障 </div></td>
+	  <td style="text-align: center;">.</td>
+	  <td style="text-align: center;"><div class="button red" onclick="sendUdp('VR_0000209')">停止 </div></td>
+	  </tr>
+	  </table>
+	  <table width="100%" border="1" style="margin: auto">
+	  <caption>左轮速度(%)</caption>
+	  <tr>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000270')">100 </div></td>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000268')">90 </div></td>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000266')">80 </div></td>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000264')">70 </div></td>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000262')">60 </div></td>
+	  </tr>
+	  <tr>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000260')">50 </div></td>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000258')">40 </div></td>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000256')">30 </div></td>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000254')">20 </div></td>
+	  <td style="text-align: center;"><div class="button green" onclick="sendUdp('VR_0000252')">10 </div></td>
+	  </tr>
+	  </table>
+	  <table width="100%" border="1" style="margin: auto">
+	  <caption>右轮速度(%)</caption>
+	  <tr>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000290')">100 </div></td>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000288')">90 </div></td>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000286')">80 </div></td>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000284')">70 </div></td>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000282')">60 </div></td>
+	  </tr>
+	  <tr>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000280')">50 </div></td>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000278')">40 </div></td>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000276')">30 </div></td>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000274')">20 </div></td>
+	  <td style="text-align: center;"><div class="button rosy" onclick="sendUdp('VR_0000272')">10 </div></td>
+	  </tr>
+	  </table>
+	  <table width="100%" border="1" style="margin: auto">
+	  <caption>超声避障距离(cm)</caption>
+	  <tr>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000231')">20 </div></td>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000232')">40 </div></td>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000233')">60 </div></td>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000234')">80 </div></td>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000235')">100 </div></td>
+	  </tr>
+	  <tr>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000236')">120 </div></td>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000237')">140 </div></td>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000238')">160 </div></td>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000239')">180 </div></td>
+	  <td style="text-align: center;"><div class="button orange medium" onclick="sendUdp('VR_0000240')">200 </div></td>
+	  </tr>
+	  </table>
+	  <table width="100%" border="1" style="margin: auto">
+	  <caption>超声方向</caption>
+	  <tr>
+	  <td style="text-align: center;"><div class="button pink" onclick="sendUdp('VR_0000220')">车头 </div></td>
+	  <td style="text-align: center;">.</td>
+	  <td style="text-align: center;"><div class="button gray" onclick="sendUdp('VR_0000221')">车尾 </div></td>
+	  </tr>
+	  </table>
+	  
+
+      <p>&nbsp;</p>
+
+    </div>
+  </body>
+</html>
