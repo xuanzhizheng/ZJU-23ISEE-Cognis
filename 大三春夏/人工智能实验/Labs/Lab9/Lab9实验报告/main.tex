@@ -1,0 +1,460 @@
+\documentclass[10.5pt]{config}
+\usepackage{amssymb}
+\IfFontExistsTF{Consolas}{\setmonofont{Consolas}}{}
+
+\major{电子科学与技术}
+\name{郑智瑄}
+\partner{}
+\stuid{3230103913}
+\date{\today}
+\lab{玉泉高分子楼-203}
+\course{人工智能实验}
+\instructor{魏准}
+\grades{}
+\expname{神经网络与深度学习训练实验}
+\exptype{设计型实验}
+
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{210,210,210}
+\definecolor{codekw}{RGB}{0,82,155}
+\definecolor{codestr}{RGB}{0,118,72}
+\definecolor{codecomment}{RGB}{105,105,105}
+\lstdefinestyle{reportpython}{
+    language=Python,
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\bfseries\color{codekw},
+    commentstyle=\itshape\color{codecomment},
+    stringstyle=\color{codestr},
+    backgroundcolor=\color{codebg},
+    frame=single,
+    rulecolor=\color{codeframe},
+    framerule=0.4pt,
+    framesep=4pt,
+    breaklines=true,
+    breakatwhitespace=false,
+    breakindent=0pt,
+    breakautoindent=false,
+    columns=flexible,
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=7pt,
+    xleftmargin=2.1em,
+    framexleftmargin=1.7em,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    captionpos=t,
+    aboveskip=0.75em,
+    belowskip=0.75em,
+    lineskip=1pt
+}
+\lstset{style=reportpython}
+
+\newcommand{\codeinput}[5]{%
+    \lstinputlisting[
+        style=reportpython,
+        firstline=#4,
+        lastline=#5,
+        caption={#3},
+        label={#2}
+    ]{#1}%
+}
+
+\begin{document}
+
+\makeheader
+
+\section{实验6-2：加入Dropout的深度神经网络训练}
+
+\subsection{实验目的}
+
+本实验在实验6-1的深度神经网络基础上引入 dropout，考察随机屏蔽隐藏层神经元后网络的训练
+表现。网络结构保持为 $25\rightarrow20\rightarrow20\rightarrow20\rightarrow5$，隐藏层按
+Topic 6 Part 1 实验6-2的文字要求采用 Sigmoid 激活函数，输出层采用 Softmax 函数，并使用
+BP 规则更新权重。
+
+\noindent\textbf{注：}课件 slide 16 文字要求使用 Sigmoid 激活函数，而 slide 17 给出的示例代码片段沿用了实验 6-1 中的 ReLU。本实验以 slide 16 的文字要求为准，隐藏层统一采用 Sigmoid 激活函数，仅在隐藏层后插入 dropout（slide 17 演示的关键步骤），输出层 Softmax 不加 dropout。
+
+实验首先比较不加 dropout 与课件示例中的 $p=0.1$ 设置；为了更清楚地观察 dropout rate 的
+影响，进一步加入 $p=0.2$ 和 $p=0.5$ 两组扩展对照。训练结束后，本文输出各组 Softmax
+分类结果，并比较 MSE 随 epoch 的变化曲线。
+
+\subsection{实验原理}
+
+训练数据为 5 个 $5\times5$ 数字图案。每个图案展开为 25 维列向量，标签写成 5 类 one-hot
+向量。四层权重矩阵的维度为：
+
+\[
+W_1\in\mathbb{R}^{20\times25},\quad
+W_2\in\mathbb{R}^{20\times20},\quad
+W_3\in\mathbb{R}^{20\times20},\quad
+W_4\in\mathbb{R}^{5\times20}.
+\]
+
+隐藏层的非线性由 Sigmoid 函数给出：
+
+\[
+\sigma(v)=\frac{1}{1+e^{-v}},\qquad
+\sigma'(v)=\sigma(v)(1-\sigma(v)).
+\]
+
+最后一层使用 Softmax 将输出转换为 5 类概率：
+
+\[
+\mathrm{Softmax}(z_i)=\frac{e^{z_i}}{\sum_{j=1}^{K}e^{z_j}}.
+\]
+
+按照课件中的简化设定，Softmax 层在反向传播时导数直接取 1，因此输出层误差信号可写为：
+
+\[
+e=d-y,\qquad \delta=e.
+\]
+
+Dropout 只在训练阶段使用。它随机丢弃一部分隐藏层神经元，并对保留下来的神经元使用
+inverted dropout 缩放，使激活值的期望尺度保持不变。设 dropout rate 为 $p$，则 mask
+定义为：
+
+\[
+m_i=
+\begin{cases}
+\frac{1}{1-p}, & \text{第 } i \text{ 个神经元被保留}\\
+0, & \text{第 } i \text{ 个神经元被丢弃}
+\end{cases}
+\]
+
+于是隐藏层传给下一层的实际输出为：
+
+\[
+\tilde y_l=y_l\odot m_l.
+\]
+
+本实验只对三个隐藏层施加 dropout，输出层不加 dropout；训练完成后的验证和结果输出均采用
+普通前向传播，不再随机屏蔽神经元。由于前向传播中被屏蔽的神经元不参与下一层计算，反向传播
+时也需要用同一个 mask 过滤对应梯度。以第三隐藏层为例：
+
+\[
+\delta_3=\sigma'(v_3)\odot m_3\odot (W_4^T\delta).
+\]
+
+第二、第一隐藏层的误差信号依次为：
+
+\[
+\delta_2=\sigma'(v_2)\odot m_2\odot (W_3^T\delta_3),\qquad
+\delta_1=\sigma'(v_1)\odot m_1\odot (W_2^T\delta_2).
+\]
+
+对应的 SGD-BP 权重更新为：
+
+\[
+W_4\leftarrow W_4+\alpha\delta \tilde y_3^T,\quad
+W_3\leftarrow W_3+\alpha\delta_3 \tilde y_2^T,
+\]
+
+\[
+W_2\leftarrow W_2+\alpha\delta_2 \tilde y_1^T,\quad
+W_1\leftarrow W_1+\alpha\delta_1 x^T.
+\]
+
+\subsection{代码实现}
+
+Listing~\ref{lst:dropout} 给出了 inverted dropout mask 的实现。函数先根据保留比例
+$1-p$ 计算需要保留的神经元数量，再随机选择下标，并把这些位置设为 $1/(1-p)$。代码中
+使用 \texttt{ym.flat[idx]} 写入 mask，这样无论激活值是普通向量还是 $(20,1)$ 形式的列向量，
+下标都会按展平后的位置解释，避免直接写 \texttt{ym[idx]} 时可能出现的行索引问题。
+
+\codeinput{../Code/EXP6/Dropout.py}{lst:dropout}{Dropout.py：Dropout mask生成函数}{1}{13}
+
+Listing~\ref{lst:deepdropout} 是一轮带 dropout 的 SGD-BP 训练。三个隐藏层先计算 Sigmoid
+激活，再分别乘以 dropout mask 得到 \texttt{y1\_drop}、\texttt{y2\_drop} 和
+\texttt{y3\_drop}；输出层仍直接接 Softmax，不再额外使用 dropout。反向传播时，各隐藏层
+delta 同步乘入前向传播使用过的 mask，使被屏蔽神经元在本次更新中不产生梯度贡献。
+
+\codeinput{../Code/EXP6/DeepDropout.py}{lst:deepdropout}{DeepDropout.py：Sigmoid隐藏层与Dropout训练函数}{1}{55}
+
+Listing~\ref{lst:train} 和 Listing~\ref{lst:main} 给出了统一的训练入口。所有实验组使用
+相同的初始权重、学习率、训练轮数和训练数据；每个 epoch 结束后，均切换到不使用 dropout
+的推理模式计算训练集 MSE。循环中最后一次前向传播得到的输出直接作为最终输出返回，避免在
+权重不再变化时重复计算。这样记录到的误差反映的是模型本身的输出，而不是某一次随机 mask
+下的临时输出。
+
+\codeinput{../Code/EXP6/exp6_2.py}{lst:train}{exp6\_2.py：训练函数与MSE记录}{13}{28}
+
+\codeinput{../Code/EXP6/exp6_2.py}{lst:main}{exp6\_2.py：实验参数、dropout rate对照与结果输出}{82}{129}
+
+\subsection{实验结果}
+
+实验统一采用随机种子 $7$、学习率 $\alpha=0.02$，训练 $5000$ epochs。除不加 dropout 的
+基线外，本文分别测试 $p=0.1$、$p=0.2$ 和 $p=0.5$ 三种 dropout rate。各组从同一组初始
+权重出发，权重均由 $[-1,1]$ 上的均匀分布采样得到。运行
+\texttt{python Code/EXP6/exp6\_2.py} 后，最终结果如表~\ref{tab:summary} 所示。
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{cccccccc}
+\toprule
+训练方式 & 最终MSE & 准确率 & 样本1 & 样本2 & 样本3 & 样本4 & 样本5 \\
+\midrule
+不加dropout & $3.291\times10^{-6}$ & 100\% & 0.997276 & 0.995416 & 0.996624 & 0.997040 & 0.996402 \\
+$p=0.1$ & $1.436\times10^{-7}$ & 100\% & 0.999555 & 0.998972 & 0.999534 & 0.999132 & 0.999419 \\
+$p=0.2$ & $8.72\times10^{-8}$ & 100\% & 0.999783 & 0.999313 & 0.999720 & 0.999477 & 0.999241 \\
+$p=0.5$ & $8.064\times10^{-2}$ & 60\% & 0.995875 & 0.287483 & 0.411194 & 0.993037 & 0.306158 \\
+\bottomrule
+\end{tabular}
+\caption{实验6-2不同dropout rate下的最终训练结果。样本1--样本5列表示对应样本在正确类别上的Softmax概率}
+\label{tab:summary}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth]{Figure_exp6_1_digits.png}
+    \caption{实验6-2训练使用的五个 $5\times5$ 数字图案}
+    \label{fig:digits}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figure_exp6_2_mse_compare.png}
+    \caption{实验6-2：不同dropout rate下的MSE vs Epoch曲线}
+    \label{fig:mse}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.94\textwidth]{Figure_exp6_2_softmax_compare.png}
+    \caption{实验6-2：不同dropout rate下的Softmax输出概率矩阵}
+    \label{fig:softmax}
+\end{figure}
+
+\subsection{结果分析}
+
+表~\ref{tab:summary} 显示，不加 dropout、$p=0.1$ 和 $p=0.2$ 三组都能把 5 个训练样本
+全部分对，说明在这些设置下网络已经学到数字图案与 one-hot 标签之间的对应关系。就本次随机
+种子和训练参数而言，$p=0.1$ 与 $p=0.2$ 的训练集 MSE 分别降至
+$1.436\times10^{-7}$ 和 $8.72\times10^{-8}$，低于不加 dropout 的
+$3.291\times10^{-6}$。不过，这里只有 5 个训练样本，没有独立验证集或测试集，因此这些数值
+只能说明当前训练集上的优化结果，不能直接作为 dropout 提升泛化能力的证据。
+
+从图~\ref{fig:mse} 可以进一步观察不同 dropout rate 对训练过程的影响。不加 dropout 时，
+MSE 曲线最平滑；$p=0.1$ 和 $p=0.2$ 因为每轮训练都引入随机 mask，曲线局部有更明显的起伏，
+但整体仍持续下降。$p=0.2$ 的扰动比 $p=0.1$ 更强，在本次运行中最终训练集 MSE 略低。与
+这两组不同，$p=0.5$ 的曲线长期停留在较高误差水平，最终准确率只有 $60\%$。这说明在本实验
+这种样本极少、每层仅 20 个隐藏单元的小网络中，一次丢弃一半隐藏神经元会明显增加优化难度，
+网络难以稳定记住所有样本。
+
+图~\ref{fig:softmax} 展示了最终 Softmax 概率矩阵。不加 dropout、$p=0.1$ 和 $p=0.2$ 的
+最大概率均集中在对角线上，其中 $p=0.1$ 与 $p=0.2$ 的非目标类别概率更接近 0，输出分布
+更尖锐。$p=0.5$ 则出现明显退化：样本 2 和样本 5 被推向第 3 类附近，样本 3 虽然仍被判为
+第 3 类，但正确类别概率也只有约 0.411。由此可见，dropout rate 不是越大越好，它需要与
+网络规模、训练样本量和训练轮数匹配；在当前设置下，过强 dropout 反而阻碍收敛。
+
+\subsection{实验小结}
+
+本实验在 Sigmoid 深度网络中加入 dropout，并比较了不加 dropout、$p=0.1$、$p=0.2$ 与
+$p=0.5$ 四种训练设置。结果表明，$p=0.1$ 和 $p=0.2$ 都能稳定收敛，并在训练集上达到
+$100\%$ 准确率；$p=0.5$ 由于随机丢弃过强，最终只达到 $60\%$。因此，在当前小样本任务中，
+适度 dropout 可以作为训练过程中的随机扰动，但过大的 dropout rate 会明显削弱网络的有效
+表达与优化能力。由于本实验没有独立测试集，训练集 MSE 的高低主要反映当前优化路径，不能
+单独用来证明 dropout 具有更强泛化能力。
+
+\clearpage
+
+\section{实验7-1：卷积神经网络训练与测试}
+
+\subsection{实验目的}
+
+本实验根据 Topic 7 Part 1 中实验7-1的要求，使用给定的卷积层 \texttt{Conv}、池化层
+\texttt{Pool} 和 \texttt{LoadMnistData} 数据读取函数，结合 mini-batch 与 momentum
+规则搭建并训练一个类似 LeNet 的卷积神经网络。实验数据从
+\texttt{Code/EXP7/References/MNIST} 中的 MNIST 文件读取，取前 2000 张图像作为训练集，
+再取之后 300 张图像作为测试集，二者不重合。训练完成后输出预测结果的准确度，即
+\[
+\mathrm{Accuracy}=\frac{\text{预测正确数量}}{N},\quad N=300.
+\]
+
+\subsection{实验原理}
+
+给出的卷积神经网络结构如表~\ref{tab:exp71_net} 所示。输入为 $28\times28$ 灰度图像；
+卷积层使用 20 个 $9\times9$ 卷积核，步长 $S=1$、补零 $P=0$，因此卷积输出大小为
+$20\times20\times20$；之后经过 ReLU 与 $2\times2$ 平均池化，得到
+$10\times10\times20$ 的特征图。池化结果展开为 2000 维向量，送入 100 节点全连接隐藏层，
+最后经 10 节点 Softmax 层输出数字 $0$--$9$ 的分类概率。
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{ccc}
+\toprule
+层 & 参数说明 & 激活函数 \\
+\midrule
+Input & $28\times28$ nodes & - \\
+Convolution & 20 convolution filters $(9\times9)$, $P=0,S=1$ & ReLU \\
+Pooling & 1 mean pooling $(2\times2)$ & - \\
+Hidden & 100 nodes & ReLU \\
+Output & 10 nodes & Softmax \\
+\bottomrule
+\end{tabular}
+\caption{实验7-1卷积神经网络结构}
+\label{tab:exp71_net}
+\end{table}
+
+卷积层输出尺寸满足：
+\[
+W_2=\frac{W_1-F+2P}{S}+1,\qquad
+H_2=\frac{H_1-F+2P}{S}+1.
+\]
+代入 $W_1=H_1=28$、$F=9$、$P=0$、$S=1$，得到 $W_2=H_2=20$。池化层使用
+$2\times2$ 平均池化并以 2 为步长下采样，因此 $20\times20$ 特征图变为
+$10\times10$。
+
+输出层仍采用课件中的简化处理，Softmax 反向传播中令
+\[
+\delta=d-y,
+\]
+其中 $d$ 是由标签转换得到的 one-hot 向量。全连接隐藏层误差信号为：
+\[
+\delta_5=(y_5>0)\odot(W_o^T\delta).
+\]
+池化层的反向传播将 $10\times10$ 的误差按平均池化权重均匀分配回 $2\times2$ 区域：
+\[
+e_2=\mathrm{kron}(e_3,\mathbf{1}_{2\times2})/4.
+\]
+卷积层梯度由输入图像与卷积层误差做 valid 卷积得到。mini-batch 中先累积各样本梯度，再取
+平均；momentum 更新形式为：
+\[
+m_t=\alpha \overline{\Delta W_t}+\beta m_{t-1},\qquad
+W_t=W_{t-1}+m_t.
+\]
+
+\subsection{代码实现}
+
+Listing~\ref{lst:exp71_conv} 和 Listing~\ref{lst:exp71_pool} 分别给出了卷积层与平均池化层
+的实现。卷积层中根据 \texttt{signal.convolve2d} 的定义先将卷积核旋转 $180^\circ$，再做
+valid 卷积；池化层使用 $2\times2$ 平均模板并每隔 2 个像素取一次结果。
+
+\codeinput{../Code/EXP7/Conv.py}{lst:exp71_conv}{Conv.py：卷积层定义}{1}{19}
+
+\codeinput{../Code/EXP7/Pool.py}{lst:exp71_pool}{Pool.py：平均池化层定义}{1}{14}
+
+Listing~\ref{lst:exp71_load} 给出了 \texttt{LoadMnistData} 的数据读取实现。函数直接读取
+\texttt{References/MNIST} 中的 IDX 格式 MNIST 图像与标签文件，支持 \texttt{.gz} 压缩文件；
+读取时先检查文件是否存在，再校验 image 和 label 文件的 magic number，最后返回形状为
+$(N,28,28)$ 的图像数组和 $(N,1)$ 的标签数组。
+
+\codeinput{../Code/EXP7/LoadMnistData.py}{lst:exp71_load}{LoadMnistData.py：MNIST数据读取函数}{8}{41}
+
+为了避免长代码框跨页挤压，训练函数拆成两段展示。Listing~\ref{lst:exp71_train_core}
+给出了 mini-batch 中单个样本的前向传播、one-hot 标签构造和反向传播；Listing~\ref{lst:exp71_train_update}
+给出了梯度平均、momentum 更新、每个 epoch 后的训练/测试准确率记录和函数返回值。
+
+\codeinput{../Code/EXP7/MnistConv.py}{lst:exp71_train_core}{MnistConv.py：CNN前向传播与反向传播核心}{18}{84}
+
+\codeinput{../Code/EXP7/MnistConv.py}{lst:exp71_train_update}{MnistConv.py：mini-batch平均、momentum更新与准确率记录}{86}{107}
+
+Listing~\ref{lst:exp71_data} 和 Listing~\ref{lst:exp71_main} 给出了实验入口。主程序初始化三组
+权重，从 \texttt{References/MNIST} 中划分训练集和测试集，并把测试集传入训练函数，用于记录
+每个 epoch 后的测试准确率。
+
+\codeinput{../Code/EXP7/exp7_1.py}{lst:exp71_data}{exp7\_1.py：权重初始化与数据划分}{14}{36}
+
+\codeinput{../Code/EXP7/exp7_1.py}{lst:exp71_main}{exp7\_1.py：训练、测试与图像保存入口}{168}{210}
+
+\subsection{实验结果}
+
+实验参数为：随机种子 $7$，训练轮数 10，学习率 $\alpha=0.01$，momentum 系数
+$\beta=0.95$，mini-batch 大小为 10。权重初始化采用 He 初始化，其中
+$W_1\in\mathbb{R}^{9\times9\times20}$，$W_5\in\mathbb{R}^{100\times2000}$，
+$W_o\in\mathbb{R}^{10\times100}$。运行
+\texttt{python Code/EXP7/exp7\_1.py} 后得到结果如表~\ref{tab:exp71_result} 所示。
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{cccccc}
+\toprule
+训练样本数 & 测试样本数 & Epochs & 训练准确率 & 测试正确数 & 测试准确率 \\
+\midrule
+2000 & 300 & 10 & 100.00\% & 283 / 300 & 94.33\% \\
+\bottomrule
+\end{tabular}
+\caption{实验7-1 CNN训练与测试结果}
+\label{tab:exp71_result}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth]{Figure_exp7_1_samples.png}
+    \caption{实验7-1：部分测试样本及预测结果，T表示真实标签，P表示预测标签}
+    \label{fig:exp71_samples}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.82\textwidth]{Figure_exp7_1_accuracy.png}
+    \caption{实验7-1：mini-batch momentum训练过程中的训练/测试错误率（对数坐标）}
+    \label{fig:exp71_train_acc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.78\textwidth]{Figure_exp7_1_filters.png}
+    \caption{实验7-1：训练后的 20 个 $9\times9$ 卷积核}
+    \label{fig:exp71_filters}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{Figure_exp7_1_feature_maps.png}
+    \caption{实验7-1：错分样本经过 Conv+ReLU 后的 20 张 feature map}
+    \label{fig:exp71_feature_maps}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Figure_exp7_1_confusion.png}
+    \caption{实验7-1：300张测试图像的预测混淆矩阵}
+    \label{fig:exp71_confusion}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{Figure_exp7_1_errors.png}
+    \caption{实验7-1：全部错分测试样本，C表示预测类别的Softmax置信度}
+    \label{fig:exp71_errors}
+\end{figure}
+
+\subsection{结果分析}
+
+图~\ref{fig:exp71_train_acc} 用错误率的对数坐标展示训练过程，因此高准确率区间内的变化不会被
+压缩在图像顶部。由于对数坐标不能显示 0，第 10 个 epoch 的训练错误率在图中按 $10^{-3}$
+下限显示，实际训练准确率仍为 $100.00\%$。训练准确率由第 1 个 epoch 的 $89.75\%$ 上升到第 10 个 epoch 的
+$100.00\%$，测试准确率由 $86.33\%$ 上升到 $94.33\%$。第 5 个 epoch 时测试准确率为
+$92.67\%$，之后仍有提升，说明 5 个 epoch 还不足以充分训练该网络。第 8 到第 10 个 epoch
+的测试准确率在 $93\%$--$94.33\%$ 附近波动，而训练准确率继续逼近 $100\%$，表明模型已经
+开始记住训练集，但测试集性能尚未出现明显下降。
+
+图~\ref{fig:exp71_filters} 展示了训练后的 20 个卷积核。部分卷积核呈现出方向性边缘、
+短笔画和局部明暗对比的结构，这说明卷积层不只是记忆像素位置，而是在学习能响应数字笔画的
+局部模式。图~\ref{fig:exp71_feature_maps} 选择了一个被识别为 3 的 8 类样本作为例子，可以
+看到不同 feature map 对输入图像的不同区域产生响应：有的图强调上半部分横向笔画，有的图
+强调下半部分弯曲结构。这些中间表示解释了卷积层如何把原始像素转换为后续全连接层可利用的
+特征。
+
+最终测试集准确率为 $283/300=94.33\%$，共有 17 张测试图像被错分。由图~\ref{fig:exp71_confusion}
+和图~\ref{fig:exp71_errors} 可见，错误主要发生在笔画形态相近或书写不规范的样本上。错误
+类型中 $4\rightarrow9$ 出现 2 次，其余错误类型各出现 1 次，包括 $0\rightarrow8$、
+$1\rightarrow3$、$1\rightarrow6$、$2\rightarrow7$、$3\rightarrow4$、$5\rightarrow6$、
+$8\rightarrow3$、$9\rightarrow8$ 等。总体来看，该 CNN 已能较好地识别 MNIST 数字，但在
+局部形态相近、闭合程度不清晰或笔画倾斜明显的样本上仍容易混淆。
+
+\subsection{实验小结}
+
+本实验完成了 Topic 7 Part 1 实验7-1的主要要求：实现卷积层、平均池化层与 MNIST 数据
+加载函数，搭建了 $28\times28$ 输入、20 个 $9\times9$ 卷积核、$2\times2$ 平均池化、
+100 节点隐藏层和 10 类 Softmax 输出层组成的 CNN，并使用 mini-batch momentum 规则训练
+10 个 epoch。在 2000 张训练图像与 300 张测试图像设置下，最终测试准确率达到 $94.33\%$。
+训练/测试错误率曲线、卷积核、feature map 和错分样本可视化共同说明：卷积层能够提取数字
+笔画的局部特征，池化层降低了空间维度，全连接层和 Softmax 层可以在这些特征基础上完成分类。
+
+\end{document}

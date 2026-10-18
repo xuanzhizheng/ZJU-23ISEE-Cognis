@@ -1,0 +1,23 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{numpy}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{np}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{sklearn}\PYG{n+nn}{.}\PYG{n+nn}{datasets}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{make\PYGZus{}moons}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{sklearn}\PYG{n+nn}{.}\PYG{n+nn}{svm}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{SVC}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{sklearn}\PYG{n+nn}{.}\PYG{n+nn}{pipeline}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{Pipeline}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{sklearn}\PYG{n+nn}{.}\PYG{n+nn}{preprocessing}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{StandardScaler}
+
+\PYG{c+c1}{\PYGZsh{} (1)产生非线性数据集}
+\PYG{n}{X}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{make\PYGZus{}moons}\PYG{p}{(}\PYG{n}{n\PYGZus{}samples}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{noise}\PYG{o}{=}\PYG{l+m+mf}{0.15}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{42}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} (2)利用 Pipeline 构建多项式核 SVM（以 C=10, degree=3 为例）}
+\PYG{n}{polynomial\PYGZus{}kernel\PYGZus{}svm\PYGZus{}clf} \PYG{o}{=} \PYG{n}{Pipeline}\PYG{p}{(}\PYG{p}{[}
+    \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scaler}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{StandardScaler}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}               \PYG{c+c1}{\PYGZsh{} (3)标准化数据}
+    \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{svm\PYGZus{}clf}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{SVC}\PYG{p}{(}\PYG{n}{kernel}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{poly}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{degree}\PYG{o}{=}\PYG{l+m+mi}{3}\PYG{p}{,}    \PYG{c+c1}{\PYGZsh{} (4)多项式核 SVC}
+                    \PYG{n}{coef0}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{C}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{42}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+\PYG{p}{]}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} (5)训练模型}
+\PYG{n}{polynomial\PYGZus{}kernel\PYGZus{}svm\PYGZus{}clf}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} (7)测试数据}
+\PYG{n}{test\PYGZus{}pts} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mf}{1.0}\PYG{p}{,} \PYG{l+m+mf}{0.5}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.3}\PYG{p}{]}\PYG{p}{]}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{polynomial\PYGZus{}kernel\PYGZus{}svm\PYGZus{}clf}\PYG{o}{.}\PYG{n}{predict}\PYG{p}{(}\PYG{n}{test\PYGZus{}pts}\PYG{p}{)}\PYG{p}{)}
+\end{MintedVerbatim}

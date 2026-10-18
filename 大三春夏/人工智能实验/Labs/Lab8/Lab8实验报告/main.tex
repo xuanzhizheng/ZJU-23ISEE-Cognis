@@ -1,0 +1,408 @@
+\documentclass[10.5pt]{config}
+\usepackage{amssymb}
+\IfFontExistsTF{Consolas}{\setmonofont{Consolas}}{}
+
+\major{电子科学与技术}
+\name{郑智瑄}
+\partner{}
+\stuid{3230103913}
+\date{\today}
+\lab{玉泉高分子楼-203}
+\course{人工智能实验}
+\instructor{魏准}
+\grades{}
+\expname{神经网络与深度学习训练实验}
+\exptype{设计型实验}
+
+\definecolor{codebg}{RGB}{248,248,248}
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\scriptsize,
+    backgroundcolor=\color{codebg},
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=false,
+    breakindent=0pt,
+    breakautoindent=false,
+    columns=fixed,
+    basewidth=0.52em,
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=6pt,
+    xleftmargin=2em,
+    framexleftmargin=1.6em,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\begin{document}
+
+\makeheader
+
+\section{实验5-2：BP训练多层神经网络}
+
+\subsection{实验目的}
+
+本实验根据 Topic 5 Part 2 中的要求，使用 SGD 训练方法、Sigmoid 激活函数及 BP 规则训练含隐藏层的神经网络，并与实验5-1中的单层 SGD 网络在同一 XOR 数据上的结果进行对比，分析多层网络相对单层网络的优势。
+
+\subsection{实验原理}
+
+实验5-2使用 XOR 数据集。输入第三维为偏置项 $x_3=1$，标签为异或输出，如表~\ref{tab:exp52_data} 所示。本实现将偏置吸收到输入特征 $x_3=1$ 中，因此 $W_1$ 的第三列扮演隐藏层偏置的角色；为简化，隐藏层输出 $y^{(1)}$ 后未再追加常数 1，因而 $W_2$ 不含显式输出层偏置。对本实验的 XOR 任务，隐藏层非线性已经足以表达所需边界，最终 MSE 收敛到 $10^{-5}$ 量级也说明输出层偏置缺失不影响该任务可解性。
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cccc}
+\toprule
+$x_1$ & $x_2$ & $x_3$（偏置） & $d$ \\
+\midrule
+0 & 0 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 1 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{实验5-2 XOR训练数据}
+\label{tab:exp52_data}
+\end{table}
+
+多层网络结构为 $3\rightarrow4\rightarrow1$。输入层含两个特征与一个偏置项，隐藏层含 4 个 Sigmoid 神经元，输出层含 1 个 Sigmoid 神经元。前向传播为：
+
+\[
+v^{(1)}=W_1x,\qquad y^{(1)}=\sigma(v^{(1)})
+\]
+
+\[
+v^{(2)}=W_2y^{(1)},\qquad y=\sigma(v^{(2)})
+\]
+
+其中：
+
+\[
+\sigma(v)=\frac{1}{1+e^{-v}},\qquad \sigma'(v)=\sigma(v)(1-\sigma(v))
+\]
+
+输出层与隐藏层 Delta 分别为：
+
+\[
+e=d-y,\qquad \delta^{(2)}=y\odot(1-y)\odot e
+\]
+
+\[
+e^{(1)}=W_2^T\delta^{(2)},\qquad
+\delta^{(1)}=y^{(1)}\odot(1-y^{(1)})\odot e^{(1)}
+\]
+
+其中 $\odot$ 表示逐元素相乘；本实验输出层只有 1 个神经元，因此输出层公式退化为标量乘法。
+
+权重采用 SGD 逐样本更新：
+
+\[
+W_2\leftarrow W_2+\alpha\delta^{(2)}(y^{(1)})^T,\qquad
+W_1\leftarrow W_1+\alpha\delta^{(1)}x^T
+\]
+
+\subsection{代码实现}
+
+Listing 1 给出 3-4-1 Sigmoid 网络的一轮 BP 更新过程，包括前向计算、输出层与隐藏层 Delta 计算以及权重更新；Listing 2 给出 XOR 数据上的单层 SGD 与多层 BP 训练、预测、MSE 和准确率计算函数。
+
+\lstinputlisting[caption={BP.py：3-4-1 Sigmoid网络的BP训练函数}]{../Code/EXP5/BP.py}
+
+\lstinputlisting[firstline=24,lastline=75,caption={exp5\_2.py：多层网络与单层网络训练及评价函数}]{../Code/EXP5/exp5_2.py}
+
+\subsection{实验结果与分析}
+
+实验参数为：随机种子 7，学习率 $\alpha=1.0$，多层 BP 网络与单层 SGD 网络均训练 50000 epochs，初始权重均从 $[-1,1]$ 均匀分布采样。由于 XOR 网络规模很小且 Sigmoid 导数有界，$\alpha=1.0$ 在本任务中仍能稳定更新；较长的 50000 epochs 用于保证两种网络在同一训练预算下公平比较。训练后结果如表~\ref{tab:exp52_results} 所示。
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{ccccccc}
+\toprule
+方法 & 最终MSE & 准确率 & $(0,0)$ & $(0,1)$ & $(1,0)$ & $(1,1)$ \\
+\midrule
+多层 BP 网络 & 0.00001305 & 100\% & 0.002771 & 0.996705 & 0.995867 & 0.004073 \\
+单层 SGD 网络 & 0.25007145 & 75\% & 0.514734 & 0.504774 & 0.505183 & 0.495220 \\
+\bottomrule
+\end{tabular}
+\caption{实验5-2多层网络与单层网络最终结果}
+\label{tab:exp52_results}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figure_exp5_2_mse.png}
+    \caption{实验5-2：多层 BP 网络与单层 SGD 网络的 MSE 曲线}
+    \label{fig:exp52_mse}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.82\textwidth]{Figure_exp5_2_outputs.png}
+    \caption{实验5-2：四组样本最终输出对比}
+    \label{fig:exp52_outputs}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Figure_exp5_2_boundary.png}
+    \caption{实验5-2：多层网络与单层网络决策边界对比}
+    \label{fig:exp52_boundary}
+\end{figure}
+
+从图~\ref{fig:exp52_mse}--\ref{fig:exp52_boundary} 可以看出，多层 BP 网络能够将 XOR 的四组样本正确分开，而单层网络输出基本停留在 0.5 附近。当四组样本输出都退化到 0.5 时，无论标签为 0 还是 1，平方误差均为 $(0.5)^2=0.25$，这解释了单层网络 MSE 曲线长期贴近 0.25 的现象。单层 SGD 网络虽按 0.5 阈值计算得到 75\% 的名义准确率，但四个输出值均紧贴 0.5：$(0,0)$ 的标签为 0，输出 0.514734 越过阈值后被错判为 1，是唯一的错误样本；$(1,1)$ 的输出 0.495220 恰好低于阈值被判为 0，与标签碰巧一致；其余两个样本标签均为 1，也因略高于阈值而被判对。因此该准确率主要来自阈值碰巧划分，网络实际上没有形成有效区分能力。这正是 XOR 线性不可分的体现；加入隐藏层后，多个非线性神经元可以组合出非线性边界，从而成功学习 XOR 映射。
+
+\clearpage
+
+\section{实验5-3：Momentum训练多层神经网络}
+
+\subsection{实验目的}
+
+本实验在实验5-2的多层神经网络基础上，将 BP 的权重更新规则改为 momentum 更新规则，比较不同 $\beta$ 值 momentum 训练方法及不用 momentum 训练方法时，误差（真实结果与输出的 MSE）随 epoch 的变化趋势，并可视化结果。
+
+\subsection{实验原理}
+
+普通 BP 的权重增量为：
+
+\[
+\Delta W_t=\alpha \delta y^T,\qquad W_t=W_{t-1}+\Delta W_t
+\]
+
+Momentum 方法在当前梯度方向之外保留历史更新方向。设 $m_t$ 为第 $t$ 步动量项：
+
+\[
+m_t=\beta m_{t-1}+\Delta W_t
+\]
+
+\[
+W_t=W_{t-1}+m_t
+\]
+
+其中 $\beta$ 为 momentum 系数。若连续若干步的梯度方向近似一致，设 $\Delta W_t=\alpha g_t$，则动量项相当于对历史梯度作几何加权：
+
+\[
+m_t\approx \left(1+\beta+\beta^2+\cdots\right)\alpha g_t
+=\frac{\alpha}{1-\beta}g_t
+\]
+
+因此可用近似等效学习率
+\[
+\alpha_{\mathrm{eff}}\approx\frac{\alpha}{1-\beta}
+\]
+理解 momentum 的放大作用。适当的 $\beta$ 可以在稳定下降方向上加速训练；但当 $\beta$ 过大时，历史方向占比过高，等效步长也会显著增大，可能导致参数越过较优区域并产生振荡。
+
+\subsection{代码实现}
+
+Listing 3 在普通 BP 更新的基础上加入 momentum 项，保存并累积历史权重增量；Listing 4 给出不同 $\beta$ 设置下的初始化、预测、评价指标和训练函数，用于对比不用 momentum 与使用 momentum 的训练效果。
+\clearpage
+
+\lstinputlisting[caption={BackPropMmt.py：带momentum的BP更新函数}]{../Code/EXP5/BackPropMmt.py}
+
+\clearpage
+
+\lstinputlisting[firstline=25,lastline=62,caption={exp5\_3.py：不同beta值的训练及评价函数}]{../Code/EXP5/exp5_3.py}
+
+\subsection{实验结果与分析}
+
+实验参数为：随机种子 7，学习率 $\alpha=1.0$，训练 12000 epochs，初始权重范围为 $[-1,1]$。结果如表~\ref{tab:exp53_results} 所示。
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabular}{ccccccc}
+\toprule
+方法 & MSE & 准确率 & $(0,0)$ & $(0,1)$ & $(1,0)$ & $(1,1)$ \\
+\midrule
+不用 momentum & 0.00006713 & 100\% & 0.00653020 & 0.99270968 & 0.99055666 & 0.00914063 \\
+$\beta=0.5$ & 0.00002859 & 100\% & 0.00410933 & 0.99517306 & 0.99416786 & 0.00633815 \\
+$\beta=0.9$ & 0.00000587 & 100\% & 0.00180434 & 0.99784581 & 0.99779816 & 0.00327517 \\
+$\beta=0.99$ & 0.18749994 & 75\% & 0.00027471 & 0.50000081 & 0.49999950 & 0.49999999 \\
+\bottomrule
+\end{tabular}
+\caption{实验5-3不同momentum设置下的最终结果}
+\label{tab:exp53_results}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figure_exp5_3_mse.png}
+    \caption{实验5-3：不同 $\beta$ 值与不用 momentum 的 MSE 曲线}
+    \label{fig:exp53_mse}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figure_exp5_3_outputs.png}
+    \caption{实验5-3：不同训练方法下四组 XOR 样本最终输出}
+    \label{fig:exp53_outputs}
+\end{figure}
+
+由图~\ref{fig:exp53_mse} 和图~\ref{fig:exp53_outputs} 可知，适当的 momentum 能明显改善 BP 训练效果：$\beta=0.5$ 和 $\beta=0.9$ 的最终 MSE 均低于不用 momentum 的情形，其中 $\beta=0.9$ 收敛效果最好。相比之下，$\beta=0.99$ 的表现显著变差。结合等效学习率近似 $\alpha_{\mathrm{eff}}\approx \alpha/(1-\beta)$ 可知，在本实验 $\alpha=1.0$ 时，$\beta=0.99$ 对应的等效步长约为 100，历史更新方向被过度累积，参数容易跨过较优区域并产生振荡，当前梯度难以及时修正方向，因此无法稳定学到 XOR 所需的非线性边界。
+
+从表~\ref{tab:exp53_results} 的最终输出也能看出这种不稳定并不是简单地全部退化到 0.5：$\beta=0.99$ 已经将 $(0,0)$ 的输出压到接近 0，但其余三组样本仍停留在 0.5 附近。这说明网络较容易拟合由偏置项主导的固定输入模式 $(0,0,1)$，却没有稳定学到 $x_1$ 与 $x_2$ 之间的非线性组合。表中输出保留 8 位小数，是为了避免 $(1,1)$ 的实际输出略小于 0.5 却在 6 位显示下四舍五入为 0.500000，从而造成阈值判别上的误解。进一步将 $\beta=0.99$ 固定、学习率降为 $\alpha=0.01$ 后，$\alpha_{\mathrm{eff}}\approx1$，在相同随机种子和 12000 epochs 下最终 MSE 降至 $1.006\times10^{-4}$，准确率恢复到 $100\%$，输出为 $0.006271,0.993567,0.986803,0.012154$。这进一步说明 $\beta=0.99$ 本身并非必然失败，关键问题在于过大的 $\beta$ 与过大的 $\alpha$ 共同放大了实际更新步长。
+
+\clearpage
+
+\section{实验6-1：训练一个深度学习网络}
+
+\subsection{实验目的}
+
+本实验根据 Topic 6 Part 1 的要求，通过 SGD 训练方法、ReLU 激活函数、最后一层 Softmax 以及 BP 规则，对一个深度神经网络进行训练，并输出训练后的分类结果。课件为简单起见指定 Softmax 函数的导数直接取 1；其与常用 Softmax + 交叉熵情形的区别在实验原理中说明。
+
+\subsection{实验原理}
+
+实验6-1的网络结构为：
+
+\[
+25 \rightarrow 20 \rightarrow 20 \rightarrow 20 \rightarrow 5
+\]
+
+对应权重矩阵维度为：
+
+\[
+W_1\in\mathbb{R}^{20\times25},\quad
+W_2\in\mathbb{R}^{20\times20},\quad
+W_3\in\mathbb{R}^{20\times20},\quad
+W_4\in\mathbb{R}^{5\times20}
+\]
+
+输入为 5 个 $5\times5$ 数字图案，展开后为 25 维向量；输出为 5 类 one-hot 标签。数据由 \texttt{make\_dataset()} 按课件图案逐项定义，例如第 1 个样本矩阵为
+\[
+\begin{bmatrix}
+0&1&1&0&0\\
+0&0&1&0&0\\
+0&0&1&0&0\\
+0&0&1&0&0\\
+0&1&1&1&0
+\end{bmatrix}.
+\]
+隐藏层采用 ReLU：
+
+\[
+\mathrm{ReLU}(x)=\max(0,x),\qquad
+\mathrm{ReLU}'(x)=
+\begin{cases}
+1, & x>0\\
+0, & x\leq0
+\end{cases}
+\]
+
+输出层采用 Softmax：
+
+\[
+\mathrm{Softmax}(z_i)=\frac{e^{z_i}}{\sum_{j=1}^{K}e^{z_j}}
+\]
+
+反向传播中，课件要求为简单起见令 Softmax 导数为 1，因此输出层 Delta 直接取：
+
+\[
+\delta=d-y
+\]
+
+需要注意，若采用 Softmax + 交叉熵损失，输出层相对于 logits 的梯度可精确化为 $y-d$；按本文 $W\leftarrow W+\alpha\delta y^T$ 与 $e=d-y$ 的符号约定，等价于取 $\delta=e$。本实验用 MSE 作为误差曲线与结果指标，因此这里的 $\delta=e$ 是课件指定的近似处理，而不是完整的 Softmax + MSE 导数。
+
+隐藏层依次反传：
+
+\[
+\delta_3=\mathrm{ReLU}'(v_3)\odot(W_4^T\delta),\quad
+\delta_2=\mathrm{ReLU}'(v_2)\odot(W_3^T\delta_3),\quad
+\delta_1=\mathrm{ReLU}'(v_1)\odot(W_2^T\delta_2)
+\]
+
+权重按 SGD 逐样本更新：
+
+\[
+W_4\leftarrow W_4+\alpha\delta y_3^T,\quad
+W_3\leftarrow W_3+\alpha\delta_3 y_2^T,\quad
+W_2\leftarrow W_2+\alpha\delta_2 y_1^T,\quad
+W_1\leftarrow W_1+\alpha\delta_1 x^T
+\]
+
+\subsection{代码实现}
+
+Listing 5 定义 ReLU 激活函数及其导数，Listing 6 定义输出层 Softmax 函数；Listing 7 给出深度 ReLU 网络的一轮 SGD-BP 更新过程。Listing 8 给出验证样本与 one-hot 标签的构造，Listing 9 给出 ReLU 与 Sigmoid 两种隐藏层设置下的预测、MSE/accuracy 评价和训练循环，Listing 10 给出最终训练验证与结果输出入口。
+
+Sigmoid 对比网络与 Listing 7 的反向传播结构相同，仅将隐藏层激活函数及其导数由 ReLU 替换为 Sigmoid，因此重点展示其训练调用与 MSE 曲线对比。
+
+\lstinputlisting[firstline=4,lastline=9,caption={ReLU.py：ReLU及其导数}]{../Code/EXP6/ReLU.py}
+
+\lstinputlisting[caption={Softmax.py：Softmax函数}]{../Code/EXP6/Softmax.py}
+
+\lstinputlisting[firstline=7,lastline=45,emptylines=0,caption={DeepReLU.py：深度ReLU网络训练函数}]{../Code/EXP6/DeepReLU.py}
+
+\clearpage
+
+\lstinputlisting[firstline=15,lastline=55,caption={exp6\_1.py：实验6-1验证样本与标签构造}]{../Code/EXP6/exp6_1.py}
+
+\clearpage
+
+\lstinputlisting[firstline=58,lastline=122,emptylines=0,caption={exp6\_1.py：实验6-1预测、评价与训练函数}]{../Code/EXP6/exp6_1.py}
+
+\clearpage
+
+\lstinputlisting[firstline=190,lastline=218,emptylines=0,caption={exp6\_1.py：实验6-1训练验证与结果输出}]{../Code/EXP6/exp6_1.py}
+
+\subsection{实验结果与分析}
+
+实验参数为：随机种子 7，学习率 $\alpha=0.01$，训练 3000 epochs，初始权重从 $[-1,1]$ 随机采样。相较于 XOR 实验中的浅层 Sigmoid 网络，本实验网络包含 4 层权重，梯度需要经过更长的链式反传，且 ReLU 输出不受 Sigmoid 上界压缩；因此采用更小的学习率 $\alpha=0.01$ 保持更新稳定，3000 epochs 已足以使 ReLU 网络 MSE 收敛到 $10^{-9}$ 量级。最终 MSE 为 $3.9\times10^{-9}$，训练集分类准确率为 $100\%$。为观察梯度消失的影响，额外保持网络结构、随机种子、学习率和训练轮数不变，仅将三个隐藏层激活函数替换为 Sigmoid 进行对比。
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{ccccccc}
+\toprule
+样本 & 目标类别 & 预测类别 & 类1 & 类2 & 类3 & 类4 / 类5 \\
+\midrule
+1 & 1 & 1 & 0.999826 & 0.000010 & 0.000016 & 0.000051 / 0.000097 \\
+2 & 2 & 2 & 0.000011 & 0.999915 & 0.000000 & 0.000000 / 0.000074 \\
+3 & 3 & 3 & 0.000025 & 0.000012 & 0.999917 & 0.000001 / 0.000045 \\
+4 & 4 & 4 & 0.000065 & 0.000000 & 0.000001 & 0.999925 / 0.000010 \\
+5 & 5 & 5 & 0.000060 & 0.000034 & 0.000031 & 0.000000 / 0.999874 \\
+\bottomrule
+\end{tabular}
+\caption{实验6-1最终Softmax输出}
+\label{tab:exp61_results}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Figure_exp6_1_digits.png}
+    \caption{实验6-1：五个训练样本的5x5图案}
+    \label{fig:exp61_digits}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{Figure_exp6_1_mse.png}
+    \caption{实验6-1：深度ReLU网络训练MSE曲线}
+    \label{fig:exp61_mse}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{Figure_exp6_1_relu_sigmoid_compare.png}
+    \caption{实验6-1：ReLU与Sigmoid隐藏层MSE曲线对比}
+    \label{fig:exp61_relu_sigmoid}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.78\textwidth]{Figure_exp6_1_softmax.png}
+    \caption{实验6-1：训练后Softmax输出概率矩阵}
+    \label{fig:exp61_softmax}
+\end{figure}
+
+从表~\ref{tab:exp61_results} 和图~\ref{fig:exp61_softmax} 可以看出，训练后每个样本在正确类别上的 Softmax 概率均接近 1，在其他类别上的概率接近 0，说明深度 ReLU 网络已经成功记住并区分了这五个数字图案。图~\ref{fig:exp61_mse} 显示 MSE 随 epoch 快速下降；其中 0--500 epoch 的放大子图展示了主要下降阶段，之后网络进入对数坐标下的缓慢精修。原因是当输出概率逐渐接近 one-hot 标签时，$e=d-y$ 整体变小，课件近似下的输出层 $\delta=e$ 也随之变小，权重更新幅度不断减弱；这与 Softmax+MSE 组合在接近饱和时梯度变小的现象一致。
+
+图~\ref{fig:exp61_relu_sigmoid} 进一步给出了 ReLU 与 Sigmoid 隐藏层的对比。两者最终训练集准确率均达到 $100\%$，但 Sigmoid 网络最终 MSE 为 $9.6964\times10^{-5}$，明显高于 ReLU 网络的 $3.9\times10^{-9}$，约相差 $2.5\times10^4$ 倍。这说明在较深网络中，Sigmoid 导数最大仅为 0.25，多层链式相乘会明显削弱反传梯度，使权重更新更慢；ReLU 在正半轴导数为 1，因此更容易保持有效梯度并快速降低误差。
+
+\section{综合总结}
+
+实验5-2说明了隐藏层对解决非线性可分问题的重要性。单层网络最终 MSE 约为 0.250071，输出基本贴近 0.5，按阈值得到的准确率并不代表模型真正学到了 XOR 规律；多层 BP 网络则将 MSE 降至 $1.305\times10^{-5}$，并形成非线性决策边界。
+
+实验5-3进一步验证了 momentum 对 BP 训练的影响。在相同随机种子与学习率下，$\beta=0.9$ 将最终 MSE 从不用 momentum 时的 $6.7\times10^{-5}$ 降到 $5.9\times10^{-6}$，约提升一个数量级；但 $\beta=0.99$ 因等效步长过大而造成不稳定。将 $\alpha$ 降为 0.01 后又能恢复收敛，支持了等效学习率解释。
+
+实验6-1将网络扩展到更深的 ReLU + Softmax 结构，完成了 5 类 $5\times5$ 图案识别任务，说明深度网络在层数增加后具备更强的特征表达和分类能力。将隐藏层 ReLU 替换为 Sigmoid 后，虽然最终仍能达到 $100\%$ 训练准确率，但 MSE 停留在 $9.6964\times10^{-5}$，明显高于 ReLU 的 $3.9\times10^{-9}$，从实验上体现了深层 Sigmoid 网络更容易因梯度衰减而收敛变慢。
+
+\end{document}

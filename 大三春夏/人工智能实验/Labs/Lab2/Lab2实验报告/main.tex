@@ -1,0 +1,222 @@
+\documentclass[10.5pt]{config}
+% 本实验报告采用 署名-相同方式共享 4.0 国际许可协议 (CC BY-SA 4.0)
+
+\major{电子科学与技术}
+\name{郑智瑄}
+\partner{} % 签名栏
+\stuid{3230103913}
+\date{\today}
+\lab{东4-216}
+\course{人工智能实验}
+\instructor{魏准}
+\grades{}
+\expname{实验1-2,1-3,2-1} % 实验名字
+\exptype{设计型实验} % 实验类型
+
+% minted 代码样式设置
+\usemintedstyle{tango}
+\setminted{
+    fontsize=\small,
+    linenos,
+    numbersep=8pt,
+    breaklines,
+    frame=single,
+    framesep=2mm,
+    tabsize=4,
+    bgcolor=codebg
+}
+% 定义代码背景色
+\definecolor{codebg}{RGB}{248, 248, 248}
+
+\begin{document}
+
+\makeheader % 首页头部
+
+% ==================== 实验 1-2 ====================
+\section{实验 1-2：约会网站数据分析与可视化}
+
+\subsection{实验目的}
+利用 Matplotlib 对约会网站样本数据进行多维度可视化分析，观察不同特征（飞行里程、游戏时间、冰淇淋消费）对用户类别标签的影响。
+
+\subsection{实验原理}
+分类问题是通过已知的特征预测特定的实例类别。在该数据集中，标签分为三个等级：不喜欢的人（1）、魅力一般的人（2）和极具魅力的人（3）。通过散点图（Scatter Plot）可以将三维特征两两组合，在二维平面上观察类别的分布规律。
+
+\subsection{核心代码实现}
+\begin{listing}[H]
+\begin{minted}{python}
+datingDataMat, datingLabels = kNN.file2matrix('datingTestSet2.txt')
+colors = {1: 'red', 2: 'green', 3: 'blue'}
+c = [colors[l] for l in datingLabels]
+legend_labels = [mpatches.Patch(color='red',   label='不喜欢'),
+                 mpatches.Patch(color='green', label='一般'),
+                 mpatches.Patch(color='blue',  label='很喜欢')]
+
+def draw_scatter(x, y, xlabel, ylabel, title):
+    fig, ax = plt.subplots(figsize=(6, 5))
+    ax.scatter(x, y, c=c, s=10)
+    ax.set_xlabel(xlabel); ax.set_ylabel(ylabel); ax.set_title(title)
+    ax.legend(handles=legend_labels)
+    fig.tight_layout()
+
+# 分别绘制三组特征组合的散点图
+draw_scatter(datingDataMat[:,0], datingDataMat[:,1],
+             '每年飞行常客里程数', '玩视频游戏所耗时间百分比',
+             '飞行里程 vs 游戏时间百分比')
+# ... 其余两组类似，分别对 [:,0] vs [:,2] 和 [:,1] vs [:,2]
+plt.show()
+\end{minted}
+\caption{数据可视化完整代码 (Data\_display.py)}
+\end{listing}
+
+\subsection{实验结果分析}
+通过绘制的三组散点图，可以清晰地看到：
+\begin{itemize}
+    \item \textbf{飞行里程与游戏时间}（图~\ref{fig:scatter1}）：数据呈现明显的簇状分布，不同类别的重叠度较低，这两个特征对分类有较强的区分度。
+    \item \textbf{冰淇淋消费}（图~\ref{fig:scatter2}、图~\ref{fig:scatter3}）：与其他特征结合时，数据点分布较为弥散，说明该特征对分类结果的影响相对较小。
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figure_1.png}
+        \caption{飞行里程 vs 游戏时间}
+        \label{fig:scatter1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figure_2.png}
+        \caption{飞行里程 vs 冰淇淋消费}
+        \label{fig:scatter2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figure_3.png}
+        \caption{游戏时间 vs 冰淇淋消费}
+        \label{fig:scatter3}
+    \end{subfigure}
+    \caption{三组特征组合的散点图对比}
+\end{figure}
+
+% ==================== 实验 1-3 ====================
+\section{实验 1-3：k-近邻算法测试与准确率评估}
+
+\subsection{实验目的}
+编写程序测试 kNN 分类器在约会数据集上的性能，并计算错误率与准确率。
+
+\subsection{实验原理}
+\begin{enumerate}
+    \item \textbf{数据归一化}：为防止数值较大的特征（如飞行里程）对距离计算产生压倒性影响，需进行归一化处理：
+    $$newValue = \frac{oldValue - min}{max - min}$$
+    \item \textbf{算法流程}：计算新数据与训练集各点的欧氏距离，选取距离最近的 $k$ 个点（本实验 $k=3$），通过投票决定最终类别。
+\end{enumerate}
+
+\subsection{核心代码实现}
+\begin{listing}[H]
+\begin{minted}{python}
+import kNN
+
+def datingClassTest():
+    datingDataMat, datingLabels = kNN.file2matrix('datingTestSet2.txt')
+    normMat, ranges, minVals = kNN.autoNorm(datingDataMat)
+    m = normMat.shape[0]
+    numTestVecs = int(m * 0.10)
+    errorCount = 0.0
+    for i in range(numTestVecs):
+        result = kNN.classify0(normMat[i, :], normMat[numTestVecs:m, :],
+                               datingLabels[numTestVecs:m], 3)
+        if result != datingLabels[i]:
+            errorCount += 1.0
+    print(f"错误率: {errorCount / float(numTestVecs):.2%}")
+    print(f"准确率: {1 - errorCount / float(numTestVecs):.2%}")
+\end{minted}
+\caption{算法测试逻辑 (exp1\_3\_dating\_test.py)}
+\end{listing}
+
+\subsection{运行结果}
+程序运行的终端输出（节选）如下：
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+预测: 3, 实际: 3
+预测: 2, 实际: 2
+预测: 1, 实际: 1
+...
+预测: 3, 实际: 2  [X]
+...
+预测: 3, 实际: 1  [X]
+...
+预测: 3, 实际: 1  [X]
+...
+预测: 2, 实际: 3  [X]
+...
+预测: 3, 实际: 1  [X]
+...
+
+错误率: 5.00%
+准确率: 95.00%
+\end{lstlisting}
+
+\subsection{结果分析}
+在 $k=3$、测试比例为 10\% 的条件下，共 100 个测试样本中有 5 个被错误分类，错误率为 5.00\%，准确率为 95.00\%。错误样本主要集中在类别 2（魅力一般）与类别 1、3 的边界区域，说明这些区域的特征分布存在一定重叠。整体而言，kNN 分类器表现良好，达到了预期要求。
+
+% ==================== 实验 2-1 ====================
+\section{实验 2-1：线性回归的标准方程解法}
+
+\subsection{实验目的}
+通过标准方程法（Standard Equation）求解线性回归模型的参数 $\theta$，实现对随机生成含噪数据的拟合与预测。
+
+\subsection{实验原理}
+线性回归预测模型定义为对特征的加权求和：
+$$\hat{y} = \theta \cdot x = \theta_0 x_0 + \theta_1 x_1 + \dots + \theta_n x_n$$
+其中 $x_0 = 1$。使用标准方程求解使成本函数最小化的 $\hat{\theta}$ 值：
+$$\hat{\theta} = (X^T X)^{-1} X^T y$$
+
+\subsection{核心代码实现}
+\begin{listing}[H]
+\begin{minted}{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 生成随机数据: 100个 x∈[0,2], y = 4 + 3x + 噪声
+X = 2 * np.random.rand(100, 1)
+y = 4 + 3 * X + np.random.randn(100, 1)
+
+# 标准方程求解: θ = (X^T X)^{-1} X^T y
+X_b = np.c_[np.ones((100, 1)), X]
+theta = np.linalg.inv(X_b.T @ X_b) @ X_b.T @ y
+
+# 预测 x=0, x=2
+X_new = np.array([[0], [2]])
+X_new_b = np.c_[np.ones((2, 1)), X_new]
+y_pred = X_new_b @ theta
+
+# 可视化
+plt.plot(X, y, "b.", label="Data")
+plt.plot(X_new, y_pred, "r-", label="Prediction")
+plt.axis([0, 2, 0, 15])
+plt.xlabel("$x_1$"); plt.ylabel("$y$")
+plt.legend(); plt.title("Linear Regression - Exp 2-1")
+plt.show()
+\end{minted}
+\caption{标准方程求解与预测 (exp2\_1\_linear\_regression.py)}
+\end{listing}
+
+\subsection{运行结果}
+程序运行的终端输出如下：
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+theta = [4.01715538 2.9316735 ]
+x=0 -> y=4.0172,  x=2 -> y=9.8805
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figure_4.png}
+    \caption{线性回归拟合结果可视化}
+    \label{fig:linreg}
+\end{figure}
+
+\subsection{结果分析}
+如图~\ref{fig:linreg} 所示，红色直线有效地穿过了带噪声的蓝色样本点群。程序求得 $\theta_0 \approx 4.017$，$\theta_1 \approx 2.932$，与数据生成方程 $y = 4 + 3x$ 高度吻合。对 $x=0$ 预测 $y=4.0172$（理论值 4），对 $x=2$ 预测 $y=9.8805$（理论值 10），误差极小，验证了标准方程解法的正确性。
+
+\end{document}

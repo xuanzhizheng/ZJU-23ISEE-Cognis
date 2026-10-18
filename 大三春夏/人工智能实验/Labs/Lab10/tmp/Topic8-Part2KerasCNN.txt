@@ -1,0 +1,153 @@
+Topic 8-2 Keras实现典型CNN
+
+        魏准
+  浙江大学，信息与电子工程学院
+        2026
+
+                         1
+U-NET-Background
+
+
+
+
+                                         2
+ From：Image and Network Analysis Group
+U-NET-Background
+
+
+
+
+                                                            3
+ Image From http://casser.io/files/transfer_learning.html
+U-NET
+
+
+                           4Nc
+
+
+
+
+                     4Nc         4Nc
+
+
+
+• Encoder-Decoder 结构
+• 编码器逐渐提取图像特征、解码器逐渐恢复图像特征
+• 上、下文信息反复组合
+• Skip Connection
+• Concatenation
+                                       4
+• 所需样本数量小
+Skip-Connection(Residual Learning)
+
+
+
+
+                                     5
+U-NET
+
+
+                                        4Nc
+• 综合信息
+• 梯度更容易传到浅层
+• 减轻任务目标                          4Nc         4Nc
+
+
+
+
+merge6 = concatenate([Conv3,up2], axis = -1)
+added = Add()([conv12, inputs])
+model = Model( inputs, added)
+                                                    6
+卷积基本特征
+
+ 输入X：W1×H1×D1；（长宽通道）
+filters：F×F×D1×K；
+步长Stride: S;
+补零数zero padding number: P;
+
+ 输出：W2×H2×K;
+W2=(W1−F+2P)/S+1
+=(5-3+2×1)/2+1=3;
+                                                    (2×0+ 2×0)+（ 2×-1+ 1×1 + 1×0 ）
+H2=(H1−F+2P)/S+1                                    +（ 1×-1 ）+1=-1;
+=(5-3+2×1)/2+1=3;
+K=2;
+
+
+                                                                                     7
+Source(CS231n: Deep Learning for Computer Vision)
+基本特征
+
+
+
+
+       第四步（图示步长为2）！
+
+
+
+
+                      8
+基本特征
+
+
+
+
+       第四步（图示步长为2）！
+
+
+
+
+                      9
+基本特征
+
+
+
+
+       第四步（图示步长为2）！
+
+
+
+
+                      10
+基本特征
+
+
+
+
+## 搭建模型
+y = Conv2D(32, 3, padding='same', activation='relu',
+kernel_initializer='he_normal’)(x)
+                                                       11
+池化层(Pooling Layer)
+
+
+
+
+                     平均池化vs最大池化
+
+
+
+
+                                  12
+1.2：池化层(Pooling Layer)
+
+y = MaxPooling2D(pool_size=(2, 2))(x)
+y =Conv2DTranspose(32, 2, strides=(2, 2), padding='same',
+activation='relu', use_bias=False, kernel_initializer='he_normal')(x)
+
+
+
+
+                                                                        13
+实验8-1：
+
+• 用Keras实现上面U-Net 结构，可视化重建结果、相对误差及
+  Loss随Epoch变化。
+• 对比下“去除与保留输出层的Skip Connection ”的效果，并分析
+  原因。
+
+
+
+                                          14
+

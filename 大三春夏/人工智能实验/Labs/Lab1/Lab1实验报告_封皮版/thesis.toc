@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}\CJKfamily {hei}\bfseries 实验目的}{1}{section.1}%
+\contentsline {section}{\numberline {2}\CJKfamily {hei}\bfseries 实验任务}{1}{section.2}%
+\contentsline {section}{\numberline {3}\CJKfamily {hei}\bfseries 实验设备}{1}{section.3}%
+\contentsline {section}{\numberline {4}\CJKfamily {hei}\bfseries 提供的代码}{1}{section.4}%
+\contentsline {section}{\numberline {5}\CJKfamily {hei}\bfseries 实验内容}{1}{section.5}%
+\contentsline {section}{\numberline {6}\CJKfamily {hei}\bfseries 实验过程与结果}{2}{section.6}%
+\contentsline {subsection}{\numberline {6.1}\CJKfamily {hei}\bfseries 4位先行进位加法器}{2}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}\CJKfamily {hei}\bfseries 设计原理}{2}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}\CJKfamily {hei}\bfseries Verilog HDL 代码与设计分析}{2}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}\CJKfamily {hei}\bfseries ModelSim 仿真与结果分析}{5}{subsubsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.2}\CJKfamily {hei}\bfseries 32 位进位选择加法器}{5}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}\CJKfamily {hei}\bfseries 设计原理}{5}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}\CJKfamily {hei}\bfseries Verilog HDL 代码与设计分析}{6}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}\CJKfamily {hei}\bfseries ModelSim 仿真与结果分析}{9}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.4}\CJKfamily {hei}\bfseries 时序仿真}{9}{subsubsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.3}\CJKfamily {hei}\bfseries 32 位流水线加法器}{9}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}\CJKfamily {hei}\bfseries 设计原理}{9}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}\CJKfamily {hei}\bfseries Verilog HDL 代码与设计分析}{10}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}\CJKfamily {hei}\bfseries ModelSim 仿真与结果分析}{13}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}\CJKfamily {hei}\bfseries 时序仿真与结果分析}{13}{subsubsection.6.3.4}%
+\contentsline {section}{\numberline {7}\CJKfamily {hei}\bfseries 遇到的问题及解决方法}{13}{section.7}%
+\contentsline {section}{\numberline {8}\CJKfamily {hei}\bfseries 思考题}{14}{section.8}%

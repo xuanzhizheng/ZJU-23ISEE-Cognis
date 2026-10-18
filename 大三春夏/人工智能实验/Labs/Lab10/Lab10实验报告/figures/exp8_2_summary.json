@@ -1,0 +1,226 @@
+{
+  "threshold": 0.5,
+  "best_under_threshold": {
+    "name": "d4_c4_adam_mse",
+    "depth": 4,
+    "latent_channels": 4,
+    "optimizer": "adam",
+    "loss": "mean_squared_error",
+    "compressed_shape": [
+      2,
+      2,
+      4
+    ],
+    "compression_ratio": 49.0,
+    "final_loss": 0.019152451306581497,
+    "final_val_loss": 0.023869814351201057,
+    "mean_relative_error": 0.40789344906806946,
+    "median_relative_error": 0.40504568815231323
+  },
+  "all_results": [
+    {
+      "name": "d2_c16_adam_mse",
+      "depth": 2,
+      "latent_channels": 16,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        7,
+        7,
+        16
+      ],
+      "compression_ratio": 1.0,
+      "final_loss": 0.01093665137887001,
+      "final_val_loss": 0.012212814763188362,
+      "mean_relative_error": 0.29494357109069824,
+      "median_relative_error": 0.2907412052154541
+    },
+    {
+      "name": "d2_c8_adam_mse",
+      "depth": 2,
+      "latent_channels": 8,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        7,
+        7,
+        8
+      ],
+      "compression_ratio": 2.0,
+      "final_loss": 0.010980705730617046,
+      "final_val_loss": 0.012179677374660969,
+      "mean_relative_error": 0.2940841317176819,
+      "median_relative_error": 0.2915503978729248
+    },
+    {
+      "name": "d3_c16_adam_mse",
+      "depth": 3,
+      "latent_channels": 16,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        4,
+        4,
+        16
+      ],
+      "compression_ratio": 3.0625,
+      "final_loss": 0.012381947599351406,
+      "final_val_loss": 0.014391615055501461,
+      "mean_relative_error": 0.3178393244743347,
+      "median_relative_error": 0.3092189431190491
+    },
+    {
+      "name": "d2_c4_adam_mse",
+      "depth": 2,
+      "latent_channels": 4,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        7,
+        7,
+        4
+      ],
+      "compression_ratio": 4.0,
+      "final_loss": 0.011308891698718071,
+      "final_val_loss": 0.01222870871424675,
+      "mean_relative_error": 0.2957760989665985,
+      "median_relative_error": 0.2922965884208679
+    },
+    {
+      "name": "d3_c8_adam_mse",
+      "depth": 3,
+      "latent_channels": 8,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        4,
+        4,
+        8
+      ],
+      "compression_ratio": 6.125,
+      "final_loss": 0.012899376451969147,
+      "final_val_loss": 0.01523358840495348,
+      "mean_relative_error": 0.32483696937561035,
+      "median_relative_error": 0.32025372982025146
+    },
+    {
+      "name": "d3_c8_rmsprop_mse",
+      "depth": 3,
+      "latent_channels": 8,
+      "optimizer": "rmsprop",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        4,
+        4,
+        8
+      ],
+      "compression_ratio": 6.125,
+      "final_loss": 0.017914749681949615,
+      "final_val_loss": 0.018071848899126053,
+      "mean_relative_error": 0.3622972071170807,
+      "median_relative_error": 0.35726284980773926
+    },
+    {
+      "name": "d3_c8_nadam_mae",
+      "depth": 3,
+      "latent_channels": 8,
+      "optimizer": "nadam",
+      "loss": "mean_absolute_error",
+      "compressed_shape": [
+        4,
+        4,
+        8
+      ],
+      "compression_ratio": 6.125,
+      "final_loss": 0.13218580186367035,
+      "final_val_loss": 0.1361798793077469,
+      "mean_relative_error": 1.0,
+      "median_relative_error": 1.0
+    },
+    {
+      "name": "d3_c4_adam_mse",
+      "depth": 3,
+      "latent_channels": 4,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        4,
+        4,
+        4
+      ],
+      "compression_ratio": 12.25,
+      "final_loss": 0.01375523116439581,
+      "final_val_loss": 0.016002625226974487,
+      "mean_relative_error": 0.3365052342414856,
+      "median_relative_error": 0.3316728472709656
+    },
+    {
+      "name": "d3_c2_adam_mse",
+      "depth": 3,
+      "latent_channels": 2,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        4,
+        4,
+        2
+      ],
+      "compression_ratio": 24.5,
+      "final_loss": 0.017534829676151276,
+      "final_val_loss": 0.020788632333278656,
+      "mean_relative_error": 0.3895967900753021,
+      "median_relative_error": 0.3840335011482239
+    },
+    {
+      "name": "d3_c1_adam_mse",
+      "depth": 3,
+      "latent_channels": 1,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        4,
+        4,
+        1
+      ],
+      "compression_ratio": 49.0,
+      "final_loss": 0.06743663549423218,
+      "final_val_loss": 0.07001461833715439,
+      "mean_relative_error": 0.7520599365234375,
+      "median_relative_error": 0.739561915397644
+    },
+    {
+      "name": "d4_c4_adam_mse",
+      "depth": 4,
+      "latent_channels": 4,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        2,
+        2,
+        4
+      ],
+      "compression_ratio": 49.0,
+      "final_loss": 0.019152451306581497,
+      "final_val_loss": 0.023869814351201057,
+      "mean_relative_error": 0.40789344906806946,
+      "median_relative_error": 0.40504568815231323
+    },
+    {
+      "name": "d4_c2_adam_mse",
+      "depth": 4,
+      "latent_channels": 2,
+      "optimizer": "adam",
+      "loss": "mean_squared_error",
+      "compressed_shape": [
+        2,
+        2,
+        2
+      ],
+      "compression_ratio": 98.0,
+      "final_loss": 0.0673065185546875,
+      "final_val_loss": 0.06979849934577942,
+      "mean_relative_error": 0.7496713399887085,
+      "median_relative_error": 0.7373725175857544
+    }
+  ]
+}

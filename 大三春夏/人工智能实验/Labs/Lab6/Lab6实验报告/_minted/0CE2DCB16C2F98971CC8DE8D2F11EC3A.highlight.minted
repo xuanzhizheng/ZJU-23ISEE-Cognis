@@ -1,0 +1,39 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{numpy}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{np}
+
+\PYG{c+c1}{\PYGZsh{} Step 1: 计算均值}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{mean\PYGZus{}val}\PYG{p}{(}\PYG{n}{data\PYGZus{}np}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}输入是numpy的format，行表示样本数，列表示特征\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{data\PYGZus{}np}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Step 2: 计算类内离散度矩阵Sw的单元}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{compute\PYGZus{}Sw\PYGZus{}0}\PYG{p}{(}\PYG{n}{xi}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{n} \PYG{o}{=} \PYG{n}{xi}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n}{ui} \PYG{o}{=} \PYG{n}{mean\PYGZus{}val}\PYG{p}{(}\PYG{n}{xi}\PYG{p}{)}
+    \PYG{n}{Sw\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{Sw\PYGZus{}0} \PYG{o}{=} \PYG{n}{Sw\PYGZus{}0} \PYG{o}{+} \PYG{n}{np}\PYG{o}{.}\PYG{n}{outer}\PYG{p}{(}\PYG{p}{(}\PYG{n}{xi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{ui}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{xi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{ui}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{Sw\PYGZus{}0}
+
+\PYG{c+c1}{\PYGZsh{} Step 3: 类间离散度矩阵Sb}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{compute\PYGZus{}Sb}\PYG{p}{(}\PYG{n}{x1}\PYG{p}{,} \PYG{n}{x2}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{u1} \PYG{o}{=} \PYG{n}{mean\PYGZus{}val}\PYG{p}{(}\PYG{n}{x1}\PYG{p}{)}
+    \PYG{n}{u2} \PYG{o}{=} \PYG{n}{mean\PYGZus{}val}\PYG{p}{(}\PYG{n}{x2}\PYG{p}{)}
+    \PYG{n}{m1} \PYG{o}{=} \PYG{n}{x1}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n}{m2} \PYG{o}{=} \PYG{n}{x2}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n}{u}  \PYG{o}{=} \PYG{p}{(}\PYG{n}{m1} \PYG{o}{*} \PYG{n}{u1} \PYG{o}{+} \PYG{n}{m2} \PYG{o}{*} \PYG{n}{u2}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{m1} \PYG{o}{+} \PYG{n}{m2}\PYG{p}{)}
+    \PYG{n}{Sb} \PYG{o}{=} \PYG{n}{m1} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{outer}\PYG{p}{(}\PYG{p}{(}\PYG{n}{u1} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{u1} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+} \PYGZbs{}
+         \PYG{n}{m2} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{outer}\PYG{p}{(}\PYG{p}{(}\PYG{n}{u2} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{u2} \PYG{o}{\PYGZhy{}} \PYG{n}{u}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{Sb}
+
+\PYG{c+c1}{\PYGZsh{} Step 4: LDA求解}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{LDA}\PYG{p}{(}\PYG{n}{x1}\PYG{p}{,} \PYG{n}{x2}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{Sw} \PYG{o}{=} \PYG{n}{compute\PYGZus{}Sw\PYGZus{}0}\PYG{p}{(}\PYG{n}{x1}\PYG{p}{)} \PYG{o}{+} \PYG{n}{compute\PYGZus{}Sw\PYGZus{}0}\PYG{p}{(}\PYG{n}{x2}\PYG{p}{)}
+    \PYG{n}{Sb} \PYG{o}{=} \PYG{n}{compute\PYGZus{}Sb}\PYG{p}{(}\PYG{n}{x1}\PYG{p}{,} \PYG{n}{x2}\PYG{p}{)}
+    \PYG{n}{Sw\PYGZus{}inv} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{inv}\PYG{p}{(}\PYG{n}{Sw}\PYG{p}{)}
+    \PYG{n}{eigVals}\PYG{p}{,} \PYG{n}{eigVects} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{eig}\PYG{p}{(}\PYG{n}{Sw\PYGZus{}inv} \PYG{o}{@} \PYG{n}{Sb}\PYG{p}{)}
+    \PYG{n}{idx} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{argsort}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{real}\PYG{p}{(}\PYG{n}{eigVals}\PYG{p}{)}\PYG{p}{)}\PYG{p}{[}\PYG{p}{:}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{n}{W} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{real}\PYG{p}{(}\PYG{n}{eigVects}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{n}{idx}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{]}\PYG{p}{)}
+    \PYG{n}{W} \PYG{o}{=} \PYG{n}{W} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{W}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} 归一化为单位向量}
+    \PYG{k}{return} \PYG{n}{W}
+\end{MintedVerbatim}

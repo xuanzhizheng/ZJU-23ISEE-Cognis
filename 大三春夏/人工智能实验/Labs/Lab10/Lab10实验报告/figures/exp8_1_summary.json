@@ -1,0 +1,14 @@
+{
+  "with_skip": {
+    "final_loss": 0.009914071299135685,
+    "final_val_loss": 0.01123339869081974,
+    "mean_relative_error": 0.280023455619812,
+    "median_relative_error": 0.2757217288017273
+  },
+  "no_skip": {
+    "final_loss": 0.008653604425489902,
+    "final_val_loss": 0.01068132370710373,
+    "mean_relative_error": 0.2747851610183716,
+    "median_relative_error": 0.27326276898384094
+  }
+}

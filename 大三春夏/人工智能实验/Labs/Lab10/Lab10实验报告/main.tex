@@ -1,0 +1,258 @@
+\documentclass[10.5pt]{config}
+\usepackage{amssymb}
+\IfFontExistsTF{Consolas}{\setmonofont{Consolas}}{}
+
+\major{电子科学与技术}
+\name{郑智瑄}
+\partner{}
+\stuid{3230103913}
+\date{\today}
+\lab{玉泉高分子楼-203}
+\course{人工智能实验}
+\instructor{魏准}
+\grades{}
+\expname{卷积网络与自编码器}
+\exptype{设计型实验}
+
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{210,210,210}
+\definecolor{codekw}{RGB}{0,82,155}
+\definecolor{codestr}{RGB}{0,118,72}
+\definecolor{codecomment}{RGB}{105,105,105}
+\newcommand{\pass}{\textcolor{codestr}{通过}}
+\newcommand{\fail}{\textcolor{red}{失败}}
+\newcommand{\best}{\textbf}
+\lstdefinestyle{reportpython}{
+    language=Python,
+    basicstyle=\ttfamily\tiny,
+    keywordstyle=\bfseries\color{codekw},
+    commentstyle=\itshape\color{codecomment},
+    stringstyle=\color{codestr},
+    backgroundcolor=\color{codebg},
+    frame=single,
+    rulecolor=\color{codeframe},
+    framerule=0.4pt,
+    framesep=4pt,
+    breaklines=true,
+    breakatwhitespace=false,
+    breakindent=0pt,
+    breakautoindent=false,
+    columns=fullflexible,
+    keepspaces=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=6pt,
+    xleftmargin=1.8em,
+    framexleftmargin=1.5em,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    captionpos=t,
+    aboveskip=0.75em,
+    belowskip=0.75em,
+    lineskip=0pt
+}
+\lstset{style=reportpython}
+
+\newcommand{\codefile}[3]{%
+    \par\medskip
+    \refstepcounter{lstlisting}\label{#2}%
+    \begin{center}
+        Listing~\thelstlisting: #3
+    \end{center}
+    \inputminted[
+        fontsize=\tiny,
+        linenos,
+        numbersep=5pt,
+        frame=single,
+        framesep=3pt,
+        breaklines=true,
+        breakanywhere=false,
+        breakafter=_,
+        tabsize=4
+    ]{python}{#1}
+    \par\medskip
+}
+
+\begin{document}
+
+\makeheader
+
+\section{实验8-1：Keras实现U-Net重建}
+
+\subsection{实验目的}
+
+本实验使用 Keras 搭建 U-Net 形式的卷积编码器-解码器，对带噪声的 MNIST 图像进行重建，输出重建图像、相对误差以及 Loss 随 epoch 的变化曲线。同时，对比输出层保留 Skip Connection 与去除该 Skip Connection 时的重建效果，并分析两种结构的差异原因。
+
+\subsection{实验原理}
+
+U-Net 由编码器、桥接层和解码器组成。编码器通过卷积和池化逐步扩大感受野，解码器通过转置卷积恢复空间尺寸。与普通自编码器相比，U-Net 在同尺度的编码端和解码端之间加入拼接式 Skip Connection，使浅层纹理和位置信息可以直接传递到解码阶段。设干净图像为 $x$，带噪输入为 $\tilde{x}$，模型输出为 $\hat{x}$，本实验采用均方误差作为训练目标：
+\[
+    L=\frac{1}{N}\sum_{i=1}^{N}\left\|x_i-\hat{x}_i\right\|_2^2 .
+\]
+
+保留输出层 Skip Connection 时，模型的最后输出写为
+\[
+    \hat{x}=F(\tilde{x})+\tilde{x},
+\]
+其中 $F(\tilde{x})$ 学习的是从带噪输入到干净图像的残差修正；去除该连接时，模型直接学习
+\[
+    \hat{x}=G(\tilde{x}).
+\]
+相对误差按如下范数形式计算：
+\[
+    \mathrm{Err}=\frac{\left\|x-\hat{x}\right\|_2}{\left\|x\right\|_2}.
+\]
+
+为避免输出层初始化策略影响对比，保留和去除输出 Skip Connection 的最后一层卷积均使用 \texttt{he\_normal} 初始化，并统一训练 20 个 epoch。输出层采用线性激活，原因是 MSE 回归任务中线性输出不会在训练初期受 \texttt{sigmoid} 饱和影响；评估和作图时再将像素裁剪到 $[0,1]$。
+
+\subsection{代码实现}
+
+公共数据处理函数如 Listing~\ref{lst:datautils} 所示。代码优先读取实验 7 中已有的本地 MNIST IDX 文件；若本地样本数不足，再退回到 \texttt{tensorflow.keras.datasets.mnist}。随后将图像归一化到 $[0,1]$，按固定随机种子加入高斯噪声，并提供相对误差与压缩比计算函数。
+
+\codefile{../Code/EXP8/data_utils.py}{lst:datautils}{data\_utils.py：完整数据读取、加噪与指标函数}
+
+U-Net 的完整实现如 Listing~\ref{lst:unet} 所示。编码端采用两级卷积块与最大池化，桥接层使用 64 个卷积核，解码端使用两级 \texttt{Conv2DTranspose} 恢复空间尺寸，并与对应编码层进行 \texttt{Concatenate}。输出层 Skip Connection 通过 \texttt{Add} 实现；无输出 Skip Connection 时，模型使用线性卷积层直接重建图像。
+
+\codefile{../Code/EXP8/exp8_1_unet.py}{lst:unet}{exp8\_1\_unet.py：完整U-Net模型与输出Skip Connection对照}
+
+\subsection{实验结果}
+
+实验环境为 Python 3.12.9、TensorFlow 2.21.0。训练参数统一设置为：随机种子 7，噪声因子 0.5，训练样本 9000 张，验证样本 1000 张，评估样本 200 张，batch size 为 64，训练 20 个 epoch，优化器为 Adam，学习率为 $10^{-3}$，输出卷积层初始化为 \texttt{he\_normal}。
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+模型 & 最终训练Loss & 最终验证Loss & 平均相对误差 & 中位相对误差 \\
+\midrule
+保留输出层Skip Connection & 0.009914 & 0.011233 & 0.280023 & 0.275722 \\
+去除输出层Skip Connection & 0.008654 & 0.010681 & 0.274785 & 0.273263 \\
+\bottomrule
+\end{tabular}
+\caption{实验8-1：同初始化条件下输出层Skip Connection对重建效果的影响}
+\label{tab:exp81}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{Figure_exp8_1_loss.png}
+    \caption{实验8-1：U-Net训练与验证Loss曲线}
+    \label{fig:exp81loss}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.94\textwidth]{Figure_exp8_1_reconstruction.png}
+    \caption{实验8-1：带噪输入、干净图像以及两种U-Net输出对比}
+    \label{fig:exp81recon}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\textwidth]{Figure_exp8_1_error.png}
+    \caption{实验8-1：两种U-Net输出的相对误差分布}
+    \label{fig:exp81err}
+\end{figure}
+
+从表~\ref{tab:exp81} 可以看到，在统一输出层初始化并延长训练后，两种模型的差距明显缩小，去除输出层 Skip Connection 的模型仍取得略低的验证 Loss 和平均相对误差。该结论应限定在本实验设置下理解：输入 $\tilde{x}$ 本身已经含有较强噪声，输出端直接加回 $\tilde{x}$ 会显式引入一条噪声通路，模型需要学习 $x-\tilde{x}$ 这一去噪残差才能抵消它。
+
+这一结果并不表示残差学习在图像去噪中普遍劣于直接重建。DnCNN 等经典去噪工作利用残差学习预测噪声分量，并认为噪声统计往往比自然图像内容更容易建模。图~\ref{fig:exp81loss} 中后期验证 Loss 也有轻微波动，说明继续延长训练未必总能同步改善泛化。因此，本实验的结论限定为：在当前数据规模、网络宽度、噪声强度和训练轮数下，输出端直接加回带噪输入没有带来优势；若改变初始化、网络规模或训练策略，结论仍需重新验证。
+
+\section{实验8-2：卷积自编码器图像去噪与压缩比搜索}
+
+\subsection{实验目的}
+
+本实验使用 Keras 搭建卷积神经网络自编码器，将带噪声污染的 MNIST 图像作为输入，以干净图像作为监督目标进行去噪重建。实验探索不同网络结构、优化器和损失函数，在相对误差小于 50\% 的约束下，寻找尽可能大的压缩比
+\[
+    \mathrm{Ratio}=\frac{\mathrm{size(Input)}}{\mathrm{size(Compressed)}} .
+\]
+同时打印最小压缩层的 shape，并可视化去噪结果与训练过程。
+
+\subsection{实验原理}
+
+卷积自编码器由编码器和解码器两部分组成。编码器通过卷积和池化把输入图像压缩为低维特征张量，解码器再通过转置卷积逐步恢复图像尺寸。本实验将压缩层命名为 \texttt{compressed}，其尺寸直接用于计算压缩比。例如输入尺寸为 $28\times28\times1$，当压缩层为 $4\times4\times2$ 时，有
+\[
+    \mathrm{Ratio}=\frac{28\times28\times1}{4\times4\times2}=24.5 .
+\]
+当压缩层进一步变为 $2\times2\times4$ 时，压缩比达到
+\[
+    \mathrm{Ratio}=\frac{28\times28\times1}{2\times2\times4}=49 .
+\]
+压缩比越大，瓶颈越窄，模型需要用更少的变量保存数字结构；但压缩过强会损失笔画细节，导致相对误差升高。
+
+\subsection{代码实现}
+
+自编码器完整实现如 Listing~\ref{lst:autoencoder} 所示。候选结构覆盖两级、三级和四级池化：两级池化得到 $7\times7$ 级别的压缩层，三级池化得到 $4\times4$ 级别的压缩层，四级池化得到 $2\times2$ 级别的压缩层。三级和四级解码后空间尺寸会恢复到 $32\times32$，因此使用 \texttt{Cropping2D} 裁剪回 $28\times28$。候选配置包括 \texttt{d3\_c2}、\texttt{d3\_c1}、\texttt{d4\_c4} 和 \texttt{d4\_c2}，覆盖 24.5、49 和 98 倍压缩比。
+
+\codefile{../Code/EXP8/exp8_2_autoencoder.py}{lst:autoencoder}{exp8\_2\_autoencoder.py：完整卷积自编码器与压缩比搜索}
+
+\subsection{实验结果}
+
+实验使用与 8-1 相同的数据划分和噪声设置，即训练样本 9000 张、验证样本 1000 张、评估样本 200 张、噪声因子 0.5、随机种子 7、batch size 64、训练 20 个 epoch。压缩比搜索结果如表~\ref{tab:exp82} 所示。
+
+\begin{table}[H]
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lccccccc}
+\toprule
+候选模型 & 压缩层shape & 压缩比 & 优化器 & Loss & 最终验证Loss & 平均相对误差 & 结果 \\
+\midrule
+\texttt{d2\_c16\_adam\_mse} & $7\times7\times16$ & 1.0000 & Adam & MSE & 0.012213 & 0.294944 & \pass \\
+\texttt{d2\_c8\_adam\_mse} & $7\times7\times8$ & 2.0000 & Adam & MSE & 0.012180 & 0.294084 & \pass \\
+\texttt{d3\_c16\_adam\_mse} & $4\times4\times16$ & 3.0625 & Adam & MSE & 0.014392 & 0.317839 & \pass \\
+\texttt{d2\_c4\_adam\_mse} & $7\times7\times4$ & 4.0000 & Adam & MSE & 0.012229 & 0.295776 & \pass \\
+\texttt{d3\_c8\_adam\_mse} & $4\times4\times8$ & 6.1250 & Adam & MSE & 0.015234 & 0.324837 & \pass \\
+\texttt{d3\_c8\_rmsprop\_mse} & $4\times4\times8$ & 6.1250 & RMSprop & MSE & 0.018072 & 0.362297 & \pass \\
+\texttt{d3\_c8\_nadam\_mae} & $4\times4\times8$ & 6.1250 & Nadam & MAE & 0.136180 & 1.000000 & \fail \\
+\texttt{d3\_c4\_adam\_mse} & $4\times4\times4$ & 12.2500 & Adam & MSE & 0.016003 & 0.336505 & \pass \\
+\texttt{d3\_c2\_adam\_mse} & $4\times4\times2$ & 24.5000 & Adam & MSE & 0.020789 & 0.389597 & \pass \\
+\texttt{d3\_c1\_adam\_mse} & $4\times4\times1$ & 49.0000 & Adam & MSE & 0.070015 & 0.752060 & \fail \\
+\best{\texttt{d4\_c4\_adam\_mse}} & \best{$2\times2\times4$} & \best{49.0000} & Adam & MSE & 0.023870 & \best{0.407893} & \best{\pass} \\
+\texttt{d4\_c2\_adam\_mse} & $2\times2\times2$ & 98.0000 & Adam & MSE & 0.069798 & 0.749671 & \fail \\
+\bottomrule
+\end{tabular}}
+\caption{实验8-2：不同自编码器结构、优化器与Loss的压缩比搜索结果}
+\label{tab:exp82}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{Figure_exp8_2_search.png}
+    \caption{实验8-2：压缩比与平均相对误差对比，虚线为50\%误差阈值}
+    \label{fig:exp82search}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.94\textwidth]{Figure_exp8_2_reconstruction.png}
+    \caption{实验8-2：最优压缩比模型的去噪重建结果}
+    \label{fig:exp82recon}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.78\textwidth]{Figure_exp8_2_loss.png}
+    \caption{实验8-2：最优压缩比模型的训练与验证Loss曲线}
+    \label{fig:exp82loss}
+\end{figure}
+
+由表~\ref{tab:exp82} 可知，\texttt{d3\_c2\_adam\_mse} 在 $4\times4\times2$ 瓶颈下达到 24.5 倍压缩，平均相对误差为 0.389597；\texttt{d4\_c4\_adam\_mse} 在 $2\times2\times4$ 瓶颈下达到 49 倍压缩，平均相对误差为 0.407893，仍低于 50\% 阈值。因此，本次搜索得到的\textbf{最大可行压缩比为 49.0}，对应压缩层 shape 为 \textbf{$2\times2\times4$}。
+
+继续压缩到 $2\times2\times2$ 时，平均相对误差升至 0.749671，已明显超过阈值；同为 49 倍压缩的 $4\times4\times1$ 也未达到要求，说明压缩比相同并不代表重建难度相同。\texttt{d3\_c1\_adam\_mse} 与 \texttt{d4\_c4\_adam\_mse} 同时改变了瓶颈形状、网络深度和解码器参数量，因此差异不能单独归因于通道数。在相同压缩比下，瓶颈空间形状、通道数和解码器规模会共同影响重建质量。
+
+从同通道数的模型对比还可以看到，较大的空间分辨率通常带来更低误差。例如 \texttt{d2\_c4\_adam\_mse} 的 $7\times7\times4$ 瓶颈误差为 0.295776，而 \texttt{d3\_c4\_adam\_mse} 的 $4\times4\times4$ 瓶颈误差升至 0.336505；\texttt{d2\_c8\_adam\_mse} 也优于 \texttt{d3\_c8\_adam\_mse}。这说明对 MNIST 这种笔画稀疏、空间结构强的图像，保留更多空间位置有时比进一步加深压缩更有利。
+
+图~\ref{fig:exp82loss} 中最优压缩比模型在训练后期出现轻微的 train--validation Loss 分叉：训练 Loss 继续下降，而验证 Loss 基本持平并有小幅波动。这是轻度过拟合信号，可通过加入 Dropout、weight decay 或继续扩大训练样本缓解。在完整 1000 张测试图像上，\texttt{d4\_c4\_adam\_mse} 的平均相对误差为 0.448349，中位相对误差为 0.440049，仍低于 50\% 阈值，但比 200 张评估集结果更接近边界，说明固定种子和评估样本量会带来一定浮动。
+
+\texttt{d3\_c8\_nadam\_mae} 的平均相对误差为 1.0，说明输出几乎退化为全黑图像。这个现象与 MAE 在大量零像素数据上的性质一致：MAE 的最优常数预测是中位数，而 MNIST 背景像素占多数且接近 0，模型在短训练中容易被推向“预测背景”的退化解。该结果反而说明，对于本去噪任务，MSE 比 MAE 更适合作为默认损失函数。
+
+\section{实验总结}
+
+本次实验完成了两个 Keras 卷积网络任务。实验8-1 搭建了带编码端-解码端 Skip Connection 的 U-Net，并在同输出层初始化、20 个 epoch 训练条件下重新比较输出层 Skip Connection 的影响。结果显示，无输出 Skip Connection 的直接重建分支仍略优，但差距较小；该结果只说明本实验设置下直接加回带噪输入没有明显收益，不能推导为残差学习的一般劣势。
+
+实验8-2 搭建并搜索了多种卷积自编码器结构。\textbf{最大可行压缩比为 49.0}，对应压缩层 \textbf{$2\times2\times4$}，200 张评估集上的平均相对误差为 0.407893，完整 1000 张测试图像上的平均相对误差为 0.448349。整体来看，卷积结构能够利用局部空间相关性完成有效去噪，而压缩比、瓶颈形状、网络深度、优化器和损失函数共同决定了重建质量与压缩能力之间的折中。
+
+\end{document}

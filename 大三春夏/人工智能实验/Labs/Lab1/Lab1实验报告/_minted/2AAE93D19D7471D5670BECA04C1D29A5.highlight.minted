@@ -1,0 +1,3 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+pip\PYG{+w}{ }install\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}numpy\PYGZlt{}2\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}i\PYG{+w}{ }https://pypi.tuna.tsinghua.edu.cn/simple
+\end{MintedVerbatim}

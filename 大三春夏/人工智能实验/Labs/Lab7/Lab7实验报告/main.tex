@@ -1,0 +1,431 @@
+\documentclass[10.5pt]{config}
+% 本实验报告采用 署名-相同方式共享 4.0 国际许可协议 (CC BY-SA 4.0)
+\usepackage{amssymb}
+
+\major{电子科学与技术}
+\name{郑智瑄}
+\partner{} % 签名栏
+\stuid{3230103913}
+\date{\today}
+\lab{玉泉高分子楼-203}
+\course{人工智能实验}
+\instructor{魏准}
+\grades{}
+\expname{Delta规则神经网络训练} % 实验名字
+\exptype{设计型实验} % 实验类型
+
+% minted 代码样式设置
+\usemintedstyle{tango}
+\setminted{
+    fontsize=\small,
+    linenos,
+    numbersep=8pt,
+    breaklines,
+    frame=single,
+    framesep=2mm,
+    tabsize=4,
+    bgcolor=codebg
+}
+% 定义代码背景色
+\definecolor{codebg}{RGB}{248, 248, 248}
+
+\begin{document}
+
+\makeheader % 首页头部
+
+% ==================== 实验5-1 ====================
+\section{Delta规则神经网络训练——实验5-1}
+
+\subsection{实验目的}
+
+构建以Sigmoid为激活函数的单层感知器神经网络，分别采用\textbf{SGD}（随机梯度下降，Stochastic Gradient Descent）和\textbf{Batch}（批量梯度下降）两种训练方法，结合Delta规则对网络权重进行迭代更新，学习映射关系 $d = x_1$（输出等于第一个输入特征）。具体任务包括：
+
+\begin{itemize}
+    \item 通过SGD训练方法及Delta规则对神经网络进行训练，输出训练后的结果；
+    \item 通过Batch训练方法及Delta规则对神经网络进行训练，输出训练后的结果；
+    \item 比较两种训练方法的误差（MSE）随epoch变化趋势，并可视化结果；
+    \item 讨论不同学习率（alpha）对训练结果的影响；
+    \item 讨论不同初始化权重W取值范围对训练结果的影响。
+\end{itemize}
+
+\subsection{实验原理}
+
+\paragraph{网络结构与训练数据}
+
+本实验采用单层感知器结构：3个输入（$x_1$、$x_2$、$x_3$，其中 $x_3 \equiv 1$ 可视作为偏置项），1个Sigmoid输出神经元，权重矩阵 $W \in \mathbb{R}^{1 \times 3}$。训练数据集如表~\ref{tab:dataset} 所示，共4条样本，目标是学习 $d = x_1$（输出等于第一个特征，与 $x_2$ 无关）：
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cccc}
+\toprule
+$x_1$ & $x_2$ & $x_3$ (偏置) & $d$ \\
+\midrule
+0 & 0 & 1 & 0 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\caption{训练数据集（$d = x_1$）}
+\label{tab:dataset}
+\end{table}
+
+\paragraph{Sigmoid激活函数}
+
+$$\sigma(v) = \frac{1}{1 + e^{-v}}, \quad \sigma'(v) = \sigma(v)\bigl(1 - \sigma(v)\bigr)$$
+
+\paragraph{均方误差（MSE）}
+
+训练过程中用均方误差衡量网络输出与期望输出之间的差距：
+$$\text{MSE} = \frac{1}{N}\sum_{k=1}^{N}\bigl(d^{(k)} - y^{(k)}\bigr)^2$$
+
+其中 $N=4$ 为样本数，$d^{(k)}$ 为期望输出，$y^{(k)}$ 为网络实际输出。
+
+\paragraph{Delta规则}
+
+对第 $k$ 个样本，前向传播为：
+$$v = W \cdot x^{(k)}, \quad y = \sigma(v), \quad e = d^{(k)} - y$$
+
+权重更新量：
+$$\Delta W_j = \alpha \cdot e \cdot y(1-y) \cdot x_j^{(k)}$$
+
+\paragraph{SGD 与 Batch 的区别}
+
+\begin{itemize}
+    \item \textbf{SGD（随机梯度下降）}：每个epoch先随机打乱样本顺序，然后逐样本计算误差并\emph{立即}更新权重，每个epoch共更新 $N=4$ 次。
+    \item \textbf{Batch（批量梯度下降）}：遍历全部样本后累加权重增量并取平均，再\emph{统一}更新一次，每个epoch只更新1次。更新公式为：
+    $$\Delta W_{j} = \frac{1}{N}\sum_{k=1}^{N} \alpha \cdot e^{(k)} \cdot y^{(k)}(1-y^{(k)}) \cdot x_j^{(k)}$$
+\end{itemize}
+
+\subsection{核心代码实现}
+
+\begin{listing}[H]
+\begin{minted}{python}
+# Sigmoid.py
+import numpy as np
+
+def Sigmoid(x):
+    return 1.0 / (1.0 + np.exp(-x))
+\end{minted}
+\caption{Step 1——Sigmoid激活函数定义}
+\end{listing}
+
+\begin{listing}[H]
+\begin{minted}{python}
+# DeltaSGD.py
+import numpy as np
+from Sigmoid import Sigmoid
+
+def DeltaSGD(W, X, D, alpha=0.1):
+    N = 4  # 训练数据个数
+    idx = np.random.permutation(N)  # 每epoch随机打乱样本顺序
+    for k in idx:
+        x = X[k, :].T
+        d = D[k]
+        v = (W @ x)[0]
+        y = Sigmoid(v)
+        e = d - y
+        W[0][0] = W[0][0] + alpha * e * y * (1 - y) * x[0]
+        W[0][1] = W[0][1] + alpha * e * y * (1 - y) * x[1]
+        W[0][2] = W[0][2] + alpha * e * y * (1 - y) * x[2]
+    return W
+\end{minted}
+\caption{Step 2——SGD训练函数（每个样本后立即更新，每epoch随机打乱顺序）}
+\end{listing}
+
+\begin{listing}[H]
+\begin{minted}{python}
+# DeltaBatch.py
+import numpy as np
+from Sigmoid import Sigmoid
+
+def DeltaBatch(W, X, D, alpha=0.1):
+    N = 4  # 训练数据个数
+    dW = np.zeros_like(W)
+    for k in range(N):
+        x = X[k, :].T
+        d = D[k]
+        v = (W @ x)[0]
+        y = Sigmoid(v)
+        e = d - y
+        dW[0][0] += alpha * e * y * (1 - y) * x[0]
+        dW[0][1] += alpha * e * y * (1 - y) * x[1]
+        dW[0][2] += alpha * e * y * (1 - y) * x[2]
+    W = W + dW / N  # 除以N取平均，与SGD的alpha公平可比
+    return W
+\end{minted}
+\caption{Step 3——Batch训练函数（遍历全部样本后取平均并统一更新）}
+\end{listing}
+
+\begin{listing}[H]
+\begin{minted}{python}
+# exp5_1.py (初始化与训练，Step 3-4)
+import numpy as np
+from Sigmoid import Sigmoid
+from DeltaSGD import DeltaSGD
+from DeltaBatch import DeltaBatch
+
+# 数据集（幻灯片P25）：d = x1，x3=1为偏置
+X = np.array([[0, 0, 1],
+              [0, 1, 1],
+              [1, 0, 1],
+              [1, 1, 1]], dtype=float)
+D = np.array([0, 0, 1, 1], dtype=float)
+
+np.random.seed(42)
+W_init = np.random.uniform(-0.5, 0.5, (1, 3))
+W_sgd   = W_init.copy()
+W_batch = W_init.copy()
+
+# SGD 训练 10000 epochs
+for _epoch in range(10000):
+    W_sgd = DeltaSGD(W_sgd, X, D)
+
+# Batch 训练 10000 epochs
+np.random.seed(42)
+W_batch = W_init.copy()
+for _epoch in range(10000):
+    W_batch = DeltaBatch(W_batch, X, D)
+
+# 输出预测值
+N = 4
+for k in range(N):
+    x = X[k, :].T
+    y = Sigmoid((W_sgd @ x)[0])
+    print(f"SGD  x1={int(X[k,0])},x2={int(X[k,1])},x3={int(X[k,2])}, d={int(D[k])}, y={y:.4f}")
+for k in range(N):
+    x = X[k, :].T
+    y = Sigmoid((W_batch @ x)[0])
+    print(f"Batch x1={int(X[k,0])},x2={int(X[k,1])},x3={int(X[k,2])}, d={int(D[k])}, y={y:.4f}")
+\end{minted}
+\caption{Step 4——数据集初始化、训练并输出预测结果}
+\end{listing}
+
+\subsection{运行结果}
+
+\subsubsection{SGD训练结果}
+
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+SGD 训练结果 (alpha=0.1, W in [-0.5, 0.5])
+最终权重 W = [ 7.25748598 -0.22006916 -3.41199044]
+  输入 x1=0, x2=0, x3=1, 期望: 0, 输出: 0.0319
+  输入 x1=0, x2=1, x3=1, 期望: 0, 输出: 0.0258
+  输入 x1=1, x2=0, x3=1, 期望: 1, 输出: 0.9791
+  输入 x1=1, x2=1, x3=1, 期望: 1, 输出: 0.9741
+\end{lstlisting}
+
+训练后 $w_1 = 7.26$（较大正值，正确响应 $x_1$），$w_2 = -0.22$（接近零，说明网络正确地忽略了无关输入 $x_2$），$w_3 = -3.41$（负偏置，设置激活阈值）。当 $x_1=0$ 时输出 $\approx 0.03$，当 $x_1=1$ 时输出 $\approx 0.97$，成功学习了 $d = x_1$ 的映射。
+
+\subsubsection{Batch训练结果}
+
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+Batch 训练结果 (alpha=0.1, W in [-0.5, 0.5])
+最终权重 W = [ 5.69466547 -0.23504375 -2.61711933]
+  输入 x1=0, x2=0, x3=1, 期望: 0, 输出: 0.0680
+  输入 x1=0, x2=1, x3=1, 期望: 0, 输出: 0.0546
+  输入 x1=1, x2=0, x3=1, 期望: 1, 输出: 0.9560
+  输入 x1=1, x2=1, x3=1, 期望: 1, 输出: 0.9449
+\end{lstlisting}
+
+Batch方法同样成功学习了 $d = x_1$ 的映射，但在相同epoch数和学习率下，最终权重绝对值更小（$w_1=5.69$ vs $7.26$），预测值离0/1边界更远，精度略低于SGD（输出范围约 $0.05$--$0.97$ vs $0.03$--$0.98$）。
+
+\subsubsection{SGD与Batch的MSE比较}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Figure_18.png}
+    \caption{SGD与Batch训练方法的MSE随epoch变化曲线（对数坐标，$\alpha=0.1$，初始权重范围 $[-0.5, 0.5]$）}
+    \label{fig:sgd_vs_batch}
+\end{figure}
+
+从图~\ref{fig:sgd_vs_batch}（纵轴为对数坐标，便于观察跨越两个数量级的收敛全程）可见：SGD（蓝色）收敛速度明显快于Batch（红色），且10000轮后最终MSE也更低（SGD: $0.000699$，Batch: $0.003145$，相差约4.5倍）。在对数坐标下，SGD曲线后期呈现出随机打乱样本顺序所带来的轻微锯齿状波动，而Batch曲线因每epoch对全样本取平均梯度，始终保持光滑单调下降，直观体现了两种方法在更新噪声上的本质差异。MSE差距的根本原因在于：SGD每个epoch执行 $N=4$ 次权重更新，Batch每个epoch仅执行1次，同等epoch数下SGD实际完成了4倍的更新量。
+
+\subsubsection{各样本输出值 $y$ 随epoch的收敛过程}
+
+除聚合MSE外，图~\ref{fig:output_traj} 展示了4个样本的网络输出 $y^{(k)}$ 在训练过程中逐epoch的变化轨迹，直观呈现"真实结果与输出之差"如何随训练收敛：
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{Figure_18b.png}
+    \caption{SGD（左）与Batch（右）训练过程中各样本输出 $y$ 随epoch变化轨迹。红色系为目标 $d=0$ 的两个样本（$y$ 应向0收敛），蓝色系为目标 $d=1$ 的两个样本（$y$ 应向1收敛）；灰色虚线为目标值 $d=0$ 和 $d=1$。}
+    \label{fig:output_traj}
+\end{figure}
+
+从图~\ref{fig:output_traj} 可以看出：
+
+\begin{itemize}
+    \item \textbf{收敛方向正确}：$d=0$ 的样本（红色，$x_1=0$）的输出从初始值约0.5出发逐步下降并趋向0；$d=1$ 的样本（蓝色，$x_1=1$）的输出逐步上升并趋向1；
+    \item \textbf{SGD收敛更快且更彻底}：SGD（左图）在约1000--2000 epoch内各曲线已基本到达目标附近；Batch（右图）收敛过程更平缓，10000 epoch结束时离目标仍稍远（$y \approx 0.055$--$0.068$ vs $0$，$y \approx 0.945$--$0.976$ vs $1$），与MSE曲线结论一致；
+    \item \textbf{同类样本几乎重叠}：$d=0$ 的两条曲线（$x_2=0$ 与 $x_2=1$）、$d=1$ 的两条曲线几乎重叠，说明网络正确学习了 $d=x_1$、与 $x_2$ 无关的映射；
+    \item \textbf{SGD曲线有轻微波动}：在对数坐标MSE图中已可见的随机性，在输出轨迹图中也体现为蓝色/红色曲线的微小锯齿。
+\end{itemize}
+
+\subsection{不同学习率（alpha）对结果的影响}
+
+固定初始权重（$W \sim U(-0.5, 0.5)$，\texttt{seed=42}），在 $\alpha \in \{0.01,\ 0.1,\ 0.5,\ 1.0,\ 5.0,\ 10.0,\ 50.0\}$ 下各训练10000 epochs，MSE收敛曲线如图~\ref{fig:alpha_compare} 所示，最终MSE汇总如下：
+
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+不同学习率的最终 MSE (10000 epochs)
+ Alpha |      SGD MSE |    Batch MSE
+--------------------------------------
+  0.01 |     0.008952 |     0.044961
+   0.1 |     0.000699 |     0.003145
+   0.5 |     0.000131 |     0.000552
+   1.0 |     0.000065 |     0.000268
+   5.0 |     0.000013 |     0.000052
+  10.0 |     0.000006 |     0.000026
+  50.0 |     0.000001 |     0.000005
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{Figure_19.png}
+    \caption{$\alpha \in \{0.01,\ 0.1,\ 0.5,\ 1.0,\ 5.0,\ 10.0,\ 50.0\}$ 下SGD（左）与Batch（右）的MSE随epoch变化曲线（对数坐标，10000 epochs）}
+    \label{fig:alpha_compare}
+\end{figure}
+
+\paragraph{分析}
+
+\begin{itemize}
+    \item \textbf{收敛速度与最终MSE均随 $\alpha$ 单调改善}：$\alpha$ 从 0.01 增至 50，SGD的最终MSE从 0.00895 降至 0.000001（约9000倍），Batch从 0.04496 降至 0.000005（约9000倍）；在对数坐标下，曲线族清晰展现了这一单调规律；
+    \item \textbf{SGD对小学习率的容忍度更高}：$\alpha=0.01$ 时Batch的最终MSE（0.045）是SGD（0.009）的5倍，因为Batch每epoch只更新1次，对小 $\alpha$ 更为敏感；
+    \item \textbf{大学习率（$\alpha \geq 5$）未出现发散}：Sigmoid导数 $\sigma'(v) = y(1-y) \leq 0.25$ 使单步更新上限为 $\alpha/4$；当权重增大后 $y(1-y) \to 0$ 进一步收缩梯度，系统自我稳定。这一特性是有代价的：权重较大时梯度趋零（梯度消失），这正是深层网络改用ReLU的动机。
+\end{itemize}
+
+\subsection{不同初始化权重范围对结果的影响}
+
+\subsubsection{单种子结果（seed=42）}
+
+固定 $\alpha=0.1$，测试初始化范围 $[-0.1, 0.1]$、$[-0.5, 0.5]$、$[-1.0, 1.0]$、$[-2.0, 2.0]$：
+
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+不同权重初始化范围的最终 MSE (10000 epochs, alpha=0.1, seed=42)
+      Init Range |      SGD MSE |    Batch MSE
+---------------------------------------------
+      [-0.1,0.1] |     0.000698 |     0.003136
+      [-0.5,0.5] |     0.000699 |     0.003145
+      [-1.0,1.0] |     0.000699 |     0.003158
+      [-2.0,2.0] |     0.000701 |     0.003198
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{Figure_20.png}
+    \caption{不同权重初始化范围下SGD（左）与Batch（右）训练的MSE收敛曲线（对数坐标）}
+    \label{fig:winit_compare}
+\end{figure}
+
+\subsubsection{多随机种子鲁棒性验证（20 seeds）}
+
+为排除单一种子的偶然性，对每种初始化范围各运行20个随机种子（seed=0至19），统计最终MSE的均值与标准差：
+
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+多随机种子结果 (10000 epochs, alpha=0.1, 20 seeds)
+  Init Range  |     SGD mean±std      |    Batch mean±std
+--------------------------------------------------------------
+  [-0.1,0.1]  | 0.000698 ± 0.000000  | 0.003134 ± 0.000003
+  [-0.5,0.5]  | 0.000698 ± 0.000001  | 0.003135 ± 0.000015
+  [-1.0,1.0]  | 0.000698 ± 0.000002  | 0.003135 ± 0.000030
+  [-2.0,2.0]  | 0.000698 ± 0.000004  | 0.003129 ± 0.000075
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.80\textwidth]{Figure_22.png}
+    \caption{20个随机种子下不同初始化范围的最终MSE均值与标准差（误差棒）}
+    \label{fig:multiseed}
+\end{figure}
+
+\paragraph{综合分析}
+
+\begin{itemize}
+    \item \textbf{SGD极度稳定}：跨所有初始化范围，20个种子的MSE标准差不超过 $4 \times 10^{-6}$，凭借频繁更新能从各种初始状态有效收敛；
+    \item \textbf{Batch轻微敏感}：标准差随初始化范围扩大从 $3\times10^{-6}$ 增至 $7.5\times10^{-5}$；初始化越大，Sigmoid更易饱和，梯度 $y(1-y)$ 更小，收敛略慢，种子间差异也略大；
+    \item \textbf{初始化影响随epoch增大而递减}：图~\ref{fig:winit_compare} 中不同初始化范围的曲线在早期有所分散（大范围初始化使Sigmoid更易饱和、梯度更小，收敛起步更慢），但随训练推进逐渐汇聚，最终MSE差异可忽略不计，说明初始化范围的影响是暂时性的而非持续性的；
+    \item \textbf{整体鲁棒性良好}：20个种子中均未出现慢收敛或局部最优异常，验证了 $d=x_1$ 任务损失曲面的良好凸性；
+    \item 在更深的网络中，初始化范围对训练稳定性影响显著（梯度爆炸/消失），实际工程通常采用 Xavier 或 He 初始化方案。
+\end{itemize}
+
+\subsection{实验总结}
+
+本次实验手动实现了基于Sigmoid激活函数的单层感知器，以 $d=x_1$ 映射为训练任务（含偏置项），分别通过SGD和Batch方法结合Delta规则完成了神经网络训练，并系统分析了学习率和权重初始化范围的影响。
+
+\paragraph{主要结论}
+
+\begin{enumerate}
+    \item \textbf{SGD vs Batch}：在相同epoch数和学习率下，SGD的收敛速度和最终精度均优于Batch（SGD MSE约为Batch的1/4.5），根本原因是SGD每个epoch执行$N$次权重更新而Batch只执行1次。若以总更新次数（而非epoch数）作为横轴进行公平比较，两者收敛曲线将趋于一致；
+    \item \textbf{学习率的影响}：$\alpha$ 越大，收敛越快，10000轮后最终MSE越低。本简单任务中大学习率（$\alpha=1.0$）仍能稳定收敛；实际复杂网络中需权衡收敛速度与训练稳定性；
+    \item \textbf{权重初始化的影响}：对SGD几乎无影响；对Batch有轻微影响——初始权重绝对值越大，收敛略慢。这是由于大初始权重导致Sigmoid饱和、梯度减小所致。在多层网络中，初始化方案（Xavier/He）的选取会对训练产生决定性影响。
+\end{enumerate}
+
+
+\clearpage
+% ==================== 附加实验 ====================
+\section{附加实验}
+
+\subsection{附加——Mini-Batch实现与三方对比}
+
+\paragraph{Mini-Batch实现}
+
+\begin{listing}[H]
+\begin{minted}{python}
+# MiniBatch.py
+import numpy as np
+from Sigmoid import Sigmoid
+
+def DeltaMiniBatch(W, X, D, alpha=0.1, batch_size=2):
+    N = X.shape[0]
+    idx = np.random.permutation(N)          # 每epoch随机打乱
+    for start in range(0, N, batch_size):
+        batch_idx = idx[start:start + batch_size]
+        m = len(batch_idx)
+        dW = np.zeros_like(W)
+        for k in batch_idx:
+            x = X[k, :].T
+            d = D[k]
+            v = (W @ x)[0]
+            y = Sigmoid(v)
+            e = d - y
+            dW[0][0] += alpha * e * y * (1 - y) * x[0]
+            dW[0][1] += alpha * e * y * (1 - y) * x[1]
+            dW[0][2] += alpha * e * y * (1 - y) * x[2]
+        W = W + dW / m                      # mini-batch内取平均
+    return W
+\end{minted}
+\caption{Mini-Batch训练函数（每个mini-batch内取平均后更新，每epoch共 $N/\text{bs}$ 次更新）}
+\end{listing}
+
+\paragraph{三方对比结果}
+
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+附加 Part 7: Mini-Batch (batch_size=2) 与 SGD/Batch 对比
+  Mini-Batch 最终权重: [ 6.49241225 -0.22676497 -3.02370338]
+    x1=0, x2=0, 期望:0, 输出:0.0464
+    x1=0, x2=1, 期望:0, 输出:0.0373
+    x1=1, x2=0, 期望:1, 输出:0.9698
+    x1=1, x2=1, 期望:1, 输出:0.9624
+  Mini-Batch 最终 MSE: 0.001467
+
+      Method |    Final MSE | Updates/epoch
+  -----------------------------------------
+         SGD |     0.000699 |           N=4
+  Mini-Batch |     0.001467 |        N/bs=2
+       Batch |     0.003145 |             1
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Figure_23.png}
+    \caption{SGD、Mini-Batch（bs=2）与Batch三种方法的MSE收敛曲线对比（对数坐标，$\alpha=0.1$）}
+    \label{fig:minibatch}
+\end{figure}
+
+\paragraph{分析}
+
+\begin{itemize}
+    \item \textbf{三方排序符合理论}：最终MSE严格满足 SGD($0.000699$) $<$ Mini-Batch($0.001467$) $<$ Batch($0.003145$)，精确对应每epoch更新次数之比 $4:2:1$，验证了"每epoch更新次数越多，同等epoch数下收敛越好"的规律；
+    \item \textbf{Mini-Batch的折中价值}：Mini-Batch在更新频率和梯度估计方差之间取得平衡——相比SGD每次只用1个样本（高方差），Mini-Batch用2个样本的平均梯度更新（方差减半），在实际大规模数据集上可以充分利用硬件并行性，通常是工程实践中的首选；
+    \item \textbf{推广意义}：对于$N=4$的微型数据集，Mini-Batch优势不明显；在$N=10^4$至$10^6$的实际任务中，batch\_size通常取32--512，在收敛速度、内存占用和梯度质量之间找到最佳权衡点。
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,14 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{C\PYGZus{}values} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{C} \PYG{o+ow}{in} \PYG{n}{C\PYGZus{}values}\PYG{p}{:}
+    \PYG{n}{svm\PYGZus{}clf} \PYG{o}{=} \PYG{n}{Pipeline}\PYG{p}{(}\PYG{p}{[}
+        \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{scaler}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{StandardScaler}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+        \PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{svc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{SVC}\PYG{p}{(}\PYG{n}{kernel}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{linear}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{C}\PYG{o}{=}\PYG{n}{C}\PYG{p}{,} \PYG{n}{random\PYGZus{}state}\PYG{o}{=}\PYG{l+m+mi}{42}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}
+    \PYG{p}{]}\PYG{p}{)}
+    \PYG{n}{svm\PYGZus{}clf}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}
+    \PYG{n}{svc}    \PYG{o}{=} \PYG{n}{svm\PYGZus{}clf}\PYG{o}{.}\PYG{n}{named\PYGZus{}steps}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{svc}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{]}
+    \PYG{n}{acc}    \PYG{o}{=} \PYG{n}{svm\PYGZus{}clf}\PYG{o}{.}\PYG{n}{score}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}
+    \PYG{n}{margin} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{svc}\PYG{o}{.}\PYG{n}{coef\PYGZus{}}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
+    \PYG{n}{n\PYGZus{}sv}   \PYG{o}{=} \PYG{n}{svc}\PYG{o}{.}\PYG{n}{n\PYGZus{}support\PYGZus{}}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{C=}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{C}\PYG{l+s+si}{:}\PYG{l+s+s2}{6.1f}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{  acc=}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{acc}\PYG{l+s+si}{:}\PYG{l+s+s2}{.4f}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{  margin=}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{margin}\PYG{l+s+si}{:}\PYG{l+s+s2}{.4f}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{  n\PYGZus{}sv=}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{n\PYGZus{}sv}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{MintedVerbatim}

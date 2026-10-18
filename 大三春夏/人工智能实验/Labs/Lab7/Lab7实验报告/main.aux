@@ -1,0 +1,65 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\pgfsyspdfmark {pgfid1}{4736286}{47362867}
+\@writefile{toc}{\contentsline {section}{\numberline {\CJKnumber  {1}、}Delta规则神经网络训练——实验5-1}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.}实验目的}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.}实验原理}{1}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{网络结构与训练数据}{1}{subsection.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 训练数据集（$d = x_1$）}}{1}{table.caption.3}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:dataset}{{1}{1}{训练数据集（$d = x_1$）}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Sigmoid激活函数}{1}{table.caption.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{均方误差（MSE）}{1}{table.caption.3}\protected@file@percent }
+\pgfsyspdfmark {pgfid2}{4736286}{47362867}
+\@writefile{toc}{\contentsline {paragraph}{Delta规则}{2}{table.caption.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SGD 与 Batch 的区别}{2}{table.caption.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.}核心代码实现}{2}{subsection.1.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {1}{\ignorespaces Step 1——Sigmoid激活函数定义}}{2}{listing.1}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {2}{\ignorespaces Step 2——SGD训练函数（每个样本后立即更新，每epoch随机打乱顺序）}}{2}{listing.2}\protected@file@percent }
+\pgfsyspdfmark {pgfid3}{4736286}{47362867}
+\@writefile{lol}{\contentsline {listing}{\numberline {3}{\ignorespaces Step 3——Batch训练函数（遍历全部样本后取平均并统一更新）}}{3}{listing.3}\protected@file@percent }
+\pgfsyspdfmark {pgfid4}{4736286}{47362867}
+\@writefile{lol}{\contentsline {listing}{\numberline {4}{\ignorespaces Step 4——数据集初始化、训练并输出预测结果}}{4}{listing.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.}运行结果}{4}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {(1)}SGD训练结果}{4}{subsubsection.1.4.1}\protected@file@percent }
+\pgfsyspdfmark {pgfid5}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {(2)}Batch训练结果}{5}{subsubsection.1.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {(3)}SGD与Batch的MSE比较}{5}{subsubsection.1.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces SGD与Batch训练方法的MSE随epoch变化曲线（对数坐标，$\alpha =0.1$，初始权重范围 $[-0.5, 0.5]$）}}{5}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:sgd_vs_batch}{{1}{5}{SGD与Batch训练方法的MSE随epoch变化曲线（对数坐标，$\alpha =0.1$，初始权重范围 $[-0.5, 0.5]$）}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {(4)}各样本输出值 $y$ 随epoch的收敛过程}{5}{subsubsection.1.4.4}\protected@file@percent }
+\pgfsyspdfmark {pgfid6}{4736286}{47362867}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces SGD（左）与Batch（右）训练过程中各样本输出 $y$ 随epoch变化轨迹。红色系为目标 $d=0$ 的两个样本（$y$ 应向0收敛），蓝色系为目标 $d=1$ 的两个样本（$y$ 应向1收敛）；灰色虚线为目标值 $d=0$ 和 $d=1$。}}{6}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:output_traj}{{2}{6}{SGD（左）与Batch（右）训练过程中各样本输出 $y$ 随epoch变化轨迹。红色系为目标 $d=0$ 的两个样本（$y$ 应向0收敛），蓝色系为目标 $d=1$ 的两个样本（$y$ 应向1收敛）；灰色虚线为目标值 $d=0$ 和 $d=1$。}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.}不同学习率（alpha）对结果的影响}{6}{subsection.1.5}\protected@file@percent }
+\pgfsyspdfmark {pgfid7}{4736286}{47362867}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces $\alpha \in \{0.01,\ 0.1,\ 0.5,\ 1.0,\ 5.0,\ 10.0,\ 50.0\}$ 下SGD（左）与Batch（右）的MSE随epoch变化曲线（对数坐标，10000 epochs）}}{7}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:alpha_compare}{{3}{7}{$\alpha \in \{0.01,\ 0.1,\ 0.5,\ 1.0,\ 5.0,\ 10.0,\ 50.0\}$ 下SGD（左）与Batch（右）的MSE随epoch变化曲线（对数坐标，10000 epochs）}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{分析}{7}{figure.caption.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.}不同初始化权重范围对结果的影响}{7}{subsection.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {(1)}单种子结果（seed=42）}{7}{subsubsection.1.6.1}\protected@file@percent }
+\pgfsyspdfmark {pgfid8}{4736286}{47362867}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 不同权重初始化范围下SGD（左）与Batch（右）训练的MSE收敛曲线（对数坐标）}}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:winit_compare}{{4}{8}{不同权重初始化范围下SGD（左）与Batch（右）训练的MSE收敛曲线（对数坐标）}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {(2)}多随机种子鲁棒性验证（20 seeds）}{8}{subsubsection.1.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 20个随机种子下不同初始化范围的最终MSE均值与标准差（误差棒）}}{8}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:multiseed}{{5}{8}{20个随机种子下不同初始化范围的最终MSE均值与标准差（误差棒）}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{综合分析}{8}{figure.caption.8}\protected@file@percent }
+\pgfsyspdfmark {pgfid9}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.}实验总结}{9}{subsection.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{主要结论}{9}{subsection.1.7}\protected@file@percent }
+\pgfsyspdfmark {pgfid10}{4736286}{47362867}
+\@writefile{toc}{\contentsline {section}{\numberline {\CJKnumber  {2}、}附加实验}{10}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.}附加——Mini-Batch实现与三方对比}{10}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mini-Batch实现}{10}{subsection.2.1}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {5}{\ignorespaces Mini-Batch训练函数（每个mini-batch内取平均后更新，每epoch共 $N/\text  {bs}$ 次更新）}}{10}{listing.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{三方对比结果}{10}{listing.5}\protected@file@percent }
+\pgfsyspdfmark {pgfid11}{4736286}{47362867}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces SGD、Mini-Batch（bs=2）与Batch三种方法的MSE收敛曲线对比（对数坐标，$\alpha =0.1$）}}{11}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:minibatch}{{6}{11}{SGD、Mini-Batch（bs=2）与Batch三种方法的MSE收敛曲线对比（对数坐标，$\alpha =0.1$）}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{分析}{11}{figure.caption.9}\protected@file@percent }
+\ttl@finishall
+\xdef \mintedoldcachechecksum{\detokenize{FA6C223B447E9651E497123585FA97CC:6}}
+\gdef \@abspage@last{11}

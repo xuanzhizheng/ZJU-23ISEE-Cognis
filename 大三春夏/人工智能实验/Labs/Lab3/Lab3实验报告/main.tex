@@ -1,0 +1,143 @@
+\documentclass[10.5pt]{config}
+% 本实验报告采用 署名-相同方式共享 4.0 国际许可协议 (CC BY-SA 4.0)
+
+\major{电子科学与技术}
+\name{郑智瑄}
+\partner{} % 签名栏
+\stuid{3230103913}
+\date{\today}
+\lab{玉泉高分子楼-203}
+\course{人工智能实验}
+\instructor{魏准}
+\grades{}
+\expname{实验2-2,2-3} % 实验名字
+\exptype{设计型实验} % 实验类型
+
+% minted 代码样式设置
+\usemintedstyle{tango}
+\setminted{
+    fontsize=\small,
+    linenos,
+    numbersep=8pt,
+    breaklines,
+    frame=single,
+    framesep=2mm,
+    tabsize=4,
+    bgcolor=codebg
+}
+% 定义代码背景色
+\definecolor{codebg}{RGB}{248, 248, 248}
+
+\begin{document}
+
+\makeheader % 首页头部
+
+% ==================== 实验 2-2 ====================
+\section{实验 2-2：多项式回归}
+
+\subsection{实验目的}
+基于 Scikit-Learn 的特征扩展与线性回归模块，完成二次多项式数据的拟合，并对拟合结果进行可视化展示。
+
+\subsection{实验原理}
+当样本关系呈现非线性形态（如抛物线）时，一次线性模型难以准确刻画趋势。可先将原始特征 $x$ 扩展为多项式特征 $[x, x^2]$，再在扩展后的特征空间中执行线性回归：
+$$\hat{y} = \theta_0 + \theta_1 x + \theta_2 x^2$$
+
+\subsection{核心代码实现}
+\begin{listing}[H]
+\begin{minted}{python}
+import numpy as np
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+
+np.random.seed(42)
+m = 100
+X = 6 * np.random.rand(m, 1) - 3
+y = 0.5 * X**2 + X + 2 + np.random.randn(m, 1)
+
+poly = PolynomialFeatures(degree=2, include_bias=False)
+X_poly = poly.fit_transform(X)
+
+model = LinearRegression()
+model.fit(X_poly, y)
+
+coef = model.coef_.ravel()
+intercept = model.intercept_.item()
+print(f"model: y = {intercept:.4f} + {coef[0]:.4f}*x + {coef[1]:.4f}*x^2")
+\end{minted}
+\caption{实验2-2核心代码（节选）}
+\end{listing}
+
+\subsection{运行结果}
+程序输出如下：
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+X shape: (100, 1), X_poly shape: (100, 2)
+model: y = 1.7813 + 0.9337*x + 0.5646*x^2
+R^2 on training set: 0.8525
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\textwidth]{Figure_5.png}
+    \caption{实验2-2 二次多项式回归拟合结果}
+    \label{fig:polyreg}
+\end{figure}
+
+\subsection{结果分析}
+由实验输出可得回归模型 $\hat{y}=1.7813+0.9337x+0.5646x^2$。其中二次项系数为正，表明模型已正确学习到数据的抛物线变化趋势；一次项与截距也与数据生成方程 $y=0.5x^2+x+2+\varepsilon$ 在结构上保持一致。训练集上 $R^2=0.8525$，说明模型可解释约 85.25\% 的响应变量波动，拟合效果良好，验证了通过多项式特征扩展处理非线性关系的可行性。
+
+% ==================== 实验 2-3 ====================
+\section{实验 2-3：逻辑回归}
+
+\subsection{实验目的}
+以鸢尾花数据集中花瓣宽度作为单一输入特征，构建逻辑回归分类器，完成“是否为维吉尼亚鸢尾花”的概率预测、曲线可视化与指定样本判定。
+
+\subsection{实验原理}
+逻辑回归先计算线性组合 $z=\theta_0+\theta_1x$，再通过 Sigmoid 函数将其映射为类别概率：
+$$P(y=1|x)=\sigma(z)=\frac{1}{1+e^{-z}}$$
+当 $P(y=1|x)>0.5$ 时判为正类（维吉尼亚鸢尾花），否则判为负类。
+
+\subsection{核心代码实现}
+\begin{listing}[H]
+\begin{minted}{python}
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
+import numpy as np
+
+iris = datasets.load_iris()
+X = iris["data"][:, 3:4]              # petal width
+y = (iris["target"] == 2).astype(int) # 是否维吉尼亚鸢尾花
+
+model = LogisticRegression(random_state=42)
+model.fit(X, y)
+
+samples = np.array([[1.7], [1.5]])
+proba = model.predict_proba(samples)[:, 1]
+pred = model.predict(samples)
+\end{minted}
+\caption{实验2-3核心代码（节选）}
+\end{listing}
+
+\subsection{运行结果}
+程序输出如下：
+\begin{lstlisting}[language={}, numbers=none, frame=single, backgroundcolor=\color{codebg}, basicstyle=\ttfamily\footnotesize, breaklines=true]
+Decision boundary (p=0.5): 1.6603 cm
+petal width=1.7 -> P(virginica)=0.5429, 预测: 是维吉尼亚鸢尾花
+petal width=1.5 -> P(virginica)=0.3330, 预测: 不是维吉尼亚鸢尾花
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\textwidth]{Figure_6.png}
+    \caption{实验2-3 逻辑回归概率曲线}
+    \label{fig:logreg}
+\end{figure}
+
+\subsection{结果分析}
+图~\ref{fig:logreg} 给出了花瓣宽度与类别概率之间的对应关系：红色曲线表示属于维吉尼亚鸢尾花的概率，蓝色曲线表示不属于该类别的概率，两条曲线在约 1.6603 cm 处相交，该位置可视为模型给出的分类分界点。对指定样本而言，花瓣宽度为 1.7 cm 时预测概率为 0.5429，略高于阈值 0.5，因此判定为维吉尼亚鸢尾花；花瓣宽度为 1.5 cm 时预测概率为 0.3330，低于阈值，因此判定为非维吉尼亚鸢尾花。结合图像与程序输出可见，模型能够根据花瓣宽度给出清晰且可解释的分类结果。
+
+\section{实验总结}
+通过实验2-2与实验2-3，我掌握了使用 Scikit-Learn 完成建模、预测与结果分析的完整流程。同时，我也进一步理解了“在线性模型框架下处理不同任务”的核心思路：在回归任务中，可通过多项式特征扩展将非线性关系映射到可由线性回归求解的特征空间；在分类任务中，逻辑回归通过概率输出与阈值判定实现可解释的二分类决策。
+
+
+
+\end{document}

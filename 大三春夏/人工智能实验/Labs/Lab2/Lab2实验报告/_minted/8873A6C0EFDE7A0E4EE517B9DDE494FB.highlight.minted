@@ -1,0 +1,17 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{kNN}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{datingClassTest}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{datingDataMat}\PYG{p}{,} \PYG{n}{datingLabels} \PYG{o}{=} \PYG{n}{kNN}\PYG{o}{.}\PYG{n}{file2matrix}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{datingTestSet2.txt}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{normMat}\PYG{p}{,} \PYG{n}{ranges}\PYG{p}{,} \PYG{n}{minVals} \PYG{o}{=} \PYG{n}{kNN}\PYG{o}{.}\PYG{n}{autoNorm}\PYG{p}{(}\PYG{n}{datingDataMat}\PYG{p}{)}
+    \PYG{n}{m} \PYG{o}{=} \PYG{n}{normMat}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n}{numTestVecs} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{m} \PYG{o}{*} \PYG{l+m+mf}{0.10}\PYG{p}{)}
+    \PYG{n}{errorCount} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{numTestVecs}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{result} \PYG{o}{=} \PYG{n}{kNN}\PYG{o}{.}\PYG{n}{classify0}\PYG{p}{(}\PYG{n}{normMat}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{p}{,} \PYG{n}{normMat}\PYG{p}{[}\PYG{n}{numTestVecs}\PYG{p}{:}\PYG{n}{m}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}\PYG{p}{,}
+                               \PYG{n}{datingLabels}\PYG{p}{[}\PYG{n}{numTestVecs}\PYG{p}{:}\PYG{n}{m}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}
+        \PYG{k}{if} \PYG{n}{result} \PYG{o}{!=} \PYG{n}{datingLabels}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{:}
+            \PYG{n}{errorCount} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mf}{1.0}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{错误率: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{errorCount}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{numTestVecs}\PYG{p}{)}\PYG{l+s+si}{:}\PYG{l+s+s2}{.2\PYGZpc{}}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{准确率: }\PYG{l+s+si}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{errorCount}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{numTestVecs}\PYG{p}{)}\PYG{l+s+si}{:}\PYG{l+s+s2}{.2\PYGZpc{}}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{MintedVerbatim}

@@ -1,0 +1,28 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Step 2: 定义LPP函数}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{LPP}\PYG{p}{(}\PYG{n}{data}\PYG{p}{,} \PYG{n}{n\PYGZus{}dims}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{n\PYGZus{}neigh}\PYG{o}{=}\PYG{l+m+mi}{30}\PYG{p}{,} \PYG{n}{t}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{W}    \PYG{o}{=} \PYG{n}{cal\PYGZus{}W}\PYG{p}{(}\PYG{n}{data}\PYG{p}{,} \PYG{n}{n\PYGZus{}neigh}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}               \PYG{c+c1}{\PYGZsh{} 计算W矩阵}
+    \PYG{n}{D}    \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{diag}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{W}\PYG{p}{,} \PYG{n}{axis}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}            \PYG{c+c1}{\PYGZsh{} 计算D矩阵（度矩阵）}
+    \PYG{n}{L}    \PYG{o}{=} \PYG{n}{D} \PYG{o}{\PYGZhy{}} \PYG{n}{W}                                 \PYG{c+c1}{\PYGZsh{} 计算L矩阵（拉普拉斯）}
+    \PYG{n}{XDXT} \PYG{o}{=} \PYG{n}{data}\PYG{o}{.}\PYG{n}{T} \PYG{o}{@} \PYG{n}{D} \PYG{o}{@} \PYG{n}{data}                    \PYG{c+c1}{\PYGZsh{} 计算 X D X\PYGZca{}T（d×d）}
+    \PYG{n}{XLXT} \PYG{o}{=} \PYG{n}{data}\PYG{o}{.}\PYG{n}{T} \PYG{o}{@} \PYG{n}{L} \PYG{o}{@} \PYG{n}{data}                    \PYG{c+c1}{\PYGZsh{} 计算 X L X\PYGZca{}T（d×d）}
+    \PYG{c+c1}{\PYGZsh{} (XDX\PYGZca{}T)\PYGZca{}\PYGZob{}\PYGZhy{}1\PYGZcb{} XLX\PYGZca{}T 特征值分解}
+    \PYG{n}{reg} \PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}8} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{eye}\PYG{p}{(}\PYG{n}{XDXT}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
+    \PYG{n}{eig\PYGZus{}vals}\PYG{p}{,} \PYG{n}{eig\PYGZus{}vects} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{eig}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{inv}\PYG{p}{(}\PYG{n}{XDXT} \PYG{o}{+} \PYG{n}{reg}\PYG{p}{)} \PYG{o}{@} \PYG{n}{XLXT}\PYG{p}{)}
+    \PYG{n}{eig\PYGZus{}vals}  \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{real}\PYG{p}{(}\PYG{n}{eig\PYGZus{}vals}\PYG{p}{)}
+    \PYG{n}{eig\PYGZus{}vects} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{real}\PYG{p}{(}\PYG{n}{eig\PYGZus{}vects}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} 找出n\PYGZus{}dims个最小非零特征值对应的特征向量}
+    \PYG{n}{idx} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{argsort}\PYG{p}{(}\PYG{n}{eig\PYGZus{}vals}\PYG{p}{)}
+    \PYG{n}{non\PYGZus{}zero\PYGZus{}idx} \PYG{o}{=} \PYG{n}{idx}\PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{eig\PYGZus{}vals}\PYG{p}{[}\PYG{n}{idx}\PYG{p}{]}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mf}{1e\PYGZhy{}10}\PYG{p}{]}
+    \PYG{n}{W\PYGZus{}proj}    \PYG{o}{=} \PYG{n}{eig\PYGZus{}vects}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{n}{non\PYGZus{}zero\PYGZus{}idx}\PYG{p}{[}\PYG{p}{:}\PYG{n}{n\PYGZus{}dims}\PYG{p}{]}\PYG{p}{]}  \PYG{c+c1}{\PYGZsh{} d × n\PYGZus{}dims}
+    \PYG{n}{data\PYGZus{}ndim} \PYG{o}{=} \PYG{n}{data} \PYG{o}{@} \PYG{n}{W\PYGZus{}proj}                        \PYG{c+c1}{\PYGZsh{} n × n\PYGZus{}dims}
+    \PYG{k}{return} \PYG{n}{data\PYGZus{}ndim}
+
+\PYG{c+c1}{\PYGZsh{} Step 3: 测试LPP函数}
+\PYG{n}{X} \PYG{o}{=} \PYG{n}{load\PYGZus{}digits}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{data}    \PYG{c+c1}{\PYGZsh{} 1797×64}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{load\PYGZus{}digits}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{target}  \PYG{c+c1}{\PYGZsh{} 标签 0, 1, ..., 9}
+\PYG{n}{dist}     \PYG{o}{=} \PYG{n}{cal\PYGZus{}pairwise\PYGZus{}dist}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}
+\PYG{n}{max\PYGZus{}dist} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n}{dist}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{max\PYGZus{}dist:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{max\PYGZus{}dist}\PYG{p}{)}
+\PYG{n}{data\PYGZus{}LPP} \PYG{o}{=} \PYG{n}{LPP}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{n\PYGZus{}dims}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{n\PYGZus{}neigh}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{t}\PYG{o}{=}\PYG{l+m+mf}{0.01} \PYG{o}{*} \PYG{n}{max\PYGZus{}dist}\PYG{p}{)}
+\end{MintedVerbatim}

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(LAB3=\"/c/Users/zzx/Desktop/人工智能实验/Labs/Lab4/Lab3实验报告\")",
+      "Bash(LAB4=\"/c/Users/zzx/Desktop/人工智能实验/Labs/Lab4/Lab4实验报告\")",
+      "Bash(cp \"$LAB3/config.cls\" \"$LAB4/config.cls\")",
+      "Bash(cp \"$LAB3/simsun.ttc\" \"$LAB4/simsun.ttc\")",
+      "Bash(cp \"$LAB3/simsunBold.otf\" \"$LAB4/simsunBold.otf\")"
+    ]
+  }
+}

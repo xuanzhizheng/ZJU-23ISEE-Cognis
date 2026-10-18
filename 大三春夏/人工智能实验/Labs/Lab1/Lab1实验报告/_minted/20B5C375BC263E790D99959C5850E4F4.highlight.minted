@@ -1,0 +1,14 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{kNN}
+
+\PYG{n}{group}\PYG{p}{,} \PYG{n}{labels} \PYG{o}{=} \PYG{n}{kNN}\PYG{o}{.}\PYG{n}{createDataSet}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} 测试点 [0, 0] 和 [0.8, 0.7]}
+\PYG{n}{test\PYGZus{}points} \PYG{o}{=} \PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mf}{0.8}\PYG{p}{,} \PYG{l+m+mf}{0.7}\PYG{p}{]}\PYG{p}{]}
+\PYG{n}{k\PYGZus{}values} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}
+
+\PYG{k}{for} \PYG{n}{pt} \PYG{o+ow}{in} \PYG{n}{test\PYGZus{}points}\PYG{p}{:}
+    \PYG{k}{for} \PYG{n}{kv} \PYG{o+ow}{in} \PYG{n}{k\PYGZus{}values}\PYG{p}{:}
+        \PYG{n}{result} \PYG{o}{=} \PYG{n}{kNN}\PYG{o}{.}\PYG{n}{classify0}\PYG{p}{(}\PYG{n}{pt}\PYG{p}{,} \PYG{n}{group}\PYG{p}{,} \PYG{n}{labels}\PYG{p}{,} \PYG{n}{kv}\PYG{p}{)}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{输入点: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{pt}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{, k: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{kv}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{, 分类结果: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{result}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{MintedVerbatim}

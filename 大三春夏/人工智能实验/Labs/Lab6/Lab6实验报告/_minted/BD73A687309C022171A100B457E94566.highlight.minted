@@ -1,0 +1,27 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{numpy}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{np}
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{sklearn}\PYG{n+nn}{.}\PYG{n+nn}{datasets}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{load\PYGZus{}digits}
+
+\PYG{c+c1}{\PYGZsh{} Step 1.1: 计算高维样本每一个元素之间的距离}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{cal\PYGZus{}pairwise\PYGZus{}dist}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{sum\PYGZus{}x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{square}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{n}{dist} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{x}\PYG{o}{.}\PYG{n}{T}\PYG{p}{)}\PYG{p}{,} \PYG{n}{sum\PYGZus{}x}\PYG{p}{)}\PYG{o}{.}\PYG{n}{T}\PYG{p}{,} \PYG{n}{sum\PYGZus{}x}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{dist}   \PYG{c+c1}{\PYGZsh{} (a\PYGZhy{}b)\PYGZca{}2 = a\PYGZca{}2 + b\PYGZca{}2 \PYGZhy{} 2*a*b}
+
+\PYG{c+c1}{\PYGZsh{} Step 1.2: 计算W矩阵}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{cal\PYGZus{}W\PYGZus{}ele}\PYG{p}{(}\PYG{n}{dist}\PYG{p}{,} \PYG{n}{t}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{n}{dist} \PYG{o}{/} \PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{cal\PYGZus{}W}\PYG{p}{(}\PYG{n}{data}\PYG{p}{,} \PYG{n}{n\PYGZus{}neigh}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n}{t}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{dist} \PYG{o}{=} \PYG{n}{cal\PYGZus{}pairwise\PYGZus{}dist}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}
+    \PYG{n}{dist}\PYG{p}{[}\PYG{n}{dist} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{dist shape:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{dist}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{)}
+    \PYG{n}{n} \PYG{o}{=} \PYG{n}{dist}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{n:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+    \PYG{n}{W\PYGZus{}dist} \PYG{o}{=} \PYG{n}{cal\PYGZus{}W\PYGZus{}ele}\PYG{p}{(}\PYG{n}{dist}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+    \PYG{n}{W} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{j\PYGZus{}n} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{argsort}\PYG{p}{(}\PYG{n}{dist}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{n\PYGZus{}neigh}\PYG{p}{]}  \PYG{c+c1}{\PYGZsh{} 元素从小到大排列}
+        \PYG{n}{W}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j\PYGZus{}n}\PYG{p}{]} \PYG{o}{=} \PYG{n}{W\PYGZus{}dist}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j\PYGZus{}n}\PYG{p}{]}                \PYG{c+c1}{\PYGZsh{} 除了前n\PYGZus{}neigh个，其余为0}
+    \PYG{k}{return} \PYG{n}{W}
+\end{MintedVerbatim}
