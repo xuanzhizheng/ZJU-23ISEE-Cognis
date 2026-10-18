@@ -1,0 +1,31 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{[pkLambda, pkT, FSR\PYGZus{}loc, FSR\PYGZus{}avg, FWHM\PYGZus{}meas, F\PYGZus{}meas, idxRef] = measurePeaks}\PYG{p}{(}\PYGZti{}, lambda, T\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{pkLambda}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{p}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{pkT}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{p}{]}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{idxRef}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{p}{]}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{FSR\PYGZus{}loc}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{NaN}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{FSR\PYGZus{}avg}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{NaN}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}meas}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{NaN}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{F\PYGZus{}meas}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{NaN}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{T}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mf}{1e\PYGZhy{}3}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{return}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{end}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 物理违约时跳过}
+
+\PYG{+w}{    }\PYG{p}{[}\PYG{n}{pks}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{locs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{widths}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{findpeaks}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lambda}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{        }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{MinPeakProminence\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.02}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{T}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{...}
+\PYG{+w}{        }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{WidthReference\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{halfheight\PYGZsq{}}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n+nb}{isempty}\PYG{p}{(}\PYG{n}{pks}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{return}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{end}
+
+\PYG{+w}{    }\PYG{n}{pkLambda}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{locs}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{pkT}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{pks}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 参考峰：最靠近中心波长 lambda0}
+\PYG{+w}{    }\PYG{n}{lambda0}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{lambda}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{lambda}\PYG{p}{(}\PYG{k}{end}\PYG{p}{)}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{[}\PYG{o}{\PYGZti{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{idxRef}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{min}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{pkLambda}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{lambda0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{FWHM\PYGZus{}meas}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{widths}\PYG{p}{(}\PYG{n}{idxRef}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n+nb}{numel}\PYG{p}{(}\PYG{n}{locs}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{l+m+mi}{2}
+\PYG{+w}{        }\PYG{n}{FSR\PYGZus{}avg}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{mean}\PYG{p}{(}\PYG{n+nb}{diff}\PYG{p}{(}\PYG{n}{locs}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{                   }\PYG{c}{\PYGZpc{} 全谱平均}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{idxRef}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n+nb}{numel}\PYG{p}{(}\PYG{n}{locs}\PYG{p}{)}\PYG{+w}{                       }\PYG{c}{\PYGZpc{} 局部（单侧相邻）}
+\PYG{+w}{            }\PYG{n}{FSR\PYGZus{}loc}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{pkLambda}\PYG{p}{(}\PYG{n}{idxRef}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{pkLambda}\PYG{p}{(}\PYG{n}{idxRef}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{else}
+\PYG{+w}{            }\PYG{n}{FSR\PYGZus{}loc}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{pkLambda}\PYG{p}{(}\PYG{n}{idxRef}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{pkLambda}\PYG{p}{(}\PYG{n}{idxRef}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{n+nb}{isnan}\PYG{p}{(}\PYG{n}{FSR\PYGZus{}loc}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}meas}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\PYG{+w}{        }\PYG{n}{F\PYGZus{}meas}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{FSR\PYGZus{}loc}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}meas}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{k}{end}
+\end{MintedVerbatim}

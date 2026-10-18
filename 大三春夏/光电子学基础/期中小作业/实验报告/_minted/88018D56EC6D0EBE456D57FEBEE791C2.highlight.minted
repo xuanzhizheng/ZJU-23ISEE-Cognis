@@ -1,0 +1,63 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{updatePlot}\PYG{p}{(}app\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{r}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{SliderR}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}\PYG{+w}{  }\PYG{n}{A}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{SliderA}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{n}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{SliderN}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}\PYG{+w}{  }\PYG{n}{d}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{SliderD}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{phi}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{SliderPhi}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{theta}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{SliderTheta}\PYG{p}{.}\PYG{n}{Value}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{pi}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{l+m+mi}{180}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{xmin}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{EditXMin}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}\PYG{+w}{  }\PYG{n}{xmax}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{EditXMax}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{xmin}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n}{xmax}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{return}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{lambda}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{linspace}\PYG{p}{(}\PYG{n}{xmin}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xmax}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{5000}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{} 物理合法性守卫 \PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{A}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{r}
+\PYG{+w}{        }\PYG{n}{T}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{lambda}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{WarnText}\PYG{p}{.}\PYG{n}{Visible}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{on\PYGZsq{}}\PYG{p}{;}\PYG{+w}{          }\PYG{c}{\PYGZpc{} 图内显示红色警告文字}
+\PYG{+w}{        }\PYG{n}{na}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}\PYGZbs{}textrm\PYGZob{}\PYGZhy{}\PYGZhy{}\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFintTh}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{na}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFSRTh}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{na}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFWHMTh}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{na}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFintMs}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{na}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFSRMs}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{na}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFWHMMs}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{na}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{WarnText}\PYG{p}{.}\PYG{n}{Visible}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{off\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{prefactor}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{A}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{airyF}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{r}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{delta}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n+nb}{pi}\PYG{+w}{ }\PYG{o}{./}\PYG{+w}{ }\PYG{n}{lambda}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{n+nb}{cos}\PYG{p}{(}\PYG{n}{theta}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{T}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{prefactor}\PYG{+w}{ }\PYG{o}{./}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{airyF}\PYG{+w}{ }\PYG{o}{.*}\PYG{+w}{ }\PYG{n+nb}{sin}\PYG{p}{(}\PYG{n}{delta}\PYG{p}{)}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{UserData}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{XData}\PYG{+w}{    }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{lambda}\PYG{p}{;}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} dB / 线性切换 ... xlim ...（详见 Listing 5）}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{A}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{r}\PYG{+w}{                              }\PYG{c}{\PYGZpc{} 物理违约：跳过特征值计算}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{updateAnnotations}\PYG{p}{(}\PYG{p}{[}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{[}\PYG{p}{]}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{NaN}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{NaN}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{[}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{return}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} \PYGZhy{}\PYGZhy{}\PYGZhy{} 先检峰，以参考峰位 lambda\PYGZus{}ref 统一计算理论/实测特征值 \PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{+w}{    }\PYG{n}{finesse\PYGZus{}th}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{pi}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{[}\PYG{n}{pkLambda}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pkT}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FSR\PYGZus{}loc}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}meas}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{idxRef}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{measurePeaks}\PYG{p}{(}\PYG{n}{lambda}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{n+nb}{isempty}\PYG{p}{(}\PYG{n}{pkLambda}\PYG{p}{)}
+\PYG{+w}{        }\PYG{n}{lambda\PYGZus{}ref}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{pkLambda}\PYG{p}{(}\PYG{n}{idxRef}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{        }\PYG{c}{\PYGZpc{} 最靠近窗口中心的峰}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{        }\PYG{n}{lambda\PYGZus{}ref}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{xmin}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{xmax}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{FSR\PYGZus{}th}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{lambda\PYGZus{}ref}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{cos}\PYG{p}{(}\PYG{n}{theta}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 连续FSR，在lambda\PYGZus{}ref处}
+\PYG{+w}{    }\PYG{n}{FWHM\PYGZus{}th}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{FSR\PYGZus{}th}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{finesse\PYGZus{}th}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 理论列}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFintTh}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}\PYGZbs{}\PYGZbs{}mathcal\PYGZob{}F\PYGZcb{} = \PYGZpc{}.1f\PYGZdl{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{finesse\PYGZus{}th}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFSRTh}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}\PYGZbs{}\PYGZbs{}mathrm\PYGZob{}FSR\PYGZcb{}\PYGZus{}\PYGZbs{}\PYGZbs{}mathrm\PYGZob{}loc\PYGZcb{} = \PYGZpc{}.2f\PYGZbs{}\PYGZbs{} \PYGZbs{}\PYGZbs{}mathrm\PYGZob{}nm\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FSR\PYGZus{}th}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFWHMTh}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}\PYGZbs{}\PYGZbs{}mathrm\PYGZob{}FWHM\PYGZcb{} = \PYGZpc{}.3f\PYGZbs{}\PYGZbs{} \PYGZbs{}\PYGZbs{}mathrm\PYGZob{}nm\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}th}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 实测列（精细度用连续FSR/实测FWHM，避免离散间距的m/(m+1)偏差）}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{n+nb}{isnan}\PYG{p}{(}\PYG{n}{FWHM\PYGZus{}meas}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}meas}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\PYG{+w}{        }\PYG{n}{F\PYGZus{}meas}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{FSR\PYGZus{}th}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}meas}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{        }\PYG{n}{F\PYGZus{}meas}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{NaN}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFintMs}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}\PYGZbs{}\PYGZbs{}mathcal\PYGZob{}F\PYGZcb{} = \PYGZpc{}.1f\PYGZdl{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{F\PYGZus{}meas}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFSRMs}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}\PYGZbs{}\PYGZbs{}mathrm\PYGZob{}FSR\PYGZcb{}\PYGZus{}\PYGZbs{}\PYGZbs{}mathrm\PYGZob{}loc\PYGZcb{} = \PYGZpc{}.2f\PYGZbs{}\PYGZbs{} \PYGZbs{}\PYGZbs{}mathrm\PYGZob{}nm\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FSR\PYGZus{}loc}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelFWHMMs}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}\PYGZbs{}\PYGZbs{}mathrm\PYGZob{}FWHM\PYGZcb{} = \PYGZpc{}.3f\PYGZbs{}\PYGZbs{} \PYGZbs{}\PYGZbs{}mathrm\PYGZob{}nm\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}meas}\PYG{p}{)}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{updateAnnotations}\PYG{p}{(}\PYG{n}{pkLambda}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pkT}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FSR\PYGZus{}loc}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FWHM\PYGZus{}meas}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{idxRef}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+\end{MintedVerbatim}

@@ -1,0 +1,23 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{} updatePlot 内——dB / 线性显示切换}
+\PYG{k}{if}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{BtnDb}\PYG{p}{.}\PYG{n}{Value}
+\PYG{+w}{    }\PYG{n}{Tdb}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{log10}\PYG{p}{(}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{1e\PYGZhy{}12}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{YData}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{Tdb}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{n}{app}\PYG{p}{.}\PYG{n}{Ax}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}T\PYGZbs{} \PYGZbs{}mathrm\PYGZob{}(dB)\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Interpreter\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{latex\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{FontSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{16}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n+nb}{ylim}\PYG{p}{(}\PYG{n}{app}\PYG{p}{.}\PYG{n}{Ax}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n+nb}{min}\PYG{p}{(}\PYG{n}{Tdb}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{80}\PYG{p}{)}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 下限跟随数据，最深 \PYGZhy{}80 dB}
+\PYG{k}{else}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{YData}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n+nb}{ylabel}\PYG{p}{(}\PYG{n}{app}\PYG{p}{.}\PYG{n}{Ax}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}T\PYGZdl{}\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Interpreter\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{latex\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{FontSize\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{16}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n+nb}{ylim}\PYG{p}{(}\PYG{n}{app}\PYG{p}{.}\PYG{n}{Ax}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{} HeldLine 同步（dB 切换时参考曲线也更新）}
+\PYG{k}{if}\PYG{+w}{ }\PYG{n+nb}{strcmp}\PYG{p}{(}\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{Visible}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{on\PYGZsq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{o}{\PYGZti{}}\PYG{n+nb}{isempty}\PYG{p}{(}\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{UserData}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{hRaw}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{UserData}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{BtnDb}\PYG{p}{.}\PYG{n}{Value}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{YData}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{log10}\PYG{p}{(}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{hRaw}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{1e\PYGZhy{}12}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{YData}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{hRaw}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{k}{end}
+\end{MintedVerbatim}

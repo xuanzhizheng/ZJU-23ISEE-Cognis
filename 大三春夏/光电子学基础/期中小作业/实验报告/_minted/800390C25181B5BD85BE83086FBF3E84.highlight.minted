@@ -1,0 +1,42 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{classdef}\PYG{+w}{ }\PYG{n}{GUI}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n+nb}{handle}
+\PYG{+w}{    }\PYG{k}{properties}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nb}{Access}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{private}\PYG{p}{)}
+\PYG{+w}{        }\PYG{n}{Fig}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Ax}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LiveLine}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{HeldLine}
+\PYG{+w}{        }\PYG{n}{PeakMarkers}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FWHMLine}\PYG{+w}{                  }\PYG{c}{\PYGZpc{} 谱线标注层：峰位三角、FWHM 线}
+\PYG{+w}{        }\PYG{n}{FSRArrow1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FSRArrowL}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FSRArrowR}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FSRText}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FWHMText}
+\PYG{+w}{        }\PYG{n}{SliderR}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LabelR}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{                   }\PYG{c}{\PYGZpc{} 六个滑块及对应数值框}
+\PYG{+w}{        }\PYG{n}{EditXMin}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{EditXMax}\PYG{+w}{                     }\PYG{c}{\PYGZpc{} 波长范围输入}
+\PYG{+w}{        }\PYG{n}{BtnReset}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{BtnHold}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{BtnDb}\PYG{+w}{               }\PYG{c}{\PYGZpc{} 原有三个按钮}
+\PYG{+w}{        }\PYG{n}{BtnAnnotate}\PYG{+w}{                            }\PYG{c}{\PYGZpc{} 几何标注切换（新增）}
+\PYG{+w}{        }\PYG{n}{BtnExportPNG}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{BtnExportCSV}\PYG{+w}{             }\PYG{c}{\PYGZpc{} PNG / CSV 导出}
+\PYG{+w}{        }\PYG{n}{DropPreset}\PYG{+w}{                             }\PYG{c}{\PYGZpc{} 预设场景下拉框（新增）}
+\PYG{+w}{        }\PYG{n}{LabelFintTh}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LabelFSRTh}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LabelFWHMTh}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 理论特征值（蓝色）}
+\PYG{+w}{        }\PYG{n}{LabelFintMs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LabelFSRMs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LabelFWHMMs}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 实测特征值（橙色，新增）}
+\PYG{+w}{        }\PYG{n}{LabelTheoryHdr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LabelMeasHdr}\PYG{+w}{           }\PYG{c}{\PYGZpc{} 两列表头}
+\PYG{+w}{        }\PYG{n}{LastFinesseTh}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LastFSRTh}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LastFWHMTh}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 缓存（供 CSV 元数据）}
+\PYG{+w}{        }\PYG{n}{LastFinesseMs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LastFSRMs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LastFWHMMs}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{properties}\PYG{+w}{ }\PYG{p}{(}Constant\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{Access}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{k}{private}\PYG{p}{)}
+\PYG{+w}{        }\PYG{n}{DEFAULT\PYGZus{}R}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.90}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{DEFAULT\PYGZus{}A}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{.}\PYG{p}{.}\PYG{p}{.}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 默认参数}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{methods}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }app\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nf}{GUI}\PYG{p}{(}\PYG{p}{)}
+\PYG{+w}{            }\PYG{n}{app}\PYG{p}{.}\PYG{n}{buildUI}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{onResize}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{updatePlot}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{methods}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Access}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{private}\PYG{p}{)}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{buildUI}\PYG{p}{(}app\PYG{p}{)}\PYG{+w}{         }\PYG{k}{end}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 创建所有控件}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onResize}\PYG{p}{(}app\PYG{p}{)}\PYG{+w}{        }\PYG{k}{end}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 自适应布局}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{updatePlot}\PYG{p}{(}app\PYG{p}{)}\PYG{+w}{      }\PYG{k}{end}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 计算谱线、更新特征值与标注}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onSliderChanging}\PYG{p}{(}app,evt,param\PYG{p}{)}\PYG{+w}{ }\PYG{k}{end}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onEditChanged}\PYG{p}{(}app,src,param\PYG{p}{)}\PYG{+w}{   }\PYG{k}{end}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onReset}\PYG{p}{(}app\PYG{p}{)}\PYG{+w}{          }\PYG{k}{end}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 恢复默认}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onHoldToggle}\PYG{p}{(}app,evt\PYG{p}{)}\PYG{+w}{ }\PYG{k}{end}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onPresetChanged}\PYG{p}{(}app,src\PYG{p}{)}\PYG{+w}{   }\PYG{k}{end}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 预设场景（新增）}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }[pk,pT,FSRl,FSRa,FWHM,F,idx]\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nf}{measurePeaks}\PYG{p}{(}\PYGZti{},lambda,T\PYG{p}{)}\PYG{+w}{ }\PYG{k}{end}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{updateAnnotations}\PYG{p}{(}app,pk,pT,FSR,FWHM,idx\PYG{p}{)}\PYG{+w}{ }\PYG{k}{end}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 标注（新增）}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onExportPNG}\PYG{p}{(}app\PYG{p}{)}\PYG{+w}{      }\PYG{k}{end}
+\PYG{+w}{        }\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onExportCSV}\PYG{p}{(}app\PYG{p}{)}\PYG{+w}{      }\PYG{k}{end}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 导出 CSV（新增）}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{k}{end}
+\end{MintedVerbatim}

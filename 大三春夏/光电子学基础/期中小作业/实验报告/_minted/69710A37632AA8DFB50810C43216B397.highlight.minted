@@ -1,0 +1,21 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onSliderChanging}\PYG{p}{(}app, evt, param\PYG{p}{)}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 拖动滑块 → 写数值输入框}
+\PYG{+w}{    }\PYG{n}{val}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{evt}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{switch}\PYG{+w}{ }\PYG{n}{param}
+\PYG{+w}{        }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{R\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelR}\PYG{p}{.}\PYG{n}{Value}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{val}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{A\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LabelA}\PYG{p}{.}\PYG{n}{Value}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{val}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c}{\PYGZpc{} ... 其余参数类似}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{updatePlot}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onEditChanged}\PYG{p}{(}app, src, param\PYG{p}{)}
+\PYG{+w}{    }\PYG{c}{\PYGZpc{} 键入数值 → 写滑块}
+\PYG{+w}{    }\PYG{n}{val}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{src}\PYG{p}{.}\PYG{n}{Value}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{switch}\PYG{+w}{ }\PYG{n}{param}
+\PYG{+w}{        }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{R\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{SliderR}\PYG{p}{.}\PYG{n}{Value}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{val}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c}{\PYGZpc{} ... 其余参数类似}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{    }\PYG{n}{app}\PYG{p}{.}\PYG{n}{updatePlot}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{end}
+\end{MintedVerbatim}

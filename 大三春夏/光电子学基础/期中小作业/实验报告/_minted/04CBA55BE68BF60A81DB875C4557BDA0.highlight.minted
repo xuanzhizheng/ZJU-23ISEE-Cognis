@@ -1,0 +1,11 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onPresetChanged}\PYG{p}{(}app, src\PYG{p}{)}
+\PYG{+w}{    }\PYG{k}{switch}\PYG{+w}{ }\PYG{n}{src}\PYG{p}{.}\PYG{n}{Value}
+\PYG{+w}{        }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{默认 (r=0.9)\PYGZsq{}}\PYG{p}{,}\PYG{+w}{      }\PYG{n}{app}\PYG{p}{.}\PYG{n}{applyPreset}\PYG{p}{(}\PYG{l+m+mf}{0.90}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.00}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{1.50}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{800}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{  }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{高精细度 (r=0.97)\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{applyPreset}\PYG{p}{(}\PYG{l+m+mf}{0.97}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.00}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{1.50}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{800}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{  }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{有损耗 (A=0.04)\PYGZsq{}}\PYG{p}{,}\PYG{+w}{   }\PYG{n}{app}\PYG{p}{.}\PYG{n}{applyPreset}\PYG{p}{(}\PYG{l+m+mf}{0.90}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.04}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{1.50}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{800}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{  }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{倾斜入射 (theta=60)\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{applyPreset}\PYG{p}{(}\PYG{l+m+mf}{0.90}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.00}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{1.50}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{800}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{60}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{case}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{短腔 (d=400 nm)\PYGZsq{}}\PYG{p}{,}\PYG{+w}{   }\PYG{n}{app}\PYG{p}{.}\PYG{n}{applyPreset}\PYG{p}{(}\PYG{l+m+mf}{0.90}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.00}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{1.50}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{400}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{  }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{k}{end}
+\end{MintedVerbatim}

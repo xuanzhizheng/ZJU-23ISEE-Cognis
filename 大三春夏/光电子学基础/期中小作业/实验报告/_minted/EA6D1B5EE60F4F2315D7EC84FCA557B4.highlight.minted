@@ -1,0 +1,18 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{onHoldToggle}\PYG{p}{(}app, evt\PYG{p}{)}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{evt}\PYG{p}{.}\PYG{n}{Value}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{BtnHold}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{      }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Release\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{raw}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{UserData}\PYG{p}{;}\PYG{+w}{          }\PYG{c}{\PYGZpc{} 取原始线性 T}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{UserData}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{raw}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{XData}\PYG{+w}{    }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{XData}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{YData}\PYG{+w}{    }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{YData}\PYG{p}{;}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 显示值与实时同步}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{Visible}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{on\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{Color}\PYG{+w}{    }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mf}{0.85}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.20}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.20}\PYG{p}{]}\PYG{p}{;}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 新曲线 → 红}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{Color}\PYG{+w}{    }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mf}{0.55}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.55}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.55}\PYG{p}{]}\PYG{p}{;}\PYG{+w}{  }\PYG{c}{\PYGZpc{} 锁定曲线 → 灰}
+\PYG{+w}{    }\PYG{k}{else}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{BtnHold}\PYG{p}{.}\PYG{n}{Text}\PYG{+w}{     }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Hold on\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{HeldLine}\PYG{p}{.}\PYG{n}{Visible}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{off\PYGZsq{}}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{app}\PYG{p}{.}\PYG{n}{LiveLine}\PYG{p}{.}\PYG{n}{Color}\PYG{+w}{   }\PYG{p}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mf}{0.20}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.40}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.85}\PYG{p}{]}\PYG{p}{;}\PYG{+w}{   }\PYG{c}{\PYGZpc{} 恢复蓝色}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{k}{end}
+\end{MintedVerbatim}

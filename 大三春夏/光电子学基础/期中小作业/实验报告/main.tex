@@ -1,0 +1,711 @@
+\documentclass[10.5pt]{config}
+% 本实验报告采用 署名-相同方式共享 4.0 国际许可协议 (CC BY-SA 4.0)
+\usepackage{amssymb}   % \mathbb{R} 等黑板体符号
+\usepackage{siunitx}
+
+\major{电子科学与技术}
+\name{郑智瑄}
+\partner{} % 签名栏
+\stuid{3230103913}
+\date{\today}
+\lab{玉泉教4-307}
+\course{光电子学基础}
+\instructor{杨宗银}
+\grades{}
+\expname{F-P 谐振腔透过率谱线仿真} % 实验名字
+\exptype{设计型实验} % 实验类型
+
+% minted 代码样式设置
+\usemintedstyle{tango}
+\setminted{
+    fontsize=\small,
+    linenos,
+    numbersep=8pt,
+    breaklines,
+    frame=single,
+    framesep=2mm,
+    tabsize=4,
+    bgcolor=codebg
+}
+% 定义代码背景色
+\definecolor{codebg}{RGB}{248, 248, 248}
+
+\begin{document}
+
+\makeheader % 首页头部
+
+% ==================== 实验目的 ====================
+\section{实验目的}
+
+\begin{enumerate}
+    \item 深入理解 Fabry--P\'erot（F-P）谐振腔的物理原理，推导并掌握其透过率关于波长 $\lambda$ 的函数关系；
+    \item 利用 MATLAB 编写 F-P 谐振腔透过率谱线的仿真程序，绘制符合理论预期的透射峰；
+    \item 以 MATLAB 面向对象的 \texttt{uifigure} 框架设计图形用户界面（GUI），允许用户通过滑块或数值输入实时调节反射率 $r$、折射率 $n$、腔长 $d$、吸收损耗 $A$、附加相位 $\varphi$ 与入射角 $\theta$ 等关键参数；
+    \item 在交互过程中实时计算并显示 F-P 谐振腔的三大特征参量：精细度 $\mathcal{F}$、自由光谱范围 FSR、半高全宽 FWHM，加深对腔体性能指标的理解。
+\end{enumerate}
+
+% ==================== 实验原理 ====================
+\section{实验原理}
+
+\subsection{F-P 谐振腔的基本结构}
+
+F-P 谐振腔（Fabry--P\'erot Interferometer）由两片平行放置、反射率高的镜面 M\textsubscript{1} 与 M\textsubscript{2} 构成，中间充以折射率 $n$、厚度 $d$ 的介质（空气、玻璃或某种介电晶体均可）。入射光在两镜之间反复反射和透射，相干叠加形成周期性的透射峰，如图~\ref{fig:ref} 所示。当反射率足够高时，仅在满足谐振条件的特定波长附近，透射率才接近 $1$，其余波长处透射率迅速趋零——正是这种频率选择性使 F-P 腔可以作为高分辨率的光学滤波器、光谱分析仪以及激光器的核心谐振元件。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.68\textwidth]{formula.png}
+    \caption{(a) F-P 谐振腔结构示意图；(b) 典型透过率谱线（蓝实线为高精细度情形）。相邻两峰间距为 FSR，单峰半高宽为 FWHM。}
+    \label{fig:ref}
+\end{figure}
+
+\subsection{透过率公式推导}
+
+设入射光振幅为 $E_0$，两镜反射率（指强度意义上的 $r = r_1 r_2$）相等，单程吸收损耗为 $A$。考虑多光束干涉后的透射光总振幅为几何级数求和，取模方后得到经典的 Airy 公式：
+$$T(\lambda) = \left(1 - \frac{A}{1-r}\right)^{2} \cdot \frac{1}{1 + \dfrac{4r}{(1-r)^{2}}\sin^{2}\!\left(\dfrac{2\pi}{\lambda}\,nd\cos\theta - \varphi\right)}.$$
+
+其中：
+\begin{itemize}
+    \item 前置因子 $\left(1 - A/(1-r)\right)^2$ 来源于单程功率损耗：引入单程吸收 $A$ 后，单镜有效透射系数降为 $T_{\text{cav}}=1-r-A$；多光束干涉在谐振时总透射率正比于 $T_{\text{cav}}^2/(1-r)^2$，代入化简即得 $(1-A/(1-r))^2$；当 $A=0$ 时等于 $1$，无吸收理想腔峰值透过率为 $100\%$；
+    \item $\sin^{2}(\cdot)$ 的自变量 $\delta = \frac{2\pi}{\lambda}nd\cos\theta - \varphi$ 表示光\textbf{单程}传播的相位变化（即往返相位差 $\frac{4\pi}{\lambda}nd\cos\theta$ 的一半），附加相位 $\varphi$ 用于描述镜面反射引入的额外相位偏移；
+    \item 系数 $F = 4r/(1-r)^2$ 为 Airy 系数（此处 $F$ 是对比度系数，注意与下文精细度 $\mathcal{F}$ 区别），$F$ 越大，谱线在谐振点附近越尖锐、谷底越深。
+\end{itemize}
+
+\subsection{谐振条件与关键参数}
+
+\paragraph{谐振条件。} 当 $\sin\delta = 0$ 即 $\delta = m\pi$（$m$ 为整数）时，$T$ 取极大值：
+$$\lambda_m = \frac{2nd\cos\theta}{m}.$$
+这即为 F-P 谐振腔的驻波条件，相邻两个谐振波长之间的距离称为自由光谱范围（FSR）。
+
+\paragraph{自由光谱范围（FSR）。} 在 $\lambda_0$ 附近，由 $\lambda_m = 2nd\cos\theta/m$ 对 $m$ 微分后近似得：
+$$\mathrm{FSR} \approx \frac{\lambda_0^{2}}{2nd\cos\theta}.$$
+
+\paragraph{精细度（Finesse）。} 用于衡量峰形尖锐程度，仅取决于反射率 $r$：
+$$\mathcal{F} = \frac{\pi\sqrt{r}}{1-r}.$$
+$r$ 越接近 $1$，$\mathcal{F}$ 越大，腔的频率选择性越强。
+
+\paragraph{半高全宽（FWHM）。} 定义为单个透射峰在半高处的宽度：
+$$\mathrm{FWHM} = \frac{\mathrm{FSR}}{\mathcal{F}}.$$
+这一关系说明，在固定腔长的情况下，提高反射率可以显著压窄峰宽，从而获得更高的光谱分辨率。
+
+\subsection{倾斜入射引起的蓝移}
+
+当入射角 $\theta \neq 0$ 时，有效相位项由 $nd$ 变为 $nd\cos\theta$，相当于把腔长压缩了一个因子 $\cos\theta$。由谐振条件 $\lambda_m = 2nd\cos\theta/m$ 可见，$\theta$ 增大将使所有谐振波长向短波方向整体移动，即发生\textbf{蓝移}，使其成为可调谐滤波器。
+
+% ==================== 代码实现 ====================
+\section{代码实现}
+
+\subsection{程序结构总览}
+
+程序采用 MATLAB 面向对象编程（OOP）思想，用一个继承自 \texttt{handle} 的类 \texttt{GUI} 封装整个应用。相比传统的脚本式 GUI，类的写法能将状态（界面组件、参数）与行为（回调函数、绘图更新）集中管理，避免全局变量污染，也便于后续功能扩展。整体文件结构如下：
+
+\begin{listing}[H]
+\begin{minted}{matlab}
+classdef GUI < handle
+    properties (Access = private)
+        Fig, Ax, LiveLine, HeldLine
+        PeakMarkers, FWHMLine                  % 谱线标注层：峰位三角、FWHM 线
+        FSRArrow1, FSRArrowL, FSRArrowR, FSRText, FWHMText
+        SliderR, LabelR, ...                   % 六个滑块及对应数值框
+        EditXMin, EditXMax                     % 波长范围输入
+        BtnReset, BtnHold, BtnDb               % 原有三个按钮
+        BtnAnnotate                            % 几何标注切换（新增）
+        BtnExportPNG, BtnExportCSV             % PNG / CSV 导出
+        DropPreset                             % 预设场景下拉框（新增）
+        LabelFintTh, LabelFSRTh, LabelFWHMTh  % 理论特征值（蓝色）
+        LabelFintMs, LabelFSRMs, LabelFWHMMs  % 实测特征值（橙色，新增）
+        LabelTheoryHdr, LabelMeasHdr           % 两列表头
+        LastFinesseTh, LastFSRTh, LastFWHMTh  % 缓存（供 CSV 元数据）
+        LastFinesseMs, LastFSRMs, LastFWHMMs
+    end
+    properties (Constant, Access = private)
+        DEFAULT_R = 0.90; DEFAULT_A = 0; ...   % 默认参数
+    end
+    methods
+        function app = GUI()
+            app.buildUI(); app.onResize(); app.updatePlot();
+        end
+    end
+    methods (Access = private)
+        function buildUI(app)         end   % 创建所有控件
+        function onResize(app)        end   % 自适应布局
+        function updatePlot(app)      end   % 计算谱线、更新特征值与标注
+        function onSliderChanging(app,evt,param) end
+        function onEditChanged(app,src,param)   end
+        function onReset(app)          end   % 恢复默认
+        function onHoldToggle(app,evt) end
+        function onPresetChanged(app,src)   end  % 预设场景（新增）
+        function [pk,pT,FSRl,FSRa,FWHM,F,idx] = measurePeaks(~,lambda,T) end
+        function updateAnnotations(app,pk,pT,FSR,FWHM,idx) end  % 标注（新增）
+        function onExportPNG(app)      end
+        function onExportCSV(app)      end   % 导出 CSV（新增）
+    end
+end
+\end{minted}
+\caption{\texttt{GUI} 类的整体骨架}
+\end{listing}
+
+\subsection{核心计算：透过率公式的向量化实现}
+
+将公式逐元素写入 MATLAB 时，关键是\textbf{向量化}——用数组运算代替循环，这是 MATLAB 高效数值绘图的惯用手段。波长 \texttt{lambda} 由 \texttt{linspace(xmin,xmax,5000)} 生成 5000 个采样点，透过率直接由以下几行完成：
+
+\begin{listing}[H]
+\begin{minted}{matlab}
+function updatePlot(app)
+    r = app.SliderR.Value;  A = app.SliderA.Value;
+    n = app.SliderN.Value;  d = app.SliderD.Value;
+    phi = app.SliderPhi.Value;
+    theta = app.SliderTheta.Value * pi / 180;
+    xmin = app.EditXMin.Value;  xmax = app.EditXMax.Value;
+    if xmin >= xmax, return; end
+    lambda = linspace(xmin, xmax, 5000);
+
+    % --- 物理合法性守卫 ---
+    if A > 1 - r
+        T = zeros(size(lambda));
+        app.WarnText.Visible = 'on';          % 图内显示红色警告文字
+        na = '$\textrm{--}$';
+        app.LabelFintTh.Text = na; app.LabelFSRTh.Text = na; app.LabelFWHMTh.Text = na;
+        app.LabelFintMs.Text = na; app.LabelFSRMs.Text = na; app.LabelFWHMMs.Text = na;
+    else
+        app.WarnText.Visible = 'off';
+        prefactor = (1 - A / (1 - r))^2;
+        airyF = 4 * r / (1 - r)^2;
+        delta = 2*pi ./ lambda .* n .* d .* cos(theta) - phi;
+        T = prefactor ./ (1 + airyF .* sin(delta).^2);
+    end
+
+    app.LiveLine.UserData = T;
+    app.LiveLine.XData    = lambda;
+    % dB / 线性切换 ... xlim ...（详见 Listing 5）
+
+    if A > 1 - r                              % 物理违约：跳过特征值计算
+        app.updateAnnotations([], [], NaN, NaN, []);
+        return;
+    end
+
+    % --- 先检峰，以参考峰位 lambda_ref 统一计算理论/实测特征值 ---
+    finesse_th = pi * sqrt(r) / (1 - r);
+    [pkLambda, pkT, FSR_loc, ~, FWHM_meas, ~, idxRef] = app.measurePeaks(lambda, T);
+    if ~isempty(pkLambda)
+        lambda_ref = pkLambda(idxRef);        % 最靠近窗口中心的峰
+    else
+        lambda_ref = (xmin + xmax) / 2;
+    end
+    FSR_th  = lambda_ref^2 / (2 * n * d * cos(theta));  % 连续FSR，在lambda_ref处
+    FWHM_th = FSR_th / finesse_th;
+
+    % 理论列
+    app.LabelFintTh.Text = sprintf('$\\mathcal{F} = %.1f$', finesse_th);
+    app.LabelFSRTh.Text  = sprintf('$\\mathrm{FSR}_\\mathrm{loc} = %.2f\\ \\mathrm{nm}$', FSR_th);
+    app.LabelFWHMTh.Text = sprintf('$\\mathrm{FWHM} = %.3f\\ \\mathrm{nm}$', FWHM_th);
+
+    % 实测列（精细度用连续FSR/实测FWHM，避免离散间距的m/(m+1)偏差）
+    if ~isnan(FWHM_meas) && FWHM_meas > 0
+        F_meas = FSR_th / FWHM_meas;
+    else
+        F_meas = NaN;
+    end
+    app.LabelFintMs.Text = sprintf('$\\mathcal{F} = %.1f$', F_meas);
+    app.LabelFSRMs.Text  = sprintf('$\\mathrm{FSR}_\\mathrm{loc} = %.2f\\ \\mathrm{nm}$', FSR_loc);
+    app.LabelFWHMMs.Text = sprintf('$\\mathrm{FWHM} = %.3f\\ \\mathrm{nm}$', FWHM_meas);
+
+    app.updateAnnotations(pkLambda, pkT, FSR_loc, FWHM_meas, idxRef);
+end
+\end{minted}
+\caption{\texttt{updatePlot}：向量化计算透过率、统一以参考峰位更新理论/实测双列特征值与几何标注}
+\end{listing}
+
+\noindent 其中几个关键设计点：
+\begin{enumerate}
+    \item \texttt{./}、\texttt{.*}、\texttt{.\^{}} 为逐元素运算符，对 \texttt{lambda} 整个数组并行求值；
+    \item \textbf{理论与实测以同一参考峰位 $\lambda_\text{ref}$ 为基准}：先调用 \texttt{measurePeaks} 定位参考峰，再在该位置计算理论 $\mathrm{FSR}_\text{loc}=\lambda_\text{ref}^2/(2nd\cos\theta)$，确保两列描述的是同一个峰处的局部 FSR，结果可直接比较；
+    \item \textbf{实测精细度}取 $\mathcal{F}_\text{ms}=\mathrm{FSR}_\text{loc,th}/\mathrm{FWHM}_\text{meas}$，避免用离散峰间距当分子时产生的 $m/(m+1)$ 系统偏差；
+    \item 只更新 \texttt{LiveLine.XData/YData}——不新建 line 对象，保证滑块实时拖动时的高刷新率。
+\end{enumerate}
+
+\subsection{滑块与数值框的双向同步}
+
+用户可\textbf{拖动滑块}或\textbf{直接键入数值}两种方式改变参数。为避免回调循环（拖滑块→改数值框→再触发回调），采用两个独立回调，各自只写对面控件的 \texttt{Value}（赋值不会反触发 \texttt{ValueChangingFcn}）：
+
+\begin{listing}[H]
+\begin{minted}{matlab}
+function onSliderChanging(app, evt, param)
+    % 拖动滑块 → 写数值输入框
+    val = evt.Value;
+    switch param
+        case 'R', app.LabelR.Value = val;
+        case 'A', app.LabelA.Value = val;
+        % ... 其余参数类似
+    end
+    app.updatePlot();
+end
+function onEditChanged(app, src, param)
+    % 键入数值 → 写滑块
+    val = src.Value;
+    switch param
+        case 'R', app.SliderR.Value = val;
+        % ... 其余参数类似
+    end
+    app.updatePlot();
+end
+\end{minted}
+\caption{双向同步的两个回调函数}
+\end{listing}
+
+其中数值输入框设置了 \texttt{Limits} 与 \texttt{LowerLimitInclusive}\,=\,\texttt{'on'}，可自动把越界输入夹紧到合法区间，从而防止 $r \ge 1$ 等数值奇异。
+
+\subsection{自适应布局 \texttt{onResize}}
+
+为使窗口拉伸时内部组件能随之等比缩放，\texttt{uifigure} 设置 \texttt{Auto\-Resize\-Children}\,=\,\texttt{'off'}，并注册 \texttt{Size\-Changed\-Fcn}\,=\,\texttt{@(\textasciitilde,\textasciitilde)\,app.\-on\-Resize()}。\texttt{onResize} 在每次窗口尺寸变化时依据当前宽高 $W$、$H$ 计算：
+
+\begin{itemize}
+    \item 绘图区占窗口上半部分，宽度 $= W - 2\text{margin} - 10$，高度 $= H - \text{ctrlH} - 30$；
+    \item 六行滑块均匀排列于左下方，每行高 $38\,\mathrm{px}$；
+    \item $\lambda_{\min}$ 与 $\lambda_{\max}$ 输入框置于滑块区底部；
+    \item 右侧 $270\,\mathrm{px}$ 宽的区域依次布置：特征值双列（理论 $\mid$ 实测）、预设场景下拉框，以及六个功能按钮（Reset、Hold on、dB 视图、标注 FSR/FWHM、Save PNG、Save CSV）。
+\end{itemize}
+
+这种 \texttt{SizeChangedFcn} + 绝对定位重算的方案，兼容性比 \texttt{uigridlayout} 更好（后者在部分 MATLAB 版本中对嵌套组件支持不完整），同时保留了自适应能力。
+
+\subsection{Hold on 对比功能}
+
+为方便直观对比不同参数下的谱线，程序设计了 \texttt{Hold on} 切换按钮：按下时将当前曲线的\textbf{原始线性} $T$ 数组（存于 \texttt{LiveLine.UserData}）拷贝到灰色虚线 \texttt{HeldLine}，实时曲线变为红色；再次点击则关闭对比。\texttt{UserData} 存储线性值而非当前显示值，是为了保证 dB/线性视图切换时参考曲线能同步正确转换（见第~\ref{ssec:db} 节）。
+
+\begin{listing}[H]
+\begin{minted}{matlab}
+function onHoldToggle(app, evt)
+    if evt.Value
+        app.BtnHold.Text      = 'Release';
+        raw = app.LiveLine.UserData;          % 取原始线性 T
+        app.HeldLine.UserData = raw;
+        app.HeldLine.XData    = app.LiveLine.XData;
+        app.HeldLine.YData    = app.LiveLine.YData;  % 显示值与实时同步
+        app.HeldLine.Visible  = 'on';
+        app.LiveLine.Color    = [0.85, 0.20, 0.20];  % 新曲线 → 红
+        app.HeldLine.Color    = [0.55, 0.55, 0.55];  % 锁定曲线 → 灰
+    else
+        app.BtnHold.Text     = 'Hold on';
+        app.HeldLine.Visible = 'off';
+        app.LiveLine.Color   = [0.20, 0.40, 0.85];   % 恢复蓝色
+    end
+end
+\end{minted}
+\caption{\texttt{onHoldToggle}：锁定参考曲线并保存原始线性 $T$ 供视图切换用}
+\end{listing}
+
+\subsection{dB 视图与物理合法性守卫}
+\label{ssec:db}
+
+\paragraph{dB/线性切换。} \texttt{BtnDb} 为状态切换按钮，其 \texttt{ValueChangedFcn} 直接调用 \texttt{updatePlot}。在 \texttt{updatePlot} 末段，依据按钮状态决定 \texttt{YData} 赋值方式，并同步更新 \texttt{HeldLine}（从其 \texttt{UserData} 中取原始线性值再转换）：
+
+\begin{listing}[H]
+\begin{minted}{matlab}
+% updatePlot 内——dB / 线性显示切换
+if app.BtnDb.Value
+    Tdb = 10 * log10(max(T, 1e-12));
+    app.LiveLine.YData = Tdb;
+    ylabel(app.Ax, '$T\ \mathrm{(dB)}$', 'Interpreter', 'latex', 'FontSize', 16);
+    ylim(app.Ax, [max(min(Tdb) - 5, -80), 1]);   % 下限跟随数据，最深 -80 dB
+else
+    app.LiveLine.YData = T;
+    ylabel(app.Ax, '$T$', 'Interpreter', 'latex', 'FontSize', 16);
+    ylim(app.Ax, [0, 1]);
+end
+
+% HeldLine 同步（dB 切换时参考曲线也更新）
+if strcmp(app.HeldLine.Visible, 'on') && ~isempty(app.HeldLine.UserData)
+    hRaw = app.HeldLine.UserData;
+    if app.BtnDb.Value
+        app.HeldLine.YData = 10 * log10(max(hRaw, 1e-12));
+    else
+        app.HeldLine.YData = hRaw;
+    end
+end
+\end{minted}
+\caption{\texttt{updatePlot} 中的 dB 切换逻辑：\texttt{ylim} 跟随数据下限，参考曲线同步转换}
+\end{listing}
+
+\noindent \texttt{ylim} 设为 $[\max(\min T_{\mathrm{dB}}-5,\,-80),\,1]$：下界跟随数据最低点再留 $5\,\mathrm{dB}$ 余量，但最多下拉至 $-80\,\mathrm{dB}$，避免数值下底无穷拉伸图形；上界固定 $1\,\mathrm{dB}$，使峰值 $0\,\mathrm{dB}$ 始终留有余量。
+
+\paragraph{物理合法性守卫。} 透过率公式中前置因子 $(1-A/(1-r))^2$ 要求单镜有效透射系数 $T_m=1-r-A\ge0$，即 $A\le1-r$。当滑块设置违反此约束时，直接计算会得到 $T>1$ 的非物理结果。程序在 \texttt{updatePlot} 顶部加入硬守卫：违约时令 $T\equiv0$，在绘图区中央显示红色警告文字"A > 1−r：吸收超限"，同时将右侧面板所有特征值标签清为"--"并提前返回，跳过后续的 \texttt{measurePeaks} 调用（见 Listing~\ref{lst:guard} 与图~\ref{fig:warn}）。
+
+\begin{listing}[H]
+\begin{minted}{matlab}
+if A > 1 - r
+    T = zeros(size(lambda));
+    app.WarnText.Visible = 'on';   % 绘图区红色警告文字
+    na = '$\textrm{--}$';
+    app.LabelFintTh.Text = na; app.LabelFSRTh.Text = na; app.LabelFWHMTh.Text = na;
+    app.LabelFintMs.Text = na; app.LabelFSRMs.Text = na; app.LabelFWHMMs.Text = na;
+else
+    app.WarnText.Visible = 'off';
+    prefactor = (1 - A / (1 - r))^2;
+    airyF     = 4 * r / (1 - r)^2;
+    delta     = 2*pi ./ lambda .* n .* d .* cos(theta) - phi;
+    T         = prefactor ./ (1 + airyF .* sin(delta).^2);
+end
+% ... 更新 LiveLine、dB 切换 ...
+if A > 1 - r
+    app.updateAnnotations([], [], NaN, NaN, []);
+    return;    % 跳过特征值计算，避免覆盖已置 -- 的标签
+end
+\end{minted}
+\caption{物理合法性守卫：$A>1-r$ 时输出零线、显示警告并提前返回\label{lst:guard}}
+\end{listing}
+
+\subsection{数值实测：\texttt{measurePeaks}}
+\label{ssec:measure}
+
+\texttt{measurePeaks} 调用 MATLAB 内置的 \texttt{findpeaks} 对透过率数组 $T(\lambda)$ 进行检峰，返回峰位、FWHM、局部 FSR 和平均 FSR 四个实测量，以及参考峰索引 \texttt{idxRef}（最靠近中心波长 $\lambda_0$ 的峰）。
+
+\begin{listing}[H]
+\begin{minted}{matlab}
+function [pkLambda, pkT, FSR_loc, FSR_avg, FWHM_meas, F_meas, idxRef] = measurePeaks(~, lambda, T)
+    pkLambda = []; pkT = []; idxRef = [];
+    FSR_loc = NaN; FSR_avg = NaN; FWHM_meas = NaN; F_meas = NaN;
+    if max(T) < 1e-3, return; end   % 物理违约时跳过
+
+    [pks, locs, widths, ~] = findpeaks(T, lambda, ...
+        'MinPeakProminence', 0.02 * max(T), ...
+        'WidthReference', 'halfheight');
+    if isempty(pks), return; end
+
+    pkLambda = locs(:)'; pkT = pks(:)';
+
+    % 参考峰：最靠近中心波长 lambda0
+    lambda0 = (lambda(1) + lambda(end)) / 2;
+    [~, idxRef] = min(abs(pkLambda - lambda0));
+    FWHM_meas = widths(idxRef);
+
+    if numel(locs) >= 2
+        FSR_avg = mean(diff(locs));                   % 全谱平均
+        if idxRef < numel(locs)                       % 局部（单侧相邻）
+            FSR_loc = pkLambda(idxRef+1) - pkLambda(idxRef);
+        else
+            FSR_loc = pkLambda(idxRef) - pkLambda(idxRef-1);
+        end
+    end
+    if ~isnan(FSR_loc) && FWHM_meas > 0
+        F_meas = FSR_loc / FWHM_meas;
+    end
+end
+\end{minted}
+\caption{\texttt{measurePeaks}：以参考峰为基准实测 FSR、FWHM 与精细度，避免宽波段 $\mathrm{FSR}\propto\lambda^{2}$ 色散对全局平均的干扰}
+\end{listing}
+
+\noindent 关键设计点：
+\begin{enumerate}
+    \item \texttt{MinPeakProminence} 设为 $0.02\,T_{\max}$，仅滤除高度 $<2\%$ 峰值的噪声，不影响真峰；
+    \item FWHM 与局部 FSR 均取\textbf{参考峰}（最靠近 $\lambda_0$ 者）的值，与理论公式 $\mathrm{FSR}\approx\lambda_0^2/(2nd\cos\theta)$ 在 $\lambda_0$ 处对齐，使两者可比较；
+    \item \texttt{idxRef} 同时返回给 \texttt{updateAnnotations}，确保几何标注也指向同一参考峰。
+\end{enumerate}
+
+\subsection{谱线标注层与预设场景}
+
+\paragraph{标注层（\texttt{BtnAnnotate}）。} 当用户点击"标注 FSR/FWHM"切换按钮时，\texttt{updatePlot} 末尾调用 \texttt{updateAnnotations}，在绘图区叠加三类几何图元：
+
+\begin{itemize}
+    \item \textbf{峰位三角}（\texttt{PeakMarkers}，红色 $\mathbf{\triangledown}$）——在全部检测到的峰位正上方标记，便于核实 \texttt{findpeaks} 结果；
+    \item \textbf{FWHM 半高线}（\texttt{FWHMLine}，绿色水平线段）——以参考峰峰值一半处为高度，跨度为实测 FWHM，右侧附数值文本；
+    \item \textbf{FSR 双向箭头}（\texttt{FSRArrow1/L/R}，紫色）——连接参考峰与其紧邻峰，中点附数值文本，直观展示局部 FSR。
+\end{itemize}
+
+\noindent 所有图元以 \texttt{Visible} 属性控制显隐，标注关闭时不影响曲线绘制性能。
+
+\paragraph{预设场景（\texttt{DropPreset}）。} 下拉框提供五个一键切换的典型场景，对应报告各节实验参数：
+
+\begin{listing}[H]
+\begin{minted}{matlab}
+function onPresetChanged(app, src)
+    switch src.Value
+        case '默认 (r=0.9)',      app.applyPreset(0.90, 0.00, 1.50, 800, 0,  0);
+        case '高精细度 (r=0.97)', app.applyPreset(0.97, 0.00, 1.50, 800, 0,  0);
+        case '有损耗 (A=0.04)',   app.applyPreset(0.90, 0.04, 1.50, 800, 0,  0);
+        case '倾斜入射 (theta=60)', app.applyPreset(0.90, 0.00, 1.50, 800, 0, 60);
+        case '短腔 (d=400 nm)',   app.applyPreset(0.90, 0.00, 1.50, 400, 0,  0);
+    end
+end
+\end{minted}
+\caption{\texttt{onPresetChanged}：将下拉框选中的场景名映射为六参数组合，调用 \texttt{applyPreset} 批量写入滑块与数值框后触发重绘}
+\end{listing}
+
+% ==================== 界面功能说明 ====================
+\section{界面功能说明}
+
+程序运行后启动如图~\ref{fig:main} 所示窗口。整个界面分为三大区域——上部谱线图、左下参数滑块区、右下特征值与控制按钮区。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{gui_main.png}
+    \caption{GUI 主界面；右侧面板以蓝色（理论）与橙色（实测）双列并排显示精细度、FSR 和 FWHM，预设场景下拉框与六个功能按钮位于其下}
+    \label{fig:main}
+\end{figure}
+
+\subsection{谱线显示区}
+
+窗口上部为 \texttt{uiaxes} 绘图区，以楷体标题和 LaTeX 坐标轴显示实时谱线（蓝色实线），右上角内嵌完整透过率公式。当"标注 FSR/FWHM"按钮激活时，图中叠加几何标注层（如图~\ref{fig:annot} 所示）：红色倒三角标出全部谐振峰位，绿色水平线段标出参考峰处的 FWHM 半高宽，紫色双端线段标出局部 FSR，各附数值文本。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{gui_annot.png}
+    \caption{几何标注层（默认参数，标注已开启）：红色 $\triangledown$ 标出全部峰位，绿色水平线段为 FWHM，紫色双端线段为局部 FSR，各附数值}
+    \label{fig:annot}
+\end{figure}
+
+\subsection{参数滑块区（左下）}
+
+六个参数每个独占一行，行内包含三部分：参数名（LaTeX 渲染）、滑块、可编辑数值框。所有参数的范围与默认值如表~\ref{tab:params} 所列。
+
+\begin{table}[H]
+    \centering
+    \caption{六个可调参数的物理意义、取值范围与默认值}
+    \label{tab:params}
+    \begin{tabular}{clccc}
+        \toprule
+        参数 & 物理意义 & 取值范围 & 默认值 & 单位 \\
+        \midrule
+        $r$         & 两镜反射率之积     & $[0.01,\ 0.99]$ & $0.90$ & --- \\
+        $A$         & 单程吸收损耗       & $[0,\ 0.5]$     & $0$    & --- \\
+        $n$         & 腔内介质折射率     & $[1.0,\ 4.0]$   & $1.50$ & --- \\
+        $d$         & 腔长               & $[10,\ 5000]$   & $800$  & \si{nm} \\
+        $\varphi$   & 附加相位           & $[0,\ 2\pi]$    & $0$    & rad \\
+        $\theta$    & 入射角             & $[0,\ 85]$      & $0$    & $^\circ$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+两种交互方式：
+\begin{enumerate}
+    \item \textbf{拖动滑块}——谱线随拖动实时刷新（\texttt{ValueChangingFcn}）；
+    \item \textbf{直接键入数值}——输入非法值会被自动夹紧到合法区间（\texttt{Limits} + \texttt{LowerLimitInclusive}）。
+\end{enumerate}
+
+底部第七行提供 $\lambda_{\min}$、$\lambda_{\max}$ 两个数值框，用于调整横轴显示范围。
+
+\subsection{特征值与控制区（右下）}
+
+右侧面板以\textbf{理论}（蓝色）与\textbf{实测}（橙色）双列并排实时显示三个关键特征量：
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \begin{tabular}{r l l}
+        \toprule
+         & 理论值（公式） & 实测值（\texttt{findpeaks}） \\
+        \midrule
+        $\mathcal{F}$ & $\pi\sqrt{r}/(1-r)$ & $\mathrm{FSR}_{\mathrm{loc,th}}(\lambda_\text{ref})~/~\mathrm{FWHM}_\text{meas}$ \\
+        $\mathrm{FSR}_\mathrm{loc}$ & $\lambda_\text{ref}^{2}/(2nd\cos\theta)$ & 参考峰与相邻峰的离散间距 \\
+        FWHM & $\mathrm{FSR}_{\mathrm{loc,th}}/\mathcal{F}_{\mathrm{th}}$ & 参考峰半高全宽（\texttt{findpeaks}） \\
+        \bottomrule
+    \end{tabular}
+    \caption{右侧面板双列特征值来源对照（理论与实测均以参考峰位 $\lambda_\text{ref}$ 为基准）}
+\end{table}
+
+\noindent 其中中心波长 $\lambda_0=(\lambda_{\min}+\lambda_{\max})/2$，所有数值随任意参数改变即时更新。
+
+\medskip
+\noindent 右侧面板还提供\textbf{预设场景}下拉框（5 个常用场景：默认、高精细度、有损耗、倾斜入射、短腔），以及 6 个功能按钮：
+
+\begin{itemize}
+    \item \textbf{Reset}（橙色）——把所有滑块、数值框与波长范围恢复到默认值，同时关闭 Hold on、dB 视图、标注层，重置预设选项；
+    \item \textbf{Hold on / Release}（蓝色，切换按钮）——锁定当前曲线为灰色虚线，实时曲线变为红色，供调参对比，如图~\ref{fig:hold_demo} 所示；
+    \item \textbf{dB 视图}（紫色，切换按钮）——将纵轴实时切换为 $10\lg T$（dB）刻度，如图~\ref{fig:db_view} 所示；高精细度下峰谷差可达 $50\,\mathrm{dB}$，线性坐标难以分辨的谷底细节在对数视图中清晰展开；Hold on 参考曲线在切换时同步转换；
+    \item \textbf{标注 FSR/FWHM}（绿色，切换按钮）——在谱线图上叠加几何标注层（峰位三角、FWHM 半高线、FSR 双端线）；
+    \item \textbf{Save PNG}（深灰色）——将绘图区以 150\,dpi 导出为 PNG 图片；
+    \item \textbf{Save CSV}（浅灰色）——以 CSV 格式导出 5000 个 $(\lambda,\,T)$ 数据点，文件头注释中嵌入当前参数、理论特征值与实测特征值元数据，便于后续数据分析。
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{gui_hold_demo.png}
+    \caption{Hold on 演示：锁定默认 $r=0.90$ 的蓝色曲线（锁定后变为灰色虚线，实时线变红），再调参至 $r=0.97$，峰形对比一目了然}
+    \label{fig:hold_demo}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{gui_db.png}
+    \caption{dB 视图（$r=0.97$）：纵轴切换为 $10\lg T$ 后，峰谷差约 $37\,\mathrm{dB}$，谷底宽度与走势清晰可见，频率选择性一目了然}
+    \label{fig:db_view}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{gui_warn.png}
+    \caption{物理合法性守卫演示（$r=0.90,\ A=0.15>1-r=0.10$）：吸收损耗超过物理上限后，谱线置零，绘图区中央显示红色警告文字，右侧面板所有特征值清为"\,--\,"}
+    \label{fig:warn}
+\end{figure}
+
+% ==================== 实验结果 ====================
+\clearpage
+
+\section{实验与分析}
+
+以下通过若干典型实验，验证 GUI 各功能的正确性与合理性。
+\subsection{反射率对峰形的影响}
+
+保持其它参数不变，将反射率由默认 $r=0.9$ 增大到 $r=0.97$，结果如图~\ref{fig:high_r} 与表~\ref{tab:exp_r} 所示。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{gui_high_r.png}
+    \caption{Hold on 对比：灰色虚线为默认 $r=0.90$（$\mathcal{F}=29.8$），红色实线为 $r=0.97$（$\mathcal{F}=103$）——反射率增大后峰显著变窄、谷底更深}
+    \label{fig:high_r}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{反射率对峰形的影响——数值仿真特征值}
+    \label{tab:exp_r}
+    \footnotesize
+    \begin{tabular}{l c c c c c c c}
+        \toprule
+        参数组 & 主峰/nm & 平均\,FSR/nm & 局部\,FSR/nm & FWHM/nm & 数值\,$\mathcal{F}$ & 理论\,$\mathcal{F}$ & $T_{\max}$ \\
+        \midrule
+        $r = 0.90$ (基准) & 799.96 & 114.28 & 200.02 & 8.954 & 22.34 & 29.80 & 1.00 \\
+        $r = 0.97$        & 799.96 & 114.28 & 200.02 & 2.592 & 77.18 & 103.14 & 1.00 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+对比图~\ref{fig:high_r} 中两条曲线与表~\ref{tab:exp_r} 中数值特征值可以看到：
+\begin{itemize}
+    \item 峰变得更尖锐、峰宽大幅减小：FWHM 从 $8.954$ 压窄至 $2.592$\,nm（约 $3.5$ 倍），图中视觉上峰明显变窄；
+    \item 相邻两峰之间的低谷更深，更接近 $0$；
+    \item 数值精细度 $\mathcal{F}$ 由 $22.34$ 升至 $77.18$，局部 FSR 因仅由 $n,d,\theta$ 决定故保持 $200.02$\,nm 不变。
+\end{itemize}
+这与理论 $\mathcal{F} = \pi\sqrt{r}/(1-r)$ 的 $r$ 依赖关系完全一致。数值精细度低于理论值约 $25\%$，源于离散峰间距与连续 FSR 公式 $\lambda^{2}/(2nd\cos\theta)$ 在低阶谐振（此处 $m\!\approx\!3$）下的系统性偏差，二者比例为 $(m+1)/m$，符合理论预期——高反射率是实现高分辨 F-P 滤波器的先决条件。
+
+\clearpage
+\subsection{入射角引起的蓝移}
+
+保持其它参数不变，将入射角由默认 $\theta=0°$ 增大至 $\theta=60°$，对比结果如图~\ref{fig:hold} 与表~\ref{tab:exp_theta} 所示。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{gui_holdon.png}
+    \caption{入射角对比：灰色虚线为 $\theta=0°$，红色实线为 $\theta=60°$——谱线整体向短波方向移动（蓝移）}
+    \label{fig:hold}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{入射角引起的蓝移——数值仿真特征值}
+    \label{tab:exp_theta}
+    \footnotesize
+    \begin{tabular}{l c c c c c c c}
+        \toprule
+        参数组 & 主峰/nm & 平均\,FSR/nm & 局部\,FSR/nm & FWHM/nm & 数值\,$\mathcal{F}$ & 理论\,$\mathcal{F}$ & $T_{\max}$ \\
+        \midrule
+        $\theta = 0^{\circ}$ (基准) & 799.96 & 114.28 & 200.02 & 8.954  & 22.34 & 29.80 & 1.00 \\
+        $\theta = 60^{\circ}$       & 599.94 & 200.02 & 200.02 & 10.074 & 19.85 & 29.80 & 1.00 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+对比图~\ref{fig:hold} 与表~\ref{tab:exp_theta} 可以看到：
+\begin{itemize}
+    \item 红色实线的所有谐振峰整体向短波方向移动，参考主峰位由 $799.96$\,nm 蓝移至 $599.94$\,nm；比值略偏离 $\cos 60^\circ=0.5$ 是因为蓝移后参考峰对应的整数阶 $m$ 发生了切换（$m=3\to 4$）；
+    \item 峰形与精细度 $\mathcal{F}$ 保持不变——入射角只改变有效光程 $nd\cos\theta$，不影响镜面反射率，因此峰宽比 $\mathrm{FWHM}/\mathrm{FSR}=1/\mathcal{F}$ 不变；理论精细度 $\mathcal{F}_{\text{th}}=29.80$ 在两组完全相同；
+    \item 有效腔长 $nd\cos\theta$ 缩短为原来的 $0.5$ 倍，FSR 随之约扩大一倍，表中平均 FSR 从 $114.28$ 增至 $200.02$\,nm 佐证了这一点。
+\end{itemize}
+这一结果同时验证了精细度公式的 $r$ 单一依赖性：无论入射角如何变化，峰形尖锐度完全由反射率决定。数值精细度从 $22.34$ 略降至 $19.85$，差异来自前述离散-连续偏差，与理论一致。倾斜入射引起的整体蓝移正是 F-P 腔实现机械无接触连续调谐的物理基础。
+
+\clearpage
+\subsection{腔长对自由光谱范围的影响}
+
+保持 $r=0.9,\ A=0,\ n=1.5,\ \theta=0$ 不变，将腔长由默认 $d=800\,\si{nm}$ 减半至 $d=400\,\si{nm}$，对比结果如图~\ref{fig:cavity} 与表~\ref{tab:exp_d} 所示。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{gui_cavity.png}
+    \caption{腔长对比：灰色虚线为 $d=800\,\si{nm}$（$\mathrm{FSR}\approx234\,\si{nm}$），红色实线为 $d=400\,\si{nm}$（$\mathrm{FSR}\approx469\,\si{nm}$）——腔长减半后峰间距近似翻倍}
+    \label{fig:cavity}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{腔长对自由光谱范围的影响——数值仿真特征值}
+    \label{tab:exp_d}
+    \footnotesize
+    \begin{tabular}{l c c c c c c c}
+        \toprule
+        参数组 & 主峰/nm & 平均\,FSR/nm & 局部\,FSR/nm & FWHM/nm & 数值\,$\mathcal{F}$ & 理论\,$\mathcal{F}$ & $T_{\max}$ \\
+        \midrule
+        $d = 800$\,nm (基准) & 799.96 & 114.28 & 200.02 & 8.954  & 22.34 & 29.80 & 1.00 \\
+        $d = 400$\,nm        & 599.94 & 200.02 & 200.02 & 10.074 & 19.85 & 29.80 & 1.00 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+对比图~\ref{fig:cavity} 与表~\ref{tab:exp_d} 可以看到：
+\begin{itemize}
+    \item 谱线峰位整体向短波方向压缩，相同波长范围内可见峰数减少约一半；腔长减半后高阶 $m$ 的峰被推出显示窗，参考主峰由 $m=3$ 处的 $799.96$\,nm 切到 $m=2$ 处的 $599.94$\,nm；
+    \item 平均 FSR 从 $114.28$ 增至 $200.02$\,nm，与公式 $\mathrm{FSR}\approx\lambda_0^{2}/(2nd\cos\theta)$ 的 $1/d$ 依赖关系吻合；局部 FSR 恰好不变，是因为腔长 $d\to d/2$ 与阶次 $m\to m-1$ 的影响在数值上相消；
+    \item 理论精细度 $\mathcal{F}_{\text{th}}=29.80$ 与 $d$ 无关，与表中数据一致；FSR 增大的同时 FWHM 同比增大，峰形尖锐度（比值 $\mathrm{FWHM}/\mathrm{FSR}=1/\mathcal{F}$）保持恒定。
+\end{itemize}
+这说明腔长 $d$ 是调节 F-P 腔工作波段与分辨率带宽的核心手段：短腔给出宽 FSR（抗混叠），长腔给出窄 FSR（细分辨率），实际设计时需在两者之间权衡。
+
+\clearpage
+\subsection{吸收损耗对峰值透过率的影响}
+
+保持 $r=0.9,\ n=1.5,\ d=800\,\si{nm},\ \theta=0$ 不变，将单程吸收损耗由默认 $A=0$ 增大至 $A=0.04$，对比结果如图~\ref{fig:absorption} 与表~\ref{tab:exp_A} 所示。
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{gui_absorption.png}
+    \caption{吸收损耗对比：灰色虚线为无损耗 $A=0$（峰值 $T_{\max}=100\%$），红色实线为 $A=0.04$（峰值 $T_{\max}=36\%$）——损耗使峰值急剧下降}
+    \label{fig:absorption}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{吸收损耗对峰值透过率的影响——数值仿真特征值}
+    \label{tab:exp_A}
+    \footnotesize
+    \begin{tabular}{l c c c c c c c}
+        \toprule
+        参数组 & 主峰/nm & 平均\,FSR/nm & 局部\,FSR/nm & FWHM/nm & 数值\,$\mathcal{F}$ & 理论\,$\mathcal{F}$ & $T_{\max}$ \\
+        \midrule
+        $A = 0$ (基准) & 799.96 & 114.28 & 200.02 & 8.954 & 22.34 & 29.80 & 1.00 \\
+        $A = 0.04$     & 799.96 & 114.28 & 200.02 & 8.954 & 22.34 & 29.80 & 0.36 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+对比图~\ref{fig:absorption} 与表~\ref{tab:exp_A} 可以看到：
+\begin{itemize}
+    \item 峰值透过率从 $100\%$ 急剧下降至 $36\%$：主峰位置、平均/局部 FSR、FWHM、数值精细度全部保持不变（吸收损耗不影响相位条件，仅改变前置因子 $(1-A/(1-r))^{2}$）；
+    \item 表中 $T_{\max}$ 由 $1.00$ 跌至 $0.36$，与公式预测 $(1-0.04/0.10)^{2}=0.36$ 完全吻合；$r=0.9$ 时分母 $(1-r)=0.1$，损耗的影响被放大约 10 倍；
+    \item 精细度 $\mathcal{F}$ 同样不变，FWHM 与 FSR 的比值维持 $1/\mathcal{F}$，但峰值变低导致信噪比显著恶化。
+\end{itemize}
+这一结果揭示了高精细度腔对腔内损耗的高度敏感性：高反射率腔 $(r\to1)$ 中 $(1-r)\to0$，微小的吸收或散射损耗 $A$ 将导致峰值透过率急剧坍塌，因此超高精细度 F-P 腔对镀膜质量与腔内介质纯度的要求极为苛刻。
+
+% ==================== 总结 ====================
+\clearpage
+\section{实验总结}
+
+本次实验围绕 Fabry--P\'erot 谐振腔的透过率特性，完成了从\textbf{公式推导}→\textbf{MATLAB 仿真}→\textbf{交互式 GUI}→\textbf{四组参数实验验证}的完整流程。主要收获可归纳为三点：
+
+\paragraph{物理层面。}通过四组对比实验，定量验证了 F-P 腔各参数对谱线的独立影响：
+\begin{itemize}
+    \item \textbf{反射率 $r$}：决定精细度 $\mathcal{F}=\pi\sqrt{r}/(1-r)$ 与峰形尖锐度，$r$ 越大峰越窄、谷底越深；
+    \item \textbf{入射角 $\theta$}：以 $\cos\theta$ 因子整体压缩有效光程，使所有谐振峰同步蓝移，峰形与 $\mathcal{F}$ 不变；
+    \item \textbf{腔长 $d$}：反比控制自由光谱范围 $\mathrm{FSR}\propto 1/d$，短腔宽 FSR、长腔窄 FSR，精细度不受影响；
+    \item \textbf{吸收损耗 $A$}：以放大因子 $1/(1-r)$ 压制峰值透过率 $T_{\max}=(1-A/(1-r))^2$，高精细度腔对损耗极度敏感。
+\end{itemize}
+这四项规律相互独立，共同构成设计高性能 F-P 滤波器的物理基础。
+
+\paragraph{编程层面。}采用 MATLAB 面向对象框架（\texttt{classdef}）+ \texttt{uifigure} 构建了单文件 GUI，核心技术点包括：
+\begin{enumerate}
+    \item 使用 \texttt{ValueChangingFcn} 实现拖动即时刷新，得到流畅的交互体验；
+    \item 利用 \texttt{Limits} + \texttt{LowerLimitInclusive} 实现数值输入框与滑块的双向安全同步；
+    \item 通过 \texttt{SizeChangedFcn} + 动态位置计算实现窗口自适应布局；
+    \item 用 \texttt{uilabel} / \texttt{text} 的 \texttt{'Interpreter','latex'} 渲染数学公式，使界面观感专业。
+\end{enumerate}
+
+\paragraph{工程层面。}在开发过程中遇到了 \texttt{uigridlayout} 深层嵌套导致部分 MATLAB 版本兼容性失败、\texttt{isvalid} 函数被工具箱覆盖等一系列兼容性问题，通过逐项排查与单元测试逐一解决，最终得到稳健的程序。这些问题的处理过程加深了对 GUI 异常捕获与跨版本兼容策略的认识。
+
+综上，本次实验不仅直观呈现了 F-P 谐振腔的物理规律，而且给出了一个功能完备、界面友好的可复用仿真工具，可作为后续学习激光器谐振腔、光学滤波器设计的实验平台。
+
+\end{document}

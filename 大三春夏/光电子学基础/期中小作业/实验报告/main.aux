@@ -1,0 +1,103 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\pgfsyspdfmark {pgfid1}{4736286}{47362867}
+\@writefile{toc}{\contentsline {section}{\numberline {\CJKnumber  {1}、}实验目的}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {\CJKnumber  {2}、}实验原理}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.}F-P 谐振腔的基本结构}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces (a) F-P 谐振腔结构示意图；(b) 典型透过率谱线（蓝实线为高精细度情形）。相邻两峰间距为 FSR，单峰半高宽为 FWHM。}}{1}{figure.caption.3}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:ref}{{1}{1}{(a) F-P 谐振腔结构示意图；(b) 典型透过率谱线（蓝实线为高精细度情形）。相邻两峰间距为 FSR，单峰半高宽为 FWHM。}{figure.caption.3}{}}
+\pgfsyspdfmark {pgfid2}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.}透过率公式推导}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.}谐振条件与关键参数}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{谐振条件。}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{自由光谱范围（FSR）。}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{精细度（Finesse）。}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{半高全宽（FWHM）。}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.}倾斜入射引起的蓝移}{2}{subsection.2.4}\protected@file@percent }
+\pgfsyspdfmark {pgfid3}{4736286}{47362867}
+\@writefile{toc}{\contentsline {section}{\numberline {\CJKnumber  {3}、}代码实现}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.}程序结构总览}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {1}{\ignorespaces \texttt  {GUI} 类的整体骨架}}{3}{listing.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.}核心计算：透过率公式的向量化实现}{3}{subsection.3.2}\protected@file@percent }
+\pgfsyspdfmark {pgfid4}{4736286}{47362867}
+\@writefile{lol}{\contentsline {listing}{\numberline {2}{\ignorespaces \texttt  {updatePlot}：向量化计算透过率、统一以参考峰位更新理论/实测双列特征值与几何标注}}{4}{listing.2}\protected@file@percent }
+\pgfsyspdfmark {pgfid5}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.}滑块与数值框的双向同步}{5}{subsection.3.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {3}{\ignorespaces 双向同步的两个回调函数}}{5}{listing.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.}自适应布局 \texttt  {onResize}}{5}{subsection.3.4}\protected@file@percent }
+\pgfsyspdfmark {pgfid6}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.}Hold on 对比功能}{6}{subsection.3.5}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {4}{\ignorespaces \texttt  {onHoldToggle}：锁定参考曲线并保存原始线性 $T$ 供视图切换用}}{6}{listing.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.}dB 视图与物理合法性守卫}{6}{subsection.3.6}\protected@file@percent }
+\newlabel{ssec:db}{{6.}{6}{dB 视图与物理合法性守卫}{subsection.3.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{dB/线性切换。}{6}{subsection.3.6}\protected@file@percent }
+\pgfsyspdfmark {pgfid7}{4736286}{47362867}
+\@writefile{lol}{\contentsline {listing}{\numberline {5}{\ignorespaces \texttt  {updatePlot} 中的 dB 切换逻辑：\texttt  {ylim} 跟随数据下限，参考曲线同步转换}}{7}{listing.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{物理合法性守卫。}{7}{listing.5}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {6}{\ignorespaces 物理合法性守卫：$A>1-r$ 时输出零线、显示警告并提前返回}}{7}{listing.6}\protected@file@percent }
+\newlabel{lst:guard}{{6}{7}{物理合法性守卫：$A>1-r$ 时输出零线、显示警告并提前返回}{listing.6}{}}
+\pgfsyspdfmark {pgfid8}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.}数值实测：\texttt  {measurePeaks}}{8}{subsection.3.7}\protected@file@percent }
+\newlabel{ssec:measure}{{7.}{8}{数值实测：\texttt {measurePeaks}}{subsection.3.7}{}}
+\@writefile{lol}{\contentsline {listing}{\numberline {7}{\ignorespaces \texttt  {measurePeaks}：以参考峰为基准实测 FSR、FWHM 与精细度，避免宽波段 $\mathrm  {FSR}\propto \lambda ^{2}$ 色散对全局平均的干扰}}{8}{listing.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.}谱线标注层与预设场景}{8}{subsection.3.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{标注层（\texttt  {BtnAnnotate}）。}{8}{subsection.3.8}\protected@file@percent }
+\pgfsyspdfmark {pgfid9}{4736286}{47362867}
+\@writefile{toc}{\contentsline {paragraph}{预设场景（\texttt  {DropPreset}）。}{9}{subsection.3.8}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {8}{\ignorespaces \texttt  {onPresetChanged}：将下拉框选中的场景名映射为六参数组合，调用 \texttt  {applyPreset} 批量写入滑块与数值框后触发重绘}}{9}{listing.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {\CJKnumber  {4}、}界面功能说明}{9}{section.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces GUI 主界面；右侧面板以蓝色（理论）与橙色（实测）双列并排显示精细度、FSR 和 FWHM，预设场景下拉框与六个功能按钮位于其下}}{9}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:main}{{2}{9}{GUI 主界面；右侧面板以蓝色（理论）与橙色（实测）双列并排显示精细度、FSR 和 FWHM，预设场景下拉框与六个功能按钮位于其下}{figure.caption.4}{}}
+\pgfsyspdfmark {pgfid10}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.}谱线显示区}{10}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 几何标注层（默认参数，标注已开启）：红色 $\triangledown $ 标出全部峰位，绿色水平线段为 FWHM，紫色双端线段为局部 FSR，各附数值}}{10}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:annot}{{3}{10}{几何标注层（默认参数，标注已开启）：红色 $\triangledown $ 标出全部峰位，绿色水平线段为 FWHM，紫色双端线段为局部 FSR，各附数值}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.}参数滑块区（左下）}{10}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 六个可调参数的物理意义、取值范围与默认值}}{10}{table.caption.6}\protected@file@percent }
+\newlabel{tab:params}{{1}{10}{六个可调参数的物理意义、取值范围与默认值}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.}特征值与控制区（右下）}{10}{subsection.4.3}\protected@file@percent }
+\pgfsyspdfmark {pgfid11}{4736286}{47362867}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 右侧面板双列特征值来源对照（理论与实测均以参考峰位 $\lambda _\text  {ref}$ 为基准）}}{11}{table.caption.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Hold on 演示：锁定默认 $r=0.90$ 的蓝色曲线（锁定后变为灰色虚线，实时线变红），再调参至 $r=0.97$，峰形对比一目了然}}{11}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:hold_demo}{{4}{11}{Hold on 演示：锁定默认 $r=0.90$ 的蓝色曲线（锁定后变为灰色虚线，实时线变红），再调参至 $r=0.97$，峰形对比一目了然}{figure.caption.8}{}}
+\pgfsyspdfmark {pgfid12}{4736286}{47362867}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces dB 视图（$r=0.97$）：纵轴切换为 $10\lg T$ 后，峰谷差约 $37\,\mathrm  {dB}$，谷底宽度与走势清晰可见，频率选择性一目了然}}{12}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:db_view}{{5}{12}{dB 视图（$r=0.97$）：纵轴切换为 $10\lg T$ 后，峰谷差约 $37\,\mathrm {dB}$，谷底宽度与走势清晰可见，频率选择性一目了然}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 物理合法性守卫演示（$r=0.90,\ A=0.15>1-r=0.10$）：吸收损耗超过物理上限后，谱线置零，绘图区中央显示红色警告文字，右侧面板所有特征值清为"\,--\,"}}{12}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:warn}{{6}{12}{物理合法性守卫演示（$r=0.90,\ A=0.15>1-r=0.10$）：吸收损耗超过物理上限后，谱线置零，绘图区中央显示红色警告文字，右侧面板所有特征值清为"\,--\,"}{figure.caption.10}{}}
+\pgfsyspdfmark {pgfid13}{4736286}{47362867}
+\@writefile{toc}{\contentsline {section}{\numberline {\CJKnumber  {5}、}实验与分析}{13}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.}反射率对峰形的影响}{13}{subsection.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Hold on 对比：灰色虚线为默认 $r=0.90$（$\mathcal  {F}=29.8$），红色实线为 $r=0.97$（$\mathcal  {F}=103$）——反射率增大后峰显著变窄、谷底更深}}{13}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:high_r}{{7}{13}{Hold on 对比：灰色虚线为默认 $r=0.90$（$\mathcal {F}=29.8$），红色实线为 $r=0.97$（$\mathcal {F}=103$）——反射率增大后峰显著变窄、谷底更深}{figure.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 反射率对峰形的影响——数值仿真特征值}}{13}{table.caption.12}\protected@file@percent }
+\newlabel{tab:exp_r}{{3}{13}{反射率对峰形的影响——数值仿真特征值}{table.caption.12}{}}
+\pgfsyspdfmark {pgfid14}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.}入射角引起的蓝移}{14}{subsection.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 入射角对比：灰色虚线为 $\theta =0°$，红色实线为 $\theta =60°$——谱线整体向短波方向移动（蓝移）}}{14}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:hold}{{8}{14}{入射角对比：灰色虚线为 $\theta =0°$，红色实线为 $\theta =60°$——谱线整体向短波方向移动（蓝移）}{figure.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 入射角引起的蓝移——数值仿真特征值}}{14}{table.caption.14}\protected@file@percent }
+\newlabel{tab:exp_theta}{{4}{14}{入射角引起的蓝移——数值仿真特征值}{table.caption.14}{}}
+\pgfsyspdfmark {pgfid15}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.}腔长对自由光谱范围的影响}{15}{subsection.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 腔长对比：灰色虚线为 $d=800\,\si {nm}$（$\mathrm  {FSR}\approx 234\,\si {nm}$），红色实线为 $d=400\,\si {nm}$（$\mathrm  {FSR}\approx 469\,\si {nm}$）——腔长减半后峰间距近似翻倍}}{15}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:cavity}{{9}{15}{腔长对比：灰色虚线为 $d=800\,\si {nm}$（$\mathrm {FSR}\approx 234\,\si {nm}$），红色实线为 $d=400\,\si {nm}$（$\mathrm {FSR}\approx 469\,\si {nm}$）——腔长减半后峰间距近似翻倍}{figure.caption.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces 腔长对自由光谱范围的影响——数值仿真特征值}}{15}{table.caption.16}\protected@file@percent }
+\newlabel{tab:exp_d}{{5}{15}{腔长对自由光谱范围的影响——数值仿真特征值}{table.caption.16}{}}
+\pgfsyspdfmark {pgfid16}{4736286}{47362867}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.}吸收损耗对峰值透过率的影响}{16}{subsection.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces 吸收损耗对比：灰色虚线为无损耗 $A=0$（峰值 $T_{\max }=100\%$），红色实线为 $A=0.04$（峰值 $T_{\max }=36\%$）——损耗使峰值急剧下降}}{16}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:absorption}{{10}{16}{吸收损耗对比：灰色虚线为无损耗 $A=0$（峰值 $T_{\max }=100\%$），红色实线为 $A=0.04$（峰值 $T_{\max }=36\%$）——损耗使峰值急剧下降}{figure.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces 吸收损耗对峰值透过率的影响——数值仿真特征值}}{16}{table.caption.18}\protected@file@percent }
+\newlabel{tab:exp_A}{{6}{16}{吸收损耗对峰值透过率的影响——数值仿真特征值}{table.caption.18}{}}
+\pgfsyspdfmark {pgfid17}{4736286}{47362867}
+\@writefile{toc}{\contentsline {section}{\numberline {\CJKnumber  {6}、}实验总结}{17}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{物理层面。}{17}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{编程层面。}{17}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{工程层面。}{17}{Item.17}\protected@file@percent }
+\ttl@finishall
+\xdef \mintedoldcachechecksum{\detokenize{622EE6DD843B8A1218047BF36EFC4106:9}}
+\gdef \@abspage@last{17}

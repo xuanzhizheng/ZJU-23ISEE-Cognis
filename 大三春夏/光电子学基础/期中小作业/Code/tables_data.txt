@@ -1,0 +1,66 @@
+% 由 gen_tables.m 自动生成 —— 直接复制到 main.tex 各 \subsection 内
+
+% ===== 反射率对峰形的影响 =====
+\begin{table}[H]
+  \centering
+  \caption{反射率对峰形的影响——数值仿真特征值}
+  \label{tab:exp1}
+  \footnotesize
+  \begin{tabular}{l c c c c c c c}
+    \toprule
+    参数组 & 主峰/nm & 平均\,FSR/nm & 局部\,FSR/nm & FWHM/nm & 数值\,$\mathcal{F}$ & 理论\,$\mathcal{F}$ & $T_{\max}$ \\
+    \midrule
+    $r = 0.90$ (基准) & 799.96 & 114.28 & 200.02 & 8.954 & 22.34 & 29.80 & 1.00 \\
+    $r = 0.97$ & 799.96 & 114.28 & 200.02 & 2.592 & 77.18 & 103.14 & 1.00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ===== 入射角引起的蓝移 =====
+\begin{table}[H]
+  \centering
+  \caption{入射角引起的蓝移——数值仿真特征值}
+  \label{tab:exp2}
+  \footnotesize
+  \begin{tabular}{l c c c c c c c}
+    \toprule
+    参数组 & 主峰/nm & 平均\,FSR/nm & 局部\,FSR/nm & FWHM/nm & 数值\,$\mathcal{F}$ & 理论\,$\mathcal{F}$ & $T_{\max}$ \\
+    \midrule
+    $\theta = 0^{\circ}$ (基准) & 799.96 & 114.28 & 200.02 & 8.954 & 22.34 & 29.80 & 1.00 \\
+    $\theta = 60^{\circ}$ & 599.94 & 200.02 & 200.02 & 10.074 & 19.85 & 29.80 & 1.00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ===== 腔长对自由光谱范围的影响 =====
+\begin{table}[H]
+  \centering
+  \caption{腔长对自由光谱范围的影响——数值仿真特征值}
+  \label{tab:exp3}
+  \footnotesize
+  \begin{tabular}{l c c c c c c c}
+    \toprule
+    参数组 & 主峰/nm & 平均\,FSR/nm & 局部\,FSR/nm & FWHM/nm & 数值\,$\mathcal{F}$ & 理论\,$\mathcal{F}$ & $T_{\max}$ \\
+    \midrule
+    $d = 800$\,nm (基准) & 799.96 & 114.28 & 200.02 & 8.954 & 22.34 & 29.80 & 1.00 \\
+    $d = 400$\,nm & 599.94 & 200.02 & 200.02 & 10.074 & 19.85 & 29.80 & 1.00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ===== 吸收损耗对峰值透过率的影响 =====
+\begin{table}[H]
+  \centering
+  \caption{吸收损耗对峰值透过率的影响——数值仿真特征值}
+  \label{tab:exp4}
+  \footnotesize
+  \begin{tabular}{l c c c c c c c}
+    \toprule
+    参数组 & 主峰/nm & 平均\,FSR/nm & 局部\,FSR/nm & FWHM/nm & 数值\,$\mathcal{F}$ & 理论\,$\mathcal{F}$ & $T_{\max}$ \\
+    \midrule
+    $A = 0$ (基准) & 799.96 & 114.28 & 200.02 & 8.954 & 22.34 & 29.80 & 1.00 \\
+    $A = 0.04$ & 799.96 & 114.28 & 200.02 & 8.954 & 22.34 & 29.80 & 0.36 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
