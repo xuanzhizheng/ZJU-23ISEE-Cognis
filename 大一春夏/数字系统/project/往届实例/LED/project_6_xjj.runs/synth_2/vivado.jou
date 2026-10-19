@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Jun 29 01:40:01 2021
+# Process ID: 16672
+# Current directory: D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.runs/synth_2
+# Command line: vivado.exe -log lcd_1602.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lcd_1602.tcl
+# Log file: D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.runs/synth_2/lcd_1602.vds
+# Journal file: D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.runs/synth_2\vivado.jou
+#-----------------------------------------------------------
+source lcd_1602.tcl -notrace

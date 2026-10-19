@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Jun 25 22:11:05 2021
+# Process ID: 10176
+# Current directory: D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.sim/sim_1/behav/xsim/xsim.dir/lcd_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.sim/sim_1/behav/xsim/xsim.dir/lcd_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun 25 22:11:06 2021...

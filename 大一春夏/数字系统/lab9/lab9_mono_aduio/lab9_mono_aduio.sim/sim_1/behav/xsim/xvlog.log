@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module audio_ctrl
+WARNING: [VRFC 10-3676] redeclaration of ansi port 'audio_pwm' is not allowed [E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v:17]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/sim_1/new/tb_audio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_audio

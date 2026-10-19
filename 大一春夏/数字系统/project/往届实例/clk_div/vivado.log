@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Jul 10 23:00:36 2021
+# Process ID: 7196
+# Current directory: D:/LenovoSoftstore/vivado/shu_ma/Done/clk_div
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14592 D:\LenovoSoftstore\vivado\shu_ma\Done\clk_div\clk_div.xpr
+# Log file: D:/LenovoSoftstore/vivado/shu_ma/Done/clk_div/vivado.log
+# Journal file: D:/LenovoSoftstore/vivado/shu_ma/Done/clk_div\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/LenovoSoftstore/vivado/shu_ma/Done/clk_div/clk_div.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/data/ip'.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jul 10 23:00:57 2021...

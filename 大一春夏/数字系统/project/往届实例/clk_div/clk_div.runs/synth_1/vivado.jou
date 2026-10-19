@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Jun 28 20:43:24 2021
+# Process ID: 17040
+# Current directory: D:/LenovoSoftstore/vivado/shu_ma/Done/clk_div/clk_div.runs/synth_1
+# Command line: vivado.exe -log clk_display.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_display.tcl
+# Log file: D:/LenovoSoftstore/vivado/shu_ma/Done/clk_div/clk_div.runs/synth_1/clk_display.vds
+# Journal file: D:/LenovoSoftstore/vivado/shu_ma/Done/clk_div/clk_div.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source clk_display.tcl -notrace

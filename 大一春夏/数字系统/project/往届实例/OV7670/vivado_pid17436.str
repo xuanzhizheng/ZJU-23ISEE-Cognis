@@ -1,0 +1,135 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 17436
+License: Customer
+
+Current time: 	Sat Jun 12 13:36:38 CST 2021
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 12
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 13 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	ÑîÐÄ°Á
+User home directory: C:/Users/ÑîÐÄ°Á
+User working directory: D:/LenovoSoftstore/vivado/OV7670_VGA/project_1
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado
+HDI_APPROOT: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4
+RDI_DATADIR: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/data
+RDI_BINDIR: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/ÑîÐÄ°Á/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/ÑîÐÄ°Á/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/ÑîÐÄ°Á/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/vivado.log
+Vivado journal file location: 	D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/vivado.jou
+Engine tmp dir: 	D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/.Xil/Vivado-17436-LAPTOP-REEO934D
+
+GUI allocated memory:	193 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 596 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: D:\LenovoSoftstore\vivado\OV7670_VGA\project_1\project_1.xpr. Version: Vivado v2017.4 
+// bs (cj):  Open Project : addNotify
+// [GUI Memory]: 60 MB (+60711kb) [00:00:04]
+// [Engine Memory]: 474 MB (+345737kb) [00:00:04]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_CURRENT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 518 MB (+21520kb) [00:00:05]
+// [GUI Memory]: 82 MB (+19852kb) [00:00:06]
+// [Engine Memory]: 572 MB (+28486kb) [00:00:06]
+// Tcl Message: open_project D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/data/ip'. 
+// [Engine Memory]: 601 MB (+498kb) [00:00:07]
+// Project name: project_1; location: D:/LenovoSoftstore/vivado/OV7670_VGA/project_1; part: xc7a35tcsg324-1
+// [GUI Memory]: 87 MB (+880kb) [00:00:07]
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 615 MB. GUI used memory: 38 MB. Current time: 6/12/21 1:36:40 PM CST
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+maximizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // ax (aF, cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 2, true); // B (D, cj) - Node
+// TclEventType: DG_GRAPH_GENERATED
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v)]", 1); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v)]", 6, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v)]", 6, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+maximizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // ax (aF, cj)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 10); // B (D, cj)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCCB_TEST (sccb_sender.v)]", 14); // B (D, cj)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SCCB_TEST (sccb_sender.v)]", 14); // B (D, cj)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 10); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v), ram_256Kx12 : generic_dpram_256Kx12 (vga_dpram.v)]", 7, false); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v), ram_256Kx12 : generic_dpram_256Kx12 (vga_dpram.v)]", 7, false, false, false, false, false, true); // B (D, cj) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v), ram_64Kx12 : generic_dpram_64Kx12 (vga_dpram.v)]", 8, false); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v), ram_64Kx12 : generic_dpram_64Kx12 (vga_dpram.v)]", 8, false, false, false, false, false, true); // B (D, cj) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v)]", 6, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v)]", 6, true, false, false, false, false, true); // B (D, cj) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, OV7670_VGA_TOP (OV7670_TOP.v), VGA_BUFFER : vga_dpram (vga_dpram.v)]", 6); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 10, true); // B (D, cj) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 10); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 10, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 10, true, false, false, false, true, false); // B (D, cj) - Popup Trigger - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 10, true); // B (D, cj) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v)]", 10, true, false, false, false, true, false); // B (D, cj) - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ac (ai, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// as (cj): Remove Sources: addNotify
+selectCheckBox(PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, "Also delete the project local file/directory from disk", true); // g (N, as): TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (as)
+dismissDialog("Remove Sources"); // as (cj)
+// Tcl Message: export_ip_user_files -of_objects  [get_files D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.srcs/sources_1/imports/hdl/DPRAM_wrapper.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.srcs/sources_1/imports/hdl/DPRAM_wrapper.v 
+// Tcl Message: file delete -force D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.srcs/sources_1/imports/hdl/DPRAM_wrapper.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v), DPRAM_i : DPRAM (DPRAM.bd)]", 11, true); // B (D, cj) - Node
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DPRAM_wrapper (DPRAM_wrapper.v), DPRAM_i : DPRAM (DPRAM.bd)]", 11, true, false, false, false, true, false); // B (D, cj) - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ac (ai, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// as (cj): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (as)
+// [Engine Memory]: 642 MB (+11802kb) [00:00:48]
+dismissDialog("Remove Sources"); // as (cj)
+// Tcl Message: export_ip_user_files -of_objects  [get_files D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.srcs/sources_1/bd/DPRAM/DPRAM.bd] -no_script -reset -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: remove_files  D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.srcs/sources_1/bd/DPRAM/DPRAM.bd 

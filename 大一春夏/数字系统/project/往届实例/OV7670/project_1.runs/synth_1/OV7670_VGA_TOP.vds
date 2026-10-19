@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Jun 21 00:25:38 2021
+# Process ID: 9072
+# Current directory: D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log OV7670_VGA_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source OV7670_VGA_TOP.tcl
+# Log file: D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.runs/synth_1/OV7670_VGA_TOP.vds
+# Journal file: D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source OV7670_VGA_TOP.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/data/ip'.
+Command: synth_design -top OV7670_VGA_TOP -part xc7a35tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14948 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 354.539 ; gain = 99.082
+---------------------------------------------------------------------------------

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="CLK100M_25M_clk_wiz_0_0_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1623477950">
+  <File Type="PA-TCL" Name="CLK100M_25M_clk_wiz_0_0.tcl"/>
+  <File Type="REPORTS-TCL" Name="CLK100M_25M_clk_wiz_0_0_reports.tcl"/>
+  <File Type="RDS-RDS" Name="CLK100M_25M_clk_wiz_0_0.vds"/>
+  <File Type="RDS-UTIL" Name="CLK100M_25M_clk_wiz_0_0_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="CLK100M_25M_clk_wiz_0_0_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="CLK100M_25M_clk_wiz_0_0.dcp"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CLK100M_25M_clk_wiz_0_0">
+    <File Path="$PSRCDIR/sources_1/bd/CLK100M_25M/ip/CLK100M_25M_clk_wiz_0_0/CLK100M_25M_clk_wiz_0_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="CLK100M_25M_clk_wiz_0_0"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CLK100M_25M_clk_wiz_0_0">
+    <File Path="$PSRCDIR/sources_1/bd/CLK100M_25M/ip/CLK100M_25M_clk_wiz_0_0/CLK100M_25M_clk_wiz_0_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="CLK100M_25M_clk_wiz_0_0"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

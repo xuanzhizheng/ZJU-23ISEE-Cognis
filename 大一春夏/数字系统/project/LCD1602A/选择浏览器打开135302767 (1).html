@@ -1,0 +1,600 @@
+<html lang="zh-CN"><head><meta charset="UTF-8"><style>.nodata  main {width:1000px;margin: auto;}</style></head><body class="nodata " style=""><div class="main_father clearfix d-flex justify-content-center " style="height:100%;"> <div class="container clearfix " id="mainBox"><main><div class="blog-content-box">
+<div class="article-header-box">
+<div class="article-header">
+<div class="article-title-box">
+<h1 class="title-article" id="articleContentId">FPGA LCD1602驱动代码 （已验证）</h1>
+</div>
+
+</div>
+</div>
+<div id="blogHuaweiyunAdvert"></div>
+
+
+<article class="baidu_pl">
+<div class="article_content clearfix" id="article_content">
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/kdoc_html_views-1a98987dfd.css" rel="stylesheet"/>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-044f2cf1dc.css" rel="stylesheet"/>
+<div class="markdown_views prism-atom-one-light" id="content_views">
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+<path d="M5,0 0,2.5 5,5z" id="raphael-marker-block" stroke-linecap="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+</svg>
+<h3><a id="_0"></a>一.需求解读</h3>
+<p>1.需求<br/> 在液晶屏第一行显示“HELLO FPGA 1234!”<br/> 2. 知识背景<br/> 1602 液晶也叫 1602 字符型液晶，它是一种专门用来显示字母、数字、符号等的点阵<br/> 型液晶模块。它由若干个 5X7 或者 5X11 等点阵字符位组成，每个点阵字符位都可以显示一<br/> 个字符，每位之间有一个点距的间隔，每行之间也有间隔，起到了字符间距和行间距的作用，<br/> 正因为如此所以它不能很好地显示图形(用自定义 CGRAM，显示效果也不好)。</p>
+<pre><code class="prism language-c"><span class="token comment">///</span>
+<span class="token comment">//模块介绍：LCD1602显示驱动</span>
+<span class="token comment">///</span>
+module <span class="token function">lcd_1602</span><span class="token punctuation">(</span> 
+	input 				clk		<span class="token punctuation">,</span><span class="token comment">//系统时钟输入50M</span>
+	input				rst_n	<span class="token punctuation">,</span><span class="token comment">//复位，低电平有效</span>
+ 	output 	reg	<span class="token punctuation">[</span><span class="token number">7</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span> 	dat		<span class="token punctuation">,</span><span class="token comment">//LCD的8位数据口</span>
+ 	output  reg			rs		<span class="token punctuation">,</span><span class="token comment">//数据命令选择信号，高电平表示数据，低电平表示命令</span>
+ 	output				rw		<span class="token punctuation">,</span><span class="token comment">//读写标志，高电平表示读，低电平表示写，该程序我们只对液晶屏进行写操作</span>
+ 	output				en		<span class="token comment">//LCD的控制脚</span>
+ <span class="token punctuation">)</span><span class="token punctuation">;</span>
+reg		<span class="token punctuation">[</span><span class="token number">15</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>	counter	<span class="token punctuation">;</span> 
+reg 	<span class="token punctuation">[</span> <span class="token number">5</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span> 	current	<span class="token punctuation">;</span> 
+reg 			clkr	<span class="token punctuation">;</span> 
+reg				e		<span class="token punctuation">;</span>
+<span class="token comment">//定义状态机</span>
+parameter   set0 <span class="token operator">=</span><span class="token number">6</span>'d0<span class="token punctuation">;</span> 
+parameter   set1 <span class="token operator">=</span><span class="token number">6</span>'d1<span class="token punctuation">;</span> 
+parameter   set2 <span class="token operator">=</span><span class="token number">6</span>'d2<span class="token punctuation">;</span> 
+parameter   set3 <span class="token operator">=</span><span class="token number">6</span>'d3<span class="token punctuation">;</span> 
+parameter   set4 <span class="token operator">=</span><span class="token number">6</span>'d4<span class="token punctuation">;</span>   
+parameter   dat0 <span class="token operator">=</span><span class="token number">6</span>'d5<span class="token punctuation">;</span> 
+parameter   dat1 <span class="token operator">=</span><span class="token number">6</span>'d6<span class="token punctuation">;</span> 
+parameter   dat2 <span class="token operator">=</span><span class="token number">6</span>'d7<span class="token punctuation">;</span> 
+parameter   dat3 <span class="token operator">=</span><span class="token number">6</span>'d8<span class="token punctuation">;</span> 
+parameter   dat4 <span class="token operator">=</span><span class="token number">6</span>'d9<span class="token punctuation">;</span> 
+parameter   dat5 <span class="token operator">=</span><span class="token number">6</span>'d10<span class="token punctuation">;</span>
+parameter   dat6 <span class="token operator">=</span><span class="token number">6</span>'d11<span class="token punctuation">;</span> 
+parameter   dat7 <span class="token operator">=</span><span class="token number">6</span>'d12<span class="token punctuation">;</span> 
+parameter   dat8 <span class="token operator">=</span><span class="token number">6</span>'d13<span class="token punctuation">;</span> 
+parameter   dat9 <span class="token operator">=</span><span class="token number">6</span>'d14<span class="token punctuation">;</span>
+parameter   dat10<span class="token operator">=</span><span class="token number">6</span>'d15<span class="token punctuation">;</span> 
+parameter   dat11<span class="token operator">=</span><span class="token number">6</span>'d16<span class="token punctuation">;</span>
+parameter	dat12<span class="token operator">=</span><span class="token number">6</span>'d17<span class="token punctuation">;</span>  
+parameter	dat13<span class="token operator">=</span><span class="token number">6</span>'d18<span class="token punctuation">;</span> 
+parameter	dat14<span class="token operator">=</span><span class="token number">6</span>'d19<span class="token punctuation">;</span> 
+parameter	dat15<span class="token operator">=</span><span class="token number">6</span>'d20<span class="token punctuation">;</span> 
+parameter   fini<span class="token operator">=</span><span class="token number">6</span>'hF1<span class="token punctuation">;</span> 
+assign en<span class="token operator">=</span>clkr<span class="token operator">|</span>e<span class="token punctuation">;</span> 
+assign rw<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//读写标志，高电平表示读，低电平表示写，该程序我们只对液晶屏进行写操作，所以置为低电平即可</span>
+ <span class="token comment">//时钟分频，以匹配LCD1602的时钟</span>
+always @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span>begin 
+ 	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span>begin
+		counter<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>
+ 		clkr<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>
+ 	end <span class="token keyword">else</span> begin
+  		counter<span class="token operator">&lt;=</span>counter<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> 
+  		<span class="token keyword">if</span><span class="token punctuation">(</span>counter<span class="token operator">==</span><span class="token number">16</span>'h000f<span class="token punctuation">)</span>  
+  			clkr<span class="token operator">&lt;=</span><span class="token operator">~</span>clkr<span class="token punctuation">;</span> 
+  		<span class="token keyword">else</span>
+  			<span class="token punctuation">;</span>
+  	end
+end 
+always @<span class="token punctuation">(</span>posedge clkr or negedge rst_n<span class="token punctuation">)</span> begin 
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span>begin
+		current<span class="token operator">&lt;=</span>set0<span class="token punctuation">;</span>
+		dat<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>
+		rs<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>
+		e<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span>
+	end <span class="token keyword">else</span> begin
+  		<span class="token keyword">case</span><span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
+    	set0<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token number">8</span>'h38<span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>set1<span class="token punctuation">;</span> 		end <span class="token comment">//*设置8位格式,2行,5*7*</span>
+    	set1<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token number">8</span>'h0C<span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>set2<span class="token punctuation">;</span> 		end <span class="token comment">//*整体显示,关光标,不闪烁*/  </span>
+    	set2<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token number">8</span>'h06<span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>set3<span class="token punctuation">;</span> 		end <span class="token comment">//*设定输入方式,增量不移位*/  </span>
+    	set3<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token number">8</span>'h01<span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>set4<span class="token punctuation">;</span> 		end <span class="token comment">//*清除显示*/   </span>
+		set4<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token number">8</span>'h80<span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat0<span class="token punctuation">;</span> 		end <span class="token comment">//设置显示第一行</span>
+    	dat0<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"H"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat1<span class="token punctuation">;</span> 		end    
+    	dat1<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"E"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat2<span class="token punctuation">;</span> 		end 
+    	dat2<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"L"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat3<span class="token punctuation">;</span> 		end 
+    	dat3<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"L"</span><span class="token punctuation">;</span>	current<span class="token operator">&lt;=</span>dat4<span class="token punctuation">;</span> 		end 
+    	dat4<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"O"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat5<span class="token punctuation">;</span> 		end 
+    	dat5<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">" "</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat6<span class="token punctuation">;</span> 		end 
+    	dat6<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"F"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat7<span class="token punctuation">;</span> 		end 
+    	dat7<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"P"</span><span class="token punctuation">;</span>	current<span class="token operator">&lt;=</span>dat8<span class="token punctuation">;</span> 		end 
+    	dat8<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"G"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat9<span class="token punctuation">;</span> 		end 
+    	dat9<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"A"</span><span class="token punctuation">;</span>	current<span class="token operator">&lt;=</span>dat10 <span class="token punctuation">;</span> 	end 
+    	dat10<span class="token operator">:</span>  begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"!"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat11<span class="token punctuation">;</span> 	end 
+    	dat11<span class="token operator">:</span>  begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"1"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat12<span class="token punctuation">;</span> 	end 
+    	dat12<span class="token operator">:</span>  begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"2"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat13<span class="token punctuation">;</span> 	end 
+		dat13<span class="token operator">:</span>  begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"3"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat14<span class="token punctuation">;</span> 	end 
+		dat14<span class="token operator">:</span>  begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"4"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>dat15<span class="token punctuation">;</span> 	end 
+		dat15<span class="token operator">:</span>  begin  e<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token string">"5"</span><span class="token punctuation">;</span> 	current<span class="token operator">&lt;=</span>fini<span class="token punctuation">;</span> 		end 
+    	fini<span class="token operator">:</span>   begin  e<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">;</span>rs<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span> dat<span class="token operator">&lt;=</span><span class="token number">8</span>'h00<span class="token punctuation">;</span>       				end
+   		<span class="token keyword">default</span><span class="token operator">:</span>   current<span class="token operator">&lt;=</span>set0<span class="token punctuation">;</span> 
+    	endcase 
+    end
+ end 
+endmodule  
+</code></pre>
+<p>第二个：</p>
+<pre><code class="prism language-c"> 
+
+<span class="token comment">// Description    : LCD1602 driver</span>
+module <span class="token function">lcd</span><span class="token punctuation">(</span>
+	input				clk			<span class="token punctuation">,</span>
+	input				rst_n		<span class="token punctuation">,</span>
+	
+	output	reg			lcd_rs		<span class="token punctuation">,</span>
+	output	wire		lcd_rw		<span class="token punctuation">,</span>
+	output	reg			lcd_en		<span class="token punctuation">,</span>
+	output	reg	<span class="token punctuation">[</span><span class="token number">7</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>	lcd_data	
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	reg	<span class="token punctuation">[</span><span class="token number">17</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>	cnt				<span class="token punctuation">;</span>
+	reg	<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>	state_c			<span class="token punctuation">;</span>
+	reg	<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>	state_n			<span class="token punctuation">;</span>
+	reg	<span class="token punctuation">[</span><span class="token number">4</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>	char_cnt		<span class="token punctuation">;</span>
+	reg	<span class="token punctuation">[</span><span class="token number">7</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>	data_display	<span class="token punctuation">;</span>
+	localparam
+		IDLE			<span class="token operator">=</span> <span class="token number">4</span>'d0	<span class="token punctuation">,</span>
+		INIT 			<span class="token operator">=</span> <span class="token number">4</span>'d1	<span class="token punctuation">,</span>
+		S0				<span class="token operator">=</span> <span class="token number">4</span>'d2	<span class="token punctuation">,</span>
+		S1				<span class="token operator">=</span> <span class="token number">4</span>'d3	<span class="token punctuation">,</span>
+		S2				<span class="token operator">=</span> <span class="token number">4</span>'d4	<span class="token punctuation">,</span>
+		S3				<span class="token operator">=</span> <span class="token number">4</span>'d5	<span class="token punctuation">,</span>
+		ROW1_ADDR		<span class="token operator">=</span> <span class="token number">4</span>'d6	<span class="token punctuation">,</span>
+		WRITE			<span class="token operator">=</span> <span class="token number">4</span>'d7	<span class="token punctuation">,</span>
+		ROW2_ADDR		<span class="token operator">=</span> <span class="token number">4</span>'d8	<span class="token punctuation">,</span>
+		stop			<span class="token operator">=</span> <span class="token number">4</span>'d9	<span class="token punctuation">;</span>
+	assign lcd_rw <span class="token operator">=</span> <span class="token number">1</span>'b0<span class="token punctuation">;</span>
+ 
+ 
+	always @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span> begin
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> begin
+			cnt <span class="token operator">&lt;=</span> <span class="token number">17</span>'d0<span class="token punctuation">;</span>
+		end
+		<span class="token keyword">else</span> begin
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>cnt<span class="token operator">==</span><span class="token number">17</span>'d100_000 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> begin
+				cnt <span class="token operator">&lt;=</span> <span class="token number">17</span>'d0<span class="token punctuation">;</span>
+			end
+			<span class="token keyword">else</span> begin
+				cnt <span class="token operator">&lt;=</span> cnt <span class="token operator">+</span> <span class="token number">1</span>'b1<span class="token punctuation">;</span>
+			end
+		end
+	end
+ 
+	always @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span> begin
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> begin
+			lcd_en <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		end
+		<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>cnt<span class="token operator">==</span><span class="token number">17</span>'d50_000 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> begin
+			lcd_en <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		end
+		<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>cnt<span class="token operator">==</span><span class="token number">17</span>'d100_000 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> begin
+			lcd_en <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		end
+	end
+ 
+	always @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span> begin
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> begin
+			char_cnt <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		end
+		<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>state_c<span class="token operator">==</span>WRITE <span class="token operator">&amp;&amp;</span> cnt<span class="token operator">==</span><span class="token number">17</span>'d50_000 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> begin
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>char_cnt<span class="token operator">==</span><span class="token number">5</span>'d24<span class="token punctuation">)</span> begin
+				char_cnt <span class="token operator">&lt;=</span> <span class="token number">5</span>'d0<span class="token punctuation">;</span>
+			end
+			<span class="token keyword">else</span> begin
+				char_cnt <span class="token operator">&lt;=</span> char_cnt <span class="token operator">+</span> <span class="token number">1</span>'b1<span class="token punctuation">;</span>
+			end
+		end
+	end
+ 
+	always @<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> begin
+		<span class="token keyword">case</span><span class="token punctuation">(</span>char_cnt<span class="token punctuation">)</span>
+			<span class="token number">5</span>'d0<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"P"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d1<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"a"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d2<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"n"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d3<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"-"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d4<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"H"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d5<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"o"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d6<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"n"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d7<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"g"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d8<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"-"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d9<span class="token operator">:</span> data_display   <span class="token operator">=</span> <span class="token string">"F"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d10<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"e"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d11<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"n"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d12<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"g"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d13<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"L"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d14<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"C"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d15<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"D"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d16<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d17<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"6"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d18<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"0"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d19<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"2"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d20<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"-"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d21<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"T"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d22<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"e"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d23<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"s"</span><span class="token punctuation">;</span>
+			<span class="token number">5</span>'d24<span class="token operator">:</span> data_display  <span class="token operator">=</span> <span class="token string">"t"</span><span class="token punctuation">;</span>
+			<span class="token keyword">default</span><span class="token operator">:</span>data_display <span class="token operator">=</span> <span class="token string">"P"</span><span class="token punctuation">;</span>
+		endcase
+	end
+	always @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span> begin
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> begin
+			state_c <span class="token operator">&lt;=</span> IDLE<span class="token punctuation">;</span>
+		end
+		<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>cnt<span class="token operator">==</span><span class="token number">17</span>'d50_000 <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> begin
+			state_c <span class="token operator">&lt;=</span> state_n<span class="token punctuation">;</span>
+		end
+	end
+ 
+	reg	<span class="token punctuation">[</span><span class="token number">19</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>	cnt_15ms<span class="token punctuation">;</span>
+	reg		flag	<span class="token punctuation">;</span>
+	always@<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span>begin
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> begin
+			cnt_15ms <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		end
+		<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>state_c <span class="token operator">==</span> IDLE<span class="token punctuation">)</span> begin
+			cnt_15ms <span class="token operator">&lt;=</span> cnt_15ms <span class="token operator">+</span> <span class="token number">1</span>'b1<span class="token punctuation">;</span>
+		end
+	end
+	always@<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span>begin
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> begin
+			flag <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		end
+		<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>state_c<span class="token operator">==</span>IDLE <span class="token operator">&amp;&amp;</span> cnt_15ms<span class="token operator">==</span><span class="token number">20</span>'d750000<span class="token punctuation">)</span> begin
+			flag <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		end
+	end
+ 
+	always @<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> begin
+		<span class="token keyword">case</span><span class="token punctuation">(</span>state_c<span class="token punctuation">)</span>
+			IDLE		<span class="token operator">:</span>
+				begin
+					<span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> begin
+						state_n <span class="token operator">=</span> INIT<span class="token punctuation">;</span>
+					end
+					<span class="token keyword">else</span> begin
+						state_n <span class="token operator">=</span> state_c<span class="token punctuation">;</span>
+					end
+				end
+			INIT 	<span class="token operator">:</span>
+				begin
+					state_n <span class="token operator">=</span> S0<span class="token punctuation">;</span>
+				end
+			S0  	<span class="token operator">:</span>
+				begin
+					state_n <span class="token operator">=</span> S1<span class="token punctuation">;</span>
+				end
+			S1  	<span class="token operator">:</span>
+				begin
+					state_n <span class="token operator">=</span> S2<span class="token punctuation">;</span>
+				end
+			S2  	<span class="token operator">:</span>
+				begin
+					state_n <span class="token operator">=</span> S3<span class="token punctuation">;</span>
+				end
+			S3  	<span class="token operator">:</span>
+				begin
+					state_n <span class="token operator">=</span> ROW1_ADDR<span class="token punctuation">;</span>
+				end
+			ROW1_ADDR<span class="token operator">:</span>
+				begin
+					state_n <span class="token operator">=</span> WRITE<span class="token punctuation">;</span>
+				end
+			WRITE		<span class="token operator">:</span>
+				begin
+					<span class="token keyword">if</span> <span class="token punctuation">(</span>char_cnt<span class="token operator">==</span><span class="token number">5</span>'d12<span class="token punctuation">)</span> begin
+						state_n <span class="token operator">=</span> ROW2_ADDR<span class="token punctuation">;</span>
+					end
+					<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>char_cnt<span class="token operator">==</span><span class="token number">5</span>'d24<span class="token punctuation">)</span> begin
+						state_n <span class="token operator">=</span> stop<span class="token punctuation">;</span>
+					end
+					<span class="token keyword">else</span> begin
+						state_n <span class="token operator">=</span> state_c<span class="token punctuation">;</span>
+					end
+				end
+			ROW2_ADDR<span class="token operator">:</span>
+				begin
+					state_n <span class="token operator">=</span> WRITE<span class="token punctuation">;</span>
+				end
+			stop		<span class="token operator">:</span>
+				begin
+					state_n <span class="token operator">=</span> stop<span class="token punctuation">;</span>
+				end
+			<span class="token keyword">default</span><span class="token operator">:</span>state_n <span class="token operator">=</span> IDLE<span class="token punctuation">;</span>
+		endcase
+	end
+ 
+	always @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span> begin
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> begin
+			lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'d0<span class="token punctuation">;</span>
+		end
+		<span class="token keyword">else</span> begin
+			<span class="token keyword">case</span><span class="token punctuation">(</span>state_c<span class="token punctuation">)</span>
+				IDLE		<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h38<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				INIT 		<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h38<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				S0			<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h08<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				S1			<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h01<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				S2			<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h06<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				S3			<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h0c<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				ROW1_ADDR	<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h80<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				WRITE		<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> data_display<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>end
+				ROW2_ADDR	<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'hc0<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				stop		<span class="token operator">:</span>begin lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h38<span class="token punctuation">;</span> lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>end
+				<span class="token keyword">default</span><span class="token operator">:</span><span class="token punctuation">;</span>
+			endcase
+		end
+	end
+endmodule
+</code></pre>
+<p>三</p>
+<pre><code class="prism language-c">module <span class="token function">lcd_1602_driver</span><span class="token punctuation">(</span>
+                clk    <span class="token punctuation">,</span>
+                rst_n  <span class="token punctuation">,</span>
+                lcd_en <span class="token punctuation">,</span>
+                lcd_rw <span class="token punctuation">,</span>  <span class="token comment">//因为只执行写操作，所以永远为0.</span>
+                lcd_rs <span class="token punctuation">,</span>
+                lcd_data
+
+              <span class="token punctuation">)</span><span class="token punctuation">;</span>
+input        clk    <span class="token punctuation">;</span>
+input        rst_n  <span class="token punctuation">;</span>
+
+output       lcd_en <span class="token punctuation">;</span>
+output       lcd_rw <span class="token punctuation">;</span>
+output       lcd_rs <span class="token punctuation">;</span>
+output <span class="token punctuation">[</span><span class="token number">7</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span> lcd_data<span class="token punctuation">;</span>
+wire         clk <span class="token punctuation">;</span>
+wire         rst_n  <span class="token punctuation">;</span>
+wire         lcd_en <span class="token punctuation">;</span>
+wire         lcd_rw<span class="token punctuation">;</span>
+reg  <span class="token punctuation">[</span><span class="token number">7</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>   lcd_data<span class="token punctuation">;</span>
+reg          lcd_rs  <span class="token punctuation">;</span>
+reg <span class="token punctuation">[</span><span class="token number">5</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>    c_state <span class="token punctuation">;</span>
+reg <span class="token punctuation">[</span><span class="token number">5</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>    n_state <span class="token punctuation">;</span>
+wire  <span class="token punctuation">[</span><span class="token number">127</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>  row_1<span class="token punctuation">;</span>
+wire  <span class="token punctuation">[</span><span class="token number">127</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span>  row_2<span class="token punctuation">;</span>
+assign row_1 <span class="token operator">=</span><span class="token string">"i am liu xiao yi"</span> <span class="token punctuation">;</span>  <span class="token comment">//第一行显示的内容</span>
+assign row_2 <span class="token operator">=</span><span class="token string">"happy everyday !"</span><span class="token punctuation">;</span>  <span class="token comment">//第二行显示的内容</span>
+<span class="token comment">//----------------------------------------------------------------------</span>
+<span class="token comment">//initialize</span>
+<span class="token comment">//first step is waitng more than 20 ms. 数据手册要求的，目的是等待系统上电稳定。</span>
+parameter TIME_20MS <span class="token operator">=</span> <span class="token number">1000</span>_000 <span class="token punctuation">;</span> <span class="token comment">//20000000/20=1000_000</span>
+<span class="token comment">//parameter TIME_15MS = 9'h100 ; //just for test</span>
+parameter TIME_500HZ<span class="token operator">=</span> <span class="token number">100</span>_000  <span class="token punctuation">;</span> <span class="token comment">//</span>
+<span class="token comment">//parameter TIME_500HZ= 4'hf;  //just for test</span>
+<span class="token comment">//use gray code   </span>
+parameter         IDLE<span class="token operator">=</span>    <span class="token number">8</span>'h00  <span class="token punctuation">;</span>  <span class="token comment">//因为此状态机一共有40个状态，所以这里用了格雷码，一次只有1位发生改变。00 01 03 02                      </span>
+parameter SET_FUNCTION<span class="token operator">=</span>    <span class="token number">8</span>'h01  <span class="token punctuation">;</span>       
+parameter     DISP_OFF<span class="token operator">=</span>    <span class="token number">8</span>'h03  <span class="token punctuation">;</span>
+parameter   DISP_CLEAR<span class="token operator">=</span>    <span class="token number">8</span>'h02  <span class="token punctuation">;</span>
+parameter   ENTRY_MODE<span class="token operator">=</span>    <span class="token number">8</span>'h06  <span class="token punctuation">;</span>
+parameter   DISP_ON   <span class="token operator">=</span>    <span class="token number">8</span>'h07  <span class="token punctuation">;</span>
+parameter    ROW1_ADDR<span class="token operator">=</span>    <span class="token number">8</span>'h05  <span class="token punctuation">;</span>       
+parameter       ROW1_0<span class="token operator">=</span>    <span class="token number">8</span>'h04  <span class="token punctuation">;</span>
+parameter       ROW1_1<span class="token operator">=</span>    <span class="token number">8</span>'h0C  <span class="token punctuation">;</span>
+parameter       ROW1_2<span class="token operator">=</span>    <span class="token number">8</span>'h0D  <span class="token punctuation">;</span>
+parameter       ROW1_3<span class="token operator">=</span>    <span class="token number">8</span>'h0F  <span class="token punctuation">;</span>
+parameter       ROW1_4<span class="token operator">=</span>    <span class="token number">8</span>'h0E  <span class="token punctuation">;</span>
+parameter       ROW1_5<span class="token operator">=</span>    <span class="token number">8</span>'h0A  <span class="token punctuation">;</span>
+parameter       ROW1_6<span class="token operator">=</span>    <span class="token number">8</span>'h0B  <span class="token punctuation">;</span>
+parameter       ROW1_7<span class="token operator">=</span>    <span class="token number">8</span>'h09  <span class="token punctuation">;</span>
+parameter       ROW1_8<span class="token operator">=</span>  <span class="token number">8</span>'h08  <span class="token punctuation">;</span>
+parameter       ROW1_9<span class="token operator">=</span>    <span class="token number">8</span>'h18  <span class="token punctuation">;</span>
+parameter       ROW1_A<span class="token operator">=</span>    <span class="token number">8</span>'h19  <span class="token punctuation">;</span>
+parameter       ROW1_B<span class="token operator">=</span>    <span class="token number">8</span>'h1B  <span class="token punctuation">;</span>
+parameter       ROW1_C<span class="token operator">=</span>    <span class="token number">8</span>'h1A  <span class="token punctuation">;</span>
+parameter       ROW1_D<span class="token operator">=</span>    <span class="token number">8</span>'h1E  <span class="token punctuation">;</span>
+parameter       ROW1_E<span class="token operator">=</span>    <span class="token number">8</span>'h1F  <span class="token punctuation">;</span>
+parameter       ROW1_F<span class="token operator">=</span>    <span class="token number">8</span>'h1D  <span class="token punctuation">;</span>
+
+parameter    ROW2_ADDR<span class="token operator">=</span>    <span class="token number">8</span>'h1C  <span class="token punctuation">;</span>
+parameter       ROW2_0<span class="token operator">=</span>    <span class="token number">8</span>'h14  <span class="token punctuation">;</span>
+parameter       ROW2_1<span class="token operator">=</span>    <span class="token number">8</span>'h15  <span class="token punctuation">;</span>
+parameter       ROW2_2<span class="token operator">=</span>    <span class="token number">8</span>'h17  <span class="token punctuation">;</span>
+parameter       ROW2_3<span class="token operator">=</span>    <span class="token number">8</span>'h16  <span class="token punctuation">;</span>
+parameter       ROW2_4<span class="token operator">=</span>    <span class="token number">8</span>'h12  <span class="token punctuation">;</span>
+parameter       ROW2_5<span class="token operator">=</span>    <span class="token number">8</span>'h13  <span class="token punctuation">;</span>
+parameter       ROW2_6<span class="token operator">=</span>    <span class="token number">8</span>'h11  <span class="token punctuation">;</span>
+parameter       ROW2_7<span class="token operator">=</span>    <span class="token number">8</span>'h10  <span class="token punctuation">;</span>
+parameter       ROW2_8<span class="token operator">=</span>    <span class="token number">8</span>'h30  <span class="token punctuation">;</span>
+parameter       ROW2_9<span class="token operator">=</span>    <span class="token number">8</span>'h31  <span class="token punctuation">;</span>
+parameter       ROW2_A<span class="token operator">=</span>    <span class="token number">8</span>'h33  <span class="token punctuation">;</span>
+parameter       ROW2_B<span class="token operator">=</span>    <span class="token number">8</span>'h32  <span class="token punctuation">;</span>
+parameter       ROW2_C<span class="token operator">=</span>    <span class="token number">8</span>'h36  <span class="token punctuation">;</span>
+parameter       ROW2_D<span class="token operator">=</span>    <span class="token number">8</span>'h37  <span class="token punctuation">;</span>
+parameter       ROW2_E<span class="token operator">=</span>    <span class="token number">8</span>'h35  <span class="token punctuation">;</span>
+parameter       ROW2_F<span class="token operator">=</span>    <span class="token number">8</span>'h34  <span class="token punctuation">;</span>
+
+
+<span class="token comment">//20ms的计数器，即初始化第一步</span>
+reg <span class="token punctuation">[</span><span class="token number">19</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span> cnt_20ms <span class="token punctuation">;</span>
+always  @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span>begin
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rst_n<span class="token operator">==</span><span class="token number">1</span>'b0<span class="token punctuation">)</span>begin
+        cnt_20ms<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    end
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>cnt_20ms <span class="token operator">==</span> TIME_20MS <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>begin
+        cnt_20ms<span class="token operator">&lt;=</span>cnt_20ms<span class="token punctuation">;</span>
+    end
+    <span class="token keyword">else</span>
+        cnt_20ms<span class="token operator">&lt;=</span>cnt_20ms <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">;</span>
+end
+wire delay_done <span class="token operator">=</span> <span class="token punctuation">(</span>cnt_20ms<span class="token operator">==</span>TIME_20MS<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">?</span> <span class="token number">1</span><span class="token char">'b1 : 1'</span>b0 <span class="token punctuation">;</span>
+<span class="token comment">//----------------------------------------------------------------------</span>
+<span class="token comment">//500ns  这里是分频，因为LCD1602的工作频率是500HZ,而FPGA是50Mhz,所以要分频</span>
+reg <span class="token punctuation">[</span><span class="token number">19</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">]</span> cnt_500hz<span class="token punctuation">;</span>
+always  @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span>begin
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rst_n<span class="token operator">==</span><span class="token number">1</span>'b0<span class="token punctuation">)</span>begin
+        cnt_500hz <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    end
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>delay_done<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>begin
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cnt_500hz<span class="token operator">==</span> TIME_500HZ <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            cnt_500hz<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            cnt_500hz<span class="token operator">&lt;=</span>cnt_500hz <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">;</span>
+    end
+    <span class="token keyword">else</span>
+        cnt_500hz<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">;</span>
+end
+
+assign lcd_en <span class="token operator">=</span> <span class="token punctuation">(</span>cnt_500hz<span class="token operator">&gt;</span><span class="token punctuation">(</span>TIME_500HZ<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">?</span> <span class="token number">1</span><span class="token char">'b0 : 1'</span>b1<span class="token punctuation">;</span>  <span class="token comment">//下降沿</span>
+assign write_flag <span class="token operator">=</span> <span class="token punctuation">(</span>cnt_500hz<span class="token operator">==</span>TIME_500HZ <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">1</span><span class="token char">'b1 : 1'</span>b0 <span class="token punctuation">;</span>
+
+<span class="token comment">//set_function ,display off ，display clear ,entry mode set</span>
+<span class="token comment">//----------------------------------------------------------------------状态机</span>
+always  @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span>begin
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rst_n<span class="token operator">==</span><span class="token number">1</span>'b0<span class="token punctuation">)</span>begin
+        c_state <span class="token operator">&lt;=</span> IDLE    <span class="token punctuation">;</span>
+    end
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>write_flag<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> begin
+        c_state<span class="token operator">&lt;=</span> n_state  <span class="token punctuation">;</span>
+    end
+    <span class="token keyword">else</span>
+        c_state<span class="token operator">&lt;=</span>c_state   <span class="token punctuation">;</span>
+end
+
+always  @<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span>begin
+    <span class="token keyword">case</span> <span class="token punctuation">(</span>c_state<span class="token punctuation">)</span>
+        IDLE<span class="token operator">:</span> n_state <span class="token operator">=</span> SET_FUNCTION <span class="token punctuation">;</span>
+SET_FUNCTION<span class="token operator">:</span> n_state <span class="token operator">=</span> DISP_OFF     <span class="token punctuation">;</span>
+    DISP_OFF<span class="token operator">:</span> n_state <span class="token operator">=</span> DISP_CLEAR   <span class="token punctuation">;</span>
+  DISP_CLEAR<span class="token operator">:</span> n_state <span class="token operator">=</span> ENTRY_MODE   <span class="token punctuation">;</span>
+  ENTRY_MODE<span class="token operator">:</span> n_state <span class="token operator">=</span> DISP_ON      <span class="token punctuation">;</span>
+  DISP_ON   <span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_ADDR    <span class="token punctuation">;</span>
+   ROW1_ADDR<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_0       <span class="token punctuation">;</span>
+      ROW1_0<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_1       <span class="token punctuation">;</span>
+      ROW1_1<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_2       <span class="token punctuation">;</span>
+      ROW1_2<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_3       <span class="token punctuation">;</span>
+      ROW1_3<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_4       <span class="token punctuation">;</span>
+      ROW1_4<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_5       <span class="token punctuation">;</span>
+      ROW1_5<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_6       <span class="token punctuation">;</span>
+      ROW1_6<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_7       <span class="token punctuation">;</span>
+      ROW1_7<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_8       <span class="token punctuation">;</span>
+      ROW1_8<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_9       <span class="token punctuation">;</span>
+      ROW1_9<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_A       <span class="token punctuation">;</span>
+      ROW1_A<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_B       <span class="token punctuation">;</span>
+      ROW1_B<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_C       <span class="token punctuation">;</span>
+      ROW1_C<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_D       <span class="token punctuation">;</span>
+      ROW1_D<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_E       <span class="token punctuation">;</span>
+      ROW1_E<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_F       <span class="token punctuation">;</span>
+      ROW1_F<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_ADDR    <span class="token punctuation">;</span>
+
+   ROW2_ADDR<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_0       <span class="token punctuation">;</span>
+      ROW2_0<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_1       <span class="token punctuation">;</span>
+      ROW2_1<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_2       <span class="token punctuation">;</span>
+      ROW2_2<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_3       <span class="token punctuation">;</span>
+      ROW2_3<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_4       <span class="token punctuation">;</span>
+      ROW2_4<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_5       <span class="token punctuation">;</span>
+      ROW2_5<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_6       <span class="token punctuation">;</span>
+      ROW2_6<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_7       <span class="token punctuation">;</span>
+      ROW2_7<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_8       <span class="token punctuation">;</span>
+      ROW2_8<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_9       <span class="token punctuation">;</span>
+      ROW2_9<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_A       <span class="token punctuation">;</span>
+      ROW2_A<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_B       <span class="token punctuation">;</span>
+      ROW2_B<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_C       <span class="token punctuation">;</span>
+      ROW2_C<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_D       <span class="token punctuation">;</span>
+      ROW2_D<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_E       <span class="token punctuation">;</span>
+      ROW2_E<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW2_F       <span class="token punctuation">;</span>
+      ROW2_F<span class="token operator">:</span> n_state <span class="token operator">=</span> ROW1_ADDR    <span class="token punctuation">;</span>
+     <span class="token keyword">default</span><span class="token operator">:</span> n_state <span class="token operator">=</span> n_state      <span class="token punctuation">;</span>
+   endcase 
+   end   
+
+   assign lcd_rw <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+   always  @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span>begin
+       <span class="token keyword">if</span><span class="token punctuation">(</span>rst_n<span class="token operator">==</span><span class="token number">1</span>'b0<span class="token punctuation">)</span>begin
+           lcd_rs <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token punctuation">;</span>   <span class="token comment">//order or data  0: order 1:data</span>
+       end
+       <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>write_flag <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>begin
+           <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>n_state<span class="token operator">==</span>SET_FUNCTION<span class="token punctuation">)</span><span class="token operator">||</span><span class="token punctuation">(</span>n_state<span class="token operator">==</span>DISP_OFF<span class="token punctuation">)</span><span class="token operator">||</span>
+              <span class="token punctuation">(</span>n_state<span class="token operator">==</span>DISP_CLEAR<span class="token punctuation">)</span><span class="token operator">||</span><span class="token punctuation">(</span>n_state<span class="token operator">==</span>ENTRY_MODE<span class="token punctuation">)</span><span class="token operator">||</span>
+              <span class="token punctuation">(</span>n_state<span class="token operator">==</span>DISP_ON <span class="token punctuation">)</span> <span class="token operator">||</span><span class="token punctuation">(</span>n_state<span class="token operator">==</span>ROW1_ADDR<span class="token punctuation">)</span><span class="token operator">||</span>
+              <span class="token punctuation">(</span>n_state<span class="token operator">==</span>ROW2_ADDR<span class="token punctuation">)</span><span class="token punctuation">)</span>begin
+           lcd_rs<span class="token operator">&lt;=</span><span class="token number">0</span> <span class="token punctuation">;</span>
+           end 
+           <span class="token keyword">else</span>  begin
+           lcd_rs<span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+           end
+       end
+       <span class="token keyword">else</span> begin
+           lcd_rs<span class="token operator">&lt;=</span>lcd_rs<span class="token punctuation">;</span>
+       end     
+   end                   
+
+   always  @<span class="token punctuation">(</span>posedge clk or negedge rst_n<span class="token punctuation">)</span>begin
+       <span class="token keyword">if</span><span class="token punctuation">(</span>rst_n<span class="token operator">==</span><span class="token number">1</span>'b0<span class="token punctuation">)</span>begin
+           lcd_data<span class="token operator">&lt;=</span><span class="token number">0</span> <span class="token punctuation">;</span>
+       end
+       <span class="token keyword">else</span>  <span class="token keyword">if</span><span class="token punctuation">(</span>write_flag<span class="token punctuation">)</span>begin
+           <span class="token keyword">case</span><span class="token punctuation">(</span>n_state<span class="token punctuation">)</span>
+
+                 IDLE<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'hxx<span class="token punctuation">;</span>
+         SET_FUNCTION<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h38<span class="token punctuation">;</span> <span class="token comment">//2*16 5*8 8位数据</span>
+             DISP_OFF<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h08<span class="token punctuation">;</span>
+           DISP_CLEAR<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h01<span class="token punctuation">;</span>
+           ENTRY_MODE<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h06<span class="token punctuation">;</span>
+           DISP_ON   <span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h0c<span class="token punctuation">;</span>  <span class="token comment">//显示功能开，没有光标，且不闪烁，</span>
+            ROW1_ADDR<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'h80<span class="token punctuation">;</span> <span class="token comment">//00+80</span>
+               ROW1_0<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span><span class="token number">127</span><span class="token operator">:</span><span class="token number">120</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_1<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span><span class="token number">119</span><span class="token operator">:</span><span class="token number">112</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_2<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span><span class="token number">111</span><span class="token operator">:</span><span class="token number">104</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_3<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span><span class="token number">103</span><span class="token operator">:</span> <span class="token number">96</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_4<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">95</span><span class="token operator">:</span> <span class="token number">88</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_5<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">87</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_6<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">79</span><span class="token operator">:</span> <span class="token number">72</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_7<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">71</span><span class="token operator">:</span> <span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_8<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">63</span><span class="token operator">:</span> <span class="token number">56</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_9<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">55</span><span class="token operator">:</span> <span class="token number">48</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_A<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">47</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_B<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">39</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_C<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">31</span><span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_D<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">23</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_E<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span> <span class="token number">15</span><span class="token operator">:</span>  <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW1_F<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_1 <span class="token punctuation">[</span>  <span class="token number">7</span><span class="token operator">:</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+            ROW2_ADDR<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> <span class="token number">8</span>'hc0<span class="token punctuation">;</span>      <span class="token comment">//40+80</span>
+               ROW2_0<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span><span class="token number">127</span><span class="token operator">:</span><span class="token number">120</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_1<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span><span class="token number">119</span><span class="token operator">:</span><span class="token number">112</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_2<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span><span class="token number">111</span><span class="token operator">:</span><span class="token number">104</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_3<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span><span class="token number">103</span><span class="token operator">:</span> <span class="token number">96</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_4<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">95</span><span class="token operator">:</span> <span class="token number">88</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_5<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">87</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_6<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">79</span><span class="token operator">:</span> <span class="token number">72</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_7<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">71</span><span class="token operator">:</span> <span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_8<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">63</span><span class="token operator">:</span> <span class="token number">56</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_9<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">55</span><span class="token operator">:</span> <span class="token number">48</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_A<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">47</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_B<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">39</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_C<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">31</span><span class="token operator">:</span> <span class="token number">24</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_D<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">23</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_E<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span> <span class="token number">15</span><span class="token operator">:</span>  <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+               ROW2_F<span class="token operator">:</span> lcd_data <span class="token operator">&lt;=</span> row_2 <span class="token punctuation">[</span>  <span class="token number">7</span><span class="token operator">:</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+           endcase                     
+       end
+       <span class="token keyword">else</span>
+              lcd_data<span class="token operator">&lt;=</span>lcd_data <span class="token punctuation">;</span>
+   end
+
+endmodule
+</code></pre>
+</div>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-f23dff6052.css" rel="stylesheet"/>
+<link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-c216769e99.css" rel="stylesheet"/>
+</div>
+<div id="treeSkill"></div>
+<div class="blog-extension-box" id="blogExtensionBox" style="width:400px;margin:auto;margin-top:12px"></div>
+</article>
+<script>
+  $(function() {
+    setTimeout(function () {
+      var mathcodeList = document.querySelectorAll('.htmledit_views img.mathcode');
+      if (mathcodeList.length > 0) {
+        for (let i = 0; i < mathcodeList.length; i++) {
+          if (mathcodeList[i].naturalWidth === 0 || mathcodeList[i].naturalHeight === 0) {
+            var alt = mathcodeList[i].alt;
+            alt = '\\(' + alt + '\\)';
+            var curSpan = $('<span class="img-codecogs"></span>');
+            curSpan.text(alt);
+            $(mathcodeList[i]).before(curSpan);
+            $(mathcodeList[i]).remove();
+          }
+        }
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+    }, 1000)
+  });
+</script>
+</div></html>

@@ -1,0 +1,73 @@
+module Top_system(
+    input clk,rst_n,Start,Stop,
+    input [1:0]num,
+    input [2:0]en,
+    input check,
+    //E_LOCK
+    output out,
+    output [11:0] seg,
+    //music
+    input s_begin,s_stop,
+    input [1:0] s_num,
+    output sound,ground,led_begin,led_stop,led_num1,led_num0,led_rst,led_sound,led_pause,led_playsignal,
+    //vga
+    output vga_hs,vga_vs,vga_rgb
+);
+E_LOCK d1(.clk(clk),. reset_in(rst_n),. b0_in(Start),. b1_in(Stop),
+.en(en[0]),.out(out),.seg(seg));
+
+TOP_music d2(.clk(clk),.rst(rst_n),.in_Begin(Start),.in_stop(Stop),
+.s_begin(s_begin),.s_stop(s_stop),.en(en[1]),.in_num(num),.s_num(s_num),
+.sound(sound),.ground(ground),.led_begin(led_begin),.led_stop(led_stop),
+.led_num1(led_num1),.led_num0(led_num0),.led_rst(led_rst),.led_sound(led_sound),.led_pause(led_pause),.led_playsignal(led_playsignal));
+//删去了 jiaoyan 接口 可在分模块中注释掉
+
+Top_vga d3(.clk(clk),.rst_n(rst_n),.vga_hs(vga_hs),.vga_vs(vga_vs),.vga_rgb(vga_rgb),
+.mux(num),.Start_dinosaur(Start),.Stop_dinosaur(Stop),.en(en[2]));
+endmodule
+
+module TOP_music(
+input clk,rst,in_Begin,in_stop,s_begin,s_stop,en,
+input[1:0]in_num,s_num,
+output sound,ground,led_begin,led_stop,led_num1,led_num0,led_rst,led_sound,led_pause,led_playsignal
+);
+endmodule
+
+module Top_vga(clk,rst_n,
+	vga_hs,vga_vs,
+	vga_rgb,
+	mux,Start_dinosaur,Stop_dinosaur,en
+    );
+    input clk ;
+    input rst_n;
+    input [1:0]    mux;
+    input Start_dinosaur;
+    input Stop_dinosaur;
+    input en;
+    output vga_hs;
+    output vga_vs;
+    output [11:0] vga_rgb;
+    wire [9:0] w_x_pixel;
+    wire [9:0] w_y_pixel;
+    wire w_clk;
+    wire [11:0] pixel_data;
+    reg [1:0]    mux_en;
+    reg Start_dinosaur_en;
+    reg Stop_dinosaur_en;
+    
+endmodule
+
+module E_LOCK(
+    input clk, reset_in, b0_in, b1_in,en,
+    output out,
+    output [11:0] seg
+    );
+endmodule
+
+
+
+
+
+
+
+

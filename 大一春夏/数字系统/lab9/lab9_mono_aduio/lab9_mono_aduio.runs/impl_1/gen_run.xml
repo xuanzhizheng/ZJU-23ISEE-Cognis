@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a50tcsg324-1" LaunchTime="1712815324">
+  <File Type="BITSTR-BMM" Name="audio_ctrl_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="audio_ctrl_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="audio_ctrl_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="audio_ctrl_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="audio_ctrl.tcl"/>
+  <File Type="OPT-TIMING" Name="audio_ctrl_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="audio_ctrl_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="audio_ctrl_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="audio_ctrl_reports.tcl"/>
+  <File Type="OPT-DRC" Name="audio_ctrl_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="audio_ctrl.hwdef"/>
+  <File Type="PWROPT-DCP" Name="audio_ctrl_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="audio_ctrl_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="audio_ctrl_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="audio_ctrl_placed.dcp"/>
+  <File Type="PLACE-IO" Name="audio_ctrl_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="audio_ctrl_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="audio_ctrl_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="audio_ctrl_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="audio_ctrl_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="audio_ctrl_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="audio_ctrl_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="audio_ctrl.bgn"/>
+  <File Type="PLACE-TIMING" Name="audio_ctrl_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="audio_ctrl_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="audio_ctrl.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="audio_ctrl_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="audio_ctrl_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="audio_ctrl_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="audio_ctrl.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="audio_ctrl_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="audio_ctrl_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="audio_ctrl_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="audio_ctrl_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="audio_ctrl_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="audio_ctrl_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="audio_ctrl.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="audio_ctrl_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="audio_ctrl.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="audio_ctrl_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="audio_ctrl_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="audio_ctrl.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="audio_ctrl_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="audio_ctrl_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="audio_ctrl_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="audio_ctrl_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="audio_ctrl_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="audio_ctrl_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="audio_ctrl_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="audio_ctrl_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="audio_ctrl_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="audio_ctrl_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="audio_ctrl_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="audio_ctrl_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="audio_ctrl_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="audio_ctrl_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="audio_ctrl_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="audio_ctrl_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="audio_ctrl_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="audio_ctrl_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="audio_ctrl_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="audio_ctrl.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="audio_ctrl_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="audio_ctrl.rbt"/>
+  <File Type="BITSTR-NKY" Name="audio_ctrl.nky"/>
+  <File Type="BG-DRC" Name="audio_ctrl.drc"/>
+  <File Type="RDI-RDI" Name="audio_ctrl.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="audio_ctrl"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/constrs_1/new/audio.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_6m"/>
+</GenRun>

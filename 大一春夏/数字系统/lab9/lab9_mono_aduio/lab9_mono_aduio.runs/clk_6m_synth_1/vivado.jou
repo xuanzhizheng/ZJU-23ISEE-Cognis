@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Apr 11 11:55:04 2024
+# Process ID: 21424
+# Current directory: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.runs/clk_6m_synth_1
+# Command line: vivado.exe -log clk_6m.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_6m.tcl
+# Log file: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.runs/clk_6m_synth_1/clk_6m.vds
+# Journal file: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.runs/clk_6m_synth_1\vivado.jou
+#-----------------------------------------------------------
+source clk_6m.tcl -notrace

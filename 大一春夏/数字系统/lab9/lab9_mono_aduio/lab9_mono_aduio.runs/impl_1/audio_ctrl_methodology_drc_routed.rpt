@@ -1,0 +1,40 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Apr 11 14:03:16 2024
+| Host         : LAPTOP-42E9R2TH running 64-bit major release  (build 9200)
+| Command      : report_methodology -file audio_ctrl_methodology_drc_routed.rpt -pb audio_ctrl_methodology_drc_routed.pb -rpx audio_ctrl_methodology_drc_routed.rpx
+| Design       : audio_ctrl
+| Device       : xc7a50tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 1
++---------+----------+------------------------------+------------+
+| Rule    | Severity | Description                  | Violations |
++---------+----------+------------------------------+------------+
+| LUTAR-1 | Warning  | LUT drives async reset alert | 1          |
++---------+----------+------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell g0_b0, with 2 or more inputs, drives asynchronous preset/clear pin(s) audio_pwm_reg/CLR, cnt_reg[0]/CLR, cnt_reg[1]/CLR, cnt_reg[2]/CLR, cnt_reg[3]/CLR, cnt_reg[4]/CLR, scale_cnt_reg[0]/CLR, scale_cnt_reg[10]/CLR, scale_cnt_reg[11]/CLR, scale_cnt_reg[12]/CLR, scale_cnt_reg[13]/CLR, scale_cnt_reg[1]/CLR, scale_cnt_reg[2]/CLR, scale_cnt_reg[3]/CLR, scale_cnt_reg[4]/CLR (the first 15 of 34 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+

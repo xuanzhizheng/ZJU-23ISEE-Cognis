@@ -1,0 +1,80 @@
+  // RS232 signals
+  input            rxd_pin,        // RS232 RXD pin
+  output           txd_pin,        // RS232 RXD pin
+  // Loopback selector
+  input            lb_sel_pin,     // Loopback selector 
+  //BT 
+    output bt_pw_on,
+    output bt_master_slave,
+    output bt_sw_hw,
+    output bt_rst_n,
+    output bt_sw,
+    input  [5:0]  sw_pin,
+  // LED outputs
+output     [3:0] led_pins
+
+
+bt_uart uart1(.clk_pin(clk),
+.rst_pin(rst_n),
+.rxd_pin(rxd_pin),
+.txd_pin(txd_pin),
+.lb_sel_pin(lb_sel_pin), 
+.bt_pw_on(bt_pw_on),
+.bt_master_slave(bt_master_slave),
+.bt_sw_hw(bt_sw_hw),
+.bt_rst_n(bt_rst_n),
+.bt_sw(bt_sw),
+.sw_pin(sw_pin),
+.led_pins(led_pins)
+);
+set_property -dict {PACKAGE_PIN D18 IOSTANDARD LVCMOS33} [get_ports bt_pw_on]
+set_property -dict {PACKAGE_PIN C16 IOSTANDARD LVCMOS33} [get_ports bt_master_slave]
+set_property -dict {PACKAGE_PIN H15 IOSTANDARD LVCMOS33} [get_ports bt_sw_hw]
+set_property -dict {PACKAGE_PIN M2 IOSTANDARD LVCMOS33} [get_ports bt_rst_n]
+set_property -dict {PACKAGE_PIN E18 IOSTANDARD LVCMOS33} [get_ports bt_sw]
+set_property -dict {PACKAGE_PIN P5 IOSTANDARD LVCMOS33} [get_ports {sw_pin[0]}]
+set_property -dict {PACKAGE_PIN P4 IOSTANDARD LVCMOS33} [get_ports {sw_pin[1]}]
+set_property -dict {PACKAGE_PIN P3 IOSTANDARD LVCMOS33} [get_ports {sw_pin[2]}]
+set_property -dict {PACKAGE_PIN P2 IOSTANDARD LVCMOS33} [get_ports {sw_pin[3]}]
+set_property -dict {PACKAGE_PIN R2 IOSTANDARD LVCMOS33} [get_ports {sw_pin[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_pin[5]}]
+set_property PACKAGE_PIN M4 [get_ports {sw_pin[5]}]
+set_property PACKAGE_PIN N2 [get_ports txd_pin]
+set_property IOSTANDARD LVCMOS33 [get_ports txd_pin]
+set_property PACKAGE_PIN L3 [get_ports rxd_pin]
+set_property IOSTANDARD LVCMOS33 [get_ports rxd_pin]
+set_property PACKAGE_PIN R1 [get_ports lb_sel_pin]
+set_property IOSTANDARD LVCMOS33 [get_ports lb_sel_pin]
+set_property PACKAGE_PIN F6 [get_ports {led_pins[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[0]}]
+set_property PACKAGE_PIN G4 [get_ports {led_pins[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[1]}]
+set_property PACKAGE_PIN G3 [get_ports {led_pins[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[2]}]
+set_property PACKAGE_PIN J4 [get_ports {led_pins[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[3]}]
+set_property PACKAGE_PIN H4 [get_ports {led_pins[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[4]}]
+set_property PACKAGE_PIN J3 [get_ports {led_pins[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[5]}]
+set_property PACKAGE_PIN J2 [get_ports {led_pins[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[6]}]
+set_property PACKAGE_PIN K2 [get_ports {led_pins[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[7]}]
+set_property PACKAGE_PIN K1 [get_ports {led_pins[8]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[8]}]
+set_property PACKAGE_PIN H6 [get_ports {led_pins[9]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[9]}]
+set_property PACKAGE_PIN H5 [get_ports {led_pins[10]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[10]}]
+set_property PACKAGE_PIN J5 [get_ports {led_pins[11]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[11]}]
+set_property PACKAGE_PIN K6 [get_ports {led_pins[12]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[12]}]
+set_property PACKAGE_PIN L1 [get_ports {led_pins[13]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[13]}]
+set_property PACKAGE_PIN M1 [get_ports {led_pins[14]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[14]}]
+set_property PACKAGE_PIN K3 [get_ports {led_pins[15]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pins[15]}]
+

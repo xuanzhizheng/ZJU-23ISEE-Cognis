@@ -1,0 +1,88 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 15040
+License: Customer
+
+Current time: 	Sun Jun 06 12:38:42 CST 2021
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 12
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 17 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	杨心傲
+User home directory: C:/Users/杨心傲
+User working directory: C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado
+HDI_APPROOT: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4
+RDI_DATADIR: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/data
+RDI_BINDIR: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/杨心傲/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/杨心傲/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/杨心傲/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1/vivado.log
+Vivado journal file location: 	C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1/vivado.jou
+Engine tmp dir: 	C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1/.Xil/Vivado-15040-LAPTOP-REEO934D
+
+GUI allocated memory:	246 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 773 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bs (cj):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 55 MB (+55117kb) [00:00:04]
+// [Engine Memory]: 485 MB (+356575kb) [00:00:04]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// Tcl Message: open_project C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1/project_1.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1' 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 76 MB (+18794kb) [00:00:05]
+// [Engine Memory]: 565 MB (+58666kb) [00:00:05]
+// [Engine Memory]: 740 MB (+154502kb) [00:00:06]
+// Tcl Message: open_project C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1/project_1.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1' 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 781 MB. GUI used memory: 54 MB. Current time: 6/6/21 12:38:42 PM CST
+// Project name: project_1; location: C:/Users/杨心傲/Desktop/ov7670采集以及显示系统详解以及实现/5,VIVADO下建立项目并实现设计/OV7670_VGA/project_1; part: xc7z020clg484-1
+// [Engine Memory]: 781 MB (+3500kb) [00:00:09]
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 

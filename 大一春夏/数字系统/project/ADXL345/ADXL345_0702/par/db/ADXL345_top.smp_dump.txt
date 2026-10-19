@@ -1,0 +1,26 @@
+
+State Machine - |ADXL345_top|ADXL345:u_adxl345|state
+Name state.ACK_EXT state.ADD_EXT state.STOP2 state.STOP1 state.ACK4 state.DATA state.ACK3 state.ADD3 state.START2 state.ACK2 state.ADD2 state.ACK1 state.ADD1 state.START1 state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.START1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.ADD1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.ACK1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.ADD2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.ACK2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.START2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.ADD3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.ACK3 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.DATA 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.ACK4 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.STOP1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.STOP2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ADD_EXT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ACK_EXT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ADXL345_top|ADXL345:u_adxl345|cnt
+Name cnt.000 cnt.011 cnt.010 cnt.001 cnt.101 
+cnt.101 0 0 0 0 0 
+cnt.001 0 0 0 1 1 
+cnt.010 0 0 1 0 1 
+cnt.011 0 1 0 0 1 
+cnt.000 1 0 0 0 1 

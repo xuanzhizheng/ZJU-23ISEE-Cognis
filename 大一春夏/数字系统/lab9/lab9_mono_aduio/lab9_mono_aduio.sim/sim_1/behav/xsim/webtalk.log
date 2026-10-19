@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Apr 11 12:02:52 2024
+# Process ID: 22756
+# Current directory: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.sim/sim_1/behav/xsim/xsim.dir/tb_audio_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.sim/sim_1/behav/xsim/xsim.dir/tb_audio_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 109.539 ; gain = 17.895
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 11 12:02:57 2024...

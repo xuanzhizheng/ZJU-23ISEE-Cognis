@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../lab9_mono_aduio.srcs/sources_1/ip/clk_6m" \
+"../../../../../../3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v" \
+"../../../../../../3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/sim_1/new/tb_audio.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

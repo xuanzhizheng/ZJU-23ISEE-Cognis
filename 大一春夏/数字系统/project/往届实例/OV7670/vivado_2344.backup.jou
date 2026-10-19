@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Jun 25 20:49:15 2021
+# Process ID: 2344
+# Current directory: D:/LenovoSoftstore/vivado/OV7670_VGA/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14484 D:\LenovoSoftstore\vivado\OV7670_VGA\project_1\project_1.xpr
+# Log file: D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/vivado.log
+# Journal file: D:/LenovoSoftstore/vivado/OV7670_VGA/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.xpr
+update_compile_order -fileset sources_1

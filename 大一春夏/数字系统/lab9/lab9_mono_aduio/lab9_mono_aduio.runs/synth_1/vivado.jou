@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Apr 11 14:02:07 2024
+# Process ID: 24372
+# Current directory: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.runs/synth_1
+# Command line: vivado.exe -log audio_ctrl.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source audio_ctrl.tcl
+# Log file: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.runs/synth_1/audio_ctrl.vds
+# Journal file: E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source audio_ctrl.tcl -notrace

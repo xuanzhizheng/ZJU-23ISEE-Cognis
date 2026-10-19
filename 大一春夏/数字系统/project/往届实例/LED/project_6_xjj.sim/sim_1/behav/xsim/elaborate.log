@@ -1,0 +1,20 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto c3da11e303824beb9cb7cae6fe655a98 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot lcd_tb_behav xil_defaultlib.lcd_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.srcs/sources_1/new/lcd_1602.v" Line 2. Module lcd_1602 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.srcs/sources_1/new/lcd_1602.v" Line 44. Module clk100M_50M doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.srcs/sources_1/new/lcd_1602.v" Line 71. Module clk_50M_500 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.srcs/sources_1/new/lcd_1602.v" Line 108. Module lcd_show doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clk100M_50M
+Compiling module xil_defaultlib.clk_50M_500
+Compiling module xil_defaultlib.lcd_show
+Compiling module xil_defaultlib.lcd_1602
+Compiling module xil_defaultlib.lcd_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot lcd_tb_behav

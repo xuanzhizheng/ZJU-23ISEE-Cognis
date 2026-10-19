@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Apr 29 15:35:10 2024
+# Process ID: 2292
+# Current directory: C:/Users/lxl/Desktop/lab9/lab9_mono_aduio
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent424 C:\Users\lxl\Desktop\lab9\lab9_mono_aduio\lab9_mono_aduio.xpr
+# Log file: C:/Users/lxl/Desktop/lab9/lab9_mono_aduio/vivado.log
+# Journal file: C:/Users/lxl/Desktop/lab9/lab9_mono_aduio\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/lxl/Desktop/lab9/lab9_mono_aduio/lab9_mono_aduio.xpr
+INFO: [Project 1-313] Project file moved from 'E:/EGOPro/project/lab9_mono_aduio' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/lxl/Desktop/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v', nor could it be found using path 'E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/lxl/Desktop/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/constrs_1/new/audio.xdc', nor could it be found using path 'E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/constrs_1/new/audio.xdc'.
+Scanning sources...
+ERROR: [Common 17-70] Application Exception: SrcMgr::createSS : type not set
+open_project C:/Users/lxl/Desktop/VivadoC/lab4_assign/debug_thanks.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/vivado/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 29 15:36:27 2024...

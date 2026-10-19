@@ -1,0 +1,9 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v,1712808614,verilog,,E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/sim_1/new/tb_audio.v,,audio_ctrl,,,../../../../lab9_mono_aduio.srcs/sources_1/ip/clk_6m,,,,,
+E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/sim_1/new/tb_audio.v,1712808109,verilog,,,,tb_audio,,,../../../../lab9_mono_aduio.srcs/sources_1/ip/clk_6m,,,,,
+E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.srcs/sources_1/ip/clk_6m/clk_6m.v,1712807700,verilog,,E:/EGOPro/3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v,,clk_6m,,,../../../../lab9_mono_aduio.srcs/sources_1/ip/clk_6m,,,,,
+E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.srcs/sources_1/ip/clk_6m/clk_6m_clk_wiz.v,1712807700,verilog,,E:/EGOPro/project/lab9_mono_aduio/lab9_mono_aduio.srcs/sources_1/ip/clk_6m/clk_6m.v,,clk_6m_clk_wiz,,,../../../../lab9_mono_aduio.srcs/sources_1/ip/clk_6m,,,,,

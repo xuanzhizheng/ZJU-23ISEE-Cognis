@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at ADXL345.v(126): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at ADXL345.v(7): object "data" differs only in case from object "DATA" in the same scope

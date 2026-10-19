@@ -1,0 +1,6 @@
+"..\obj\Reg_RW.obj",
+"..\obj\main.obj",
+"..\obj\LDChip.obj",
+"..\obj\usart.obj" 
+TO "..\obj\V07C" 
+PRINT(".\V07C.m51") RAMSIZE(256) 

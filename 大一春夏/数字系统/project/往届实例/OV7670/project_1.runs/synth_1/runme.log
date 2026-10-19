@@ -1,0 +1,25 @@
+
+*** Running vivado
+    with args -log OV7670_VGA_TOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source OV7670_VGA_TOP.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source OV7670_VGA_TOP.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/LenovoSoftstore/Xilinx_Vivado_SDK_2017.4_1216_1/Vivado/2017.4/data/ip'.
+Command: synth_design -top OV7670_VGA_TOP -part xc7a35tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14948 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 354.539 ; gain = 99.082
+---------------------------------------------------------------------------------
+Abnormal program termination (EXCEPTION_ACCESS_VIOLATION)
+Please check 'D:/LenovoSoftstore/vivado/OV7670_VGA/project_1/project_1.runs/synth_1/hs_err_pid9072.log' for details

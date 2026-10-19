@@ -1,0 +1,1 @@
+"..\code\LDChip.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(..\code;..\user) DEBUG OBJECTEXTEND PRINT(.\LDChip.lst) TABS (2) OBJECT(..\obj\LDChip.obj)

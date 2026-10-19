@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Apr 29 15:12:10 2024
+# Process ID: 15056
+# Current directory: C:/Users/lxl/Desktop/lab9/lab9_mono_aduio
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8220 C:\Users\lxl\Desktop\lab9\lab9_mono_aduio\lab9_mono_aduio.xpr
+# Log file: C:/Users/lxl/Desktop/lab9/lab9_mono_aduio/vivado.log
+# Journal file: C:/Users/lxl/Desktop/lab9/lab9_mono_aduio\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/lxl/Desktop/lab9/lab9_mono_aduio/lab9_mono_aduio.xpr

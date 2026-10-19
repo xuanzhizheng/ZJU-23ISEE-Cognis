@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a50tcsg324-1" LaunchTime="1712815324">
+  <File Type="PA-TCL" Name="audio_ctrl.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="audio_ctrl_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="audio_ctrl_reports.tcl"/>
+  <File Type="RDS-RDS" Name="audio_ctrl.vds"/>
+  <File Type="RDS-UTIL" Name="audio_ctrl_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="audio_ctrl_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="audio_ctrl.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="audio_ctrl_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="audio_ctrl_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/audio_ctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="audio_ctrl"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../3.EGOPro-配套实验-Vivado2019.1_V1.0/source/lab9/constrs_1/new/audio.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_6m"/>
+</GenRun>

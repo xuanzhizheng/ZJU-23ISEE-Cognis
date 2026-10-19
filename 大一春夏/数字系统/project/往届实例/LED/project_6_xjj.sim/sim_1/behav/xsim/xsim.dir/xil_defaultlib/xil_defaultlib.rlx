@@ -1,0 +1,7 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.srcs/sim_1/new/lcd_tb.v,1624630344,verilog,,,,lcd_tb,,,,,,,,
+D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.srcs/sources_1/new/lcd_1602.v,1624645563,verilog,,D:/LenovoSoftstore/vivado/OV7670_VGA/project_6_xjj/project_6_xjj.srcs/sim_1/new/lcd_tb.v,,clk100M_50M;clk_50M_500;lcd_1602;lcd_show,,,,,,,,
